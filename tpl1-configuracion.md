@@ -8,6 +8,7 @@ TPL 1 - Configuración inicial de la red del laboratorio
 #### Notas para ayudantes
 
 * Acá van notas nuestras que consideren pertinentes.
+* En caso de requerir insertar un salto de pagina en cualquier parte del documento, escribir \pagebreak en una linea en blanco.
 * Le saqué los # a los comandos porque los estudiantes lo escribían. Si hace falta, lo vuelvo a poner.
 
 #### --- Fin notas para ayudantes ---
