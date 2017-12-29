@@ -43,7 +43,7 @@ Teleinformática y Redes
 - Teoría Capa de Transporte y TCP (1)
 - Teoría Capa de Transporte y TCP (2)
   - Ejercicio Control de Congestión
-- Captura para Trabajo Práctico Integrador
+- [Captura para Trabajo Práctico Integrador](./receta-tp-integrador)
 - Práctica Interface de Sockets
 - Teoría IPv6
 - Consultas/Ejercicios integradores
