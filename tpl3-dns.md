@@ -63,42 +63,39 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
 \pagebreak
 
-Documentación de configuración de la zona [su-nro-legajo].tyr
-=============================================================
+Documentación de configuración de la zona `[su-nro-legajo].tyr`
+===============================================================
 
-    Nombre de la zona DNS: 
-    Nombre del servidor DNS: 
-    Dirección de correo del contacto: 
-    Número de serie de la zona: 
+    Nombre de la zona DNS: ______________.tyr
+    Nombre del servidor DNS: ________________.tyr
+    Dirección de correo del contacto: _______________________________
+    Número de serie de la zona: ___________
     Tiempo de vida en caché: _____ segundos
 
-Resource Records (RR)
 
-#### Notas para ayudantes
+#### Resource Records (RR)
 
-* Falta reemplazar esto por una tabla Markdown
+| Nombre de Host | Clase | Tipo de RR | Datos del RR     | Comentario |
+| -------------- | :---: | :--------: | ---------------- | ---------- |
+| mail           |  IN   | A          | 190.104.80.3     | (ejemplo)  |
+|                |  IN   |            |                  |            |
+|                |  IN   |            |                  |            |
+|                |  IN   |            |                  |            |
+|                |  IN   |            |                  |            |
+|                |  IN   |            |                  |            |
+|                |  IN   |            |                  |            |
+|                |  IN   |            |                  |            |
+|                |  IN   |            |                  |            |
+|                |  IN   |            |                  |            |
+|                |  IN   |            |                  |            |
 
-Nombre de Host
-Clase
-Tipo de RR
-Datos del RR
-IN
-IN
-IN
-IN
-IN
-IN
-IN
-IN
-IN
-Zona de Punteros Reversos
-Nombre de Host
-Clase
-Tipo de RR
-Datos del RR
-IN
-IN
-IN
-IN
+#### Zona de Punteros Reversos
 
-#### --- Fin notas para ayudantes ---
+| Nombre de Host              | Clase | Tipo de RR | Datos del RR      | Comentario |
+| --------------------------- | :---: | :--------: | ----------------- | ---------- |
+| 3.80.104.190.in-addr.arpa.  |  IN   |    PTR     | mail.unlu.edu.ar. | (ejemplo)  |
+|                             |  IN   |            |                   |            |
+|                             |  IN   |            |                   |            |
+|                             |  IN   |            |                   |            |
+|                             |  IN   |            |                   |            |
+|                             |  IN   |            |                   |            |
