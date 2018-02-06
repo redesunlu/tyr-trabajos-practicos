@@ -8,7 +8,7 @@ $(foreach package,$(REQUIRED_PACKAGES),\
 
 .PHONY: all clean
 
-all: pdf/tpl1-configuracion.pdf pdf/tpl2-telnet.pdf pdf/tpl3-dns.pdf pdf/tpl4-correo-electronico.pdf pdf/tpl5-http.pdf pdf/receta-tp-integrador.pdf
+all: pdf/tpl1-configuracion.pdf pdf/tpl2-telnet.pdf pdf/tpl3-dns.pdf pdf/tpl4-correo-electronico.pdf pdf/tpl5-http.pdf pdf/tpe-sockets.pdf pdf/receta-tp-integrador.pdf
 
 pdf/%.pdf: %.md header.tex
 	@- mkdir pdf
