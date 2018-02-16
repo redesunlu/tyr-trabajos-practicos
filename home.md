@@ -66,6 +66,7 @@ Si no se posee una copia del repositorio
     apt-get --no-install-recommends install \
         pandoc lmodern texlive-xetex texlive-generic-recommended \
         texlive-fonts-recommended fonts-dejavu
+    cd tyr.wiki
     git pull && make
 
 Los documentos generados quedan en el directorio `./pdf/`
