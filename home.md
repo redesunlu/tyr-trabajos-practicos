@@ -6,7 +6,7 @@ Teleinformática y Redes
 - Teoría Introducción, Redes y OSI
   - Slides 01 Introducción
   - Slides 02 Protocolos y OSI
-  - Guía de lectura - Introducción
+  - [Guía de lectura - Introducción](./gl-introduccion)
 - [TPL#1 Configuración inicial del laboratorio](./tpl1-configuracion)
 - Teoría Comunicaciones de datos (modelo, señales, multiplexación)
   - Slides 03 Modelo Comunicaciones
