@@ -8,7 +8,7 @@ $(foreach package,$(REQUIRED_PACKAGES),\
 
 .PHONY: all clean
 
-all: pdf/tpl1-configuracion.pdf pdf/tpl2-telnet.pdf pdf/tpl3-dns.pdf pdf/tpl4-correo-electronico.pdf pdf/tpl5-http.pdf pdf/tpe-sockets.pdf pdf/receta-tp-integrador.pdf
+all: pdf/gl-introduccion.pdf pdf/tp-transmision-datos.pdf pdf/tpl1-configuracion.pdf pdf/tpl2-telnet.pdf pdf/tpl3-dns.pdf pdf/tpl4-correo-electronico.pdf pdf/tpl5-http.pdf pdf/tpe-sockets.pdf pdf/receta-tp-integrador.pdf
 
 pdf/%.pdf: %.md header.tex
 	@- mkdir pdf
@@ -20,7 +20,7 @@ pdf/%.pdf: %.md header.tex
 		-V mainfont="DejaVu Serif" -V colorlinks=true -V graphics=true \
 		-V author-meta=$(shell whoami) \
 		/tmp/output.md -o "$@"
-	evince "$@" &
+	#evince "$@" &
 
 clean:
 	- rm -v pdf/*.pdf
