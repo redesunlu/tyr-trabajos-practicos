@@ -12,7 +12,7 @@ Teleinformática y Redes
   - Slides 03 Modelo Comunicaciones
   - Slides 04 Multiplexación
   - Slides 05 Medios
-  - TP Transmisión de datos
+  - [TP Transmisión de datos](./tp-transmision-datos)
 - [TPL#2 Cliente-Servidor - Telnet](./tpl2-telnet)
 - Teoría Redes y Conmutación
   - Slides 06 Redes
@@ -22,7 +22,7 @@ Teleinformática y Redes
 - [TPL#4 Correo Electrónico](./tpl4-correo-electronico)
 - Teoría Capa de Enlace (2) + Redes Locales (1)
   - Slides 10 Redes de Area Local
-  - TP Eficiencia del enlace
+  - [TP Eficiencia del enlace](./tp-control-enlace)
 - TPL#5 HTTP (clase 1)
 - Teoría Redes Locales (2)
   - Guía de lectura - Enlace
