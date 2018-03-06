@@ -38,7 +38,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
         ip addr add dev {interfaz} {dirección_IP[/{prefijo_máscara]} [broadcast {dir_difusión}]
         ip link set dev {interfaz} up   # "levantar" el enlace de red
 
-    Por ejemplo,
+    Por ejemplo:
 
         ip addr add dev eth2 192.168.0.143/24 broadcast 192.168.0.255
         ip link set dev eth2 up
@@ -51,13 +51,15 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
         ping {DIRECCIÓN IP}
 
-5. Resolución de nombres de hosts a direcciones IP. Completar el archivo `/etc/hosts` con los nombres y las direcciones de red de al menos 2 máquinas del laboratorio para la resolución local de nombres.
+5. Resolución de nombres de hosts a direcciones IP.
 
-6. Verificar conectividad con al menos 2 equipos de la red utilizando nombres de host.
+    a. Completar el archivo `/etc/hosts` con los nombres y las direcciones de red de al menos 2 máquinas del laboratorio para la resolución local de nombres.
+
+    b. Verificar conectividad con al menos 2 equipos de la red utilizando nombres de host:
 
         ping {NOMBRE DE HOST}
 
-7. Ver la tabla de ruteo definida utilizando el comando `ip route show` o `route`. ¿Cuáles son las redes accesibles?
+7. Ver la tabla de ruteo definida utilizando el comando `ip route show`. ¿Cuáles son las redes accesibles?
 
 8. Agregar la dirección `10.4.11.30` como ruta por defecto para acceder a otras redes:
 
@@ -84,9 +86,9 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     b. En otra terminal ejecutar el comando ping para enviar un mensaje ICMP Echo Request:
 
-            ping Dirección_IP -c 2
+            ping Dirección_IP -c 3
 
-    c. Una vez obtenida la respuesta del comando _ping_, detener la captura (finalizar el proceso _tshark_ presionando **Ctrl+C**)
+    c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tshark_ presionando **Ctrl+C**)
 
     d. Analizar el volcado del programa de captura, representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
