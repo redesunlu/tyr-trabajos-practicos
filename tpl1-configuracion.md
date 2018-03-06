@@ -80,7 +80,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
         : no resuelve nombres de objetos de red (por ej. nombres de host, puertos TCP y UDP)
 
         -V
-        : Muestra decodificación de protocolos para cada trama.
+        : muestra decodificación de protocolos para cada trama.
 
         -f
         : filtro, en este caso, sólo tramas que contengan el protocolo icmp y la dirección ip especificada.
