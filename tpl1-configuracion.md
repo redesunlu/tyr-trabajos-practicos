@@ -15,9 +15,9 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 **Consignas**
 
-Salvo indicación en contrario, todos los comandos siguientes se deben ejecutarse con permisos de usuario administrador (`root`). Para obtenerlos, utilice el comando `su`.
+Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar con permisos de usuario administrador (`root`). Para obtenerlos, utilice el comando `su`.
 
-1. Verificar que el sistema operativo haya detectado la/s interfaces físicas de red (NIC). A tal efecto utilizar el comando `dmesg` y buscar las referencias a la interfaz de red (`eth{n}` o `eno{N}`).
+1. Verificar que el sistema operativo haya detectado la/s interfaces físicas de red (NIC). A tal efecto utilizar el comando `dmesg` y buscar las referencias a la interfaz de red (`eth{n}` , `eno{N}` , `ens{N}f{N}` o `enp{N}f{N}`).
 
     Utilizar el comando `mii-tool` para verificar el estado del enlace para cada interfaz física de red.
 
@@ -41,6 +41,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutars
     Por ejemplo,
 
         ip addr add dev eth2 192.168.0.143/24 broadcast 192.168.0.255
+        ip link set dev eth2 up
 
     Verificar configuración con:
 
@@ -50,8 +51,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutars
 
         ping {DIRECCIÓN IP}
 
-5. Resolución de nombres de hosts a direcciones IP. Completar el archivo `/etc/hosts` con los nombres y las
-direcciones de red de al menos 2 máquinas del laboratorio para la resolución local de nombres.
+5. Resolución de nombres de hosts a direcciones IP. Completar el archivo `/etc/hosts` con los nombres y las direcciones de red de al menos 2 máquinas del laboratorio para la resolución local de nombres.
 
 6. Verificar conectividad con al menos 2 equipos de la red utilizando nombres de host.
 
@@ -61,33 +61,15 @@ direcciones de red de al menos 2 máquinas del laboratorio para la resolución l
 
 8. Agregar la dirección `10.4.11.30` como ruta por defecto para acceder a otras redes:
 
-        ip route add default dev eth0 via 10.4.11.30
+        ip route add default via 10.4.11.30
 
     Verificar nuevamente la tabla de ruteo.
 
-9. Verificar la tabla arp con el comando:
+9. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con otro equipo. Las acciones que debe realizar son:
 
-        ip neigh show
+    a. Iniciar la captura redireccionando la salida a un archivo para su posterior análisis:
 
-10. Borrar todas la entradas (si hay)
-
-        ip neigh flush {Dirección IP | all}
-
-11. Ejecutar el comando `ping` utilizando como parámetro una dirección ip de host no asignado en la red (p, ej, `10.4.11.65`), y una dirección ip de un host perteneciente a otra red (por ej. `170.210.96.99`). Verificar la tabla arp e indicar cómo se interpreta en cada caso y por qué.
-
-12. Borrar todas las entradas de la tabla arp.
-
-13. Coordinar con otro compañero para que sólo uno de los dos ejecute un ping al host del otro. Verificar la tabla arp en cada máquina. ¿Qué pasó en cada caso? ¿Por qué?
-
-14. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con otro equipo. Las acciones que debe realizar son:
-
-    a. Borrar la tabla arp:
-
-            ip neigh flush all
-
-    b. Iniciar la captura redireccionando la salida a un archivo para su posterior análisis:
-
-            tshark -n -V -f 'host Dirección_IP' > nombre_archivo
+            tshark -n -V -f 'icmp && host Dirección_IP' > nombre_archivo
 
         Parámetros utilizados:
 
@@ -98,11 +80,11 @@ direcciones de red de al menos 2 máquinas del laboratorio para la resolución l
         : Muestra decodificación de protocolos para cada trama.
 
         -f
-        : filtro, en este caso, sólo tramas que contengan la dirección ip especificada.
+        : filtro, en este caso, sólo tramas que contengan el protocolo icmp y la dirección ip especificada.
 
     c. En otra terminal ejecutar el comando ping para enviar un mensaje ICMP Echo Request:
 
-            ping Dirección_IP -c 1
+            ping Dirección_IP -c 2
 
     d. Una vez obtenida la respuesta del comando _ping_, detener la captura (finalizar el proceso _tshark_ presionando **Ctrl+C**)  Analizar el volcado del programa de captura, representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
