@@ -1,7 +1,7 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** Luján xx/xx/xxxx
+**Fecha de Entrega:** Luján 29/03/2018
 
 **Objetivo:** Conocer el procedimiento inicial y hacer habitual la práctica de configuración de un host en una red basada en el juego de protocolos TCP/IP.
 
@@ -82,11 +82,13 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
         -f
         : filtro, en este caso, sólo tramas que contengan el protocolo icmp y la dirección ip especificada.
 
-    c. En otra terminal ejecutar el comando ping para enviar un mensaje ICMP Echo Request:
+    b. En otra terminal ejecutar el comando ping para enviar un mensaje ICMP Echo Request:
 
             ping Dirección_IP -c 2
 
-    d. Una vez obtenida la respuesta del comando _ping_, detener la captura (finalizar el proceso _tshark_ presionando **Ctrl+C**)  Analizar el volcado del programa de captura, representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
+    c. Una vez obtenida la respuesta del comando _ping_, detener la captura (finalizar el proceso _tshark_ presionando **Ctrl+C**)
+
+    d. Analizar el volcado del programa de captura, representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
 
 #### Bibliografía
