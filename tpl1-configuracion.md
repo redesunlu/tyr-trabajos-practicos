@@ -1,7 +1,7 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** Luján 29/03/2018
+**Fecha de Entrega:** Luján 22/03/2018
 
 **Objetivo:** Conocer el procedimiento inicial y hacer habitual la práctica de configuración de un host en una red basada en el juego de protocolos TCP/IP.
 
