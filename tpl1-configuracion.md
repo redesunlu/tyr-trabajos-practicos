@@ -17,7 +17,7 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar con permisos de usuario administrador (`root`). Para obtenerlos, utilice el comando `su`.
 
-1. Verificar que el sistema operativo haya detectado la/s interfaces físicas de red (NIC). A tal efecto utilizar el comando `dmesg` y buscar las referencias a la interfaz de red (`eth{n}` , `eno{N}` , `ens{N}f{N}` o `enp{N}f{N}`).
+1. Verificar que el sistema operativo haya detectado la/s interfaces físicas de red (NIC). A tal efecto utilizar el comando `dmesg` y buscar las referencias a la interfaz de red (`eth{n}` , `eno{N}` , `ens{N}f{N}` o `enp{N}s{N}`).
 
     Utilizar el comando `mii-tool` para verificar el estado del enlace para cada interfaz física de red.
 
@@ -27,7 +27,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
             hostname {nombre_equipo}
 
-        donde `{nombre_equipo}` es el nombre que le corresponde al equipo según el diagrama establecido de la red.
+       donde `{nombre_equipo}` es el nombre que le corresponde al equipo según el diagrama establecido de la red.
 
     b. Permanente: Editar el archivo `/etc/hostname`, asignando el nombre que le corresponde al equipo.
 
@@ -35,7 +35,8 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     Para asignar direcciones de red a una interfaz e iniciar el enlace, utilizar el comando:
 
-        ip addr add dev {interfaz} {dirección_IP[/{prefijo_máscara]} [broadcast {dir_difusión}]
+        ip addr add dev {interfaz} {dirección_IP[/{prefijo_máscara]} \
+           [broadcast {dir_difusión}]
         ip link set dev {interfaz} up   # "levantar" el enlace de red
 
     Por ejemplo:
