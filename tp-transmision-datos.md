@@ -8,6 +8,7 @@ Hoja de formulas
 
 Nyquist:
 	- C = 2 * B ∗ log_{2}(M)
+
 Shannon:
 	- C = B * log_{2}(SNR + 1)
 	- SNR_{db} = 10 * log_{10}(SNR)
@@ -38,6 +39,8 @@ M = 8
 
 Se requieren al menos 8 niveles de tensión para transmitir a la tasa especificada.
 
+https://www.wolframalpha.com/input/?i=48+%3D+2+*+8+*+log2(x)
+
 #### -- Fin notas para ayudantes ---
 
 ### 2) Se tiene un canal de 10.200 Hz y una SNR = 20dB, con un sistema que puede codificar utilizando 16 niveles de tensión. ¿Cuál es la capacidad máxima del canal?
@@ -49,6 +52,8 @@ Utilizar tanto Nyquist como Shannon. El resultado correcto es el menor de ambos
 Por Nyquist:
 
 C = 2 ∗ 10200 ∗ log_{2}(16) = 81,6 Kbps
+
+https://www.wolframalpha.com/input/?i=2+*+10200+*+log2(16)+%3D+x
 
 Shannon:
 
@@ -142,7 +147,44 @@ Para una EE > 2 se requieren mas de 2 niveles de codificación.
 
 #### Notas para ayudantes
 
-TODO: Encarar
+(Esto es una aproximación mental)
+
+TODO: validar que Gabriel lo resuelve igual
+
+Tiempo requerido por fibra óptica
+
+    Simplificamos Tfibra = Tprop + Ttrama + (Tcola) + (Tproc)
+
+    Tcola  = 0 (negligible)
+    Tproc  = 0 (negligible)
+
+    Datos  = (2 * 24) * 1024 * 8 Mbits
+    Tasa   = 150 Mbps
+    Ttrama = 2560 segundos
+
+    Vseñal = 200000 km/s
+    Tprop  = d / 200000
+
+    Tfibra = 2560 seg + d km / 200000 km/s
+
+Tiempo requerido por delivery
+
+    Descartando cargar las memorias, con el vehículo encendido y sin tráfico ni intersecciones
+
+    Datos  = 24 * 1024 * 8 Mbits
+    Tasa   = (carga max) / tiempo
+    Tdeliv = d / 30 km/h
+    Tdeliv = d / (30 km / 3600 seg)
+
+Equiparando
+
+    2560 + d / 200000 = d / (30 / 3600)
+
+    2560 + d / 200000 = 120 d
+
+    d = 21.33 km
+
+Entre 0 y 21.3 km el delivery tiene una tasa de transferencia mayor que el enlace de fibra.
 
 #### -- Fin notas para ayudantes ---
 
