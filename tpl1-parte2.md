@@ -15,7 +15,7 @@ TPL 1 parte 2 - Configuración inicial de una red utilizando netkit
 
 **Consignas**
 
-1. Instalar la herramienta netkit-ng con el script `instalar-netkit-ng.sh` siguiendo la documentación de la siguiente URL: https://github.com/redesunlu/netkit-doc/blob/master/README.md
+1. Instalar la herramienta netkit-ng con el script `instalar-netkit-ng.sh` siguiendo la documentación de la siguiente URL: https://github.com/redesunlu/netkit-doc
 2. Descargar el laboratorio de práctica de configuración inicial disponible en: https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_conf_inicial-TYR.tar.gz
 3. Inicar el laboratorio, siguiendo la documentación referida en el punto 1.
 4. Asignar las direcciones IP 10.4.11.11 y 10.4.11.12 a las pc1 y pc2 respectivamente.
