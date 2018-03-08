@@ -44,6 +44,7 @@ Teleinformática y Redes
 - Teoría Capa de Transporte y TCP (1)
 - Teoría Capa de Transporte y TCP (2)
   - Ejercicio Control de Congestión
+- [Práctica DHCP](tplX-dhcp) y [Práctica UDP](tplX-udp)
 - [Captura para Trabajo Práctico Integrador](./receta-tp-integrador)
 - Práctica Interface de Sockets
 - Teoría IPv6
