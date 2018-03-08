@@ -19,13 +19,15 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
     Verifique desde otra terminal que el proceso esté en "escucha" en el puerto indicado ejecutando:
 
-        netstat -­atnp
+        netstat -­ltnp
+o bien
+        ss -­ltnp
 
     En el host que actuará como cliente, inicie el proceso `nc`, indicando que realice una conexión al servidor y puerto dados. Para ello, ejecute:
 
         nc ip_host_servidor nro_de_puerto
 
-    Una vez establecida la conexión, la entrada estándar del proceso _nc_ se reenviará al otro extremo del socket, donde la instancia par de _nc_ la copiará en su salida estándar, creando una suerte de "chat". Ahora pruebe escribir mensajes en su consola, recordando que la comunicación es bidireccional. Una vez realizado el intercambio de mensajes en ambos sentidos, puede finalizar la conexión enviando EOF (Ctrl+D).
+    Una vez establecida la conexión, la entrada estándar del proceso _nc_ se reenviará al otro extremo del socket, donde la instancia par de _nc_ la copiará en su salida estándar, creando una suerte de "chat". Ahora pruebe escribir mensajes en su consola, recordando que la comunicación es bidireccional. Una vez realizado el intercambio de mensajes en ambos sentidos, puede finalizar la conexión enviando EOF (Ctrl+D) desde cualquiera de los hosts.
 
     Una vez finalizada la conexión, detenga el proceso _tshark_ que se encuentra capturando (CTRL+C).
 
@@ -46,8 +48,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
         apt-­get install telnetd
 
-4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante 
-`ps`), y finalice la sesión, realizando una captura de todo el proceso utilizando `tshark`.
+4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante `ps`), y finalice la sesión, realizando una captura de todo el proceso utilizando `tshark`.
 
     Analice la captura, identifique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP.  Comente las características de la información en tránsito con respecto a la confidencialidad.
 
