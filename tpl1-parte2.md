@@ -3,7 +3,7 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 **Fecha de Entrega:** Luján 22/03/2018
 
-**Objetivo:** Conocer el uso de la herramienta netkit-ng ....
+**Objetivo:** Adquirir habilidades en el uso de la herramienta netkit-ng...
 
 #### Notas para ayudantes
 
