@@ -1,5 +1,5 @@
-TPL 1 - Configuración inicial de la red del laboratorio
-=======================================================
+TPL 1 parte 2 - Configuración inicial de una red utilizando netkit
+==================================================================
 
 **Fecha de Entrega:** Luján 22/03/2018
 
