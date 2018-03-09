@@ -102,6 +102,9 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 * Páginas de manual de cada comando utilizado.
 * "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 5: "Transformación de direcciones Internet en direcciones físicas.
 * "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 14.1: “Ethernet (CSMA/CD)”
+* El manual del Administrador de Debian. Raphaël Hertzog, Roland Mas. Freexian. 2016. Apéndice B: "Curso breve de emergencia"  
+  <https://debian-handbook.info/browse/es-ES/stable/short-remedial-course.html>
+
 
 \pagebreak
 
