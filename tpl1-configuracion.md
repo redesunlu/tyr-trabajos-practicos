@@ -7,9 +7,12 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 #### Notas para ayudantes
 
-* Acá van notas nuestras que consideren pertinentes.
-* En caso de requerir insertar un salto de pagina en cualquier parte del documento, escribir \pagebreak en una linea en blanco.
-* Le saqué los # a los comandos porque los estudiantes lo escribían. Si hace falta, lo vuelvo a poner.
+* Durante la primera práctica de 2018 encontramos las siguientes cuestiones para resolver/corregir:
+  * En el punto 1, la herramienta `mii-tool` no devuelve si hay enlace o no (de hecho, indica que "no conoce la interfaz") mientras la interfaz está dada de baja (que es lo normal cuando se inicia el sistema).
+    * Una alternativa viable es reemplazar el comando `mii-tool` por `ip link set group default up` (o el que corresponda a la/las interfaces disponibles) y luego verificar mediante `ip link show` que en alguna NO diga NO-CARRIER.
+  * Asociado a lo anterior, a los estudiantes les cuesta determinar mediante `dmesg` cual es la interfaz (además de "qué es una interfaz"), debido al reciente cambio de nomenclatura `ethN` ==> `enpNsN`.
+    * Una alternativa viable es reemplazar el uso de dmesg con `ip link show`, e indicar que los números de la izquierda indican la cantidad de interfaces, y que una máquina por defecto tiene `lo` y las interfaces de red que siguen. Hay que dejarles bien claro que _interfaz_ es la denominación del dispositivo que allí aparece, y que en todo lo sucesivo donde diga _interfaz_ hay que reemplazarlo por dicho "nombre".
+  * Por otro lado, hay que remover todas las referencias a ethN del TP.
 
 #### --- Fin notas para ayudantes ---
 
