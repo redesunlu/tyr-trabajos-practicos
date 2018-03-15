@@ -59,17 +59,17 @@ o bien
 
 6. Instale e inicie en el entorno **netkit** el laboratorio de telnet provisto por los docentes, disponible en <direccion_url> y realice las siguientes actividades:
 
-    1. El laboratorio cuenta con dos hosts. Un host actuará como cliente telnet, mientras que el segundo host actuará como servidor remoto. Tenga en cuenta que **la ventana del servidor no aparecerá en pantalla** para dar la idea de que es un servidor _remoto_.
-    2. Inicie una captura de tráfico en el enlace A.
-    3. Asigne una dirección IP al host cliente dentro de la red `172.16.0.0/24`.
-    4. En la terminal del host _cliente_, conectese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `secreta`. Ahora deberá estar ejecutando comandos en el host _remoto_.
-    5. Estando en el host _remoto_, ejecute el siguiente comando respetando su sintaxis.
+    1. El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
+    2. Asigne una dirección IP al host cliente dentro de la red `172.16.0.0/24`.
+    3. Inicie una captura de tráfico en el enlace A.
+    4. En la terminal del host _cliente_, conectese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`. Ahora deberá estar ejecutando comandos en el host _remoto_.
+    5. Con la sesión iniciada en el host _remoto_, ejecute el siguiente comando respetando la sintaxis.
 
         who && who | openssl dgst
 
-    6. Salga del host remoto mediante el comando `exit`
-    7. Copie la salida de dicho comando como resolución de este ejercicio. Añada además todos los comandos que ejecutó para lograr dicho resultado.
-    8. Detenga la captura de tráfico, guardela a un archivo y remítala como parte de la tarea.
+    6. Copie la salida de dicho comando como resolución de este ejercicio. Añada además todos los comandos que ejecutó para lograr dicho resultado.
+    7. Salga del host remoto escribiendo el comando `exit`
+    8. Detenga y guarde la captura de tráfico. Remítala como parte de la tarea.
     9. (opcional) Analice la captura y busque entre los datos cargados por los paquetes IP la clave que utilizó para acceder al servidor remoto. ¿Puede leerse fácilmente?
    10. (opcional) Identifique los paquetes que establecen la conexión TCP entre los hosts.
 
@@ -77,16 +77,15 @@ o bien
 
 Spoiler! El ejercicio está bien resuelto cuando el comado `who` devuelve
 
-root   pts/0       Fecha Hora (IP-DEL-CLIENTE)
-HASH-SHA256-DE-LA-LINEA-ANTERIOR
+    root     pts/0        Fecha y Hora (IP-DEL-CLIENTE)
+    (stdin)= HASH-SHA256-DE-LA-LINEA-ANTERIOR
 
 por ejemplo
 
-root   pts/0       Mar 14, 14:51 (172.16.0.2)
-HASH-SHA256-DE-LA-LINEA-ANTERIOR
+    root     pts/0        Mar 15 11:31 (172.16.0.2)
+    (stdin)= f94cccb03ebbffef4aa22b514211a503
 
-El hash se solicita para validar que el estudiante no cambió el texto de la salida.
-Hay que recordar que la IP del cliente puede variar pues se deja a libre elección del estudiante.
+El hash (md5) se solicita para validar que el estudiante no cambió el texto de la salida. Hay que recordar que la IP del cliente puede variar pues se deja a libre elección del estudiante.
 
 
 #### --- Fin notas para ayudantes ---
