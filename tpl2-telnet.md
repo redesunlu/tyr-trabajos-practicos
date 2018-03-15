@@ -77,14 +77,14 @@ o bien
 Spoiler! El ejercicio está bien resuelto cuando el comado `who` devuelve
 
     root     pts/0        Fecha y Hora (IP-DEL-CLIENTE)
-    (stdin)= HASH-MD5-DE-LA-LINEA-ANTERIOR
+    (stdin)= HASH-MD5-O-SHA256-DE-LA-LINEA-ANTERIOR
 
 por ejemplo
 
     root     pts/0        Mar 15 11:31 (172.16.0.2)
     (stdin)= f94cccb03ebbffef4aa22b514211a503
 
-El hash (md5) se solicita para validar que el estudiante no cambió el texto de la salida. Hay que recordar que la IP del cliente puede variar pues se deja a libre elección del estudiante.
+El hash (md5 o sha256, dependiendo de la versión de openssl) se solicita para validar que el estudiante no cambió el texto de la salida. Hay que recordar que la IP del cliente puede variar pues se deja a libre elección del estudiante.
 
 #### --- Fin notas para ayudantes ---
 
