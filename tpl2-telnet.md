@@ -54,26 +54,26 @@ o bien
 
 5. Investigue acerca de la diferencia en la ejecución de procesos servidores en modo stand-alone y como esclavos del proceso _inetd_ (provisto por alguno de los paquetes _openbsd-inetd, inetutils-inetd, xinetd_). Mencione ventajas y desventajas de cada modelo.
 
+6. Instale e inicie en **netkit** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_telnet-TYR.tar.gz>
+
+    El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
+
+    1. Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`.
+    2. Inicie una captura de tráfico en el enlace A.
+    3. En la terminal del host _cliente_, conectese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`.
+    4. Con la sesión iniciada en el host _remoto_, ejecute el siguiente comando respetando la sintaxis.
+
+            who && who | openssl dgst
+
+    5. Copie la salida de dicho comando como resolución de este ejercicio.  
+       Añada además todos los comandos que ejecutó para lograr dicho resultado.
+    6. Salga del host remoto escribiendo el comando `exit`
+    7. Detenga y guarde la captura de tráfico. Remítala como parte de la tarea.
 
 #### Notas para ayudantes
 
-6. Instale e inicie en el entorno **netkit** el laboratorio de telnet provisto por los docentes, disponible en <direccion_url> y realice las siguientes actividades:
-
-    1. El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
-    2. Asigne una dirección IP al host cliente dentro de la red `172.16.0.0/24`.
-    3. Inicie una captura de tráfico en el enlace A.
-    4. En la terminal del host _cliente_, conectese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`. Ahora deberá estar ejecutando comandos en el host _remoto_.
-    5. Con la sesión iniciada en el host _remoto_, ejecute el siguiente comando respetando la sintaxis.
-
-        who && who | openssl dgst
-
-    6. Copie la salida de dicho comando como resolución de este ejercicio. Añada además todos los comandos que ejecutó para lograr dicho resultado.
-    7. Salga del host remoto escribiendo el comando `exit`
-    8. Detenga y guarde la captura de tráfico. Remítala como parte de la tarea.
-    9. (opcional) Analice la captura y busque entre los datos cargados por los paquetes IP la clave que utilizó para acceder al servidor remoto. ¿Puede leerse fácilmente?
-   10. (opcional) Identifique los paquetes que establecen la conexión TCP entre los hosts.
-
-**Para este ejercicio tenemos (nosotros) que crear un laboratorio basándonos en el webserver. Más o menos lo tengo armado, pero prefiero tenerlo bien resuelto antes de subirlo a github.**
+    8. (opcional) Analice la captura y busque entre los datos cargados por los paquetes IP la clave que utilizó para acceder al servidor remoto. ¿Puede leerse fácilmente?
+    9. (opcional) Identifique los paquetes que establecen la conexión TCP entre los hosts.
 
 Spoiler! El ejercicio está bien resuelto cuando el comado `who` devuelve
 
@@ -86,7 +86,6 @@ por ejemplo
     (stdin)= f94cccb03ebbffef4aa22b514211a503
 
 El hash (md5) se solicita para validar que el estudiante no cambió el texto de la salida. Hay que recordar que la IP del cliente puede variar pues se deja a libre elección del estudiante.
-
 
 #### --- Fin notas para ayudantes ---
 
