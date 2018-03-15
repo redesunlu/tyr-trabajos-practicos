@@ -60,7 +60,7 @@ o bien
 
     1. Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`.
     2. Inicie una captura de tráfico en el enlace A.
-    3. En la terminal del host _cliente_, conectese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`.
+    3. En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`.
     4. Con la sesión iniciada en el host _remoto_, ejecute el siguiente comando respetando la sintaxis.
 
             who && who | openssl dgst
