@@ -17,7 +17,9 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
     Verifique desde otra terminal que el proceso esté en "escucha" en el puerto indicado ejecutando:
 
         netstat -­ltnp
-o bien
+
+    o bien
+
         ss -­ltnp
 
     En el host que actuará como cliente, inicie el proceso `nc`, indicando que realice una conexión al servidor y puerto dados. Para ello, ejecute:
