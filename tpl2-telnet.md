@@ -3,7 +3,6 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
 **Fecha de Entrega:** Luján 05/04/2018
 
-**Objetivo:** _TODO_
 
 1. Creación de un modelo simple Cliente/Servidor
 
@@ -63,7 +62,7 @@ o bien
     3. En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`.
     4. Con la sesión iniciada en el host _remoto_, ejecute el siguiente comando respetando la sintaxis.
 
-            who && who | openssl dgst
+            who && who | openssl sha1
 
     5. Copie la salida de dicho comando como resolución de este ejercicio.  
        Añada además todos los comandos que ejecutó para lograr dicho resultado.
@@ -74,6 +73,7 @@ o bien
 
     8. (opcional) Analice la captura y busque entre los datos cargados por los paquetes IP la clave que utilizó para acceder al servidor remoto. ¿Puede leerse fácilmente?
     9. (opcional) Identifique los paquetes que establecen la conexión TCP entre los hosts.
+    Cambié openssl dgst por openssl sha1 ya que dgst en mi máquina usa otro algoritmo, de manera que depende de la versión de openssl cual será el default (no leí man con detalle, así salió y si quieren otro digest lo cambiamos) - florge
 
 Spoiler! El ejercicio está bien resuelto cuando el comado `who` devuelve
 
