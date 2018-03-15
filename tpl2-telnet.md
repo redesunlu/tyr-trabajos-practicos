@@ -5,8 +5,6 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
 **Objetivo:** _TODO_
 
-### Consignas
-
 1. Creación de un modelo simple Cliente/Servidor
 
     Acuerde con otro compañero en los roles iniciales que tendrá cada uno y el número de puerto a utilizar. Realice una captura de todo el proceso utilizando la herramienta `tshark`, guardándola en un archivo en formato _pcap_ para su posterior análisis:
@@ -44,9 +42,11 @@ o bien
 
 2. Describa someramente el protocolo Telnet. Características y usos.
 
+\pagebreak
+
 3. Instale un servidor _telnet_:
 
-        apt-­get install telnetd
+        apt-get install telnetd
 
 4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante `ps`), y finalice la sesión, realizando una captura de todo el proceso utilizando `tshark`.
 
