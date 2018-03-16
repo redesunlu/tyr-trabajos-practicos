@@ -45,11 +45,13 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
 \pagebreak
 
-3. Instale un servidor _telnet_:
+3. Instale el cliente `telnet` y el servidor telnet correspondiente (llamado `telnetd`):
 
-        apt-get install telnetd
+        apt-get install telnet telnetd
 
-4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante `ps`), y finalice la sesión, realizando una captura de todo el proceso utilizando `tshark`.
+4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante `ps`), y finalice la sesión, realizando una captura de todo el proceso utilizando `tshark`. Para ello comience la captura y luego ejecute:
+
+        telnet IP-HOST-DESTINO
 
     Analice la captura, identifique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP.  Comente las características de la información en tránsito con respecto a la confidencialidad.
 
@@ -62,7 +64,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
     1. Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`.
     2. Inicie una captura de tráfico en el enlace A.
     3. En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`.
-    4. Con la sesión iniciada en el host _remoto_, ejecute el siguiente comando respetando la sintaxis.
+    4. Con la sesión iniciada en _remoto_, ejecute el siguiente comando respetando la sintaxis.
 
             who && who | openssl dgst
 
