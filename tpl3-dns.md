@@ -7,9 +7,12 @@ TPL 3 - Domain Name System
 
 #### Notas para ayudantes
 
-* Falta para este trabajo práctico la elaboración o bien el uso de un laboratorio Netkit.
 * Hay una muy buena presentación con teoría y práctica de DNS en
   <http://cereal.forest.usf.edu/linux/L3/w02-dns_proxy/O4L01/online-module-guide.pdf>
+
+Ejercicio removido en 2018 por florge-maurom
+8. Acceda a la herramienta en línea de reporte DNS <http:/www.howismydns.com/> y solicite chequear el dominio 
+`unlu.edu.ar`. Describa al menos 3 de los chequeos/verificaciones realizados y los resultados obtenidos.
 
 #### --- Fin notas para ayudantes ---
 
@@ -20,14 +23,14 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
 2. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien al de acceso público `8.8.8.8`) para obtener la siguiente información: 
 
-    a. ¿Cuál es la dirección IP del host `platdig.unlu.edu.ar`?
-    b. ¿Cuál es la dirección IP del host `www.labredes.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
-    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unlp.edu.ar`?
+    a. ¿Cuál es la dirección IP del host `straval.unlu.edu.ar`?
+    b. ¿Cuál es la dirección IP del host `resoluciones.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
+    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unl.edu.ar`?
     d. ¿Cuál es el nombre del host cuya dirección IP es `170.210.103.35`?
-    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `lacnic.net`?
-    f. ¿Cuál es la dirección IPv6 del host `www.isoc.org`?
+    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `ripe.net`?
+    f. ¿Cuál es la dirección IPv6 del host `www.icann.org`?
 
-3. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `lujan.gob.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
+3. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `afip.gov.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
 
 4. Defina cómo estará compuesta la zona de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `SU-NRO-LEGAJO.tyr` (suponiendo que `.tyr ` es un TLD), definiendo:
 
@@ -39,16 +42,18 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
     Complete la planilla adjunta a partir de las definiciones previas.
 
-5. Describa cómo es el proceso de una consulta de un cliente (solicitud de IP de un mnemónico que no es de su dominio) suponiendo que todos los servidores DNS consultados tienen la cache vacía (u operan sin cache). Para ello analice la captura `dns_ejemplo1.pcap`, representando gráficamente el intercambio y de mensajes, y  relacionando cada mensaje con el proceso de resolución dns.
+5. Instale e inicie en el entorno netkit el laboratorio de dns provisto por los docentes disponible en  http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_dns-TYR.tar.gz y realice las siguientes actividades:
 
-6. Analice la captura `dns_ejemplo2.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particular que observe en la misma?
+    a. Inicie una captura desde el host.
+    b. Desde pc1.lugroma3.org, ejecute el comando `ping -c 4 pc2.nanoinside.net`
+    c. Una vez recibidas las 4 respuestas ICMP, detenga la captura.
+    d. Analice la captura y describa cómo es el proceso de resolución de nombres para determinar la dirección ip de pc2.nanoinside.net, representando gráficamente el intercambio de mensajes dns, e indicando el propósito de cada uno.
+
+6. Analice la captura `dns_ejemplo.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particular que observe en la misma?
 
 7. ¿Cómo un desarrollador de aplicaciones puede acceder al servicio DNS? (Por ej. si es necesario resolver, en una aplicación de software, mnemónicos a direcciones IP o viceversa)
 
-8. Acceda a la herramienta en línea de reporte DNS <http:/www.howismydns.com/> y solicite chequear el dominio 
-`unlu.edu.ar`. Describa al menos 3 de los chequeos/verificaciones realizados y los resultados obtenidos.
-
-9. ¿Quién tiene a su cargo la administración de los nombres de dominio bajo el dominio `.ar`? ¿Qué y cuáles son las zonas especiales? ¿Que requisito especial se requiere para solicitar un dominio `.org.ar`?
+8. ¿Quién tiene a su cargo la administración de los nombres de dominio bajo el dominio `.ar`? ¿Qué y cuáles son las zonas especiales? ¿Que requisito especial se requiere para solicitar un dominio `.org.ar`?
 
 #### Bibliografía
 
