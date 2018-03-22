@@ -49,7 +49,7 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
     c. Una vez recibidas las 4 respuestas ICMP, detenga la captura.
     d. Analice la captura y describa cómo es el proceso de resolución de nombres para determinar la dirección ip de pc2.nanoinside.net, representando gráficamente el intercambio de mensajes dns, e indicando el propósito de cada uno.
 
-6. Analice la captura `dns_ejemplo.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particular que observe en la misma?
+6. Analice la captura `captura_ejemplo_dns.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particular que observe en la misma?
 
 7. ¿Cómo un desarrollador de aplicaciones puede acceder al servicio DNS? (Por ej. si es necesario resolver, en una aplicación de software, mnemónicos a direcciones IP o viceversa)
 
