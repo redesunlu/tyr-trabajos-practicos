@@ -1,14 +1,15 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** Luján xx/xx/xxxx
+**Fecha de Entrega:** Luján 12/04/2018
 
-**Objetivo:** _TODO_
+**Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
 #### Notas para ayudantes
 
-* Acá van notas nuestras que consideren pertinentes.
-* Le saqué los # a los comandos porque los estudiantes lo escribían. Si hace falta, lo vuelvo a poner.
+* Falta para este trabajo práctico la elaboración o bien el uso de un laboratorio Netkit.
+* Hay una muy buena presentación con teoría y práctica de DNS en
+  <http://cereal.forest.usf.edu/linux/L3/w02-dns_proxy/O4L01/online-module-guide.pdf>
 
 #### --- Fin notas para ayudantes ---
 
@@ -28,13 +29,13 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
 3. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `lujan.gob.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
 
-4. Defina cómo estará compuesta la zona de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `[su-nro-legajo].tyr` (suponiendo que `.tyr ` es un TLD), definiendo:
+4. Defina cómo estará compuesta la zona de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `SU-NRO-LEGAJO.tyr` (suponiendo que `.tyr ` es un TLD), definiendo:
 
     a. El nombre de su host en el nuevo dominio, y su respectivo puntero reverso.
     b. El host `ns1` como `10.4.11.30` y el respectivo reverso.
     c. Su propio host y `ns1` como name servers del dominio.
     d. Al menos otras 2 máquinas del aula, siguiendo el mapa de red del laboratorio, identificando a los equipos con su nuevo dominio, y sus respectivos punteros reversos.
-    e. Alias para `www.[su-nro-legajo].tyr` y `ftp.[su-nro-legajo].tyr` que devuelvan su propia dirección IP.
+    e. Alias para `www.SU-NRO-LEGAJO.tyr` y `ftp.SU-NRO-LEGAJO.tyr` que devuelvan su propia dirección IP.
 
     Complete la planilla adjunta a partir de las definiciones previas.
 
@@ -63,7 +64,7 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
 \pagebreak
 
-Documentación de configuración de la zona `[su-nro-legajo].tyr`
+Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr`
 ===============================================================
 
     Nombre de la zona DNS: ______________.tyr
