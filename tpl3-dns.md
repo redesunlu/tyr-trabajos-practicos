@@ -83,7 +83,7 @@ Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr`
 
 | Nombre de Host | Clase | Tipo de RR | Datos del RR     | Comentario |
 | -------------- | :---: | :--------: | ---------------- | ---------- |
-| mail           |  IN   | A          | 190.104.80.3     | (ejemplo)  |
+| straval        |  IN   | A          | 190.104.80.57    | (ejemplo)  |
 |                |  IN   |            |                  |            |
 |                |  IN   |            |                  |            |
 |                |  IN   |            |                  |            |
@@ -99,7 +99,7 @@ Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr`
 
 | Nombre de Host              | Clase | Tipo de RR | Datos del RR      | Comentario |
 | --------------------------- | :---: | :--------: | ----------------- | ---------- |
-| 3.80.104.190.in-addr.arpa.  |  IN   |    PTR     | mail.unlu.edu.ar. | (ejemplo)  |
+| 57.80.104.190.in-addr.arpa. |  IN   |    PTR     | straval.unlu.edu.ar. | (ejemplo)  |
 |                             |  IN   |            |                   |            |
 |                             |  IN   |            |                   |            |
 |                             |  IN   |            |                   |            |
