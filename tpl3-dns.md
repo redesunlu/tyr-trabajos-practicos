@@ -9,6 +9,7 @@ TPL 3 - Domain Name System
 
 * Hay una muy buena presentación con teoría y práctica de DNS en
   <http://cereal.forest.usf.edu/linux/L3/w02-dns_proxy/O4L01/online-module-guide.pdf>
+* Para la próxima consultar los NS de `www.telecom.com.ar` y consultar que tienen de curioso.
 
 Ejercicio removido en 2018 por florge-maurom
 8. Acceda a la herramienta en línea de reporte DNS <http:/www.howismydns.com/> y solicite chequear el dominio 
