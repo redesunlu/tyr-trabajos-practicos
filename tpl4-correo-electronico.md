@@ -3,7 +3,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 **Fecha de Entrega:** Luján xx/xx/xxxx
 
-**Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales agentes y protocolos que integran su arquitectura.
+**Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
 #### Notas para ayudantes
 
