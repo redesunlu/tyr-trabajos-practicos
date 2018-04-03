@@ -32,13 +32,13 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 8. Instale e inicie en el entorno **netkit** el laboratorio de email provisto por los docentes, disponible en
 <http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_email-TYR.tar.gz> y realice las siguientes actividades:
 
-    a. Inicie una captura desde el host.
-    b. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje a la cuenta `guest@nanoinside.net`, indicando en el encabezado Subject: "Resolucion del ejercicio 9", y un mensaje de al menos 3 líneas que contenga su nombre y legajo.
-    c. Desde la **pc2**, utilizando `nc`, conéctese al servidor POP3 `pop.nanoinside.net` (TCP puerto 110). Acceda a la cuenta de usuario `guest` (contraseña `guest`), recupere el mensaje almacenado en la casilla, bórrelo y finalice adecuadamente la sesión POP. 
-    d. Detenga el proceso de captura en el host.
-    e. Analice la captura y discuta acerca de la confidencialidad de los datos transmitidos.
-    f. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
-    g. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
+    1. Inicie una captura desde el host.
+    2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje a la cuenta `guest@nanoinside.net`, indicando en el encabezado Subject: "Resolucion del ejercicio 9", y un mensaje de al menos 3 líneas que contenga su nombre y legajo.
+    3. Desde la **pc2**, utilizando `nc`, conéctese al servidor POP3 `pop.nanoinside.net` (TCP puerto 110). Acceda a la cuenta de usuario `guest` (contraseña `guest`), recupere el mensaje almacenado en la casilla, bórrelo y finalice adecuadamente la sesión POP.
+    4. Detenga el proceso de captura en el host.
+    5. Analice la captura y discuta acerca de la confidencialidad de los datos transmitidos.
+    6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
+    7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
 
 9. Utilizando `nc`, conéctese al servidor SMTP indicado por el docente (puerto 25) y envíele un mensaje. El mismo debe cumplir con los requisitos de la RFC 5322, indicará en FROM su apellido y legajo, y un cuerpo del mensaje tipo MIME Text/Plain donde debe responder cuales son los campos de encabezado obligatorios según RFC5322.
 
