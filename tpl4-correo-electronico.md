@@ -32,7 +32,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
     1. Inicie una captura desde el host.
     2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje cuyo remitente sea `su-nombre@lugroma3.org` destinado a la cuenta de correo `guest@nanoinside.net`.
-        - Indique en el encabezado Subject: "Resolucion del ejercicio 9". Escriba un cuerpo de mensaje de al menos 3 líneas, incluyendo su nombre y su legajo.
+        - Indique en el encabezado Subject: "Resolucion del ejercicio 8". Escriba un cuerpo de mensaje de al menos 3 líneas, incluyendo su nombre y su legajo.
         - Finalice el mensaje escribiendo un punto en una línea en blanco. Deberá ver la respuesta `250 OK id=...` indicando que el mensaje fue procesado correctamente.
     3. Desde la **pc2**, utilizando `nc`, conéctese al servidor POP3 `pop.nanoinside.net` (TCP puerto 110). Acceda a la cuenta de usuario `guest` (contraseña `guest`), recupere el mensaje almacenado en la casilla, bórrelo y finalice adecuadamente la sesión POP.
     4. Detenga el proceso de captura en el host.
