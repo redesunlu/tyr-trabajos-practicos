@@ -1,9 +1,9 @@
-TPL 4 - Correo Electrónico SMTP -POP3 – IMAP4 – MIME
-====================================================
+TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
+=====================================================
 
 **Fecha de Entrega:** Luján xx/xx/xxxx
 
-**Objetivo:** _TODO_
+**Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales agentes y protocolos que integran su arquitectura.
 
 #### Notas para ayudantes
 
@@ -21,7 +21,7 @@ TPL 4 - Correo Electrónico SMTP -POP3 – IMAP4 – MIME
 3. ¿Cuáles son los comandos SMTP de una implementación mínima?  
    Describa someramente cada uno.
 
-4. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte delusuario queenvía correo y el abuso que esto puede acarrear.
+4. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte del usuario que envía correo y el abuso que esto puede acarrear.
 
 5. ¿Cuál es el propósito de los protocolos POP e IMAP? Describa los comandos disponibles para el protocolo POP3.
 
