@@ -12,8 +12,6 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 #### --- Fin notas para ayudantes ---
 
-#### Consignas
-
 1. Describa el objetivo y como opera la aplicación correo electrónico, indicando los elementos involucrados: que son y cuál es la función de los agentes de usuario (user agents - UAs) y agentes de transferencia de mensajes (mail transfer agent - MTAs), ¿qué servicio adicional se requiere para la transferencia de mensajes?.
 
 2. ¿Qué es un Relay Agent, qué función cumple y en qué casos se utiliza?.
@@ -33,7 +31,9 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 <http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_email-TYR.tar.gz> y realice las siguientes actividades:
 
     1. Inicie una captura desde el host.
-    2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje a la cuenta `guest@nanoinside.net`, indicando en el encabezado Subject: "Resolucion del ejercicio 9", y un mensaje de al menos 3 líneas que contenga su nombre y legajo.
+    2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje cuyo remitente sea `su-nombre@lugroma3.org` destinado a la cuenta de correo `guest@nanoinside.net`.
+        - Indique en el encabezado Subject: "Resolucion del ejercicio 9". Escriba un cuerpo de mensaje de al menos 3 líneas, incluyendo su nombre y su legajo.
+        - Finalice el mensaje escribiendo un punto en una línea en blanco. Deberá ver la respuesta `250 OK id=...` indicando que el mensaje fue procesado correctamente.
     3. Desde la **pc2**, utilizando `nc`, conéctese al servidor POP3 `pop.nanoinside.net` (TCP puerto 110). Acceda a la cuenta de usuario `guest` (contraseña `guest`), recupere el mensaje almacenado en la casilla, bórrelo y finalice adecuadamente la sesión POP.
     4. Detenga el proceso de captura en el host.
     5. Analice la captura y discuta acerca de la confidencialidad de los datos transmitidos.
