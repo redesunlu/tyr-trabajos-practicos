@@ -1,7 +1,7 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** Luján xx/xx/xxxx
+**Fecha de Entrega:** Luján 26/04/2018
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -21,9 +21,9 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 4. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte del usuario que envía correo y el abuso que esto puede acarrear.
 
-5. ¿Cuál es el propósito de los protocolos POP e IMAP? Describa los comandos disponibles para el protocolo POP3.
-
-6. ¿Qué ventajas ofrece el protocolo IMAP4 sobre POP3?
+5. ¿Cuál es el propósito de los protocolos POP e IMAP?
+    Describa brevemente los comandos disponibles para el protocolo POP3.
+    ¿Qué ventajas ofrece el protocolo IMAP4 sobre POP3?
 
 7. ¿Para qué se definió la extensión MIME? Describa cómo se implementa y los diferentes tipos de contenidos y codificación MIME.
 
