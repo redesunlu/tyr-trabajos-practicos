@@ -7,8 +7,25 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 #### Notas para ayudantes
 
-* Acá van notas nuestras que consideren pertinentes.
-* Le saqué los # a los comandos porque los estudiantes lo escribían. Si hace falta, lo vuelvo a poner.
+* Podría adicionarse un ejercicio en el cual el estudiante deba
+  obtener el código fuente de un mensaje de correo electrónico de tipo SPAM
+  que posea en su casilla (mensaje tipo RFC 822), lo adjunte al trabajo,
+  e indique:
+
+    * La semántica y el valor de los campos de encabezado que se ven en clase
+      (From, To, CC, Date, Subject, Reply-To, MIME-Version, Content-Type),
+    * El valor del Return-Path y si coincide con el valor del campo From,
+    * La lista de servidores SMTP por los que fue pasando el mensaje
+      (encabezados que comienzan con Received from), la hora en la que pasó
+      por cada uno de ellos y qué protocolo se utilizó en la transferencia.
+    * Si es MIME de tipo multipart/*, determinar para qué se utiliza el valor
+      del dato `boundary`. Cuantos bloques componen el mensaje, qué tipo de
+      contenido (Content-Type) y qué codificación se utiliza
+      (Content-Transfer-Encoding) en cada bloque,
+    * algo más que consideren interesante?
+
+    Pido un mensaje de SPAM para no lidiarme con todo el tema de la
+    confidencialidad y demás. Un spam no debería tener datos privados.
 
 #### --- Fin notas para ayudantes ---
 
