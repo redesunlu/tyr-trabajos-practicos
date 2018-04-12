@@ -22,30 +22,30 @@ TPL 5 - World Wide Web - HTTP
 
     a. Petición por protocolo HTTP versión 1.0
 
-        nc -C www.unlu.edu.ar 80 (enter)
-        GET / HTTP/1.0 (enter) (enter)
+            $ nc -C www.unlu.edu.ar 80 (enter)
+            GET / HTTP/1.0 (enter) (enter)
 
     b. Petición por protocolo HTTP versión 1.1
 
-        nc -C www.unlu.edu.ar 80 (enter)
-        GET / HTTP/1.1 (enter)
-        Host: www.unlu.edu.ar (enter) (enter)
+            $ nc -C www.unlu.edu.ar 80 (enter)
+            GET / HTTP/1.1 (enter)
+            Host: www.unlu.edu.ar (enter) (enter)
 
     c. Petición HTTP. Copie el texto de la petición (indicada bajo la línea) y péguelo una vez establecida la
 conexión con `nc`. Finalice la petición pulsando **tres veces** la tecla Enter.
 
-        nc -C www.unlu.edu.ar 80
-        GET / HTTP/1.1
-        Host: www.tyr.unlu.edu.ar
-        Connection: keep-alive
+            $ nc -C www.unlu.edu.ar 80
+            GET / HTTP/1.1
+            Host: www.tyr.unlu.edu.ar
+            Connection: keep-alive
 
     d. Petición HTTP. Copie el texto de la petición (indicada bajo la línea) y péguelo una vez establecida la
 conexión con `nc`. Finalice la petición pulsando **tres veces** la tecla Enter.
 
-        nc -C www.unlu.edu.ar 80
-        GET / HTTP/1.1
-        Host: www.tyr.unlu.edu.ar
-        Connection: close
+            $ nc -C www.unlu.edu.ar 80
+            GET / HTTP/1.1
+            Host: www.tyr.unlu.edu.ar
+            Connection: close
 
     Responda:
 
