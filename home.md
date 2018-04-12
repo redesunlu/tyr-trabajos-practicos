@@ -24,7 +24,7 @@ Teleinformática y Redes
 - Teoría Capa de Enlace (2) + Redes Locales (1)
   - Slides 10 Redes de Area Local
   - [TP Eficiencia del enlace](./tp-control-enlace)
-- TPL#5 HTTP (clase 1)
+- [TPL#5 World Wide Web - HTTP](./tpl5-http)
 - Teoría Redes Locales (2)
   - Guía de lectura - Enlace
 - Teoría/Práctica Cableado Estructurado
