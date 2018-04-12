@@ -3,16 +3,16 @@ TPL 5 - World Wide Web - HTTP
 
 **Fecha de Entrega:** Luján xx/xx/xxxx
 
-**Objetivo:** _TODO_
-
 #### Notas para ayudantes
+
+**Objetivo:** _TODO_
 
 * Acá van notas nuestras que consideren pertinentes.
 * Le saqué los # a los comandos porque los estudiantes lo escribían. Si hace falta, lo vuelvo a poner.
 
-#### --- Fin notas para ayudantes ---
-
 #### Consignas
+
+#### --- Fin notas para ayudantes ---
 
 1. Describa someramente el protocolo HTTP. Indique modo de operación y primitivas básicas.
 
@@ -83,7 +83,7 @@ la variable de entorno `HTTP_PROXY` como se muestra a continuación. Esto es equ
 
         Dicha dirección IP es la correspondiente al host servidor web.
 
-    e. Detenga la captura y analice el mensaje que aparece en pantalla. ¿Qué código de respuesta HTTP se retornó? Cierre el navegador web pulsando la tecla **q**
+    e. Detenga la captura y analice el mensaje que aparece en pantalla. ¿Qué código de respuesta HTTP se retornó? Cierre el navegador web pulsando la tecla `q`
 
     f. La configuración de fábrica del software proxy Squid impide que los clientes naveguen a través de él. Para resolverlo, busque el archivo `/etc/squid/squid.conf` dentro del host proxy, edítelo y reemplace la línea
 
@@ -282,14 +282,14 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 [^1]: <http://pastebin.com/BThStjqY>
 [^2]: <http://pastebin.com/9TW5kvA4>
 
-#### Bibliografía
+**Bibliografía**
 
 * "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 19.4: "Protocolo de Transferencia de Hipertexto (HTTP)".
 * "Redes de Computadoras", Tercera Edición, Andrew Tannenbaum, Prentice Hall. Capítulo 7.6: "La World Wide Web".
 * RFC 7230 - Hypertext Transfer Protocol (HTTP/1.1) Message Syntax and Routing
 * RFC 7231 - Hypertext Transfer Protocol (HTTP/1.1) Semantics and Content
 
-#### Recursos en internet
+**Recursos en internet**
 
 * <http://www.faqs.org> y <http://www.rfc-editor.org>
 * Apache web server: <http://httpd.apache.org/>
