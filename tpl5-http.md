@@ -130,9 +130,9 @@ recomienda leer los primeros capítulos del tutorial en español indicado en las
     b. ¿Cuál es la salida por consola del programa Python? ¿Qué puede interpretar de ella?
     c. Abra un archivo de extensión `.html` en el directorio home del usuario. Si no existiera alguno, genere uno escrito por usted. ¿Qué sucede al abrirlo con el navegador web?
 
-12. Escriba en un editor de texto el siguiente script y guárdelo en el archivo `http1.py`
+12. Escriba en un editor de texto el script en página siguiente y guárdelo en el archivo `http1.py`
 
-    (imagen codigo 1)
+    ![http1.py](images/http1_2.png){ width=14cm }
 
     Es importante destacar al momento de escribir el código, que en el lenguaje Python los espacios son utilizados para definir el nivel de anidamiento de la sentencia (ya que como se ve, no se utilizan llaves); por lo tanto, debe respetarse la sintaxis y todos los espacios del ejemplo.
 
@@ -148,18 +148,12 @@ recomienda leer los primeros capítulos del tutorial en español indicado en las
 
         ¿Qué diferencias aprecia y a causa de qué?
 
-    d. En el navegador (Firefox o Chromium/Chrome), presione Ctrl+Shift+I, lo que da lugar a la apertura del depurador del navegador; entre otras cosas, éste posee una pestaña o apartado llamado "Red", que permite examinar cómo la página web es obtenida por el navegador, recurso por recurso. Seleccione haciendo clic sobre la petición hecha al servidor web local y describa qué encabezados devolvió el servidor escrito en Python.
+    d. En el navegador (Firefox o Chromium/Chrome), presione la combinación de teclas `Ctrl+Shift+I`, lo que da lugar a la apertura del depurador del navegador. Entre otras cosas, éste posee una pestaña o apartado llamado "Red", que permite examinar cómo la página web es obtenida por el navegador, recurso por recurso.  
+    Seleccione haciendo clic sobre la petición hecha al servidor web local y describa qué encabezados devolvió el servidor escrito en Python.
+
+\pagebreak
 
 13. Escriba en un editor de texto el siguiente script [^1] y guárdelo en el archivo `http2.py`
-
-    (imagen código 2)
-
-    Ejecute el script servidor HTTP con el comando `python http2.py` Luego, abra un navegador web e ingrese a la URL <http://localhost:8000> con el depurador del navegador activo.
-
-    a. Analice cómo se obtiene la página principal y la imagen embebida en el documento.
-    b. Detenga el servidor, modifique el encabezado `Content-Type` a `text/plain` y vuelva a ejecutar la prueba. ¿Qué apariencia tiene la página web y por qué?
-
-14. Escriba en un editor de texto el siguiente script [^2] y guárdelo en el archivo `http3.py`
 
 ~~~~~~~python
 # coding: utf-8
@@ -190,6 +184,83 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         """ Deshabilito la salida por defecto del servidor """
         pass
  
+if __name__ == '__main__':
+    http_server = BaseHTTPServer.HTTPServer((HOST_NAME, PORT), Handler)
+    print 'Ejecutando Server HTTP - %s:%s' % (HOST_NAME, PORT)
+    print 'Presione Ctrl+C para detener...'
+    try:
+        http_server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    http_server.server_close()
+    print 'Deteniendo Server HTTP - %s:%s' % (HOST_NAME, PORT)
+~~~~~~~
+
+Ejecute el script servidor HTTP con el comando `python http2.py` Luego, abra un navegador web e ingrese a la URL <http://localhost:8000> con el depurador del navegador activo.
+
+  a. Analice cómo se obtiene la página principal y la imagen embebida en el documento.
+  b. Detenga el servidor, modifique el encabezado `Content-Type` a `text/plain` y vuelva a ejecutar la prueba. ¿Qué apariencia tiene la página web y por qué?
+
+14. Escriba en un editor de texto el siguiente script [^2] y guárdelo en el archivo `http3.py`
+
+~~~~~~~python
+# coding: utf-8
+
+import BaseHTTPServer
+
+HOST_NAME = 'localhost'
+PORT = 8000
+
+def detectar_so(user_agent):
+    # Ver listados en http://www.useragentstring.com/pages/useragentstring.php
+    if 'Linux' in user_agent:
+        return 'Veo que Ud. esta usando Linux como S.O.'
+    elif 'Windows' in user_agent:
+        return 'Veo que Ud. esta usando Windows como S.O.'
+    else:
+        return 'No conozco su S.O.'
+
+def get_pagina_ok():
+    """ Función que dvuelve la página de exito de ejemplo """
+    # Como alternativa podría abrirse un archivo del disco, leerlo y devolverlo
+    # como cadena de texto.
+    return ('<html><head><title>Pagina HTML de ejemplo</title>'
+           '</head><body><p>Esta es una prueba, con texto en <b>negrita</b>,'
+           '<i>cursiva</i> e incluso una imagen externa:</p>'
+           '<img src="http://www.labredes.unlu.edu.ar/themes/glossyblue/images'
+           '/header-bg.jpg" />')
+
+class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
+
+    def do_GET(server):
+        """Respondo a una petición de tipo GET"""
+        # Imprimo los encabezados por consola
+        print '-' * 80
+        print server.command, server.path, server.request_version
+        print server.headers
+        # Devuelvo la respuesta
+        if server.path.startswith('/ir_a/'):
+            ir_a = server.path.split('/')[-1]
+            server.send_response(302)
+            server.send_header('Location', 'http://' + ir_a)
+            server.end_headers()
+        elif server.path.startswith('/no_existe'):
+            server.send_response(404)
+            server.send_header('Content-Type', 'text/plain')
+            server.end_headers()
+            server.wfile.write('Pagina no encontrada')
+        else:
+            server.send_response(200)
+            server.send_header('Content-Type', 'text/html')
+            server.end_headers()
+            server.wfile.write(get_pagina_ok())
+            server.wfile.write('<p>' + detectar_so(server.headers['User-Agent']))
+            server.wfile.write('</p></body></html>')
+
+    def log_message(*args):
+        """ Deshabilito la salida por defecto del servidor """
+        pass
+
 if __name__ == '__main__':
     http_server = BaseHTTPServer.HTTPServer((HOST_NAME, PORT), Handler)
     print 'Ejecutando Server HTTP - %s:%s' % (HOST_NAME, PORT)
