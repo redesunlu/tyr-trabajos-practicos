@@ -7,8 +7,8 @@ TPL 5 - World Wide Web - HTTP
 
 **Objetivo:** _TODO_
 
-* Acá van notas nuestras que consideren pertinentes.
-* Le saqué los # a los comandos porque los estudiantes lo escribían. Si hace falta, lo vuelvo a poner.
+- Al final de este documento están las expectativas de respuesta para los
+  ejercicios 11 a 14 que involucran python.
 
 #### Consignas
 
@@ -299,3 +299,29 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 * Sitio web del lenguaje Python: <https://www.python.org/>
 * Tutorial de Python: <http://docs.python.org.ar/tutorial/2/contenido.html>
 * Guías de inicio en Python: <http://python.org.ar/AprendiendoPython>
+
+
+#### Notas para ayudantes
+
+#### Expectativas de respuesta ejercicios 11 a 14
+
+    11.a. Qué se ve en el navegador? --> Se ve un listado de directorio.
+    11.b. Qué se ve en la consola? --> Muestra las peticiones HTTP recibidas.
+          Debería interpretar cada campo.
+    11.c. Abrir archivo HTML. --> Se ve una página HTML interpretada.
+
+    12.a. Qué se ve en el navegador? --> Se ve una página en blanco.
+    12.b. Qué se ve en la consola? --> Se ven los encabezados HTTP por consola.
+    12.c. Diferencias encabezados entre navegadores distintos, Ctrl+F5, URL.
+          User-Agent, Accept, Accept-language, Accept-encoding, Cache, URL.
+    12.d. Se ven los encabezados de servidor agregados por Python: Date, Server.
+
+    13.a. El cliente hace una Petición GET HTML + Petición GET Imagen a UNLu.
+    13.b. Devolución Content-Type: text/plain. Retorna el código fuente de la página.
+
+    14.a. Página dinámica. La respuesta depende del User-Agent.
+    14.b. Redirección mediante HTTP 302. Indicar header Location.
+          Primero GET a proceso propio, luego GET a UNLu y a recursos afines.
+    14.c. Petición a página inexistente. --> Obtiene una respuesta 404.
+
+#### --- Fin notas para ayudantes ---
