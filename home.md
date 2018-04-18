@@ -28,7 +28,7 @@ Teleinformática y Redes
   - [Temario clase teórica HTTP](./temario-clase-http)
 - Teoría Redes Locales (2)
   - Guía de lectura - Enlace
-- Teoría/Práctica Cableado Estructurado
+- [Teoría/Práctica Cableado Estructurado](./cableado-estructurado)
   - Documento "Cableado Estructurado"
   - Documento adicional (Cableado Estructurado)
 - Teoría WLANs + Resolución TPLs (y consultas)
