@@ -21,6 +21,7 @@ Teleinformática y Redes
 - Teoría Capa de Enlace (1)
   - Slides 09 Capa de Enlace
 - [TPL#4 Correo Electrónico](./tpl4-correo-electronico)
+  - [Ejemplo envio de correo](./ejemplo-envio-correo)
 - Teoría Capa de Enlace (2) + Redes Locales (1)
   - Slides 10 Redes de Area Local
   - [TP Eficiencia del enlace](./tp-control-enlace)
