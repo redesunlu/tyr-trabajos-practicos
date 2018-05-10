@@ -42,7 +42,7 @@ Teleinformática y Redes
 - Práctica Subnetting, CIDR, VLSM
 - Teoría Ruteo Estático / Ruteo Dinámico
   - Guía de lectura - La Capa de Red en Internet
-- Práctica Ruteo Dinámico (lab Netkit RIP)
+- [Práctica Ruteo Dinámico](./tplX-ruteo)
 - Teoría Capa de Transporte y TCP (1)
 - Teoría Capa de Transporte y TCP (2)
   - Ejercicio Control de Congestión
