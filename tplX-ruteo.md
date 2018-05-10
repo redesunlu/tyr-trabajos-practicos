@@ -1,7 +1,7 @@
 Ejercicio de Ruteo Dinámico con Netkit
 ======================================
 
-Una organización está vinculada con su sucursal a través de un proveedor de servicios de conectividad el cual -además- le brinda acceso a Internet. Dicho proveedor interconecta a sus clientes a través de una red propia (nube), que utiliza el bloque de direcciones IP 200.44.0.0 con máscara 255.255.255.0. A su empresa le ha asignado la red 200.14.32.0 con máscara 255.255.255.0. La Figura 1 representa gráficamente la topología de la red de la organización.
+Una organización está vinculada con su sucursal a través de un proveedor de servicios de conectividad el cual -además- le brinda acceso a Internet. Dicho proveedor interconecta a sus clientes a través de una red propia (nube), que utiliza el bloque de direcciones IP `200.44.0.0` con máscara `255.255.255.0`. A su empresa le ha asignado la red `200.14.32.0` con máscara `255.255.255.0`. La Figura 1 representa gráficamente la topología de la red de la organización.
 
 Con esta información usted debe especificar, en un laboratorio de Netkit, la configuración que permita que la Casa Central se comunique con la Sucursal y mantenga conectividad completa en sus redes internas. Luego, se permita acceso a Internet a la Gerencia, los Servidores (los cuales prestan servicios al exterior) y a la Sucursal.
 
