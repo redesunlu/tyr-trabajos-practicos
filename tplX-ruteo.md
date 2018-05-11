@@ -36,6 +36,8 @@ Una vez finalizado eso, se les entrega este práctico (armado por Tomás para 20
 
 > La clase así parece corta, pero tenía al principio la explicación de cómo se arma un labo de Netkit, que según entiendo, ya lo vieron al principio de la cursada esta vez. Igual el labo les va a llevar un rato asi que para el resto de la clase les alcanza. (Yo cuando lo redacté, lo armé y me llevo un rato armar los archivos y eso)
 
+**Para clase 1er cuatrimestre 2019**: armar slides propias en base a las de Netkit UNIRoma.
+
 ### Punteo clase demostrativa
 
  - Recordar algoritmos base de ruteo dinámico: link-state / distance-vector
