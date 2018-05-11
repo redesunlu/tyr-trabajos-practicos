@@ -10,7 +10,7 @@ Con esta información usted debe especificar, en un laboratorio de Netkit, la co
 - Escriba las tablas de rutas finales de un dispositivo de cada red y de los routers 1, 3 y 4.
 - Como resolución, entregue un informe con las respuestas a estas consignas y con el laboratorio de Netkit (comprimido) listo para ser iniciado en una instalación de Netkit.
 
-![Topología de la red](./images/topologia-ruteo.png){ width=100% }
+![](./images/topologia-ruteo.png){ width=100% }
 
 ### Notas para ayudantes
 
@@ -69,12 +69,26 @@ Una vez finalizado eso, se les entrega este práctico (armado por Tomás para 20
      tabla intercambiada (slide 18).
    - Mostrar tabla de rutas RIP conectándose al demonio ripd y ejecutando
      `show ip rip` (slide 20). Recordar que:
+     - La clave por defecto es `zebra`, `quagga`, o bien `root`
      - R> significa ruta aprendida por RIP, mientras que
      - C> significa ruta conectada directa
      - en los valores del tipo `[120/3]` se interpreta `120` como distancia
        administrativa de la ruta y `3` como métrica en saltos (hops); para
        OSPF, la distancia administrativa es otra que indica mayor prioridad.
      - Tiempo de vida de las entradas: 3 minutos, decreciendo.
+
+   - Repaso sobre tablas de rutas:
+     - Consultar a los estudiantes si un `ping` de r2 a r5 funciona (no lo hará).
+     - En r2, hacer `ping` a r5 (opc indicar IP origen con `ping -I origen destino`).
+       Validar que no hay respuesta.
+     - Consultar a qué se debe? (no indicar nada aún)
+     - En r5, hacer captura con `tcpdump -v`. Deben verse los ICMP Echo Request,
+       pero ninguna respuesta.
+     - Sucede que r5 no tiene ruta hacia r2. Recibe los requests, pero al
+       intentar responderlos, no tiene ruta hacia la/las redes de r2.
+     - Establecer en r5 una ruta estática hasta la red origen del ping de r2 y
+       validar que ahora sí llegan los pings.
+
    - Consultar a estudiantes sobre qué falta para dar conectividad hacia
      Internet.
      - Agregar ruta por defecto, estática, en `r4` mediante
@@ -90,10 +104,9 @@ Una vez finalizado eso, se les entrega este práctico (armado por Tomás para 20
    Tomar como base la slide 16 de `lab_quagga.pdf`, donde se representa la
    diferencia entre interfaz de usuario sin privilegios, interfaz de 
    usuario con privilegios, e interfaz de configuración.
-   Mencionar clave hardcodeada `zebra`
 
  - Mostrar comando `show interface ethN` ?
- - Mostrar comando `show ip route` ? <-- ver si esto funciona con RIP y si,
+ - Mostrar comando `show ip route` ? ver si esto funciona con RIP y si,
    en tal caso, muestra las rutas aprendidas, para evitar utilizar
    `show ip rip`
 
