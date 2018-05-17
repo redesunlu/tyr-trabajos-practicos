@@ -18,6 +18,8 @@ En la topología hay un servidor DHCP que asigna direcciones IP a los clientes, 
 
 También se adiciona un recurso dinámico (cgi o php), en el mismo servidor que tiene las imágenes.
 
+
+
 En cuanto a hardware
 --------------------
 
@@ -200,10 +202,13 @@ En tal sentido, es probable que haya que definir la sentencia siguiente en el
 archivo de configuración de Squid. Ver 
 <http://www.squid-cache.org/Versions/v3/3.3/cfgman/positive_dns_ttl.html>
 
-        positive_dns_ttl a 10 seconds
+        negative_dns_ttl a 1 seconds
+        positive_dns_ttl a 2 seconds
 
 Alternativamente, en la definición de la zona DNS en BIND, acortar el TTL del
 SOA para reducir la chance de que se almacene entre distintas capturas.
+
+Por las pruebas realizadas, debe asegurarse que se cierren las conexiones TCP con el web server.
 
 
 En los routers
