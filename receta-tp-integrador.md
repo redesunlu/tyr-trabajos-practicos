@@ -135,11 +135,11 @@ En el servidor DNS
 
         apt-get install bind9
 
-- Copiar la configuración local a `/etc/bind`
+- Copiar la configuración local a `/etc/bind` (anexa al final)
 
         cp named.conf.local /etc/bind/
 
-- Copiar la base de datos de zona a `/var/cache/bind`
+- Copiar la base de datos de zona a `/var/cache/bind` (anexa al final)
 
         cp example.com /var/cache/bind/
 
@@ -333,3 +333,62 @@ Estos pasos son los mínimos para realizar la captura de cada uno de los legajos
 Repetir estos pasos por cada legajo.
 
 [^1]: tarea de los estudiantes.
+
+\pagebreak
+
+Archivo /etc/bind/named.conf.local
+----------------------------------
+
+Esta versión es como debería ser en Jessie. Validar que en stretch es similar.
+
+~~~~~~
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "example.com" {
+	type master;
+	file "example.com";
+};
+~~~~~~
+
+\pagebreak
+
+Archivo /var/cache/bind/example.com
+-----------------------------------
+
+Esta versión es como debería ser en Jessie. Validar que en stretch es similar.
+
+~~~~~~
+; *******************************
+; * Base de Datos: example.com	*
+; *******************************
+
+$TTL 30
+@	IN	SOA	ns1.example.com	florge.example.com (
+			    2018052401	; Serial
+			    7200	; Refresh
+			    3600	; Retry
+			    432000	; Expire
+			    36000	; Minimun (negative caching TTL)
+			    )
+
+; *******************************
+; * Name servers del Dominio	*
+; *******************************
+		IN	NS	ns1.example.com.
+
+; *******************************
+; * Datos de hosts		*
+; *******************************
+ns1	IN A	200.28.10.100
+proxy	IN A	200.18.10.99
+web1	IN A	 200.28.0.89
+web2	IN A	 200.28.0.90
+www	IN A	CNAME web1
+img	IN A	CNAME web2
+~~~~~~
