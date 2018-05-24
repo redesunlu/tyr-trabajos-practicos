@@ -1,23 +1,9 @@
-Receta Captura TP Integrador 2018
-=================================
+Receta Captura TP Integrador 2017 y previos
+===========================================
 
 Este es una especie de racconto para Ayudantes y Docentes, con notas y tareas
 que se deben efectuar a fin de preparar el aula y los equipos para efectuar
 la Captura Final de Teleinformática y Redes con pocas (o nulas) dificultades.
-
-Para captura 2018
------------------
-
-En la topología hay un servidor DHCP que asigna direcciones IP a los clientes, por lo que adicionalmente a los borrados que haya que hacer en los equipos, en los clientes deben hacer algo como:
-
-    pkill dhclient           # matar el demonio dhclient
-    ip addr flush dev ethX   # eliminar todas las direcciones asignadas
-    ip link set ethX down    # dar de baja el enlace
-    dhclient ethX            # pedir una nueva dirección IP
-    # validar que dhclient hace UP del enlace
-
-También se adiciona un recurso dinámico (cgi o php), en el mismo servidor que tiene las imágenes.
-
 
 
 En cuanto a hardware
@@ -111,6 +97,8 @@ En el cliente HTTP
 - Agregar las direcciones anteriores como excepciones al proxy en el navegador.
 - Verificar que es posible consultar las páginas solicitando el archivo `000000.html` 
   que debería instalarse en el webserver previamente.
+- En el primer acceso al sitio seguro, aceptar el certificado auto-firmado 
+  provisto por el servidor.
 
 Nota:
 
@@ -141,7 +129,7 @@ En el servidor DNS
 
 - Copiar la base de datos de zona a `/var/cache/bind`
 
-        cp example.com /var/cache/bind/
+        cp orgx.com /var/cache/bind/
 
 - Desactivar el uso de DNSSEC añadiendo a `/etc/bind/named.conf.options`
   las sentencias siguientes:
@@ -156,7 +144,7 @@ En el servidor DNS
 
 - Realizar una consulta al DNS local y verificar que existe respuesta:
 
-        dig @127.0.0.1 www.example.com
+        dig @127.0.0.1 www.orgx.com
 
 
 En el servidor Proxy HTTP
@@ -257,7 +245,7 @@ En el router con NAT (Router C)
         #!/bin/sh
         IF_INTERNA=eth0
         IF_EXTERNA=eth1
-        IP_EXTERNA=200.18.10.2
+        IP_EXTERNA=123.12.23.43
         # elimino las configuraciones previas
         iptables -F; iptables -t nat -F; iptables -t mangle -F
         # alternativa 1 (snat). Preferida
@@ -289,25 +277,30 @@ En los servidores HTTP
         KeepAlive Off
 
 
-En el servidor de imagenes y CGI
---------------------------------
+En el servidor HTTPS
+--------------------
 
 - Configurar las interfaces de red y las rutas necesarias. [^1]
-- Instalar apache2
+- Instalar apache2 y el módulo SSL
 
-        apt-get install apache2
+        apt-get install apache2 libapache2-mod-ssl
 
 - Copiar los recursos a servir en `/var/www/` o `/var/www/html/` (según 
   la versión) y asignar permisos de lectura a todos los usuarios.
+- Habilitar el módulo, el sitio `default-ssl`, y deshabilitar el
+  sitio inseguro `default`:
+
+        a2enmod ssl
+        a2ensite default-ssl
+        a2dissite default
+        service apache2 restart
 
 - Agregar un conjunto de datos `000000.html`, `000000-1.png` y `000000-2.png` 
   para pruebas sin necesidad de utilizar los archivos de los alumnos.
 
-- TODO: agregar el script CGI.
-
 - Verificar que es posible obtener un recurso con wget:
 
-        wget http://127.0.0.1/
+        wget --no-check-certificate https://127.0.0.1/
 
 
 En equipo de captura
@@ -324,7 +317,7 @@ Estos pasos son los mínimos para realizar la captura de cada uno de los legajos
  1. ip neigh flush all
  2. Iniciar capturas en equipos designados. legajo.pcap
  3. Abrir navegadores en equipos designados.
- 4. Ir a URL <http://www.example.com/legajo.html>
+ 4. Ir a URL http://www.orgx.com/legajo.html
  5. Esperar que se descargue toda la pagina
  6. Esperar 10seg
  7. Cerrar navegador
