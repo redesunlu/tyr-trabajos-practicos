@@ -418,6 +418,8 @@ www	IN A	CNAME web1
 img	IN A	CNAME web2
 ~~~~~~
 
+\pagebreak
+
 Archivo /usr/lib/cgi-bin/pie.pl
 -----------------------------------
 #!/usr/bin/perl -wT
