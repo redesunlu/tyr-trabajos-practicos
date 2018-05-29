@@ -271,7 +271,7 @@ En el router con NAT (Router C)
 
         apt-get install isc-dhcp-server
 
-- Configuración mínima en `/etc/dhcp/dhcpd.conf`
+- Configuración mínima en `/etc/dhcp/dhcpd.conf`:
 
         option domain-name "example.com";
         option domain-name-servers ns1.example.com;
@@ -349,13 +349,15 @@ Pasos para la captura
 Estos pasos son los mínimos para realizar la captura de cada uno de los legajos.
 
  1. ip neigh flush all
- 2. Iniciar capturas en equipos designados. legajo.pcap
- 3. Abrir navegadores en equipos designados.
- 4. Ir a URL <http://www.example.com/legajo.html>
- 5. Esperar que se descargue toda la pagina
- 6. Esperar 10seg
- 7. Cerrar navegador
- 8. Finalizar Captura
+ 2. dhclient -r *interface*
+ 3. Iniciar capturas en equipos designados. legajo.pcap
+ 4. dhclient *interface*
+ 5. Abrir navegadores en equipos designados.
+ 6. Ir a URL <http://www.example.com/legajo.html>
+ 7. Esperar que se descargue toda la pagina
+ 8. Esperar 10seg
+ 9. Cerrar navegador
+ 10. Finalizar Captura
 
 Repetir estos pasos por cada legajo.
 
