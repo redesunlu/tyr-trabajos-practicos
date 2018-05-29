@@ -48,6 +48,9 @@ Escribir estos pasos en el pizarrón para que todos puedan leerlos y ejecutarlos
         service ntp stop
         pkill apache
         pkill squid
+        apt-get purge rtkit
+        systemctl stop systemd-timesyncd
+        systemctl disable systemd-timesyncd
 
 - Para verificar los procesos que están corriendo y ver si es necesario terminar alguno adicional:
 
@@ -118,9 +121,12 @@ Nota:
   embargo la codificación es GZip (`Content-Encoding: gzip`) tanto en el 
   mensaje del servidor web como en el servidor proxy (visible si se realiza 
   `Follow TCP stream` sobre el flujo). Una posible solución a este 
-  comportamiento es desactivar el módulo `deflate` en Apache2 mediante:
+  comportamiento es Deshabilitar gzip en el Virtualhost editando el archivo `/etc/apache2/sites-enabled/000-default.conf` y agregando dentreo del tag `Virtualhost` la siguiente directiva de apache:
 
-        a2dismod deflate
+        SetEnv no-gzip 1
+
+    A continuación se debe reiniciar el servicio
+
         service apache2 restart
 
     pero sería interesante que los estudiantes detecten tal característica.
@@ -179,10 +185,10 @@ En el servidor Proxy HTTP
 - Squid hace caché en memoria y, opcionalmente, en disco. Para vaciar el caché, ejecutar:
 
         #!/bin/sh
-        service squid3 stop
+        service squid stop
         rm -r /var/spool/squid/*
-        squid3 -k
-        service squid3 start
+        squid3 -z
+        service squid start
 
     Esto es necesario solo en casos donde se solicite algo al proxy previo al
     momento de las capturas y haya que repetir el request.
@@ -246,6 +252,7 @@ visto, esta opcion de configuración tiene mayor prioridad).
           echo 0 > $i;
         done
 
+NOTA: Lo anterior se puede cambiar por lo que esta en `/etc/sysctl.conf`.
 
 En el router con NAT (Router C)
 -------------------------------
@@ -301,7 +308,7 @@ En los servidores HTTP
 
 - Para evitar tener que cerrar el browser para que se produzcan los cierres
   de conexion TCP, se puede deshabilitar KeepAlive desde el web server.
-  En el archivo `/etc/apache2/conf/httpd.conf`
+  En el archivo `/etc/apache2/apache2.conf`
 
         KeepAlive Off
 
@@ -329,8 +336,10 @@ En el servidor de imagenes y CGI
             chown www-data.www-data /usr/lib/cgi-bin/pie.pl
             chmod 750 /usr/lib/cgi-bin/pie.pl
 
-    - Verificar si es necesario habilitar mod_cgi.
+    - Por default hay que habilitar el modulo de cgi:
 
+            a2enmod cgi
+            service apache2 restart
 
 - Verificar que es posible obtener un recurso con wget:
 
@@ -418,8 +427,8 @@ ns1	IN A	200.18.10.100
 proxy	IN A	200.18.10.99
 web1	IN A	 200.28.0.89
 web2	IN A	 200.28.0.90
-www	IN A	CNAME web1
-img	IN A	CNAME web2
+www	IN	CNAME web1
+img	IN	CNAME web2
 ~~~~~~
 
 \pagebreak
