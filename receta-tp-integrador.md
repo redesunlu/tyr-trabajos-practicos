@@ -267,20 +267,22 @@ En el router con NAT (Router C)
         # habilito el reenvio
         echo 1 > /proc/sys/net/ipv4/ip_forward
 
-Instalar servidor DHCP
+- Instalar servidor DHCP:
+
         apt-get install isc-dhcp-server
 
-Configuración mínima en /etc/dhcp/dhcpd.conf
-       option domain-name "example.com";
-       option domain-name-servers ns1.example.com;
-       default-lease-time 60;
-       max-lease-time 120;
-       authoritative;
-       log-facility local7;
-       subnet 10.10.10.0 netmask 255.255.255.0 {
-         range 10.10.10.120 10.10.10.255;
-         option routers 10.10.10.100;
-       }
+- Configuración mínima en `/etc/dhcp/dhcpd.conf`
+
+        option domain-name "example.com";
+        option domain-name-servers ns1.example.com;
+        default-lease-time 60;
+        max-lease-time 120;
+        authoritative;
+        log-facility local7;
+        subnet 10.10.10.0 netmask 255.255.255.0 {
+          range 10.10.10.120 10.10.10.255;
+          option routers 10.10.10.100;
+        }
 
 
 En los servidores HTTP
@@ -320,14 +322,14 @@ En el servidor de imagenes y CGI
 
 - Script CGI:
 
-  Copiar el archivo /usr/lib/cgi-bin/pie.pl (Adjunto al final)
+    - Copiar el archivo /usr/lib/cgi-bin/pie.pl (Adjunto al final)
 
-Cambiar permisos y dueño:
+    - Cambiar permisos y dueño:
 
-        chown www-data.www-data /usr/lib/cgi-bin/pie.pl
-        chmod 750 /usr/lib/cgi-bin/pie.pl
+            chown www-data.www-data /usr/lib/cgi-bin/pie.pl
+            chmod 750 /usr/lib/cgi-bin/pie.pl
 
-Verificar si es necesario habilitar mod_cgi.
+    - Verificar si es necesario habilitar mod_cgi.
 
 
 - Verificar que es posible obtener un recurso con wget:
@@ -422,6 +424,8 @@ img	IN A	CNAME web2
 
 Archivo /usr/lib/cgi-bin/pie.pl
 -----------------------------------
+
+~~~~~~perl
 #!/usr/bin/perl -wT
 use strict;
 
@@ -437,3 +441,4 @@ print <<END_HTML;
   </body>
 </html>
 END_HTML
+~~~~~~
