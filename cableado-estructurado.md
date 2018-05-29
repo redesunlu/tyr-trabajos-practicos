@@ -21,4 +21,12 @@ Clase de Cableado Estructurado
 - [ ] Fragmentos de cable UTP abiertos
 
 - Introduction to Cabling by Fulvio Risso at Politecnico di Torino  
-  <https://05cadd13-a-340fb901-s-sites.googlegroups.com/a/frisso.net/prl/files/LAN%20-%20Cabling.pdf?attachauth=ANoY7cqb80RStZJbgrkaZsmq5E8C5UD9C5i8J7j3xyQC-Qhons1Sl_kOSgVCkn5WBs62FXMopbJJtwConRoTxKBnyNcK4SmSVkkRpTK377t4eT2xqtk_sioyw-JwvwF86ZwbhA61uOR-isMIOsKU3yrcD58zEfNQKLRnmp98IklUQKcwtQguWZzi5JxxfIwvc0IuMkyH_xWa1ma2JomET1mLiWWAUT6W8A%3D%3D&attredirects=0>
+  <https://05cadd13-a-340fb901-s-sites.googlegroups.com/a/frisso.net/prl/files/LAN%20-%20Cabling.pdf>
+
+- Ver soluciones de Networking, Cableado Estructurado y casos de éxito
+  empresa STYM (Siderca, Banco Itaú, Wallmart, etc)  
+  <http://stym.com.ar/obras/>
+
+- Ejemplo tecnología "COMMScope GigaSPEED X10D"  
+  <https://es.commscope.com/Solutions/Category-6A-cabling/>
+
