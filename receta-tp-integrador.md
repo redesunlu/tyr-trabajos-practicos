@@ -8,16 +8,11 @@ la Captura Final de Teleinformática y Redes con pocas (o nulas) dificultades.
 Para captura 2018
 -----------------
 
-En la topología hay un servidor DHCP que asigna direcciones IP a los clientes, por lo que adicionalmente a los borrados que haya que hacer en los equipos, en los clientes deben hacer algo como:
+En la topología hay un servidor DHCP que asigna direcciones IP a los clientes.
+También se adiciona un recurso dinámico (cgi o php), en el mismo servidor que tiene las imágenes,
+y se eliminó el servidor HTTPS.
 
-    pkill dhclient           # matar el demonio dhclient
-    ip addr flush dev ethX   # eliminar todas las direcciones asignadas
-    ip link set ethX down    # dar de baja el enlace
-    dhclient ethX            # pedir una nueva dirección IP
-    # validar que dhclient hace UP del enlace
-
-También se adiciona un recurso dinámico (cgi o php), en el mismo servidor que tiene las imágenes.
-
+![Topología TP Integrador](./images/topologia-integrador-2018.png)
 
 
 En cuanto a hardware
