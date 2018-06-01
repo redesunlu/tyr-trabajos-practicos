@@ -203,7 +203,7 @@ En el servidor Proxy HTTP
                            # reverso del router C
 
         log_fqdn off       # desactivar la resolución de nombres en el registro
-        pinger_enable on   # desactivar que haga PING (!)
+        pinger_enable off  # desactivar que haga PING (!)
 
     - Documentación respaldatoria:
         - <http://wiki.squid-cache.org/SquidFaq/ConfiguringSquid#Can_I_make_Squid_proxy_only.2C_without_caching_anything.3F>
