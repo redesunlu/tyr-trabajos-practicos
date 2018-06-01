@@ -31,18 +31,27 @@ En cuanto a hardware
 En todos los equipos que participan
 -----------------------------------
 
+Antes de desconectar la red de Internet, instalar los siguientes paquetes:
+
+    apt-get install ethtool           # en todos los equipos
+    apt-get install netsurf           # en el cliente
+    apt-get install squid            # en el servidor proxy
+    apt-get install apache2           # en los servidores web
+    apt-get install bind9             # en el servidor dns
+    apt-get install isc-dhcp-server   # en el servidor dhcp
+
 Escribir estos pasos en el pizarrón para que todos puedan leerlos y ejecutarlos.
 
 - Detener los servicios superfluos:
 
         #!/bin/sh
-        service apache2 stop
+        service apache2 stop   # salvo en los webservers
         service exim4 stop
         service nfs-common stop
         service openbsd-inetd stop
         service rpcbind stop
         service ssh stop
-        service squid3 stop
+        service squid stop     # salvo en el proxy
         service avahi-daemon stop
         service ntpdate stop
         service ntp stop
@@ -86,7 +95,15 @@ En el cliente HTTP
 
 - Configurar las interfaces de red, la resolución DNS y las rutas necesarias. [^1]
 
-- Deshabilitar la descarga de `favicon.ico` en `about:config` de Firefox.
+- Configurar que el navegador utilice el proxy asignado. [^1]
+
+- Preferentemente utilizar el navegador NetSurf en el cliente, ya que Mozilla
+  Firefox realiza una gran cantidad de peticiones a sitios externos para
+  actualizar listas de páginas bloqueadas, extensiones y otros motivos que
+  desconozco.
+
+- En caso de utilizar Firefox, deshabilitar la descarga de `favicon.ico` en
+  `about:config`
 
         browser.chrome.favicons	false
         browser.chrome.site_icons  false
@@ -107,11 +124,19 @@ En el cliente HTTP
         127.0.0.3	location.services.mozilla.com
         127.0.0.3	tiles-cloudfront.cdn.mozilla.net
         127.0.0.3	safebrowsing-cache.google.com
+
+        (faltan agregar unas nuevas que aparecieron en 2018)
+
         (y otras que no recuerdo)
 
     a fin de evitar que se consulte DNS por esos dominios.
 
-- Agregar las direcciones anteriores como excepciones al proxy en el navegador.
+- Agregar las direcciones siguientes como excepciones al proxy en el navegador:
+
+        safebrowsing.google.com, safebrowsing-cache.google.com,
+        .mozdev.org, .mozilla.com, .mozilla.net, .mozilla.org,
+        www.netsurf-browser.com
+
 - Verificar que es posible consultar las páginas solicitando el archivo `000000.html` 
   que debería instalarse en el webserver previamente.
 
@@ -120,16 +145,8 @@ Nota:
 - La respuesta HTTP resulta ser de tipo HTML (`Content-Type: text/html`), sin 
   embargo la codificación es GZip (`Content-Encoding: gzip`) tanto en el 
   mensaje del servidor web como en el servidor proxy (visible si se realiza 
-  `Follow TCP stream` sobre el flujo). Una posible solución a este 
-  comportamiento es Deshabilitar gzip en el Virtualhost editando el archivo `/etc/apache2/sites-enabled/000-default.conf` y agregando dentreo del tag `Virtualhost` la siguiente directiva de apache:
-
-        SetEnv no-gzip 1
-
-    A continuación se debe reiniciar el servicio
-
-        service apache2 restart
-
-    pero sería interesante que los estudiantes detecten tal característica.
+  `Follow TCP stream` sobre el flujo). Una posible solución a este
+  comportamiento se adjunta en la sección destinada al webserver.
 
 
 En el servidor DNS
@@ -169,48 +186,55 @@ En el servidor Proxy HTTP
 -------------------------
 
 - Configurar las interfaces de red, la resolución DNS (Archivo `resolv.conf`) y las rutas necesarias. [^1]
+
 - Instalar Squid3 [^1]
 
-        apt-get install squid3
+        apt-get install squid
 
-- Habilitar el servicio a todas las direcciones, en `/etc/squid3/squid.conf`
+- Establecer las siguientes configuraciones en `/etc/squid/squid.conf`
 
-        # Reemplazar
+        # habilitar el servicio a todas las direcciones
         # http_access deny all
-        # por
         http_access allow all
-        # o bien
-        # http_access allow $DIRECCION_DE_RED
 
-- Squid hace caché en memoria y, opcionalmente, en disco. Para vaciar el caché, ejecutar:
+        cache deny all     # evitar que se haga caché de recursos
+
+        # disminuir el tiempo de vida de peticiones dns
+        negative_dns_ttl 1 seconds
+        positive_dns_ttl 2 seconds
+
+        client_db off      # desactivar la creación de estadísticas de clientes
+                           # esto evita que squid pregunte por el puntero
+                           # reverso del router C
+
+        log_fqdn off       # desactivar la resolución de nombres en el registro
+        pinger_enable on   # desactivar que haga PING (!)
+
+    - Documentación respaldatoria:
+        - <http://wiki.squid-cache.org/SquidFaq/ConfiguringSquid#Can_I_make_Squid_proxy_only.2C_without_caching_anything.3F>
+        - <http://www.squid-cache.org/Versions/v3/3.3/cfgman/positive_dns_ttl.html>
+        - <https://www.safaribooksonline.com/library/view/squid-the-definitive/0596001622/re59.html>
+        - <https://wiki.squid-cache.org/SquidFaq/OperatingSquid#Using_ICMP_to_Measure_the_Network>
+
+- En las capturas 2018 vimos pings entre el proxy y otros equipos, algo realmente
+  curioso, que resultó ser una funcionalidad (nueva?!) de squid3. A partir de
+  ahora lo deshabilitaremos a fin de evitar mayor confusión.
+
+- Salvo que esté desactivado (por pasos previos), squid hace caché en memoria y
+  opcionalmente en disco. Si en algún momento es necesario vaciar el caché, ejecutar:
 
         #!/bin/sh
         service squid stop
         rm -r /var/spool/squid/*
-        squid3 -z
+        squid -z
         service squid start
 
     Esto es necesario solo en casos donde se solicite algo al proxy previo al
     momento de las capturas y haya que repetir el request.
 
-- Opcionalmente, desactivar el caché por completo, en `/etc/squid3/squid.conf`,
-  según lo indicado en  
-  <http://wiki.squid-cache.org/SquidFaq/ConfiguringSquid#Can_I_make_Squid_proxy_only.2C_without_caching_anything.3F>
-
-        cache deny all
-
-En las capturas de 2017, el proxy Squid hizo caché de la resolucion de nombres
-de dominio, por lo tanto en muchas peticiones no se observa consulta DNS alguna.
-
-En tal sentido, es probable que haya que definir la sentencia siguiente en el
-archivo de configuración de Squid. Ver 
-<http://www.squid-cache.org/Versions/v3/3.3/cfgman/positive_dns_ttl.html>
-
-        negative_dns_ttl a 1 seconds
-        positive_dns_ttl a 2 seconds
-
-Alternativamente, en la definición de la zona DNS en BIND, acortar el TTL del
-SOA para reducir la chance de que se almacene entre distintas capturas.
+- Alternativamente a disminuir el TTL de las consultas DNS,, en la definición
+  de la zona DNS en BIND se puede acortar el TTL del SOA para reducir la chance
+  de que las resoluciones DNS se almacenen entre distintas capturas.
 
 Por las pruebas realizadas, debe asegurarse que se cierren las conexiones TCP con el web server.
 
@@ -218,11 +242,16 @@ Por las pruebas realizadas, debe asegurarse que se cierren las conexiones TCP co
 En los routers
 --------------
 
-- Configurar las interfaces de red y las rutas necesarias. [^1]
-- Habilitar el reenvío de paquetes:
+- Previamente a que los estudiantes configuren las direcciones, establecer las
+  siguientes configuraciones en el archivo `/etc/sysctl.conf` (y luego reiniciar)
 
-        # echo 1 > /proc/sys/net/ipv4/ip_forward
-        sysctl -w net.ipv4.ip_forward=1   # esto hace lo mismo
+        net.ipv4.ip_forward=1            # habilita el reenvío de paquetes
+        net.ipv4.conf.all.arp_filter=1   # solo responde arp en la interfaz adecuada
+
+        net.ipv4.conf.all.accept_redirects = 0    # deshabilitar ICMP redirect
+        net.ipv4.conf.all.send_redirects = 0      # deshabilitar ICMP redirect
+
+- Configurar las interfaces de red y las rutas necesarias. [^1]
 
 Notas:
 
@@ -232,30 +261,19 @@ Notas:
   <http://linux-ip.net/html/ether-arp.html>, 
   <https://openvz.org/Multiple_network_interfaces_and_ARP_flux>, y 
   en la documentación del kernel linux `Documentation/networking/ip-sysctl.txt`. 
-  Una posible solución a este comportamiento es definir `arp_filter=1`:
+  Una solución a este comportamiento es la indicada con `arp_filter` en la
+  configuración anterior, o sino definir `arp_ignore` y `arp_announce`, pero
+  sería interesante que ellos mismos detecten el comportamiento extraño.
 
-        sysctl -w net.ipv4.conf.all.arp_filter=1
-
-    o definir `arp_ignore` y `arp_announce`, pero sería interesante que ellos
-    mismos detecten el comportamiento extraño.
-
-- Desactivar ICMP redirect en routers y equipos (Esto lo hace el equipo docente)
-
-Cuando se definen distintas redes IP sobre una misma red Ethernet, es 
+- Cuando se definen distintas redes IP sobre una misma red Ethernet, es 
 posible que los equipos en distintas redes omitan pasar por los routers 
-asignados en rutas estáticas. Para corregir este comportamiento, 
-desactivar el envío y la aceptación de ICMP redirect en todas las 
-interfaces (all) Y EN LA INTERFAZ ethX adecuada también (pues, por lo 
-visto, esta opcion de configuración tiene mayor prioridad).
+asignados en rutas estáticas. Para corregir este comportamiento, la configuración
+anterior desactiva el envío y la aceptación de ICMP redirect en todas las 
+interfaces (all).
 
-        for i in /proc/sys/net/ipv4/conf/*/{accept,send}_redirects; do
-          echo 0 > $i;
-        done
 
-NOTA: Lo anterior se puede cambiar por lo que esta en `/etc/sysctl.conf`.
-
-En el router con NAT (Router C)
--------------------------------
+En el router con NAT y DHCP (Router C)
+--------------------------------------
 
 - Configurar las interfaces de red y las rutas necesarias. [^1]
 
@@ -267,16 +285,27 @@ En el router con NAT (Router C)
         IP_EXTERNA=200.18.10.2
         # elimino las configuraciones previas
         iptables -F; iptables -t nat -F; iptables -t mangle -F
+
         # alternativa 1 (snat). Preferida
-        #iptables -t nat -A POSTROUTING -o $IF_EXTERNA -j SNAT --to $IP_EXTERNA
+        iptables -t nat -A POSTROUTING -o $IF_EXTERNA -j SNAT --to $IP_EXTERNA
+
         # alternativa 2 (masquerade)
-        iptables -t nat -A POSTROUTING -o $IF_EXTERNA -j MASQUERADE
+        # iptables -t nat -A POSTROUTING -o $IF_EXTERNA -j MASQUERADE
         # habilito el reenvio
         echo 1 > /proc/sys/net/ipv4/ip_forward
 
 - Instalar servidor DHCP:
 
         apt-get install isc-dhcp-server
+
+- Establecer como servidor DNS en `/etc/resolv.conf` el asignado según el
+  trabajo práctico. De no hacerlo, el servidor DHCP intenta resolver el
+  mnemónico para ns1.example.com y demora la respuesta al cliente.
+
+- Habilitar que DHCP escuche sólo en la interfaz expuesta a la red interna.
+  Para ello, en `/etc/default/dhcp` escribir:
+
+        Interfaces="ethX"
 
 - Configuración mínima en `/etc/dhcp/dhcpd.conf`:
 
@@ -292,16 +321,16 @@ En el router con NAT (Router C)
         }
 
 
-En los servidores HTTP
-----------------------
+En los servidores HTTP (ambos)
+------------------------------
 
 - Configurar las interfaces de red y las rutas necesarias. [^1]
 - Instalar apache2 [^1]
 
         apt-get install apache2
 
-- Copiar los recursos a servir en `/var/www/` o `/var/www/html/` (según 
-  la versión) y asignar permisos de lectura a todos los usuarios.
+- Copiar los recursos a servir en `/var/www/html/`
+  y asignar permisos de lectura a todos los usuarios.
 - Verificar que es posible obtener un recuro con wget:
 
         wget http://127.0.0.1/
@@ -312,8 +341,21 @@ En los servidores HTTP
 
         KeepAlive Off
 
+- Deshabilitar gzip en el Virtualhost editando el archivo
+  `/etc/apache2/sites-enabled/000-default.conf` y agregando dentro del tag
+  `Virtualhost` la siguiente directiva de apache:
 
-En el servidor de imagenes y CGI
+        SetEnv no-gzip 1
+
+    A continuación se debe reiniciar el servicio
+
+        service apache2 restart
+
+    Esto impide que las respuestas HTTP se compriman con gzip (ver nota
+    previa en la sección relativa al cliente HTTP).
+
+
+En el servidor de imágenes y CGI
 --------------------------------
 
 - Configurar las interfaces de red y las rutas necesarias. [^1]
@@ -321,15 +363,15 @@ En el servidor de imagenes y CGI
 
         apt-get install apache2
 
-- Copiar los recursos a servir en `/var/www/` o `/var/www/html/` (según 
-  la versión) y asignar permisos de lectura a todos los usuarios.
+- Copiar los recursos a servir en `/var/www/html/`
+  y asignar permisos de lectura a todos los usuarios.
 
 - Agregar un conjunto de datos `000000.html`, `000000-1.png` y `000000-2.png` 
   para pruebas sin necesidad de utilizar los archivos de los alumnos.
 
 - Script CGI:
 
-    - Copiar el archivo /usr/lib/cgi-bin/pie.pl (Adjunto al final)
+    - Copiar el archivo `/usr/lib/cgi-bin/pie.pl` (Adjunto al final)
 
     - Cambiar permisos y dueño:
 
@@ -341,9 +383,10 @@ En el servidor de imagenes y CGI
             a2enmod cgi
             service apache2 restart
 
-- Verificar que es posible obtener un recurso con wget:
+- Verificar que es posible obtener los recursos con wget:
 
         wget http://127.0.0.1/
+        wget http://127.0.0.1/cgi-bin/pie.pl
 
 
 En equipo de captura
@@ -357,8 +400,8 @@ Pasos para la captura
 
 Estos pasos son los mínimos para realizar la captura de cada uno de los legajos.
 
- 1. ip neigh flush all
- 2. dhclient -r *interface*
+ 1. dhclient -r *interface*
+ 2. ip neigh flush all
  3. Iniciar capturas en equipos designados. legajo.pcap
  4. dhclient *interface*
  5. Abrir navegadores en equipos designados.
