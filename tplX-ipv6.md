@@ -91,10 +91,12 @@ Los estudiantes deberán:
 - DEERING, S., HINDEN, R. 2017. _Internet Protocol, Version 6 (IPv6) Specification_, RFC 8200.  
   <https://tools.ietf.org/html/rfc8200>
 - HINDEN, R., DEERING, S. 2006. _Ip Version 6 Addressing Architecture_, RFC 4291  
-<https://tools.ietf.org/html/rfc4291>  
+<https://tools.ietf.org/html/rfc4291>
 - STALLINGS, W. 2007. Capítulo 18. Sección 1. IPv6. en _Data and Computer Communications (8th ed)_. pp. 586-595. Prentice Hall.
 - O'FLAHERTY, C. et al. 2009. _IPv6 para Todos: Guía de uso y aplicación para diversos entornos._ ISOC.Ar Asociación Civil de Argentinos en Internet.  
   <www.ipv6tf.org/pdf/ipv6paratodos.pdf>
+- NARTEN, T., et al. 2007. _Neighbor Discovery for IPv6_, RFC 4861  
+<https://tools.ietf.org/html/rfc4861>
 - BIERINGER, P. 2017. _Linux Ipv6 HOWTO_  
   <http://tldp.org/HOWTO/Linux+IPv6-HOWTO/>
 
