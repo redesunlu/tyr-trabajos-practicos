@@ -65,11 +65,10 @@ Los estudiantes deberán:
         ping6 www.unlu.edu.ar
 
 9. Navegar a las siguientes direcciones:
-
-      - <http://www.unlu.edu.ar/>
-      - <https://whatismyipaddress.com/es/mi-ip>
-      - <https://www.google.com/>
-      - ...
+    - <http://www.unlu.edu.ar/>
+    - <https://whatismyipaddress.com/es/mi-ip>
+    - <https://www.google.com/>
+    - ...
 
 10. Quitar la dirección IPv6 asignada estáticamente, reiniciando o mediante
 
