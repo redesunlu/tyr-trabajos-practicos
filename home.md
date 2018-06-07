@@ -49,7 +49,7 @@ Teleinformática y Redes
 - [Práctica DHCP](tplX-dhcp) y [Práctica UDP](tplX-udp)
 - [Captura para Trabajo Práctico Integrador 2018](./receta-tp-integrador)
 - Práctica Interface de Sockets
-- Teoría IPv6
+- [Teoría y Práctica IPv6](./tplX-ipv6)
 - Consultas/Ejercicios integradores
 - Segundo parcial
 - Recuperatorio + Expo TP Integrador
