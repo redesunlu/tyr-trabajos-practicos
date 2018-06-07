@@ -35,6 +35,7 @@ Los estudiantes deberán:
 
 1. Quitar las direcciones y la configuración IPv4 que tuviera su equipo.
 
+        ip route flush all
         ip address flush dev eth0
         ip -6 address flush dev eth0
 
@@ -43,6 +44,7 @@ Los estudiantes deberán:
 3. Asignar estáticamente una dirección IPv6 a la interfaz que posee enlace, dentro del rango designado.
 
         ip -6 address add 2800:110:1018:411::100/64 dev eth0
+        ip link set eth0 up
 
 4. Verificar conectividad con otro equipo de su misma red mediante las direcciones de enlace local `fe80:...`.
 
