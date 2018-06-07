@@ -104,6 +104,8 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 * "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 14.1: “Ethernet (CSMA/CD)”
 * El manual del Administrador de Debian. Raphaël Hertzog, Roland Mas. Freexian. 2016. Apéndice B: "Curso breve de emergencia"  
   <https://debian-handbook.info/browse/es-ES/stable/short-remedial-course.html>
+* Tcpdump Examples: Practical examples to lift your network troubleshooting. Hacker Target Pty Ltd. 2018  
+  <https://hackertarget.com/tcpdump-examples/>
 
 
 \pagebreak
