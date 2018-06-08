@@ -287,8 +287,10 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 
 **Bibliografía**
 
-* "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 19.4: "Protocolo de Transferencia de Hipertexto (HTTP)".
-* "Redes de Computadoras", Tercera Edición, Andrew Tannenbaum, Prentice Hall. Capítulo 7.6: "La World Wide Web".
+* STALLINGS, W. 2002. 19.4: "Protocolo de Transferencia de Hipertexto (HTTP)" en _Comunicaciones y Redes de Computadoras (6ta ed)_. Prentice Hall.
+* TANNEMBAUM, A. Capítulo 7.6: "La World Wide Web" en _Redes de Computadoras (3ra ed)_. Prentice Hall.
+* GORALSKI, W. 2017. Capítulo 26: "Hypertext Transfer Protocol" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.  
+  <https://www.sciencedirect.com/science/book/9780128110270>
 * RFC 7230 - Hypertext Transfer Protocol (HTTP/1.1) Message Syntax and Routing
 * RFC 7231 - Hypertext Transfer Protocol (HTTP/1.1) Semantics and Content
 

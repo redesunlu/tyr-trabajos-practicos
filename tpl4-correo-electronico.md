@@ -61,9 +61,10 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 #### Bibliografía
 
-* "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 19.3:
-_"Electronic Mail: SMPTP and MIME"_.
-* "TCP/IP Illustrated Vol.1", Richard Stevens, Addison Wesley. Capítulo 28: _"SMTP: Simple Mail Transfer Protocol"_.
+* STALLINGS, W. 2002. Capítulo 19.3: "Electronic Mail: SMPTP and MIME" en _Comunicaciones y Redes de Computadoras (6ta ed)_. Prentice Hall.
+* STEVENS, R. 1994. Capítulo 28: "SMTP: Simple Mail Transfer Protocol" en _TCP/IP Illustrated Vol.1_. Addison Wesley.
+* GORALSKI, W. 2017. Capítulo 25: "SMTP and Email" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.  
+  <https://www.sciencedirect.com/science/book/9780128110270>
 * RFC 5321 Simple Mail Transfer Protocol
 * RFC 2487 SMTP Service Extension for Secure SMTP over Transport Layer Security
 * RFC 2554 SMTP Service Extension for Authentication
