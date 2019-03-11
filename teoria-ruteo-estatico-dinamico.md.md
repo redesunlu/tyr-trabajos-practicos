@@ -7,9 +7,13 @@ Algunas notas varias
 - Clase 2 Jue 30/May --> 2da parte ruteo dinámico y práctica
 - Separar slides de IPv4 en dos: IPv4 y Ruteo
 - Bibliografía: Ver Peterson y Stevens 2da ed (y ver Kurose pues tengo la sensación de que había algo bueno ahí también). Brindar la documentación a los estudiantes.
-- [Slides originales de Gabriel](http://www.tyr.unlu.edu.ar/pub/11-Red.pdf)
+- [Slides originales (PDF) de Gabriel](http://www.tyr.unlu.edu.ar/pub/11-Red.pdf)
+- [Slides nuevas en Drive](https://drive.google.com/drive/folders/1kSItBJif2za2kNWXoTAlTo8yGi67kh5P)
 - Para las diapos nuevas, Gabriel propuso utilizar gráficos _basados en_ los del libro de Kurose.
 - Reducir el gráfico de encaminamiento que figura en las slides, a 4 hosts con 2 routers.
+- Desarrollar más las slides de algoritmos de ruteo (DV / LS)
+    - 3 slides para c/u (Bellman Ford / Dijkstra)
+- Cambiar simulador de Ruteo dinámico (el de _mathiaz_ no funciona?)
 
 Temario
 
@@ -34,4 +38,18 @@ Temario
 
 Hasta aquí debería llevar aproximadamente 1 hora.
 
-- Dibujar topología en el pizarrón y realizar ejercicio de papel
+- Dibujar topología estilo parcial en el pizarrón y realizar ejercicio en clase.
+
+Esto nos debería tomar 1 hora más.
+Y el resto, lo que se pueda, para lo que sigue.
+
+- Preguntar qué sucede si la cantidad de redes de capa 3 se incrementa --> ir llevándolos a la necesidad de Ruteo Dyn.
+- Algoritmos de ruteo o de _mantenimiento de tablas_
+    - Distance-Vector / Bellman-Ford
+    - Link-State / Dijkstra
+- Explicar ambos con ejemplos
+- Bajar a realidad _comentando_ las implementaciones de ambos
+    - RIP / OSPF
+    - Explicar pero no ahondar demasiado en ellos
+- Diferenciar ruteo interno (vistos) vs ruteo externo (BGP / IS-IS)
+
