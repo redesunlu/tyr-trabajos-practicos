@@ -40,7 +40,7 @@ Teleinformática y Redes
     - Slides 11 Capa de Red e IP
     - Slides 12 Capa de Transporte y TCP
 - Práctica Subnetting, CIDR, VLSM
-- [Teoría Ruteo Estático / Ruteo Dinámico](teoria-ruteo-estatico-dinamico.md)
+- [Teoría Ruteo Estático / Ruteo Dinámico](teoria-ruteo.md)
     - Guía de lectura - La Capa de Red en Internet
 - [Práctica Ruteo Dinámico](./tplX-ruteo)
 - Teoría Capa de Transporte y TCP (1)
