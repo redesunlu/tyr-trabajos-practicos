@@ -28,13 +28,17 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     El primer paso de este práctico es determinar cual de todas las interfaces es la real y tomar nota de su nombre. Aparecerá en el listado con el estado _BROADCAST_.
 
-        ip addr add dev {interfaz} {dirección_IP[/{prefijo_máscara]} \
-           [broadcast {dir_difusión}]
-        ip link set dev {interfaz} up   # "levantar" el enlace de red
+2. Configuración de interfaces de red para utilizar el protocolo TCP/IP.
+
+    El paso siguiente es asignar a la interfaz física una dirección de red IP según el plano anexo.
+    Para ello, utilizar los siguientes comandos:
+
+        ip addr add dev {interfaz} {dirección_IP[/{prefijo_máscara]}
+        ip link set dev {interfaz} up
 
     Por ejemplo:
 
-        ip addr add dev {interfaz} 192.168.0.143/24 broadcast 192.168.0.255
+        ip addr add dev {interfaz} 192.168.0.143/24
         ip link set dev {interfaz} up
 
     Verificar configuración con:
