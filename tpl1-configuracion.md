@@ -1,7 +1,7 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** Luján 22/03/2018
+**Fecha de Entrega:** Luján 28/03/2019
 
 **Objetivo:** Conocer el procedimiento inicial y hacer habitual la práctica de configuración de un host en una red basada en el juego de protocolos TCP/IP.
 
@@ -43,8 +43,8 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     Por ejemplo:
 
-        ip addr add dev eth2 192.168.0.143/24 broadcast 192.168.0.255
-        ip link set dev eth2 up
+        ip addr add dev {interfaz} 192.168.0.143/24 broadcast 192.168.0.255
+        ip link set dev {interfaz} up
 
     Verificar configuración con:
 
