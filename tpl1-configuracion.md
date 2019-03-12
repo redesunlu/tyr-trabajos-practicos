@@ -7,6 +7,8 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 #### Notas para ayudantes
 
+* Por Florge 2019. Cambiado dmesg por ip link, . ¿Será necesario poner una salida de ip link show explicándola? tshark por tcpdump, y reordenado el punto de asignar nombre al host.
+
 * Durante la primera práctica de 2018 encontramos las siguientes cuestiones para resolver/corregir:
   * En el punto 1, la herramienta `mii-tool` no devuelve si hay enlace o no (de hecho, indica que "no conoce la interfaz") mientras la interfaz está dada de baja (que es lo normal cuando se inicia el sistema).
     * Una alternativa viable es reemplazar el comando `mii-tool` por `ip link set group default up` (o el que corresponda a la/las interfaces disponibles) y luego verificar mediante `ip link show` que en alguna NO diga NO-CARRIER.
@@ -20,20 +22,9 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar con permisos de usuario administrador (`root`). Para obtenerlos, utilice el comando `su`.
 
-1. Verificar la/s interfaces físicas de red (NIC) que el sistema operativo haya detectado. A tal efecto utilizar el comando `ip link show`, el cual muestra las interfaces físicas y su estado (identificadas como `eth{N}` , `eno{N}` , `ens{N}f{N}`, `enp{N}s{N}`, `w{N}gN}`...) y virtuales (`lo`, `tun{N}`...).
+1. Verificar la/s interfaces físicas de red (NIC) que el sistema operativo haya detectado. A tal efecto utilizar el comando `ip link show`, el cual muestra las interfaces físicas y su estado (identificadas como `eth{N}` , `eno{N}` , `ens{N}f{N}`, `enp{N}s{N}`, `w{N}gN}`...), además de las interfaces virtuales definidas (`lo`, `tun{N}`...).
 
-
-2. Configuración del nombre del equipo:
-
-    a. Temporal: utilizando el comando `hostname`:
-
-            hostname {nombre_equipo}
-
-       donde `{nombre_equipo}` es el nombre que le corresponde al equipo según el diagrama establecido de la red.
-
-    b. Permanente: Editar el archivo `/etc/hostname`, asignando el nombre que le corresponde al equipo.
-
-3. Configuración de interfaces de red para utilizar el protocolo TCP/IP:
+2. Configuración de interfaces de red para utilizar el protocolo TCP/IP:
 
     Para asignar direcciones de red a una interfaz e iniciar el enlace, utilizar el comando:
 
@@ -50,9 +41,19 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
         ip addr show
 
-4. Verificar conectividad con al menos 2 equipos de la red utilizando el comando `ping`:
+3. Verificar conectividad con al menos 2 equipos de la red utilizando el comando `ping`:
 
         ping {DIRECCIÓN IP}
+
+4. Configuración del nombre del equipo:
+
+    a. Temporal: utilizando el comando `hostname`:
+
+            hostname {nombre_equipo}
+
+       donde `{nombre_equipo}` es el nombre que le corresponde al equipo según el diagrama establecido de la red.
+
+    b. Permanente: Editar el archivo `/etc/hostname`, asignando el nombre que le corresponde al equipo.
 
 5. Resolución de nombres de hosts a direcciones IP.
 
