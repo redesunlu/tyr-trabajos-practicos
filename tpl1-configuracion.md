@@ -20,9 +20,8 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar con permisos de usuario administrador (`root`). Para obtenerlos, utilice el comando `su`.
 
-1. Verificar que el sistema operativo haya detectado la/s interfaces físicas de red (NIC). A tal efecto utilizar el comando `dmesg` y buscar las referencias a la interfaz de red (`eth{n}` , `eno{N}` , `ens{N}f{N}` o `enp{N}s{N}`).
+1. Verificar la/s interfaces físicas de red (NIC) que el sistema operativo haya detectado. A tal efecto utilizar el comando `ip link show`, el cual muestra las interfaces físicas y su estado (identificadas como `eth{N}` , `eno{N}` , `ens{N}f{N}`, `enp{N}s{N}`, `w{N}gN}`...) y virtuales (`lo`, `tun{N}`...).
 
-    Utilizar el comando `mii-tool` para verificar el estado del enlace para cada interfaz física de red.
 
 2. Configuración del nombre del equipo:
 
@@ -75,24 +74,27 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     a. Iniciar la captura redireccionando la salida a un archivo para su posterior análisis:
 
-            tshark -n -V -f 'icmp && host Dirección_IP' > nombre_archivo
+            tcpdump -n -p -w nombre_archivo icmp && host Dirección_IP
 
         Parámetros utilizados:
 
         -n
-        : no resuelve nombres de objetos de red (por ej. nombres de host, puertos TCP y UDP)
+        : no resuelve nombres de objetos de red (por ej. nombres de host, puertos TCP y UDP).
 
-        -V
-        : muestra decodificación de protocolos para cada trama.
+        -p
+        : no capturar en modo promiscuo.
 
-        -f
+        -w
+        : guarda paquetes capturados en el archivo indicado.
+
+        icmp && host Dirección_IP
         : filtro, en este caso, sólo tramas que contengan el protocolo icmp y la dirección ip especificada.
 
     b. En otra terminal ejecutar el comando ping para enviar un mensaje ICMP Echo Request:
 
             ping Dirección_IP -c 3
 
-    c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tshark_ presionando **Ctrl+C**)
+    c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tcpdump_ presionando **Ctrl+C**)
 
     d. Analizar el volcado del programa de captura, representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
