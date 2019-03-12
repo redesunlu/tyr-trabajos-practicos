@@ -22,11 +22,11 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar con permisos de usuario administrador (`root`). Para obtenerlos, utilice el comando `su`.
 
-1. Verificar la/s interfaces físicas de red (NIC) que el sistema operativo haya detectado. A tal efecto utilizar el comando `ip link show`, el cual muestra las interfaces físicas y su estado (identificadas como `eth{N}` , `eno{N}` , `ens{N}f{N}`, `enp{N}s{N}`, `w{N}gN}`...), además de las interfaces virtuales definidas (`lo`, `tun{N}`...).
+1. Verificar la/s interfaces físicas de red (NIC) que el sistema operativo haya detectado. Para ello, utilizar el comando `ip link show`, el cual muestra las interfaces físicas y su estado. El primer dígito en cada línea es el número de interfaz (comúnmente llamada _placa de red_), el segundo texto es el nombre de la interfaz, y lo que figura entre símbolos <> es su estado.
 
-2. Configuración de interfaces de red para utilizar el protocolo TCP/IP:
+    Las interfaces con nombres `eth{N}`, `eno{N}`, `ens{N}f{N}`, `enp{N}s{N}`, `w{N}g{N}` son interfaces físicas (_hardware real_). Existe al menos una interfaz virtual denominada `lo` o `loopback` y es posible que existan otras interfaces virtuales con nombres diversos (`tun{N}`, `br{N}`, ...).
 
-    Para asignar direcciones de red a una interfaz e iniciar el enlace, utilizar el comando:
+    El primer paso de este práctico es determinar cual de todas las interfaces es la real y tomar nota de su nombre. Aparecerá en el listado con el estado _BROADCAST_.
 
         ip addr add dev {interfaz} {dirección_IP[/{prefijo_máscara]} \
            [broadcast {dir_difusión}]
@@ -41,7 +41,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
         ip addr show
 
-3. Verificar conectividad con al menos 2 equipos de la red utilizando el comando `ping`:
+3. Verificar que es posible contactar a otros 2 equipos de la red utilizando el comando `ping`:
 
         ping {DIRECCIÓN IP}
 
@@ -51,19 +51,20 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
             hostname {nombre_equipo}
 
-       donde `{nombre_equipo}` es el nombre que le corresponde al equipo según el diagrama establecido de la red.
+         donde `{nombre_equipo}` es el nombre que le corresponde al equipo según el diagrama establecido de la red.
 
     b. Permanente: Editar el archivo `/etc/hostname`, asignando el nombre que le corresponde al equipo.
+
+\pagebreak
 
 5. Resolución de nombres de hosts a direcciones IP.
 
     a. Completar el archivo `/etc/hosts` con los nombres y las direcciones de red de al menos 2 máquinas del laboratorio para la resolución local de nombres.
 
-    b. Verificar conectividad con al menos 2 equipos de la red utilizando nombres de host:
+    b. Verificar que es posible contactar otros 2 equipos de la red utilizando nombres de host ejecutando `ping {NOMBRE DE HOST}`
 
-        ping {NOMBRE DE HOST}
-
-7. Ver la tabla de ruteo definida utilizando el comando `ip route show`. ¿Cuáles son las redes accesibles?
+7. Ver la tabla de ruteo definida utilizando el comando `ip route show`.  
+   ¿Cuáles son las redes accesibles?
 
 8. Agregar la dirección `10.4.11.30` como ruta por defecto para acceder a otras redes:
 
@@ -75,7 +76,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     a. Iniciar la captura redireccionando la salida a un archivo para su posterior análisis:
 
-            tcpdump -n -p -w nombre_archivo icmp && host Dirección_IP
+            tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'icmp && host DIRECCION_IP'
 
         Parámetros utilizados:
 
@@ -88,8 +89,8 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
         -w
         : guarda paquetes capturados en el archivo indicado.
 
-        icmp && host Dirección_IP
-        : filtro, en este caso, sólo tramas que contengan el protocolo icmp y la dirección ip especificada.
+        'icmp && host DIRECCION_IP'
+        : filtrar, en este caso, sólo tramas que lleven mensajes de protocolo ICMP **y** provengan o estén destinadas a la dirección IP especificada.
 
     b. En otra terminal ejecutar el comando ping para enviar un mensaje ICMP Echo Request:
 
@@ -97,18 +98,19 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tcpdump_ presionando **Ctrl+C**)
 
-    d. Analizar el volcado del programa de captura utilizando la aplicación wireshark (o cualquier otro analizador de tráfico que permita leer archivos en formato pcap), representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
+    d. Analizar el volcado del programa de captura utilizando la aplicación wireshark (o cualquier otro analizador de tráfico que permita leer archivos en formato _pcap_), representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
+**Bibliografía**
 
-#### Bibliografía
-
-* Páginas de manual de cada comando utilizado.
+* Guía del comando TCPdump. Jeremy Stretch. Traducido al español por el equipo de LabRedes  
+  <http://www.labredes.unlu.edu.ar/files/site/data/tyr/tcpdump-esp-draft1.pdf>
 * "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 5: "Transformación de direcciones Internet en direcciones físicas.
 * "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 14.1: “Ethernet (CSMA/CD)”
-* El manual del Administrador de Debian. Raphaël Hertzog, Roland Mas. Freexian. 2016. Apéndice B: "Curso breve de emergencia"  
+* El manual del Administrador de Debian. Raphaël Hertzog, Roland Mas. Freexian. 2016.  
+  Apéndice B: "Curso breve de emergencia"  
   <https://debian-handbook.info/browse/es-ES/stable/short-remedial-course.html>
-* Tcpdump Examples: Practical examples to lift your network troubleshooting. Hacker Target Pty Ltd. 2018  
-  <https://hackertarget.com/tcpdump-examples/>
+* Tcpdump Examples: Practical examples to lift your network troubleshooting.  
+  Hacker Target Pty Ltd. 2018  <https://hackertarget.com/tcpdump-examples/>
 
 
 \pagebreak
