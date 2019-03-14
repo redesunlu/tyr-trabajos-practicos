@@ -108,7 +108,8 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
 * Guía del comando TCPdump. Jeremy Stretch. Traducido al español por el equipo de LabRedes  
   <http://www.labredes.unlu.edu.ar/files/site/data/tyr/tcpdump-esp-draft1.pdf>
-* "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 5: "Transformación de direcciones Internet en direcciones físicas.
+* "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 4: "Direcciones Internet".
+* "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 5: "Transformación de direcciones Internet en direcciones físicas".
 * "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 14.1: “Ethernet (CSMA/CD)”
 * El manual del Administrador de Debian. Raphaël Hertzog, Roland Mas. Freexian. 2016.  
   Apéndice B: "Curso breve de emergencia"  
