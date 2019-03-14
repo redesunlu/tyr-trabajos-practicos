@@ -15,6 +15,7 @@ TPL 1 - Configuración inicial de la red del laboratorio
   * Asociado a lo anterior, a los estudiantes les cuesta determinar mediante `dmesg` cual es la interfaz (además de "qué es una interfaz"), debido al reciente cambio de nomenclatura `ethN` ==> `enpNsN`.
     * Una alternativa viable es reemplazar el uso de dmesg con `ip link show`, e indicar que los números de la izquierda indican la cantidad de interfaces, y que una máquina por defecto tiene `lo` y las interfaces de red que siguen. Hay que dejarles bien claro que _interfaz_ es la denominación del dispositivo que allí aparece, y que en todo lo sucesivo donde diga _interfaz_ hay que reemplazarlo por dicho "nombre".
   * Por otro lado, hay que remover todas las referencias a ethN del TP.
+ * Ojo con el filtro de tcpdump para el ping, porque si se hace ping a la propia ip publica (o localhost), el comando no captura nada. Si se hace ping a un host externo, el filtro funciona perfectamente.
 
 #### --- Fin notas para ayudantes ---
 
