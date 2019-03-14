@@ -119,9 +119,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
   <https://debian-handbook.info/browse/es-ES/stable/short-remedial-course.html>
 * Tcpdump Examples: Practical examples to lift your network troubleshooting.  
   Hacker Target Pty Ltd. 2018  <https://hackertarget.com/tcpdump-examples/>
-
-
-\pagebreak
+* Páginas de manual de cada comando utilizado.
 
 Mapa de la red del laboratorio
 ==============================
@@ -129,5 +127,5 @@ Mapa de la red del laboratorio
 ![](images/topologia-laboratorio.png)
 
 * Dirección de red: **10.4.11.0**
-* Máscara de red: **255.255.255.0** o bien **/24**
+* Máscara de red: **/24** o bien **255.255.255.0**
 * Dirección de broadcast: **10.4.11.255**
