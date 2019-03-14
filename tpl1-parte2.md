@@ -29,6 +29,7 @@ TPL 1 parte 2 - Configuración inicial de una red utilizando netkit
 #### Bibliografía
 
 * Páginas de manual de cada comando utilizado.
+* "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 4: "Direcciones Internet".
 * "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 5: "Transformación de direcciones Internet en direcciones físicas.
 * "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 14.1: “Ethernet (CSMA/CD)”
 * "Manual de uso de Netkit"  
