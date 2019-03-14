@@ -13,6 +13,7 @@ Algunas notas varias
 - Reducir el gráfico de encaminamiento que figura en las slides, a 4 hosts con 2 routers.
 - Desarrollar más las slides de algoritmos de ruteo (DV / LS)
     - 3 slides para c/u (Bellman Ford / Dijkstra)
+    - Dar énfasis al algoritmo por sobre los protocolos
 - Cambiar simulador de Ruteo dinámico (el de _mathiaz_ no funciona?)
 
 Temario
@@ -26,7 +27,13 @@ Temario
     - Indirecta (otra red de capa 2 anexa)
 - Tabla de rutas
     - Explicar cada columna de `route`
-    - Explicar cómo se selecciona / busca la ruta elegida (AND)
+    - Explicar cómo se selecciona / busca la ruta elegida
+        - Para cada fila de la tabla de rutas
+        - Se hace DIR_DESTINO AND MASCARA-FILA
+        - Se compara contra DIR_RED de la FILA
+        - Si son iguales, enviar por la interfaz de la fila (al destino o a GW)
+        - Si son distintas, seguir revisando
+        - Eventualmente podría coincidir con varias entradas. En tal caso gana la que "mas coincide", pero no hablaremos de de Longest-Prefix-Match.
     - Explicar qué es _gateway_
     - Qué pasa si uno quiere enviar un paquete a direcciones desconocidas? (pie para default gw)
     - Explicar qué es un _default gateway_
@@ -39,10 +46,15 @@ Temario
 Hasta aquí debería llevar aproximadamente 1 hora.
 
 - Dibujar topología estilo parcial en el pizarrón y realizar ejercicio en clase.
+- Hacer previo a la clase, la tabla de rutas que sería "ideal".
 
 Esto nos debería tomar 1 hora más.
 Y el resto, lo que se pueda, para lo que sigue.
 
+- Antes de Ruteo Dyn hablar de Sistemas Autónomos.
+    - Comentar a muy alto nivel la arquitectura de Internet
+    - Comentar la administración de las tablas de rutas a gran/mediana escala
+    - Diferenciar ruteo interno (vistos) vs ruteo externo (BGP / IS-IS)
 - Preguntar qué sucede si la cantidad de redes de capa 3 se incrementa --> ir llevándolos a la necesidad de Ruteo Dyn.
 - Algoritmos de ruteo o de _mantenimiento de tablas_
     - Distance-Vector / Bellman-Ford
@@ -51,5 +63,4 @@ Y el resto, lo que se pueda, para lo que sigue.
 - Bajar a realidad _comentando_ las implementaciones de ambos
     - RIP / OSPF
     - Explicar pero no ahondar demasiado en ellos
-- Diferenciar ruteo interno (vistos) vs ruteo externo (BGP / IS-IS)
 
