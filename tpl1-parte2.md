@@ -1,7 +1,7 @@
 TPL 1 parte 2 - Configuración inicial de una red utilizando netkit
 ==================================================================
 
-**Fecha de Entrega:** Luján 22/03/2018
+**Fecha de Entrega:** Luján 28/03/2019
 
 **Objetivo:** Adquirir habilidades en el uso de la herramienta netkit-ng.
 
@@ -24,7 +24,7 @@ TPL 1 parte 2 - Configuración inicial de una red utilizando netkit
 5. Pruebe conectividad entre _pc1_, _pc2_ y _r1_ (cuya dirección IP es 10.4.11.30)
 6. Resuelva en el laboratorio los puntos 5 a 8 del TPL1, con la siguiente salvedad:
 
-    En el punto 8, en lugar utilizar tshark para realizar la captura, use el compando `vdump` desde el host.
+    En el punto 8, puede utilizar el comando `vdump` para realizar la captura desde el host, o bien el comando `tcpdump` dentro de la máquina virtual.
 
 #### Bibliografía
 
