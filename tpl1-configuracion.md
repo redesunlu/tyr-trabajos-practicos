@@ -40,27 +40,27 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
     El paso siguiente es asignar a la interfaz física una dirección de red IP según el plano anexo.
     Para ello, utilizar los siguientes comandos:
 
-        ip addr add dev {interfaz} {dirección_IP[/{prefijo_máscara]}
-        ip link set dev {interfaz} up
+        ip addr add dev INTERFAZ DIRECCIÓN_IP/PREFIJO_MÁSCARA
+        ip link set dev INTERFAZ up
 
     Por ejemplo:
 
-        ip addr add dev {interfaz} 192.168.0.143/24
-        ip link set dev {interfaz} up
+        ip addr add dev INTERFAZ 192.168.0.143/24
+        ip link set dev INTERFAZ up
 
     Verificar configuración ejecutando `ip addr show`
 
 3. Verificar que es posible contactar a otros 2 equipos de la red utilizando el comando `ping`:
 
-        ping {DIRECCIÓN IP}
+        ping DIRECCION_IP
 
 4. Configuración del nombre del equipo:
 
     a. Temporal: utilizando el comando `hostname`:
 
-            hostname {nombre_equipo}
+            hostname NOMBRE_EQUIPO
 
-         donde `{nombre_equipo}` es el nombre que le corresponde al equipo según el diagrama establecido de la red.
+         donde `NOMBRE_EQUIPO` es el nombre que le corresponde al equipo según el diagrama establecido de la red y se debe escribir en minúsculas.
 
     b. Permanente: Editar el archivo `/etc/hostname`, asignando el nombre que le corresponde al equipo.
 
@@ -70,7 +70,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     a. Completar el archivo `/etc/hosts` con los nombres y las direcciones de red de al menos 2 máquinas del laboratorio para la resolución local de nombres.
 
-    b. Verificar que es posible contactar otros 2 equipos de la red utilizando nombres de host ejecutando `ping {NOMBRE DE HOST}`
+    b. Verificar que es posible contactar otros 2 equipos de la red utilizando nombres de host ejecutando `ping NOMBRE_OTRO_EQUIPO`
 
 7. Ver la tabla de ruteo definida utilizando el comando `ip route show`.  
    ¿Cuáles son las redes accesibles?
@@ -103,7 +103,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     b. En otra terminal ejecutar el comando ping para enviar un mensaje ICMP Echo Request:
 
-            ping Dirección_IP -c 3
+            ping DIRECCION_IP -c 3
 
     c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tcpdump_ presionando **Ctrl+C**)
 
