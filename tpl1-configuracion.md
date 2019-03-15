@@ -8,13 +8,6 @@ TPL 1 - Configuración inicial de la red del laboratorio
 #### Notas para ayudantes
 
 * Por Florge 2019. Cambiado dmesg por ip link, . ¿Será necesario poner una salida de ip link show explicándola? tshark por tcpdump, y reordenado el punto de asignar nombre al host.
-
-* Durante la primera práctica de 2018 encontramos las siguientes cuestiones para resolver/corregir:
-  * En el punto 1, la herramienta `mii-tool` no devuelve si hay enlace o no (de hecho, indica que "no conoce la interfaz") mientras la interfaz está dada de baja (que es lo normal cuando se inicia el sistema).
-    * Una alternativa viable es reemplazar el comando `mii-tool` por `ip link set group default up` (o el que corresponda a la/las interfaces disponibles) y luego verificar mediante `ip link show` que en alguna NO diga NO-CARRIER.
-  * Asociado a lo anterior, a los estudiantes les cuesta determinar mediante `dmesg` cual es la interfaz (además de "qué es una interfaz"), debido al reciente cambio de nomenclatura `ethN` ==> `enpNsN`.
-    * Una alternativa viable es reemplazar el uso de dmesg con `ip link show`, e indicar que los números de la izquierda indican la cantidad de interfaces, y que una máquina por defecto tiene `lo` y las interfaces de red que siguen. Hay que dejarles bien claro que _interfaz_ es la denominación del dispositivo que allí aparece, y que en todo lo sucesivo donde diga _interfaz_ hay que reemplazarlo por dicho "nombre".
-  * Por otro lado, hay que remover todas las referencias a ethN del TP.
 * Ojo con el filtro de tcpdump para el ping, porque si se hace ping a la propia IP publica (sea de localhost o de la interfaz física), el comando no captura nada. Si se hace ping a un host externo, el filtro funciona perfectamente. En wireshark pasa exactamente lo mismo. Hay confirmación del comportamiento en un [hilo de StackOverflow](https://unix.stackexchange.com/questions/491859/ping-uses-localhost-instead-of-public-ip-address) y en un [mensaje de lista de correo de 2008](https://groups.google.com/d/msg/comp.protocols.tcp-ip/TNkCcZWV3e4/RZ2LVPTsA98J). **La "solución" mas sencilla es hacer ping a otro host.**  
 Quizás la mejor explicación sea esta:
     > Physically, if it actually went out on eth0 it wouldn't be received, an Ethernet interface doesn't "hear" what it's sending. So in any case, there needs to be a shortcut somewhere that says "oh this is a local packet, it must be handled locally". Probably easier to redirect the packet to lo0 than adding a "handle outbound traffic as inbound path", though one would have to check the relevant RFCs for correctness. – [jcaron Jan 1 at 13:20](https://unix.stackexchange.com/questions/491859/ping-uses-localhost-instead-of-public-ip-address#comment902770_491859)
@@ -131,3 +124,14 @@ Mapa de la red del laboratorio
 * Dirección de red: **10.4.11.0**
 * Máscara de red: **/24** o bien **255.255.255.0**
 * Dirección de broadcast: **10.4.11.255**
+
+#### Notas para ayudantes - Cuestiones ya resueltas
+
+* Durante la primera práctica de 2018 encontramos las siguientes cuestiones para resolver/corregir:
+  * En el punto 1, la herramienta `mii-tool` no devuelve si hay enlace o no (de hecho, indica que "no conoce la interfaz") mientras la interfaz está dada de baja (que es lo normal cuando se inicia el sistema).
+    * Una alternativa viable es reemplazar el comando `mii-tool` por `ip link set group default up` (o el que corresponda a la/las interfaces disponibles) y luego verificar mediante `ip link show` que en alguna NO diga NO-CARRIER.
+  * Asociado a lo anterior, a los estudiantes les cuesta determinar mediante `dmesg` cual es la interfaz (además de "qué es una interfaz"), debido al reciente cambio de nomenclatura `ethN` ==> `enpNsN`.
+    * Una alternativa viable es reemplazar el uso de dmesg con `ip link show`, e indicar que los números de la izquierda indican la cantidad de interfaces, y que una máquina por defecto tiene `lo` y las interfaces de red que siguen. Hay que dejarles bien claro que _interfaz_ es la denominación del dispositivo que allí aparece, y que en todo lo sucesivo donde diga _interfaz_ hay que reemplazarlo por dicho "nombre".
+  * Por otro lado, hay que remover todas las referencias a ethN del TP.
+
+#### --- Fin notas para ayudantes ---
