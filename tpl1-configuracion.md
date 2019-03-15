@@ -25,11 +25,15 @@ Quizás la mejor explicación sea esta:
 
 Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar con permisos de usuario administrador (`root`). Para obtenerlos, utilice el comando `su`.
 
-1. Verificar la/s interfaces físicas de red (NIC) que el sistema operativo haya detectado. Para ello, utilizar el comando `ip link show`, el cual muestra las interfaces físicas y su estado. El primer dígito en cada línea es el número de interfaz (comúnmente llamada _placa de red_), el segundo texto es el nombre de la interfaz, y lo que figura entre símbolos <> es su estado.
+1. Verificar la/s interfaces físicas de red (comúnmente llamada _placa de red_ o _NIC_) que el sistema operativo haya detectado. A tal efecto, ejecutar los comandos siguientes en el orden indicado:
 
-    Las interfaces con nombres `eth{N}`, `eno{N}`, `ens{N}f{N}`, `enp{N}s{N}`, `w{N}g{N}` son interfaces físicas (_hardware real_). Existe al menos una interfaz virtual denominada `lo` o `loopback` y es posible que existan otras interfaces virtuales con nombres diversos (`tun{N}`, `br{N}`, ...).
+        ip link set group default up
+        ip link show
 
-    El primer paso de este práctico es determinar cual de todas las interfaces es la real y tomar nota de su nombre. Aparecerá en el listado con el estado _BROADCAST_.
+    El primer comando activa todas las interfaces de red disponibles, mientras que el segundo las lista en pantalla. Cada interfaz posee un nombre que la identifica. Las interfaces con nombres `eth{N}`, `eno{N}`, `ens{N}f{N}`, `enp{N}s{N}`, `w{N}g{N}` son interfaces físicas (_hardware real_). Existe al menos una interfaz virtual denominada `lo` o `loopback` y es posible que existan otras interfaces virtuales con nombres diversos (`tun{N}`, `br{N}`, ...).
+    
+    El primer paso de este práctico es determinar cual de todas las interfaces es la real.  
+    Para ello, buscar el nombre de la interfaz cuyo estado (aquello que figura entre `<>`) contiene los términos `BROADCAST` y `LOWER_UP`.
 
 2. Configuración de interfaces de red para utilizar el protocolo TCP/IP.
 
@@ -44,9 +48,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
         ip addr add dev {interfaz} 192.168.0.143/24
         ip link set dev {interfaz} up
 
-    Verificar configuración con:
-
-        ip addr show
+    Verificar configuración ejecutando `ip addr show`
 
 3. Verificar que es posible contactar a otros 2 equipos de la red utilizando el comando `ping`:
 
