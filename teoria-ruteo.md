@@ -81,14 +81,46 @@ Y el resto, lo que se pueda, para lo que sigue.
     - Metodo para calcular el camino mas corto.
 - Algoritmos de ruteo o de _mantenimiento de tablas_
     - Distance-Vector / Bellman-Ford
+      - Hay ejemplo en peterson de una [topologia sencilla](#ejemplos-de-topología).
+      - Explicar uno o dos iteraciones?
+      - Cuenta al infinito. Escenario con topologia de Peterson.
+        - Se cae enlace entre A y E. A actualiza su costo a E a infinito.
+        - B y C anuncian que tienen costo 2 para llegar a E.
+        - B entonces descarta A (infinito) pero C anuncia costo 2, y por lo tanto puede llegar con costo 3 por C. Anuncia esto a A y B.
+        - A concluye que puede alcanzar a E con costo 4 por B. Anuncia a C.
+        - C concluye que puede alcanzar E a costo 5 por A. Y asi.
+      - Cuenta al infinito: soluciones
+        - Reducir el numero que signifique infinito (p.e. 16). Impone una longitud máxima de la red
+        - *Split Horizont*. Consiste en no anunciar las rutas a los nodos de los cuales fueron aprendidas.
+        - *Split Horizont with poison reverse*: Variante de mayor fortaleza, donde en lugar de no anunciar una ruta al nodo del cual la aprendimos, se le envía la misma con información negativa, por ejemplo infinito.
+        - Esto solo evitaba los problemas en loops pequeños (2 nodos). En redes mas grandes había que implementar técnicas mas complejas que hacían que los tiempos de convergencias sean bastantes altos.
     - Link-State / Dijkstra
+    - Luego de los ejemplos, esta bueno recapitular:
+      - Convergencia: Proceso mediante el cual la información de ruteo queda consistente en todos los nodos de la topología.
+      - Ningún nodo conoce el estado **global**, solo su tabla de rutas.
+      - Cuando un nodo decide enviar actualizaciones a vecinos.
+        - Con cierta frecuencia fija (típicamente segundos), aunque no haya cambios (ayuda a saber que el nodo esta activo)
+        - Disparado por una novedad en algún vecino.
 - Explicar ambos con ejemplos
 - Bajar a realidad _comentando_ las implementaciones de ambos
-    - RIP / OSPF
+    - RIP
+      - Protocolo que implementa un algoritmo de ruteo basado en vector de distancias
+      - Es un protocolo muy sencillo. Su PDU es muy sencilla. (Ejemplo abajo)
+      - Actualizaciones cada 30 seg.
+      - Los enlaces tienen costo 1. (costo es la cantidad de saltos)
+    - OSPF
     - Explicar pero no ahondar demasiado en ellos
 
 ## Ejemplos de Topología
 
-### Peterson
+### Peterson: Vector Distancia
 
 ![Ejemplo de Distance-Vector de Peterson](./images/routing-peterson-distance-vector-graph.png)
+
+![](./images/routing-peterson-initial-global-distance-all-nodes.png)
+
+![](./images/routing-peterson-initial-routing-table-node-a.png)
+
+![](./images/routing-peterson-final-routing-table-node-a.png)
+
+![](./images/routing-peterson-rip-packet.png)
