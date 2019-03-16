@@ -87,8 +87,8 @@ Y el resto, lo que se pueda, para lo que sigue.
     - RIP / OSPF
     - Explicar pero no ahondar demasiado en ellos
 
-## Ejemplos
+## Ejemplos de Topología
 
 ### Peterson
 
-![Ejemplo de Distance-Vector de Peterson](/home/tomas/workspace/tyr-wiki/images/routing-peterson-distance-vector-graph.png)
+![Ejemplo de Distance-Vector de Peterson](./images/routing-peterson-distance-vector-graph.png)
