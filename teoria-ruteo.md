@@ -109,6 +109,11 @@ Y el resto, lo que se pueda, para lo que sigue.
       - Actualizaciones cada 30 seg.
       - Los enlaces tienen costo 1. (costo es la cantidad de saltos)
     - OSPF
+      - Implementa estado del enlace (Dijkstra)
+      - Inicialmente todos los nodos comparten sus enlaces directos con todo el resto de la red
+      - Esto es condición suficiente que el resto de los nodos conozcan todo el estado de la red (a diferencia de vector distancia) y pueda aplicar el algoritmo de camino mas corto
+      - 2 mecanismos: Diseminación confiable de los estados-enlace y calculo del camino mas corto
+      - Diseminación via *flooding*.
     - Explicar pero no ahondar demasiado en ellos
 
 ## Ejemplos de Topología
