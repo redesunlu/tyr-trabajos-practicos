@@ -116,6 +116,12 @@ Y el resto, lo que se pueda, para lo que sigue.
       - 2 mecanismos: Diseminación confiable de los estados-enlace y calculo del camino mas corto
       - Diseminación via *flooding*.
     - Explicar pero no ahondar demasiado en ellos
+    - Métricas
+      - 1 por link. Entonces, el costo indica la cantidad de saltos.
+        - 1 enlace satelital con alta latencia vale igual que 1 enlace de fibra
+        - Tampoco por capacidad del canal
+      - Tamaño de la cola de paquetes
+      - Combinación de latencia y ancho de banda y tipo de enlace.
 
 ## Ejemplos de Topología
 
