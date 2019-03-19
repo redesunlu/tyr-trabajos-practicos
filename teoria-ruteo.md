@@ -95,6 +95,7 @@ Y el resto, lo que se pueda, para lo que sigue.
         - *Split Horizont with poison reverse*: Variante de mayor fortaleza, donde en lugar de no anunciar una ruta al nodo del cual la aprendimos, se le envía la misma con información negativa, por ejemplo infinito.
         - Esto solo evitaba los problemas en loops pequeños (2 nodos). En redes mas grandes había que implementar técnicas mas complejas que hacían que los tiempos de convergencias sean bastantes altos.
     - Link-State / Dijkstra
+      - Ejemplo de topologia y Shortest Path en Peterson
     - Luego de los ejemplos, esta bueno recapitular:
       - Convergencia: Proceso mediante el cual la información de ruteo queda consistente en todos los nodos de la topología.
       - Ningún nodo conoce el estado **global**, solo su tabla de rutas.
@@ -129,3 +130,10 @@ Y el resto, lo que se pueda, para lo que sigue.
 ![](./images/routing-peterson-final-routing-table-node-a.png)
 
 ![](./images/routing-peterson-rip-packet.png)
+
+### Peterson: Djikstra
+
+![](./images/routing-peterson-link-state-graph.png)
+
+![](./images/routing-peterson-dijkstra-table.png)
+
