@@ -8,23 +8,23 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
     Acuerde con otro compañero en los roles iniciales que tendrá cada uno y el número de puerto a utilizar. Realice una captura de todo el proceso utilizando la herramienta `tcpdump`, guardándola en un archivo en formato _pcap_ para su posterior análisis:
 
-            tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'icmp && host DIRECCION_IP'
+        tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'icmp && host DIRECCION_IP'
 
     En el host que actuará como servidor, inicie el proceso `nc`, indicando que abra un número de puerto dado en modo de _escucha_ o _listening_. Para ello, ejecute:
 
-            nc -­l NRO_DE_PUERTO
+        nc -­l NRO_DE_PUERTO
 
     Verifique desde otra terminal que el proceso esté en "escucha" en el puerto indicado ejecutando:
 
-            netstat -­ltnp
+        netstat -­ltnp
 
     o bien
 
-            ss -­ltnp
+        ss -­ltnp
 
     En el host que actuará como cliente, inicie el proceso `nc`, indicando que realice una conexión al servidor y puerto dados. Para ello, ejecute:
 
-            nc IP_HOST_SERVIDOR NRO_DE_PUERTO
+        nc IP_HOST_SERVIDOR NRO_DE_PUERTO
 
     Una vez establecida la conexión, la entrada estándar del proceso _nc_ se reenviará al otro extremo del socket, donde la instancia par de _nc_ la copiará en su salida estándar, creando una suerte de "chat". Ahora pruebe escribir mensajes en su consola, recordando que la comunicación es bidireccional. Una vez realizado el intercambio de mensajes en ambos sentidos, puede finalizar la conexión enviando EOF (Ctrl+D) o deteniendo el proceso _nc_ (Ctrl+C) desde cualquiera de los hosts.
 
@@ -49,7 +49,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
         apt-get install telnet telnetd
 
-4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante `ps`), y finalice la sesión, realizando una captura de todo el proceso utilizando `tcpdump`. Para ello comience la captura y luego ejecute:
+4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante `ps`), y finalice la sesión escribiendo el comando `exit`, realizando una captura de todo el proceso utilizando `tcpdump`. Para ello comience la captura y luego ejecute:
 
         telnet IP-HOST-DESTINO
 
