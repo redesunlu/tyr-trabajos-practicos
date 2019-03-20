@@ -8,7 +8,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
     Acuerde con otro compañero en los roles iniciales que tendrá cada uno y el número de puerto a utilizar. Realice una captura de todo el proceso utilizando la herramienta `tcpdump`, guardándola en un archivo en formato _pcap_ para su posterior análisis:
 
-        tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'icmp && host DIRECCION_IP'
+        tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'tcp && host DIRECCION_IP'
 
     En el host que actuará como servidor, inicie el proceso `nc`, indicando que abra un número de puerto dado en modo de _escucha_ o _listening_. Para ello, ejecute:
 
@@ -39,7 +39,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
         tshark -­r NOMBRE_ARCHIVO.PCAP ­-O tcp
         tshark -­r NOMBRE_ARCHIVO.PCAP -­nqz follow,tcp,hex,0
 
-    Realice un diagrama representando el intercambio de tramas indicando las que corresponden a protocolos auxiliares (si existen), al establecimiento y cierre de la conexión TCP y a las de transmisión de datos a nivel aplicación.
+    Realice un diagrama representando el intercambio de tramas indicando las que corresponden al establecimiento y cierre de la conexión TCP y a las de transmisión de datos a nivel aplicación.
 
 2. Describa someramente el protocolo Telnet. Características y usos.
 
@@ -49,7 +49,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
         apt-get install telnet telnetd
 
-4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante `ps`), y finalice la sesión escribiendo el comando `exit`, realizando una captura de todo el proceso utilizando `tcpdump`. Para ello comience la captura y luego ejecute:
+4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante `ps`), y finalice la sesión (escribiendo el comando `exit`), realizando una captura de todo el proceso utilizando `tcpdump`. Para ello comience la captura y luego ejecute:
 
         telnet IP-HOST-DESTINO
 
