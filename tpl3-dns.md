@@ -44,7 +44,7 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
     Complete la planilla adjunta a partir de las definiciones previas.
 
-5. Instale e inicie en el entorno netkit el laboratorio de dns provisto por los docentes disponible en  http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_dns-TYR.tar.gz y realice las siguientes actividades:
+5. Instale e inicie en el entorno netkit el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_dns-TYR.tar.gz> y realice las siguientes actividades:
 
     a. Inicie una captura desde el host.
     b. Desde pc1.lugroma3.org, ejecute el comando `ping -c 4 pc2.nanoinside.net`
