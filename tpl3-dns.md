@@ -47,9 +47,9 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 5. Instale e inicie en el entorno netkit el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_dns-TYR.tar.gz> y realice las siguientes actividades:
 
     a. Inicie una captura desde el host.
-    b. Desde pc1.lugroma3.org, ejecute el comando `ping -c 4 pc2.nanoinside.net`
+    b. Desde _pc1.lugroma3.org_, ejecute el comando `ping -c 4 pc2.nanoinside.net`
     c. Una vez recibidas las 4 respuestas ICMP, detenga la captura.
-    d. Analice la captura y describa cómo es el proceso de resolución de nombres para determinar la dirección ip de pc2.nanoinside.net, representando gráficamente el intercambio de mensajes dns, e indicando el propósito de cada uno.
+    d. Analice la captura y describa cómo es el proceso de resolución de nombres para determinar la dirección ip de _pc2.nanoinside.net_, representando gráficamente el intercambio de mensajes dns, e indicando el propósito de cada uno.
 
 6. Analice la captura `captura_ejemplo_dns.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particular que observe en la misma?
 
@@ -68,9 +68,9 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 #### Recursos en Internet
 * Para cada uno de los protocolos desarrollados a lo largo de la cursada, busque cuales son los Request For Comments (RFC) o Internet Draft que los describen, siguiendo la cadena de actualizaciones. Recurra a 
 <http://www.faqs.org>, <http://www.rfc-editor.org> y <http://www.ietf.org>
-* HERTZOG, R., MAS, R., Capítulo 10.6: "Servidores de nombres de dominio (DNS)" en _El libro del administrador de Debian_.  
+* HERTZOG, R., MAS, R., Capítulo 10.6: "Servidores de nombres de dominio (DNS)" en _El libro del administrador de Debian_.
   Disponible en <http://debian-handbook.info/browse/es-ES/stable/sect.domain-name-servers.html>
-* LUPI, F. 2014. Capítulo 26: "The Domain Name System" en _The NetBSD Guide_. The NetBSD Foundation  
+* LUPI, F. 2014. Capítulo 26: "The Domain Name System" en _The NetBSD Guide_. The NetBSD Foundation.
   Disponible en <https://www.netbsd.org/docs/guide/en/chap-dns.html>
 
 \pagebreak
@@ -79,13 +79,13 @@ Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr.example`
 ===============================================================
 
     Nombre de la zona DNS: ______________.tyr.example
-    Nombre del servidor DNS: ________________.tyr.example
+    Nombre del servidor DNS: ______.____________.tyr.example
     Dirección de correo del contacto: _______________________________
     Número de serie de la zona: ___________
     Tiempo de vida en caché: _____ segundos
 
 
-#### Resource Records (RR)
+#### Resource Records (RR) para *.SU-NRO-LEGAJO.tyr.example
 
 | Nombre de Host | Clase | Tipo de RR | Datos del RR     | Comentario |
 | -------------- | :---: | :--------: | ---------------- | ---------- |
@@ -105,7 +105,7 @@ Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr.example`
 
 | Nombre de Host               | Clase | Tipo de RR | Datos del RR         | Comentario |
 | ---------------------------- | :---: | :--------: | -------------------- | ---------- |
-| 35.103.210.170.in-addr.arpa. |  IN   |    PTR     | cidetic.tyr.example  | (ejemplo)  |
+| 35.103.210.170.in-addr.arpa. |  IN   |    PTR     | cidetic.LEGAJO.tyr.example  | (ejemplo)  |
 |                              |  IN   |            |                      |            |
 |                              |  IN   |            |                      |            |
 |                              |  IN   |            |                      |            |
