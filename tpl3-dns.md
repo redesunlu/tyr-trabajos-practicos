@@ -1,7 +1,7 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** Luján 12/04/2018
+**Fecha de Entrega:** Luján 11/04/2019
 
 **Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
@@ -23,24 +23,24 @@ Ejercicio removido en 2018 por florge-maurom
 1. Describa el objetivo del sistema DNS, su estructura, elementos que intervienen y 
 tipos de datos (Resource Records) típicos que se pueden consultar.
 
-2. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien al de acceso público `8.8.8.8`) para obtener la siguiente información: 
+2. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien alguno de acceso público tal como `8.8.8.8` o `1.1.1.1`) para obtener la siguiente información:
 
-    a. ¿Cuál es la dirección IP del host `straval.unlu.edu.ar`?
+    a. ¿Cuál es la dirección IP del host `redhidro.unlu.edu.ar`?
     b. ¿Cuál es la dirección IP del host `resoluciones.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
-    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unl.edu.ar`?
-    d. ¿Cuál es el nombre del host cuya dirección IP es `170.210.103.35`?
-    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `ripe.net`?
-    f. ¿Cuál es la dirección IPv6 del host `www.icann.org`?
+    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unp.edu.ar`?
+    d. ¿Cuál es el nombre del host cuya dirección IP es `170.210.96.90`?
+    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `arin.net`?
+    f. ¿Cuál es la dirección IPv6 del host `www.ietf.org`?
 
-3. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `afip.gov.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
+3. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `argentina.gob.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
 
-4. Defina cómo estará compuesta la zona de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `SU-NRO-LEGAJO.tyr` (suponiendo que `.tyr ` es un TLD), definiendo:
+4. Defina cómo estará compuesta la zona de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `SU-NRO-LEGAJO.tyr.example` (`.example` es un TLD reservado para uso en documentación y ejemplos), definiendo:
 
     a. El nombre de su host en el nuevo dominio, y su respectivo puntero reverso.
     b. El host `ns1` como `10.4.11.30` y el respectivo reverso.
     c. Su propio host y `ns1` como name servers del dominio.
     d. Al menos otras 2 máquinas del aula, siguiendo el mapa de red del laboratorio, identificando a los equipos con su nuevo dominio, y sus respectivos punteros reversos.
-    e. Alias para `www.SU-NRO-LEGAJO.tyr` y `ftp.SU-NRO-LEGAJO.tyr` que devuelvan su propia dirección IP.
+    e. Alias para `www.SU-NRO-LEGAJO.tyr.example` y `ftp.SU-NRO-LEGAJO.tyr.example` que devuelvan su propia dirección IP.
 
     Complete la planilla adjunta a partir de las definiciones previas.
 
@@ -75,11 +75,11 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
 \pagebreak
 
-Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr`
+Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr.example`
 ===============================================================
 
-    Nombre de la zona DNS: ______________.tyr
-    Nombre del servidor DNS: ________________.tyr
+    Nombre de la zona DNS: ______________.tyr.example
+    Nombre del servidor DNS: ________________.tyr.example
     Dirección de correo del contacto: _______________________________
     Número de serie de la zona: ___________
     Tiempo de vida en caché: _____ segundos
@@ -89,7 +89,7 @@ Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr`
 
 | Nombre de Host | Clase | Tipo de RR | Datos del RR     | Comentario |
 | -------------- | :---: | :--------: | ---------------- | ---------- |
-| straval        |  IN   | A          | 190.104.80.57    | (ejemplo)  |
+| cidetic        |  IN   |     A      | 170.210.103.35   | (ejemplo)  |
 |                |  IN   |            |                  |            |
 |                |  IN   |            |                  |            |
 |                |  IN   |            |                  |            |
@@ -103,11 +103,11 @@ Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr`
 
 #### Zona de Punteros Reversos
 
-| Nombre de Host              | Clase | Tipo de RR | Datos del RR      | Comentario |
-| --------------------------- | :---: | :--------: | ----------------- | ---------- |
-| 57.80.104.190.in-addr.arpa. |  IN   |    PTR     | straval.unlu.edu.ar. | (ejemplo)  |
-|                             |  IN   |            |                   |            |
-|                             |  IN   |            |                   |            |
-|                             |  IN   |            |                   |            |
-|                             |  IN   |            |                   |            |
-|                             |  IN   |            |                   |            |
+| Nombre de Host               | Clase | Tipo de RR | Datos del RR         | Comentario |
+| ---------------------------- | :---: | :--------: | -------------------- | ---------- |
+| 35.103.210.170.in-addr.arpa. |  IN   |    PTR     | cidetic.tyr.example  | (ejemplo)  |
+|                              |  IN   |            |                      |            |
+|                              |  IN   |            |                      |            |
+|                              |  IN   |            |                      |            |
+|                              |  IN   |            |                      |            |
+|                              |  IN   |            |                      |            |
