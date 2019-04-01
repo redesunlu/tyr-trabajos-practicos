@@ -23,11 +23,12 @@ Temario
         - Nodos: Dispositivos (finales e intermedios)
         - Aristas: Enlaces de red
     - Recordar conmutación de paquetes y la decisión de por dónde se (re)enviará un paquete.
-        - En circuitos virtuales solo es un problema en la fase de establecimiento de la conexion
+        - En circuitos virtuales solo es un problema en la fase de establecimiento de la conexión
         - En una red de datagramas, no existe un camino, sino que la decisión del próximo salto se va tomando en cada nodo intermedio, para cada datagrama.
     - Partir de una red de capa 2 (LAN), consultar si es posible cursar paquetes allí; extender a dos redes interconectadas. Cómo es posible cursar un paquete de una a otra y viceversa?
-    - Richard Martin discrimina Ruteo vs Reenvío. _Rutear_ es tomar la decisión de por donde (re)enviar un paquete. _Reenviar_ es la acción siguiente: (re)inyectarlo en el medio.
-    - Se trata entonces de ver como cada nodo intermedio dispone de TODA la información necesaria para tomar la mejor decisión posible sobre el proximo salto de cada datagrama.
+    - Richard Martin discrimina Ruteo vs Reenvío. _Rutear_ es tomar la decisión de por donde (re)enviar un paquete. _Reenviar_ es la acción siguiente: (re)inyectarlo en el medio. Kurose plantea la misma diferencia, y ademas dice que son las 2 funciones principales de la capa.
+        - Analogía de la diferencia entre estos dos conceptos sacada de Kurose: Si se piensa en un viaje en coche entre 2 localidades diferentes (Por ejemplo, Luján y Mar del Plata), **Ruteo** es la acción de detenerse al costado de la ruta al llegar a una nueva localidad, tomar el mapa de la provincia de Buenos Aires, buscar en dicho mapa la ruta adecuada para ir a la siguiente localidad y tomar la decisión de seguir por dicho camino. Por otro lado, **Reenvío** es la acción de volver a la ruta, tomar el camino decidido y dirigirse hacia la nueva localidad. (Puede ir a una slide o no según si se ve didáctico).
+    - Se trata entonces de ver como cada nodo intermedio dispone de TODA la información necesaria para tomar la mejor decisión posible sobre el próximo salto de cada datagrama.
         - Estructura: Tabla de rutas (como se llena dicha tabla?)
     - Objetivo: encontrar el camino mas corto entre 2 nodos
 - Explicar tipo de entrega
@@ -82,6 +83,7 @@ Y el resto, lo que se pueda, para lo que sigue.
 - Algoritmos de ruteo o de _mantenimiento de tablas_
     - Distance-Vector / Bellman-Ford
       - Hay ejemplo en peterson de una [topologia sencilla](#ejemplos-de-topología).
+      - Me gusto mucho esta imagen para explicar Vector de Distancia. ![](images/routing-kurose-distance-vector-algorithm-example.png)
       - Explicar uno o dos iteraciones?
       - Cuenta al infinito. Escenario con topologia de Peterson.
         - Se cae enlace entre A y E. A actualiza su costo a E a infinito.
