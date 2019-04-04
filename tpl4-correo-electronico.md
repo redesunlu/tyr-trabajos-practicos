@@ -1,28 +1,14 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** Luján 26/04/2018
+**Fecha de Entrega:** Luján 24/04/2019
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
 #### Notas para ayudantes
 
-* Podría adicionarse un ejercicio en el cual el estudiante deba
-  obtener el código fuente de un mensaje de correo electrónico de tipo SPAM
-  que posea en su casilla (mensaje tipo RFC 822), lo adjunte al trabajo,
-  e indique:
-
-    * La semántica y el valor de los campos de encabezado que se ven en clase
-      (From, To, CC, Date, Subject, Reply-To, MIME-Version, Content-Type),
-    * El valor del Return-Path y si coincide con el valor del campo From,
-    * La lista de servidores SMTP por los que fue pasando el mensaje
-      (encabezados que comienzan con Received from), la hora en la que pasó
-      por cada uno de ellos y qué protocolo se utilizó en la transferencia.
-    * Si es MIME de tipo multipart/*, determinar para qué se utiliza el valor
-      del dato `boundary`. Cuantos bloques componen el mensaje, qué tipo de
-      contenido (Content-Type) y qué codificación se utiliza
-      (Content-Transfer-Encoding) en cada bloque,
-    * algo más que consideren interesante?
+* Agregué el ejercicio 9 donde los estudiantes deben obtener el código fuente
+  de un mensaje de correo electrónico de tipo SPAM que posea en su casilla.
 
     Pido un mensaje de SPAM para no lidiarme con todo el tema de la
     confidencialidad y demás. Un spam no debería tener datos privados.
@@ -45,7 +31,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 7. ¿Para qué se definió la extensión MIME? Describa cómo se implementa y los diferentes tipos de contenidos y codificación MIME.
 
 8. Instale e inicie en el entorno **netkit** el laboratorio de email provisto por los docentes, disponible en
-<http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_email-TYR.tar.gz> y realice las siguientes actividades:
+<https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_email.tar.gz> y realice las siguientes actividades:
 
     1. Inicie una captura desde el host.
     2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje cuyo remitente sea `su-nombre@lugroma3.org` destinado a la cuenta de correo `guest@nanoinside.net`.
@@ -58,6 +44,25 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
 
 9. Utilizando `nc`, conéctese al servidor SMTP indicado por el docente (puerto 25) y envíele un mensaje. El mismo debe cumplir con los requisitos de la RFC 5322, indicará en FROM su apellido y legajo, y un cuerpo del mensaje tipo MIME Text/Plain donde debe responder cuales son los campos de encabezado obligatorios según RFC5322.
+
+9. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
+   utilizando el menú ". . .", descargue el código RFC 822 del mismo (en Gmail
+   corresponde a la opción _Mostrar original_, en Outlook a _Ver origen del
+   mensaje_, en Yahoo a _Ver mensaje original_, etc).  
+   Analice los encabezados del mensaje e indique:
+
+    * La semántica y el valor de los campos de encabezado vistos en clase
+      (From, To, CC, Date, Subject, Reply-To, MIME-Version, Content-Type),
+    * El valor del campo Return-Path y si coincide con el valor del campo From,
+    * La lista de servidores SMTP por los que fue pasando el mensaje
+      (encabezados que comienzan con `Received: from`), la hora en la que pasó
+      por cada uno de ellos y qué protocolo se utilizó en la transferencia
+      (indicado por `with ...`).
+    * Si es MIME de tipo _multipart/*_, determinar para qué se utiliza el valor
+      del dato `boundary`, cuantos bloques componen el mensaje, qué tipo de
+      contenido (Content-Type) y qué codificación se utiliza
+      (Content-Transfer-Encoding) en cada bloque,
+
 
 #### Bibliografía
 
