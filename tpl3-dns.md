@@ -11,6 +11,19 @@ TPL 3 - Domain Name System
   <http://cereal.forest.usf.edu/linux/L3/w02-dns_proxy/O4L01/online-module-guide.pdf>
 * Para la próxima consultar los NS de `www.telecom.com.ar` y consultar que tienen de curioso.  
   (gulp.arnet.com.ar, oktubre.arnet.com.ar, lobosuelto.arnet.com.ar, corderoatado.arnet.com.ar)
+* El punto 7 se refiere a las funciones que existen (llamadas a sistema operativo)
+  para hacer consultas DNS en un programa que uno está escribiendo. Vale decir,
+  si se está programando en C/C++, qué funciones se utilizan para convertir un
+  nombre de host en IP y viceversa, por ejemplo.
+* Respecto al punto 8, entre los Top-Level-Domains, como también entre los
+  subdominios que figuran dentro de .ar, .es, etc. hay dominios o zonas que son
+  especiales y para obtener un subdominio dentro de ellas es necesario cumplir
+  ciertos requisitos adicionales. Vale decir, no cualquiera puede obtener un
+  dominio de estos tipo. Un ejemplo es ".mil", a nivel global, y ".mil.ar" a
+  nivel nacional, donde ambos están reservados para ciertas organizaciones.  
+  La idea es que los estudiantes investiguen sobre algunos de estos dominios o
+  zonas especiales y qué requisitos hay que cumplir para obtener un subdominio
+  dentro de ".org.ar".
 
 Ejercicio removido en 2018 por florge-maurom
 8. Acceda a la herramienta en línea de reporte DNS <http:/www.howismydns.com/> y solicite chequear el dominio 
