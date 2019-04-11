@@ -1,7 +1,7 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** Luján 26/04/2018
+**Fecha de Entrega:** Luján 2/05/2018
 
 #### Notas para ayudantes
 
@@ -9,7 +9,8 @@ TPL 5 - World Wide Web - HTTP
 
 - Los ejercicios con netcat incorporan los argumentos `-v` para que indique
   si se estableció bien la conexión TCP y `-C` (mayúscula) para que los Enter
-  se envíen como `<cr><lf>`. 
+  se envíen como `<cr><lf>`.
+- netcat-tradicional devualve inmediatamente el prompt con conection close, netcat-openbsd no, el server manda el fin, el cliente confirma el fin pero no cierra en el otro sentido. Al intentar anviar algo mas el server responde con rst y recién ahí el nc termina.
 - Al final de este documento están las expectativas de respuesta para los
   ejercicios 11 a 14 que involucran python.
 
