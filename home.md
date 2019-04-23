@@ -59,6 +59,8 @@ Teleinformática y Redes
 
 - [Trabajo Práctico Integrador 2017 y previos](./receta-tp-integrador-2017)
 
+- [Preguntas para examen, con respuesta esperada](./preguntas)
+
 #### Pasos para generar los Trabajos Prácticos en PDF
 
 Si ya se posee una copia del repositorio
