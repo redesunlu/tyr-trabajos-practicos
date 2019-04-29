@@ -106,7 +106,8 @@ DNS
     - Puntero: bibliografía de DNS (TODO: anotar cual)
     - Esperado: TODO: falta consignar
 
-- Una aplicación solicita al sistema operativo la resolución del nombre news.jpl.nasa.gov, sin embargo el servidor ns1.nasa.gov que responde consultas sobre el dominio nasa.gov está caído (fuera de línea). ¿Obtiene la aplicación una respuesta a su consulta? Responda y justifique.
+- Una aplicación solicita al sistema operativo la resolución del nombre news.jpl.nasa.gov. El servidor ns1.nasa.gov que debería responder consultas sobre el dominio nasa.gov está caído (fuera de línea). Sin embargo, la aplicación obtiene respuesta a su consulta. ¿Es esto posible?  
+Si este escenario es posible, explicite de qué manera pudo haberse resuelto la consulta. Si tal escenario no es posible, justifique por qué.
      - Puntero: clase de DNS (TODO: si hay bibliografía, anotar cual)
      - Esperado: ambas respuestas son válidas, dependiendo de la justificación:
          - Si SI recibe respuesta, puede ser porque la obtuvo de un servidor DNS secundario o bien de caché del servidor DNS de su ISP.
