@@ -83,8 +83,7 @@ Y el resto, lo que se pueda, para lo que sigue.
 - Algoritmos de ruteo o de _mantenimiento de tablas_
     - Distance-Vector / Bellman-Ford
       - Hay ejemplo en peterson de una [topologia sencilla](#ejemplos-de-topología).
-      - Me gusto mucho esta imagen para explicar Vector de Distancia. ![](images/routing-kurose-distance-vector-algorithm-example.png)
-      - Explicar uno o dos iteraciones?
+      - Me gusto mucho esta imagen para explicar Vector de Distancia. NO VA A LA CLASE![](images/routing-kurose-distance-vector-algorithm-example.png)
       - Cuenta al infinito. Escenario con topologia de Peterson.
         - Se cae enlace entre A y E. A actualiza su costo a E a infinito.
         - B y C anuncian que tienen costo 2 para llegar a E.
@@ -138,6 +137,114 @@ Y el resto, lo que se pueda, para lo que sigue.
 ![](./images/routing-peterson-final-routing-table-node-a.png)
 
 ![](./images/routing-peterson-rip-packet.png)
+
+Explicación del algoritmo de ruteo vector distancia con la topología de la figura 4.14.
+
+#### Introducción
+
+Dada la topología de la figura 4.14
+
+![Ejemplo de Distance-Vector de Peterson](./images/routing-peterson-distance-vector-graph.png)
+
+1) Plantear la tabla de rutas del Router A (RA) en el estado inicial.
+
+2) RA recibe un anuncio de la tabla inicial del RC. En base a dicha información actualizar la tabla de RA.
+
+3) RA recibe anuncio de tabla inicial de RF. Actualizar la tabla de RA con dicha información.
+
+#### Paso 1: Tabla inicial de Router A
+
+| Destino | Costo | Salto |
+| ------- | ----- | ----- |
+| A       | 0     | -     |
+| B       | 1     | B     |
+| C       | 1     | C     |
+| D       | inf   | -     |
+| E       | 1     | E     |
+| F       | 1     | F     |
+| G       | inf   | -     |
+
+#### Paso 2: Recepcion del vector de distancias de Router C:
+
+| Destino | Costo |
+| ------- | ----- |
+| A       | 1     |
+| B       | 1     |
+| C       | 0     |
+| D       | 1     |
+| E       | inf   |
+| F       | inf   |
+| G       | inf   |
+
+#### Paso 3: Calcular la tabla temporal en base a vector de RC
+
+Seria la tabla de rutas si siempre se debiera pasar por RC. Es el costo entre RA y RC mas los costos de RC:
+
+| Destino | Costo |
+| ------- | ----- |
+| A       | 2     |
+| B       | 2     |
+| C       | 1     |
+| D       | 2     |
+| E       | inf   |
+| F       | inf   |
+| G       | inf   |
+
+#### Paso 4: Calcula nueva tabla de A
+
+Para cada destino, es el menor valor entre Tabla inicial y Tabla temporal. En los casos que el menor sea de la temporal, el siguiente salto es C. (aprende RD)
+
+| Destino | Costo | Salto |
+| ------- | ----- | ----- |
+| A       | 0     | -     |
+| B       | 1     | B     |
+| C       | 1     | C     |
+| **D**   | **2** | **C** |
+| E       | 1     | E     |
+| F       | 1     | F     |
+| G       | inf   | -     |
+
+#### Paso 5: Recepción del vector distancia de RF
+
+| Destino | Costo |
+| ------- | ----- |
+| A       | 1     |
+| B       | inf   |
+| C       | inf   |
+| D       | inf   |
+| E       | inf   |
+| F       | 0     |
+| G       | 1     |
+
+#### Paso 6: Tabla Temporal en RA en base a vector de RF
+
+De nuevo, es el costo de llegar a cada destino, sumándole al vector de RF el costo entre RA y RF.
+
+| Destino | Costo |
+| ------- | ----- |
+| A       | 2     |
+| B       | inf   |
+| C       | inf   |
+| D       | inf   |
+| E       | inf   |
+| F       | 1     |
+| G       | 2     |
+
+#### Paso 7: Nueva tabla de A
+
+(aprende G)
+
+| Destino | Costo | Salto |
+| ------- | ----- | ----- |
+| A       | 0     | -     |
+| B       | 1     | B     |
+| C       | 1     | C     |
+| D       | 2     | C     |
+| E       | 1     | E     |
+| F       | 1     | F     |
+| **G**   | **2** | **F** |
+
+Esta es la tabla final del ejercicio.
 
 ### Peterson: Djikstra
 
