@@ -152,7 +152,9 @@ Dada la topología de la figura 4.14
 
 3) RA recibe anuncio de tabla inicial de RF. Actualizar la tabla de RA con dicha información.
 
-#### Paso 1: Tabla inicial de Router A
+Nota: En este ejemplo de Peterson, todos los enlaces tienen costo 1 por dos motivos. En primer lugar, es más sencillo de explicar, y en segundo lugar, en el protocolo RIP todos los enlaces tienen por defecto costo 1 (la PDU tiene un campo para indicar un costo != 1, pero parece que no es lo habitual). El único inconveniente que se me ocurre para este tipo de ejemplos sencillos es que no refleja cambios en las tablas de ruta que puedan suceder por la incorporación de rutas más "económicas". Es decir, todos los cambios de rutas que sucedan se darán por incorporación de nuevos destinos o por cambios de topología explícitos (caída de enlace/router).
+
+#### Paso 1: Tabla inicial de Router A <a id="tabla_a_inicial"></a>
 
 | Destino | Costo | Salto |
 | ------- | ----- | ----- |
@@ -230,7 +232,7 @@ De nuevo, es el costo de llegar a cada destino, sumándole al vector de RF el co
 | F       | 1     |
 | G       | 2     |
 
-#### Paso 7: Nueva tabla de A
+#### Paso 7: Nueva tabla de A <a id="tabla_a_final"></a>
 
 (aprende G)
 
@@ -245,6 +247,36 @@ De nuevo, es el costo de llegar a cada destino, sumándole al vector de RF el co
 | **G**   | **2** | **F** |
 
 Esta es la tabla final del ejercicio.
+
+#### Resolución alternativa
+
+[Tabla inicial de A](#tabla_a_inicial)
+
+##### Tabla temporal de A para cálculo luego de recibir info de C
+
+| Destino | Costo Actual (Ca) | Salto Actual | Mensaje C | Costo x C (Cc) | Min(Ca, Cc) | Salto |
+| ------- | ----------------- | ------------ | --------- | -------------- | ----------- | ----- |
+| A       | 0                 | -            | 1         | 1 +1           | 0           | -     |
+| B       | 1                 | B            | 1         | 1 +1           | 1           | B     |
+| C       | 1                 | C            | 0         | 0 +1           | 1           | C     |
+| D       | inf               | -            | 1         | 1 +1           | **2**       | **C** |
+| E       | 1                 | E            | inf       | inf            | 1           | E     |
+| F       | 1                 | F            | inf       | inf            | 1           | F     |
+| G       | inf               | -            | inf       | inf            | inf         | -     |
+
+##### Tabla temporal de A para cálculo luego de recibir info de F
+
+| Destino | Costo Actual (Ca) | Salto Actual | Mensaje F | Costo x F (Cf) | Min(Ca, Cf) | Salto |
+| ------- | ----------------- | ------------ | --------- | -------------- | ----------- | ----- |
+| A       | 0                 | -            | 1         | 1 +1           | 0           | -     |
+| B       | 1                 | B            | inf       | inf            | 1           | B     |
+| C       | 1                 | C            | inf       | inf            | 1           | C     |
+| D       | **2**             | **C**        | inf       | inf            | 2           | C     |
+| E       | 1                 | E            | inf       | inf            | 1           | E     |
+| F       | 1                 | F            | 0         | 0 +1           | 1           | F     |
+| G       | inf               | -            | 1         | 1 +1           | **2**       | **F** |
+
+[Tabla final de A](#tabla_a_final)
 
 ### Peterson: Djikstra
 
