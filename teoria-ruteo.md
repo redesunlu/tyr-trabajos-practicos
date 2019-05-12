@@ -284,3 +284,64 @@ Esta es la tabla final del ejercicio.
 
 ![](./images/routing-peterson-dijkstra-table.png)
 
+### Topología de Gabriel
+
+La topología a continuación se viene usando en las clases de TyR hace años:
+
+![Topologia Ejemplo TyR](./images/topologia-ruteo-dinamico-gabriel.png)
+
+#### Vector Distancia
+
+Objetivo: Obtener la tabla de A luego de realizar un intercambio con B y luego con C.
+
+##### Intercambio con B
+
+| Destino | Costo Actual (Ca) | Salto Actual | Mensaje B | Costo x B (Cb) | Min(Ca, Cb) | Salto |
+| ------- | ----------------- | ------------ | --------- | -------------- | ----------- | ----- |
+| A       | 0                 | -            | 5         | 5 + 5          | 0           | -     |
+| B       | 5                 | B            | 0         | 0 + 5          | 5           | B     |
+| C       | 2                 | C            | 4         | 4 + 5          | 2           | C     |
+| D       | 3                 | D            | inf       | inf + 5        | 3           | D     |
+| E       | inf               | -            | 3         | 3 + 5          | **8**       | **B** |
+
+##### Intercambio con C
+
+| Destino | Costo Actual (Ca) | Salto Actual | Mensaje C | Costo x C (Cc) | Min(Ca, Cc) | Salto |
+| ------- | ----------------- | ------------ | --------- | -------------- | ----------- | ----- |
+| A       | 0                 | -            | 2         | 2 + 2 = 4      | 0           | -     |
+| B       | 5                 | B            | 4         | 4 + 2 = 6      | 5           | B     |
+| C       | 2                 | C            | 0         | 0 + 2 = 2      | 2           | C     |
+| D       | 3                 | D            | inf       | inf + 2 = inf  | 3           | D     |
+| E       | 8                 | B            | 4         | 4 + 2 = 6      | **6**       | **C** |
+
+##### Tabla final del ejercicio para A
+
+| Destino | Costo | Salto |
+| ------- | ----- | ----- |
+| A       | 0     | -     |
+| B       | 5     | B     |
+| C       | 2     | C     |
+| D       | 3     | D     |
+| E       | 6     | C     |
+
+#### Estado del Enlace
+
+| Paso | Confirmados                   | Tentativo         | Grafo                 |
+| ---- | ----------------------------- | ----------------- | --------------------- |
+| 1    | 0                             | (A,0)             | Ir dibujando el grafo |
+| 2    | (A,0)                         | (B,5) (C,2) (D,3) |                       |
+| 3    | (A,0) (C,2)                   | (B,5) (D,3) (E,6) |                       |
+| 4    | (A,0) (C,2) (D,3)             | (B,5) (E,6)       |                       |
+| 5    | (A,0) (C,2) (D,3) (B,5)       | (E,6)             |                       |
+| 6    | (A,0) (C,2) (D,3) (B,5) (E,6) | 0                 |                       |
+
+Tabla final:
+
+| Destino | Costo | Salto |
+| ------- | ----- | ----- |
+| A       | 0     | -     |
+| B       | 5     | B     |
+| C       | 2     | C     |
+| D       | 3     | D     |
+| E       | 6     | C     |
+
