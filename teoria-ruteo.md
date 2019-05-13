@@ -292,17 +292,18 @@ La topología a continuación se viene usando en las clases de TyR hace años:
 
 #### Vector Distancia
 
-Objetivo: Obtener la tabla de A luego de realizar un intercambio con B y luego con C.
+Objetivo: Obtener la tabla de A luego de realizar un intercambio con B y luego con C.  
+Se indican con negrita las rutas que se actualizan.
 
 ##### Intercambio con B
 
 | Destino | Costo Actual (Ca) | Salto Actual | Mensaje B | Costo x B (Cb) | Min(Ca, Cb) | Salto |
 | ------- | ----------------- | ------------ | --------- | -------------- | ----------- | ----- |
-| A       | 0                 | -            | 5         | 5 + 5          | 0           | -     |
-| B       | 5                 | B            | 0         | 0 + 5          | 5           | B     |
-| C       | 2                 | C            | 4         | 4 + 5          | 2           | C     |
-| D       | 3                 | D            | inf       | inf + 5        | 3           | D     |
-| E       | inf               | -            | 3         | 3 + 5          | **8**       | **B** |
+| A       | 0                 | -            | 5         | 5 + 5 = 10     | 0           | -     |
+| B       | 5                 | B            | 0         | 0 + 5 = 5      | 5           | B     |
+| C       | 2                 | C            | 4         | 4 + 5 = 9      | 2           | C     |
+| D       | 3                 | D            | inf       | inf + 5 = inf  | 3           | D     |
+| E       | inf               | -            | 3         | 3 + 5 = 8      | **8**       | **B** |
 
 ##### Intercambio con C
 
@@ -326,14 +327,16 @@ Objetivo: Obtener la tabla de A luego de realizar un intercambio con B y luego c
 
 #### Estado del Enlace
 
-| Paso | Confirmados                   | Tentativo         | Grafo                 |
-| ---- | ----------------------------- | ----------------- | --------------------- |
-| 1    | 0                             | (A,0)             | Ir dibujando el grafo |
-| 2    | (A,0)                         | (B,5) (C,2) (D,3) |                       |
-| 3    | (A,0) (C,2)                   | (B,5) (D,3) (E,6) |                       |
-| 4    | (A,0) (C,2) (D,3)             | (B,5) (E,6)       |                       |
-| 5    | (A,0) (C,2) (D,3) (B,5)       | (E,6)             |                       |
-| 6    | (A,0) (C,2) (D,3) (B,5) (E,6) | 0                 |                       |
+| Paso | Confirmados                   | Tentativo             | Grafo                 |
+| ---- | ----------------------------- | --------------------- | --------------------- |
+| 1    | Ø                             | **(A,0)**             | Ir dibujando el grafo |
+| 2    | (A,0)                         | (B,5) **(C,2)** (D,3) |                       |
+| 3    | (A,0) (C,2)                   | (B,5) **(D,3)** (E,6) |                       |
+| 4    | (A,0) (C,2) (D,3)             | **(B,5)** (E,6)       |                       |
+| 5    | (A,0) (C,2) (D,3) (B,5)       | **(E,6)**             |                       |
+| 6    | (A,0) (C,2) (D,3) (B,5) (E,6) | Ø                     |                       |
+
+Se indican con negrita los nodos elegidos (por menor coste) en cada iteración.
 
 Tabla final:
 
