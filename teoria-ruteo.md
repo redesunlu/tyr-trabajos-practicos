@@ -5,16 +5,10 @@ Algunas notas varias
 
 - Clase 1 Jue 23/May --> Ruteo estático y 1ra parte de dinámico
 - Clase 2 Jue 30/May --> 2da parte ruteo dinámico y práctica
-- Separar slides de IPv4 en dos: IPv4 y Ruteo
-- Bibliografía: Ver Peterson y Stevens 2da ed (y ver Kurose pues tengo la sensación de que había algo bueno ahí también). Brindar la documentación a los estudiantes.
+- Bibliografía: Peterson. Kurose.
 - [Slides originales (PDF) de Gabriel](http://www.tyr.unlu.edu.ar/pub/11-Red.pdf)
 - [Slides nuevas en Drive](https://drive.google.com/drive/folders/1kSItBJif2za2kNWXoTAlTo8yGi67kh5P)
-- Para las diapos nuevas, Gabriel propuso utilizar gráficos _basados en_ los del libro de Kurose.
-- Reducir el gráfico de encaminamiento que figura en las slides, a 4 hosts con 2 routers.
-- Desarrollar más las slides de algoritmos de ruteo (DV / LS)
-    - 3 slides para c/u (Bellman Ford / Dijkstra)
-    - Dar énfasis al algoritmo por sobre los protocolos
-- Cambiar simulador de Ruteo dinámico (el de _mathiaz_ no funciona?)
+- Armar topologia de 3 routers, un par de hosts en cada red, y uno con salida a internet. Queda como apunte y no va a slides.
 
 Temario
 
@@ -27,7 +21,6 @@ Temario
         - En una red de datagramas, no existe un camino, sino que la decisión del próximo salto se va tomando en cada nodo intermedio, para cada datagrama.
     - Partir de una red de capa 2 (LAN), consultar si es posible cursar paquetes allí; extender a dos redes interconectadas. Cómo es posible cursar un paquete de una a otra y viceversa?
     - Richard Martin discrimina Ruteo vs Reenvío. _Rutear_ es tomar la decisión de por donde (re)enviar un paquete. _Reenviar_ es la acción siguiente: (re)inyectarlo en el medio. Kurose plantea la misma diferencia, y ademas dice que son las 2 funciones principales de la capa.
-        - Analogía de la diferencia entre estos dos conceptos sacada de Kurose: Si se piensa en un viaje en coche entre 2 localidades diferentes (Por ejemplo, Luján y Mar del Plata), **Ruteo** es la acción de detenerse al costado de la ruta al llegar a una nueva localidad, tomar el mapa de la provincia de Buenos Aires, buscar en dicho mapa la ruta adecuada para ir a la siguiente localidad y tomar la decisión de seguir por dicho camino. Por otro lado, **Reenvío** es la acción de volver a la ruta, tomar el camino decidido y dirigirse hacia la nueva localidad. (Puede ir a una slide o no según si se ve didáctico).
     - Se trata entonces de ver como cada nodo intermedio dispone de TODA la información necesaria para tomar la mejor decisión posible sobre el próximo salto de cada datagrama.
         - Estructura: Tabla de rutas (como se llena dicha tabla?)
     - Objetivo: encontrar el camino mas corto entre 2 nodos
@@ -36,10 +29,11 @@ Temario
     - Indirecta (otra red de capa 2 anexa)
 - Tabla de rutas
     - Explicar cada columna de `route` 
-        - Red
+        - Red destino
+        - Mascara
         - Gateway o salto siguiente
         - Interfaz
-        - Metrica (por arriba): Costo, distancia, latencia.
+        - Métrica (opcional): Costo, distancia, latencia.
     - Explicar cómo se selecciona / busca la ruta elegida
         - Para cada fila de la tabla de rutas
         - Se hace DIR_DESTINO AND MASCARA-FILA
@@ -62,7 +56,7 @@ Temario
 
 Hasta aquí debería llevar aproximadamente 1 hora.
 
-- Dibujar topología estilo parcial en el pizarrón y realizar ejercicio en clase.
+- Dibujar topología estilo parcial en el pizarrón y realizar ejercicio en clase. (Maurom, ejemplo charlado con Gabriel)
 - Hacer previo a la clase, la tabla de rutas que sería "ideal".
 
 Esto nos debería tomar 1 hora más.
