@@ -297,7 +297,7 @@ Se indican con negrita las rutas que se actualizan.
 
 ##### Intercambio con B
 
-| Destino | Costo Actual (Ca) | Salto Actual | Mensaje B | Costo x B (Cb) | Min(Ca, Cb) | Salto |
+| Destino | Costo Actual (Ca) | Salto Actual | Vector de dist. de B | Costo x B (Cb) | Min(Ca, Cb) | Salto |
 | ------- | ----------------- | ------------ | --------- | -------------- | ----------- | ----- |
 | A       | 0                 | -            | 5         | 5 + 5 = 10     | 0           | -     |
 | B       | 5                 | B            | 0         | 0 + 5 = 5      | 5           | B     |
