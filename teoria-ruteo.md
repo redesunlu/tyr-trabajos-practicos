@@ -25,8 +25,10 @@ Temario
         - Estructura: Tabla de rutas (como se llena dicha tabla?)
     - Objetivo: encontrar el camino mas corto entre 2 nodos
 - Explicar tipo de entrega
-    - Directa (misma red de capa 2)
-    - Indirecta (otra red de capa 2 anexa)
+    - Directa (misma red de capa 2)  
+      ![](./images/encapsulamiento-entrega-directa.png)
+    - Indirecta (otra red de capa 2 anexa)  
+      ![](./images/encapsulamiento-entrega-indirecta-1.png)
 - Tabla de rutas
     - Explicar cada columna de `route` 
         - Red destino
@@ -56,8 +58,10 @@ Temario
 
 Hasta aquí debería llevar aproximadamente 1 hora.
 
-- Dibujar topología estilo parcial en el pizarrón y realizar ejercicio en clase. (Maurom, ejemplo charlado con Gabriel)
+- Dibujar topología estilo parcial en el pizarrón y realizar ejercicio en clase (ejemplo charlado con Gabriel).
 - Hacer previo a la clase, la tabla de rutas que sería "ideal".
+
+    ![Topología para usar en pizarrón](./images/routing-topologia-ejemplo-3-r.png)
 
 Esto nos debería tomar 1 hora más.
 Y el resto, lo que se pueda, para lo que sigue.
