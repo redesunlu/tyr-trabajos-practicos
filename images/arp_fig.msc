@@ -2,11 +2,11 @@ msc {
 
   A [label="10.2.5.10 52:54:00:1b:ac:ca"],
   B [label="10.2.5.11 e8:40:f2:ac:0d:43"],
-  C [label="10.2.5.12 54:52:00:73:47:c9"],
-  D [label="10.2.5.13 f4:4d:30:aa:53:df"];
+  C [label="10.2.5.12 54:52:00:73:47:c9"];
 
   A => * [label="[ARP] ¿Quien tiene 10.2.5.12? Pregunta 10.2.5.10"];
-  C => A [label="[ARP] 10.2.5.12 esta en 54:52:00:73:47:c9"];
-  A >> C [label="[IP] Paquete"];
+  C => A [label="[ARP] 10.2.5.12 esta en 54:52:00:73:47:c9", arcskip="1"];
+  |||;
+  A >> C [label="[IP] Paquete", arcskip="1"];
   |||;
 }
