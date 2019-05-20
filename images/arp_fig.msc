@@ -1,24 +1,12 @@
-WIP this chart
-
 msc {
-  arcgradient="45";
 
-  A,
-  B,
-  C,
-  D;
+  A [label="10.2.5.10 52:54:00:1b:ac:ca"],
+  B [label="10.2.5.11 e8:40:f2:ac:0d:43"],
+  C [label="10.2.5.12 54:52:00:73:47:c9"],
+  D [label="10.2.5.13 f4:4d:30:aa:53:df"];
 
-  A => * [label="[ARP] Quien es C"];
-  C => A [label="[ARP] Yo soy C"];
+  A => * [label="[ARP] ¿Quien tiene 10.2.5.12? Pregunta 10.2.5.10"];
+  C => A [label="[ARP] 10.2.5.12 esta en 54:52:00:73:47:c9"];
   A >> C [label="[IP] Paquete"];
   |||;
 }
-
-170.210.96.10 dev enp2s0 lladdr 52:54:00:1b:ac:ca REACHABLE
-170.210.96.70 dev enp2s0 lladdr e8:40:f2:ac:0d:43 STALE
-170.210.96.35 dev enp2s0 lladdr e8:40:f2:ab:e7:3b STALE
-170.210.96.186 dev enp2s0 lladdr 52:54:00:b5:8a:3f STALE
-170.210.96.1 dev enp2s0 lladdr 54:52:00:73:47:c9 STALE
-170.210.96.191 dev enp2s0 lladdr 52:54:00:24:26:46 REACHABLE
-170.210.96.99 dev enp2s0 lladdr 00:16:3e:11:00:0a STALE
-170.210.96.54 dev enp2s0 lladdr f4:4d:30:aa:53:df STALE
