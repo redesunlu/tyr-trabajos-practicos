@@ -1,0 +1,13 @@
+msc {
+  arcgradient="45";
+
+  A,
+  B,
+  C,
+  D;
+
+  A => * [label="[ARP] Quien es C"];
+  C => A [label="[ARP] Yo soy C"];
+  A >> C [label="[IP] Paquete"];
+  |||;
+}
