@@ -59,6 +59,22 @@ Temario
 Hasta aquí debería llevar aproximadamente 1 hora.
 
 - Dibujar topología estilo parcial en el pizarrón y realizar ejercicio en clase (ejemplo charlado con Gabriel).
+
+    1. Poner nombre a las interfaces de cada host y routers
+    2. Asignar direcciones de las redes en cada enlace
+    3. Asignar direcciones IP a cada interfaz en cada host y router
+    4. Definir tablas de rutas necesarias para comunicar B --> A
+    5. Definir tablas de rutas necesarias para comunicar B --> C
+    6. Definir tablas de rutas necesarias (default) para que D llegue a Internet
+    7. Preguntar cambios necesarios para comunicar D --> B (ruta específica)
+
+    Observaciones:
+
+    - No mencionar Default Gateway hasta el punto 6.
+    - Todo lo que esté en la columna Gateway debe ser vecino (toda IP debe ser directa)
+    - Tanto B como C no necesitan conocer redes intermedias para pasar a través de ellas
+    - Las redes de interconexión (R1 -- R3) pueden ser privadas
+
 - Hacer previo a la clase, la tabla de rutas que sería "ideal".
 
     ![Topología para usar en pizarrón](./images/routing-topologia-ejemplo-3-r.png)
