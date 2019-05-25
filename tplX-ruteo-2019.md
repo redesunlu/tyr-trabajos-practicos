@@ -15,4 +15,4 @@ Se solicita:
 4. Definir las tablas de rutas de los ruteadores R1, R2, R3 y R4 para que respondan a los requisitos previamente mencionados.
 5. Indicar cualquier otra configuración y/o suposición realizadas (o restricciones impuestas). Justificar.
 
-![Topología de la red de la organización](./images/topologia-ruteo.png){ width=75% }
+![Topología de la red de la organización](./images/ejercicio-ruteo-estatico.png){ width=75% }

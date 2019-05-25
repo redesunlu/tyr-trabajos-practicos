@@ -10,7 +10,7 @@ $(foreach package,$(REQUIRED_PACKAGES),\
 
 all: pdf/gl-introduccion.pdf pdf/tp-transmision-datos.pdf pdf/tpl1-configuracion.pdf \
 	pdf/tpl2-telnet.pdf pdf/tpl3-dns.pdf pdf/tpl4-correo-electronico.pdf pdf/tpl5-http.pdf \
-	pdf/tpe-sockets.pdf pdf/receta-tp-integrador.pdf pdf/tpl1-parte2.pdf
+	pdf/tpe-sockets.pdf pdf/receta-tp-integrador.pdf pdf/tpl1-parte2.pdf tplX-ruteo-2019.pdf
 
 pdf/%.pdf: %.md header.tex
 	@- mkdir pdf
