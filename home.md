@@ -47,7 +47,7 @@ Teleinformática y Redes
 - Teoría Capa de Transporte y TCP (2)
     - Ejercicio Control de Congestión
 - [Práctica DHCP](tplX-dhcp) y [Práctica UDP](tplX-udp)
-- [Captura para Trabajo Práctico Integrador 2018](./receta-tp-integrador)
+- [Captura para Trabajo Práctico Integrador 2019](./receta-tp-integrador-2019)
 - Práctica Interface de Sockets
 - [Teoría y Práctica IPv6](./tplX-ipv6)
 - Consultas/Ejercicios integradores
@@ -58,6 +58,7 @@ Teleinformática y Redes
 - Guía de Estilo para la entrega de Trabajos Prácticos
 
 - [Trabajo Práctico Integrador 2017 y previos](./receta-tp-integrador-2017)
+- [Trabajo Práctico Integrador 2018](./receta-tp-integrador-2018)
 
 - [Preguntas para examen, con respuesta esperada](./preguntas)
 
