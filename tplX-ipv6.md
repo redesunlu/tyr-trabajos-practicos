@@ -58,6 +58,8 @@ En cualquiera de los equipos del laboratorio
     ip addr add 2800:110:1018:411::xx/64 dev eth0
     ip route add ::/0 via 2800:110:1018:411::1 dev eth0
 
+Nota: para restablecer todo una vez realizada la práctica, quitar las rutas, las direcciones y las interfaces del tunel mediante `ip [route|address|tunel] del` y quitar el módulo SIT mediante `modprobe -r sit`.
+
 
 #### --- Fin notas para ayudantes ---
 
