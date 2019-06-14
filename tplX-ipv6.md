@@ -14,6 +14,51 @@ Si fuera necesario establecer autoconfiguración dinámica en Debian, agregar lo
 
 Recordar que si bien RADVD puede enviar el DNS como una opción dentro del Router Advertisement, aún no es posible que los sistemas Debian tomen el DNS y lo configuren en `resolv.conf`.
 
+#### Configuración para salir con IPv6 desde el Aula 411
+
+Lo más sencillo es utilizar túnel para portar IPv6 sobre IPv4 entre el router de las aulas (que NO tiene IPv6) hasta _barza_ o _router1_ (que tienen IPv6) o bien soda (que puede tener IPv6) según lo indicado en <https://juncotic.com/tunel-ipv6-montando-tunel-ipv6/>
+
+![](./images/esquema-conexion-ipv6.png)
+
+En el caso de querer utilizar el equipo _soda_ para salir por IPv6, previamente asignar la siguiente dirección al mismo y habilitar ruteo:
+
+    # dar direccion ipv6 de red unlu
+    ip address add 2800:110:1018:bbbb::37/64 dev enp1s0
+    ip route add default via 2800:110:1018:bbbb::1 dev enp1s0
+
+    # crear tunel contra router aulas
+    ip tunnel add net6tun mode sit remote 170.210.101.126 local 170.210.96.37
+    ip link set net6tun up
+    ip route add 2800:110:1018:411::/64 dev net6tun
+
+    sysctl -w net.ipv6.conf.all.forwarding=1
+    # establecer reglas de fw para permitir forwarding de trafico ipv6
+
+En el router 1 (central)
+
+    ip route add 2800:110:1018:411::/64 via 2800:110:1018:bbbb::37 dev INTERFAZ
+
+En el router de Aulas
+
+    ip tunnel add net6tun mode sit remote 170.210.96.37 local 170.210.101.126
+    ip link set net6tun up
+    ip route add ::/0 dev net6tun
+    ip route add 2800:110:1018:411::/64 via fe80::...:9999 dev eth0    # <-- aqui fe80::...:9999 es la Link-Local del equipo del aula
+    sysctl -w net.ipv6.conf.all.forwarding=1
+    # establecer reglas de fw para permitir forwarding de trafico ipv6
+
+En UNO de los equipos del aula, que actuará como router local
+
+    ip addr add 2800:110:1018:411::1/64 dev eth1
+    ip route add ::/0 via fe80::...:126 dev eth0    # <-- aqui fe80::...:126 es la Link-Local del router de Aulas
+    sysctl -w net.ipv6.conf.all.forwarding=1
+
+En cualquiera de los equipos del laboratorio
+
+    ip addr add 2800:110:1018:411::xx/64 dev eth0
+    ip route add ::/0 via 2800:110:1018:411::1 dev eth0
+
+
 #### --- Fin notas para ayudantes ---
 
 
