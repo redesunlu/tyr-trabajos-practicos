@@ -43,14 +43,14 @@ En el router de Aulas
     ip tunnel add net6tun mode sit remote 170.210.96.37 local 170.210.101.126
     ip link set net6tun up
     ip route add ::/0 dev net6tun
-    ip route add 2800:110:1018:411::/64 via fe80::...:9999 dev eth0    # <-- aqui fe80::...:9999 es la Link-Local del equipo del aula
+    ip route add 2800:110:1018:411::/64 via fe80::...:9999 dev eth0    # ← aqui fe80::...:9999 es la Link-Local del equipo del aula
     sysctl -w net.ipv6.conf.all.forwarding=1
     # establecer reglas de fw para permitir forwarding de trafico ipv6
 
 En UNO de los equipos del aula, que actuará como router local
 
     ip addr add 2800:110:1018:411::1/64 dev eth1
-    ip route add ::/0 via fe80::...:126 dev eth0    # <-- aqui fe80::...:126 es la Link-Local del router de Aulas
+    ip route add ::/0 via fe80::...:126 dev eth0    # ← aqui fe80::...:126 es la Link-Local del router de Aulas
     sysctl -w net.ipv6.conf.all.forwarding=1
 
 En cualquiera de los equipos del laboratorio
