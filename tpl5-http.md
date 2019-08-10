@@ -1,7 +1,7 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** Luján 2/05/2018
+**Fecha de Entrega:** 26/09/2018
 
 #### Notas para ayudantes
 
@@ -59,8 +59,8 @@ conexión con `nc`. Finalice la petición pulsando **tres veces** la tecla Enter
 
 4. Instale e inicie el servidor HTTP Apache en su equipo (paquete `apache2`). Inicie una captura de paquetes, filtrando por la dirección del cliente o del servidor. En otro host  de la red, realice  una petición HTTP al servidor web (indicando la dirección IP en el campo URL) utilizando al menos 2 navegadores gráficos diferentes (ej: Firefox o Iceweasel, Chrome o Chromium, Konqueror, Epiphany) y 1 navegador web en modo texto (ej: w3m, lynx, links).
 
-    a. ¿Qué encabezados envía cada cliente en la petición? 
-    b. Comente las características de la información en tránsito con respecto a la confidencialidad. 
+    a. ¿Qué encabezados envía cada cliente en la petición?
+    b. Comente las características de la información en tránsito con respecto a la confidencialidad.
 
 5. Describa cómo opera un cliente HTTP (por ejemplo un navegador web) para recuperar una página HTML que contiene varios objetos. Analice la captura del archivo `captura_ejemplo_http.pcap` provisto por los docentes y represente el intercambio de mensajes mediante un gráfico ideado por Ud. ¿Qué primitivas se utilizan en cada caso?.
 
@@ -109,14 +109,14 @@ la variable de entorno `HTTP_PROXY` como se muestra a continuación. Esto es equ
 
     Detenga la captura, analícela y responda:
 
-    1. ¿Qué encabezados envía el cliente al proxy-http en la petición? 
-    2. ¿Qué encabezados envía el proxy-http al servidor web en la petición? 
+    1. ¿Qué encabezados envía el cliente al proxy-http en la petición?
+    2. ¿Qué encabezados envía el proxy-http al servidor web en la petición?
     3. Mencione las diferencias que observa en los encabezados respecto a no utilizar un proxy-http (punto 4)
     4. ¿Es posible cambiar el número de puerto TCP en el que escucha el servidor proxy? ¿Qué línea del archivo de configuración hay que cambiar para que Squid escuche por conexiones en el puerto 8080?
 
-8. ¿Cómo un sistema que realiza caché local puede determinar si algún objeto en el servidor original fue modificado con respecto a la copia actual, sin realizar la transferencia completa del objeto? 
+8. ¿Cómo un sistema que realiza caché local puede determinar si algún objeto en el servidor original fue modificado con respecto a la copia actual, sin realizar la transferencia completa del objeto?
 
-9. ¿Qué es la interfaz CGI? ¿Para qué se utiliza? 
+9. ¿Qué es la interfaz CGI? ¿Para qué se utiliza?
 
 10. ¿De qué formas un programa puede recibir parámetros por medio de la interfaz CGI? Comente las diferencias en el modo de operación en cada caso.
 
@@ -140,19 +140,19 @@ recomienda leer los primeros capítulos del tutorial en español indicado en las
 
     Es importante destacar al momento de escribir el código, que en el lenguaje Python los espacios son utilizados para definir el nivel de anidamiento de la sentencia (ya que como se ve, no se utilizan llaves); por lo tanto, debe respetarse la sintaxis y todos los espacios del ejemplo.
 
-    Ejecute el script servidor HTTP con el comando `python http1.py`  
+    Ejecute el script servidor HTTP con el comando `python http1.py`
     Luego, abra un navegador web e ingrese a la URL <http://localhost:8000>
 
     a. ¿Qué es lo que se ve en el navegador?
     b. ¿Cuál es la salida por consola del servidor http? ¿Qué puede interpretar de la misma?
     c. Experimente y compare las diferencias en la salida del servidor web:
-        - Con otros navegadores o clientes http, 
+        - Con otros navegadores o clientes http,
         - Recargando la página con Ctrl+F5,
         - Ingresando a la URL <http://localhost:8000/test/de/url/>
 
         ¿Qué diferencias aprecia y a causa de qué?
 
-    d. En el navegador (Firefox o Chromium/Chrome), presione la combinación de teclas `Ctrl+Shift+I`, lo que da lugar a la apertura del depurador del navegador. Entre otras cosas, éste posee una pestaña o apartado llamado "Red", que permite examinar cómo la página web es obtenida por el navegador, recurso por recurso.  
+    d. En el navegador (Firefox o Chromium/Chrome), presione la combinación de teclas `Ctrl+Shift+I`, lo que da lugar a la apertura del depurador del navegador. Entre otras cosas, éste posee una pestaña o apartado llamado "Red", que permite examinar cómo la página web es obtenida por el navegador, recurso por recurso.
     Seleccione haciendo clic sobre la petición hecha al servidor web local y describa qué encabezados devolvió el servidor escrito en Python.
 
 \pagebreak
@@ -162,12 +162,12 @@ recomienda leer los primeros capítulos del tutorial en español indicado en las
 ~~~~~~~python
 # coding: utf-8
 import BaseHTTPServer
- 
+
 HOST_NAME = 'localhost'
 PORT = 8000
- 
+
 class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
- 
+
     def do_GET(server):
         """Respondo a una petición de tipo GET"""
         # Imprimo los encabezados
@@ -183,11 +183,11 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
             '<i>cursiva</i> e incluso una imagen externa:</p>'
             '<img src="http://www.labredes.unlu.edu.ar/themes/glossyblue/images/'
             'header-bg.jpg" /></body></html>')
- 
+
     def log_message(*args):
         """ Deshabilito la salida por defecto del servidor """
         pass
- 
+
 if __name__ == '__main__':
     http_server = BaseHTTPServer.HTTPServer((HOST_NAME, PORT), Handler)
     print 'Ejecutando Server HTTP - %s:%s' % (HOST_NAME, PORT)
@@ -290,7 +290,7 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 
 * STALLINGS, W. 2002. 19.4: "Protocolo de Transferencia de Hipertexto (HTTP)" en _Comunicaciones y Redes de Computadoras (6ta ed)_. Prentice Hall.
 * TANNEMBAUM, A. Capítulo 7.6: "La World Wide Web" en _Redes de Computadoras (3ra ed)_. Prentice Hall.
-* GORALSKI, W. 2017. Capítulo 26: "Hypertext Transfer Protocol" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.  
+* GORALSKI, W. 2017. Capítulo 26: "Hypertext Transfer Protocol" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
   <https://www.sciencedirect.com/science/book/9780128110270>
 * RFC 7230 - Hypertext Transfer Protocol (HTTP/1.1) Message Syntax and Routing
 * RFC 7231 - Hypertext Transfer Protocol (HTTP/1.1) Semantics and Content

@@ -1,7 +1,7 @@
 TPL 1 parte 2 - Configuración inicial de una red utilizando netkit
 ==================================================================
 
-**Fecha de Entrega:** Luján 28/03/2019
+**Fecha de Entrega:** 29/08/2019
 
 **Objetivo:** Adquirir habilidades en el uso de la herramienta netkit-ng.
 
@@ -15,9 +15,9 @@ TPL 1 parte 2 - Configuración inicial de una red utilizando netkit
 
 **Consignas**
 
-1. Instalar la herramienta Netkit-NG con el script `instalar-netkit-ng.sh` siguiendo la documentación de la siguiente URL:  
+1. Instalar la herramienta Netkit-NG con el script `instalar-netkit-ng.sh` siguiendo la documentación de la siguiente URL:
    <https://github.com/redesunlu/netkit-doc>
-2. Descargar y descomprimir el laboratorio de práctica de configuración inicial disponible en:  
+2. Descargar y descomprimir el laboratorio de práctica de configuración inicial disponible en:
    <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_conf_inicial-TYR.tar.gz>
 3. Iniciar el laboratorio, siguiendo la documentación referida en el punto 1.
 4. Asignar las direcciones IP 10.4.11.11 y 10.4.11.12 a las _pc1_ y _pc2_ respectivamente.
@@ -32,5 +32,5 @@ TPL 1 parte 2 - Configuración inicial de una red utilizando netkit
 * "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 4: "Direcciones Internet".
 * "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 5: "Transformación de direcciones Internet en direcciones físicas.
 * "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 14.1: “Ethernet (CSMA/CD)”
-* "Manual de uso de Netkit"  
+* "Manual de uso de Netkit"
   <https://github.com/redesunlu/netkit-doc/blob/master/manual-de-uso.md>

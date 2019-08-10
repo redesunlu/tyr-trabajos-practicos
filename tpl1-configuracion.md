@@ -1,14 +1,14 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** Luján 28/03/2019
+**Fecha de Entrega:** 29/08/2019
 
 **Objetivo:** Conocer el procedimiento inicial y hacer habitual la práctica de configuración de un host en una red basada en el juego de protocolos TCP/IP.
 
 #### Notas para ayudantes
 
 * Por Florge 2019. Cambiado dmesg por ip link, . ¿Será necesario poner una salida de ip link show explicándola? tshark por tcpdump, y reordenado el punto de asignar nombre al host.
-* Ojo con el filtro de tcpdump para el ping, porque si se hace ping a la propia IP publica (sea de localhost o de la interfaz física), el comando no captura nada. Si se hace ping a un host externo, el filtro funciona perfectamente. En wireshark pasa exactamente lo mismo. Hay confirmación del comportamiento en un [hilo de StackOverflow](https://unix.stackexchange.com/questions/491859/ping-uses-localhost-instead-of-public-ip-address) y en un [mensaje de lista de correo de 2008](https://groups.google.com/d/msg/comp.protocols.tcp-ip/TNkCcZWV3e4/RZ2LVPTsA98J). **La "solución" mas sencilla es hacer ping a otro host.**  
+* Ojo con el filtro de tcpdump para el ping, porque si se hace ping a la propia IP publica (sea de localhost o de la interfaz física), el comando no captura nada. Si se hace ping a un host externo, el filtro funciona perfectamente. En wireshark pasa exactamente lo mismo. Hay confirmación del comportamiento en un [hilo de StackOverflow](https://unix.stackexchange.com/questions/491859/ping-uses-localhost-instead-of-public-ip-address) y en un [mensaje de lista de correo de 2008](https://groups.google.com/d/msg/comp.protocols.tcp-ip/TNkCcZWV3e4/RZ2LVPTsA98J). **La "solución" mas sencilla es hacer ping a otro host.**
 Quizás la mejor explicación sea esta:
     > Physically, if it actually went out on eth0 it wouldn't be received, an Ethernet interface doesn't "hear" what it's sending. So in any case, there needs to be a shortcut somewhere that says "oh this is a local packet, it must be handled locally". Probably easier to redirect the packet to lo0 than adding a "handle outbound traffic as inbound path", though one would have to check the relevant RFCs for correctness. – [jcaron Jan 1 at 13:20](https://unix.stackexchange.com/questions/491859/ping-uses-localhost-instead-of-public-ip-address#comment902770_491859)
 
@@ -24,8 +24,8 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
         ip link show
 
     El primer comando activa todas las interfaces de red disponibles, mientras que el segundo las lista en pantalla. Cada interfaz posee un nombre que la identifica. Las interfaces con nombres `eth{N}`, `eno{N}`, `ens{N}f{N}`, `enp{N}s{N}`, `w{N}g{N}` son interfaces físicas (_hardware real_). Existe al menos una interfaz virtual denominada `lo` o `loopback` y es posible que existan otras interfaces virtuales con nombres diversos (`tun{N}`, `br{N}`, ...).
-    
-    El primer paso de este práctico es determinar cual de todas las interfaces es la real.  
+
+    El primer paso de este práctico es determinar cual de todas las interfaces es la real.
     Para ello, buscar el nombre de la interfaz cuyo estado (aquello que figura entre `<>`) contiene los términos `BROADCAST` y `LOWER_UP`.
 
 2. Configuración de interfaces de red para utilizar el protocolo TCP/IP.
@@ -65,7 +65,7 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
     b. Verificar que es posible contactar otros 2 equipos de la red utilizando nombres de host ejecutando `ping NOMBRE_OTRO_EQUIPO`
 
-7. Ver la tabla de ruteo definida utilizando el comando `ip route show`.  
+7. Ver la tabla de ruteo definida utilizando el comando `ip route show`.
    ¿Cuáles son las redes accesibles?
 
 8. Agregar la dirección `10.4.11.30` como ruta por defecto para acceder a otras redes:
@@ -104,15 +104,15 @@ Salvo indicación en contrario, todos los comandos siguientes se deben ejecutar 
 
 **Bibliografía**
 
-* Guía del comando TCPdump. Jeremy Stretch. Traducido al español por el equipo de LabRedes  
+* Guía del comando TCPdump. Jeremy Stretch. Traducido al español por el equipo de LabRedes
   <http://www.labredes.unlu.edu.ar/files/site/data/tyr/tcpdump-esp-draft1.pdf>
 * "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 4: "Direcciones Internet".
 * "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 5: "Transformación de direcciones Internet en direcciones físicas".
 * "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 14.1: “Ethernet (CSMA/CD)”
-* El manual del Administrador de Debian. Raphaël Hertzog, Roland Mas. Freexian. 2016.  
-  Apéndice B: "Curso breve de emergencia"  
+* El manual del Administrador de Debian. Raphaël Hertzog, Roland Mas. Freexian. 2016.
+  Apéndice B: "Curso breve de emergencia"
   <https://debian-handbook.info/browse/es-ES/stable/short-remedial-course.html>
-* Tcpdump Examples: Practical examples to lift your network troubleshooting.  
+* Tcpdump Examples: Practical examples to lift your network troubleshooting.
   Hacker Target Pty Ltd. 2018  <https://hackertarget.com/tcpdump-examples/>
 * Páginas de manual de cada comando utilizado.
 

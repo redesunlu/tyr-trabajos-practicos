@@ -1,7 +1,7 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** Luján 11/04/2019
+**Fecha de Entrega:** 12/09/2019
 
 **Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
@@ -9,7 +9,7 @@ TPL 3 - Domain Name System
 
 * Hay una muy buena presentación con teoría y práctica de DNS en
   <http://cereal.forest.usf.edu/linux/L3/w02-dns_proxy/O4L01/online-module-guide.pdf>
-* Para la próxima consultar los NS de `www.telecom.com.ar` y consultar que tienen de curioso.  
+* Para la próxima consultar los NS de `www.telecom.com.ar` y consultar que tienen de curioso.
   (gulp.arnet.com.ar, oktubre.arnet.com.ar, lobosuelto.arnet.com.ar, corderoatado.arnet.com.ar)
 * El punto 7 se refiere a las funciones que existen (llamadas a sistema operativo)
   para hacer consultas DNS en un programa que uno está escribiendo. Vale decir,
@@ -20,20 +20,20 @@ TPL 3 - Domain Name System
   especiales y para obtener un subdominio dentro de ellas es necesario cumplir
   ciertos requisitos adicionales. Vale decir, no cualquiera puede obtener un
   dominio de estos tipo. Un ejemplo es ".mil", a nivel global, y ".mil.ar" a
-  nivel nacional, donde ambos están reservados para ciertas organizaciones.  
+  nivel nacional, donde ambos están reservados para ciertas organizaciones.
   La idea es que los estudiantes investiguen sobre algunos de estos dominios o
   zonas especiales y qué requisitos hay que cumplir para obtener un subdominio
   dentro de ".org.ar".
 
 Ejercicio removido en 2018 por florge-maurom
-8. Acceda a la herramienta en línea de reporte DNS <http:/www.howismydns.com/> y solicite chequear el dominio 
+8. Acceda a la herramienta en línea de reporte DNS <http:/www.howismydns.com/> y solicite chequear el dominio
 `unlu.edu.ar`. Describa al menos 3 de los chequeos/verificaciones realizados y los resultados obtenidos.
 
 #### --- Fin notas para ayudantes ---
 
 ### Consignas
 
-1. Describa el objetivo del sistema DNS, su estructura, elementos que intervienen y 
+1. Describa el objetivo del sistema DNS, su estructura, elementos que intervienen y
 tipos de datos (Resource Records) típicos que se pueden consultar.
 
 2. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien alguno de acceso público tal como `8.8.8.8` o `1.1.1.1`) para obtener la siguiente información:
@@ -74,12 +74,12 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
 * COLOURIS, G., DOLLIMORE, J., KINDBERG T. 2001. Capítulo 9: "Servicios de Nombres" en _Sistemas Distribuidos, Conceptos y Diseño_. Addison Wesley.
 * STEVENS, R. 1994. Capítulo 14: "DNS: The Domain Name System" en _TCP/IP Illustrated Vol.1_. Addison Wesley.
-* GORALSKI, W. 2017. Capítulo 23: "The Domain Name System" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.  
+* GORALSKI, W. 2017. Capítulo 23: "The Domain Name System" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
   <https://www.sciencedirect.com/science/book/9780128110270>
 * COMER, D. Capítulo 22: "Sistema de nombre de dominio (DNS)" en _Redes globales de información con Internet y TCP/IP_. Prentice Hall.
 
 #### Recursos en Internet
-* Para cada uno de los protocolos desarrollados a lo largo de la cursada, busque cuales son los Request For Comments (RFC) o Internet Draft que los describen, siguiendo la cadena de actualizaciones. Recurra a 
+* Para cada uno de los protocolos desarrollados a lo largo de la cursada, busque cuales son los Request For Comments (RFC) o Internet Draft que los describen, siguiendo la cadena de actualizaciones. Recurra a
 <http://www.faqs.org>, <http://www.rfc-editor.org> y <http://www.ietf.org>
 * HERTZOG, R., MAS, R., Capítulo 10.6: "Servidores de nombres de dominio (DNS)" en _El libro del administrador de Debian_.
   Disponible en <http://debian-handbook.info/browse/es-ES/stable/sect.domain-name-servers.html>

@@ -1,7 +1,7 @@
 TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 =================================================
 
-**Fecha de Entrega:** Luján 04/04/2019
+**Fecha de Entrega:** 05/09/2019
 
 
 1. Creación de un modelo simple Cliente/Servidor
@@ -68,7 +68,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
             who && who | openssl dgst
 
-    5. Copie la salida de dicho comando como resolución de este ejercicio.  
+    5. Copie la salida de dicho comando como resolución de este ejercicio.
        Añada además todos los comandos que ejecutó para lograr dicho resultado.
     6. Salga del host remoto escribiendo el comando `exit`
     7. Detenga y guarde la captura de tráfico. Remítala como parte de la tarea.
@@ -77,7 +77,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
     8. (opcional) Analice la captura y busque entre los datos cargados por los paquetes IP la clave que utilizó para acceder al servidor remoto. ¿Puede leerse fácilmente?
     9. (opcional) Identifique los paquetes que establecen la conexión TCP entre los hosts.
-    
+
 Spoiler! El ejercicio está bien resuelto cuando el comado `who` devuelve
 
     root     pts/0        Fecha y Hora (IP-DEL-CLIENTE)

@@ -1,7 +1,7 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** Luján 24/04/2019
+**Fecha de Entrega:** 19/09/2019
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -19,13 +19,13 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 2. ¿Qué es un Relay Agent, qué función cumple y en qué casos se utiliza?.
 
-3. ¿Cuáles son los comandos SMTP de una implementación mínima?  
+3. ¿Cuáles son los comandos SMTP de una implementación mínima?
    Describa someramente cada uno.
 
 4. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte del usuario que envía correo y el abuso que esto puede acarrear.
 
-5. ¿Cuál es el propósito de los protocolos POP e IMAP?  
-   Describa brevemente los comandos disponibles para el protocolo POP3.  
+5. ¿Cuál es el propósito de los protocolos POP e IMAP?
+   Describa brevemente los comandos disponibles para el protocolo POP3.
    ¿Qué ventajas ofrece el protocolo IMAP4 sobre POP3?
 
 7. ¿Para qué se definió la extensión MIME? Describa cómo se implementa y los diferentes tipos de contenidos y codificación MIME.
@@ -48,7 +48,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 9. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
    utilizando el menú ". . .", descargue el código RFC 822 del mismo (en Gmail
    corresponde a la opción _Mostrar original_, en Outlook a _Ver origen del
-   mensaje_, en Yahoo a _Ver mensaje original_, etc).  
+   mensaje_, en Yahoo a _Ver mensaje original_, etc).
    Analice los encabezados del mensaje e indique:
 
     * La semántica y el valor de los campos de encabezado vistos en clase
@@ -68,7 +68,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 * STALLINGS, W. 2002. Capítulo 19.3: "Electronic Mail: SMPTP and MIME" en _Comunicaciones y Redes de Computadoras (6ta ed)_. Prentice Hall.
 * STEVENS, R. 1994. Capítulo 28: "SMTP: Simple Mail Transfer Protocol" en _TCP/IP Illustrated Vol.1_. Addison Wesley.
-* GORALSKI, W. 2017. Capítulo 25: "SMTP and Email" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.  
+* GORALSKI, W. 2017. Capítulo 25: "SMTP and Email" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
   <https://www.sciencedirect.com/science/book/9780128110270>
 * RFC 5321 Simple Mail Transfer Protocol
 * RFC 2487 SMTP Service Extension for Secure SMTP over Transport Layer Security
