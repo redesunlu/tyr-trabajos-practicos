@@ -154,13 +154,18 @@ Elementos que interviene:
 
 ### Corrección de errores
 
+Corregir errores implica retransmisión de tramas cuando se detecta un escenario de falla, para lo cual hay que implementar técnicas que conviertan el enlace de datos de no confiable a confiable.
+
 3 técnicas de ARQ (Automatic Repeat Request):
 
 * ARQ con S&W
+  * Escenario 1: Trama dañada al llegar a destino. Destino la descarta. Source tiene un timer, que al no recibir ACK, retransmite cuando expira. Para poder hacer esto se mantiene una copia del frame.
+  * Escenario 2: ACK dañado. B recibe correctamente Trama, pero en A expira timer y retransmite.
+  * ![arq stop and wait](images/arq-stop-and-wait.png) 
 * ARQ go-back-N
 * ARQ con retransmisión selectiva
 
-retransmisión selectiva es mas eficiente desde los datos pedidos porque solo se transmite la trama perdida. Sin embargo, es habitual que en un escenario de perdida o interferencia, lo que se dañe sea una ráfaga de tramas. En ese caso, go-back-N responde mejor. Dependiendo del escenario podría usarse uno u otro, o ambos.
+retransmisión selectiva es mas eficiente desde los datos pedidos porque solo se transmite la trama perdida. Sin embargo, es habitual que en un escenario de perdida o interferencia, lo que se dañe sea una ráfaga de tramas. En ese caso, go-back-N responde mejor. Dependiendo del escenario podría usarse uno u otro, o ambos. Ademas, el primero es para un escenario de control de flujo con S&W, mientras que los otros dos se utilizan en escenarios con SW.
 
 ## HDLC
 
