@@ -3,7 +3,7 @@
 ## Puntos claves
 
 * Capa 2 del modelo OSI y TCP / IP
-* Capa 1 resuelve transmision de datos y sincronización. Sin embargo eso no alcanza para comunicar de forma "fiable". Errores y Congestión del receptor. 
+* Capa 1 resuelve transmisión de datos y sincronización. Sin embargo eso no alcanza para comunicar de forma "fiable". Errores y Congestión del receptor. 
 * Crear la ilusión de un enlace confiable, o fiable, entre adyacentes es el objetivo de la capa 2.
 * Es un conjunto de procedimientos para gestionar y controlar el intercambio entre dispositivos adyacentes.
 * 2 objetivos primarios: Control de flujo y control de enlace.
@@ -16,29 +16,47 @@ Es la capa 2 del modelo OSI:
 
 
 
-Para enviar datos sobre un medio, existen muchos factores a considerar ademas de los considerados en la Capa 1 (sincronizacion de dispositivos, conversion de datos en señales). A todas esas actividades y mecanismos que permiten que la comunicación se realice de forma confiable se los engloba en la capa de control del enlace. Cuando un protocolo de control de enlace se utiliza entre dispositivos, el medio se denomina "enlace de datos".
+Para enviar datos sobre un medio, existen muchos factores a considerar ademas de los considerados en la Capa 1 (sincronización de dispositivos, conversión de datos en señales). A todas esas actividades y mecanismos que permiten que la comunicación se realice de forma confiable se los engloba en la capa de control del enlace. Cuando un protocolo de control de enlace se utiliza entre dispositivos, el medio se denomina "enlace de datos".
+
+La secuencia de bits que circulan por el enlace de datos se dividen en bloques, a los que se llama **tramas** o frames y es la unidad de transmisión de datos en capa 2.
 
 Entre estos requerimientos / objetivos se pueden mencionar:
 
-* Sincronización de tramas: Division de los datos a ser enviados en "bloques" conocidos como frame o tramas, cuyo principio y final deben distinguidos. 
-* Control de Flujo: La estación que envia datos no debe hacerlo a una velocidad mayor de la que la estación receptora pueda recibirlos.
+* Sincronización de tramas: División de los datos a ser enviados en "bloques" conocidos como frame o tramas, cuyo principio y final deben distinguidos. 
+* Control de Flujo: La estación que envía datos no debe hacerlo a una velocidad mayor de la que la estación receptora pueda recibirlos.
 * Control de errores: Corrección de errores introducidos por el sistema de transmisión.
 * Direccionamiento: En un medio compartido, p.e. LAN, las estaciones deben poder identificarse y especificarse.
-* Datos y control en el mismo enlace: Tener un enlace unico para control y datos, y que el receptor pueda distinguir uno de otro.
-* Gestion del enlace: Procedmientos generales para el inicio, mantenimiento y finalizacion del intercambio de datos pueden ser necesarios o requeridos para la comunicación entre los dispositivos.
+* Datos y control en el mismo enlace: Tener un enlace único para control y datos, y que el receptor pueda distinguir uno de otro.
+* Gestión del enlace: Procedimientos generales para el inicio, mantenimiento y finalización del intercambio de datos pueden ser necesarios o requeridos para la comunicación entre los dispositivos.
 
 ## Contexto
 
-Medios: Imperfectos (ruido, atenuacion); capacidad finita (ancho de banda); Retardo de propagacion (distancia). -> Posibilidad de errores.
+Medios: Imperfectos (ruido, atenuación); capacidad finita (ancho de banda); Retardo de propagación (distancia). -> Posibilidad de errores.
 
 Emisor/Receptor: Tiempos de procesamiento; Tamaño de buffers. -> Control de Flujo.
 
-## Escenarios
+## Control de Flujo
+
+Procedimientos y técnicas para que el emisor no sobrecargue al receptor de datos.
+
+El receptor tiene buffers para mantener la información recibida durante el procesamiento de la misma, antes de pasarla a capas superiores. Estos buffers pueden llenarse si se reciben datos a una tasa mayor de la velocidad de procesamiento. Si los buffers se llenan, el receptor empieza a descartar tramas.
+
+El control de flujo debe garantizar que el receptor siempre tiene espacio disponible para recibir nuevos datos.
+
+### Escenarios
 
 * Se transmiten frames: Control + Información
-* 
+* Control de flujo
+* Control de errores
+  * Detección
+  * Recuperación
+* Direccionamiento
+* Tipos de servicio
+  * Sin conexión, sin acuse de recibo
+  * Sin conexión, con acuse de recibo
+  * Con conexión, con acuse de recibo
 
-### Escenario 1: Condiciones
+#### Escenario 1: Condiciones
 
 Transmisión unidireccional
 
@@ -48,7 +66,7 @@ Canal de comunicaciones libre de errores
 
 Tiempo de proceso despreciable
 
-### Escenario 2: Condiciones
+#### Escenario 2: Condiciones
 
 Transmisión unidireccional
 
@@ -58,7 +76,7 @@ Canal de comunicaciones libre de errores
 
 Tiempo de proceso **NO** despreciable
 
-### Escenario 3: Condiciones
+#### Escenario 3: Condiciones
 
 Transmisión unidireccional **de datos**
 
@@ -68,7 +86,7 @@ Canal de comunicaciones **con posibilidad** de errores
 
 Tiempo de proceso no despreciable
 
-### Escenario 4: Condiciones
+#### Escenario 4: Condiciones
 
 Transmisión **bidireccional** de datos
 
@@ -78,16 +96,84 @@ Canal de comunicaciones con posibilidad de errores
 
 Tiempo de proceso no despreciable
 
+### Técnicas de control de flujo
 
+* Stop & Wait (parada y espera)
+* Sliding Windows
 
-## Control de Flujo
+### Stop & Wait
 
-Procedimientos y tecnicas para que el emisor no sobrecargue al receptor de datos.
+* Emisor envía un frame, y espera el ack. Cuando lo recibe, envía el siguiente
+* Muy eficiente para frames grandes, pero esto no es conveniente por una serie de razones
+  * Tamaño de buffer en receptor limitado
+  * Si ocurre un error hay que retransmitir el frame entero, entonces un gran frame debe transmitirse nuevamente. Pequeños frames son mas convenientes, porque se detecta el error mucho mas rapido y pequeñas cantidades de datos son retransmitidas.
+  * En un medio compartido, como una LAN, no es convenientes que un único dispositivo tenga exclusividad sobre el medio respecto a los demás.
 
-El receptor tiene buffers para mantener la información recibida durante el procesamiento de la misma, antes de pasarla a capas superiores. Estos buffers pueden llenarse si se reciben datos a una tasa mayor de la velocidad de procesamiento.
+### Sliding Windows
 
+* Transmitir de 1 frame por vez genera ineficiencias en el uso del enlace.
+* Se puede mejorar mucho permitiendo la emisión de mas de 1 frame por vez.
+* La ventana indica cuantas tramas se pueden enviar antes de esperar los ACK
+* Mejora la utilización del canal
+* Se negocia al principio de la comunicación y lo establece el receptor
+* Gráfico de SW
+* Numero de secuencia; Tamaño de ventana; Confirmación.
+* Numero de secuencia: En el header, por lo tanto, tiene un limite.
+  * Si el campo es de 3 btis: 2^3 = 8 (del 0 al 7). Entonces frame seq es |8| (modulo).
+  * En general, si el campo es de k-bits, la secuencia va de 0 a (2^k)-1 (es también el tamaño de ventana). Ademas |2^k| es como se numeran los frames.
+* Tampoco es obligatorio que W = 2^k. Puede ser menor si el receptor lo considera adecuado.
+  * No puede ser mayor porque si quedan "en viaje" mas de un frame con idéntico seq number, el emisor cuando recibe un ACK no sabe cual de los dos frames esta siendo confirmado.
+* En un escenario donde ambas estaciones transmiten, el mecanismo es igual pero cada dispositivo tiene dos ventanas: Una de transmisión y una de recepción.
+* Ejemplo: Cambiar RR N por ACK N-1. Después explicar el RR (Receive and Ready for N).
 
+![Sliding Window Example](./images/sliding-windows-example.png)
+
+## Control de errores
+
+Son los mecanismos que se utilizan para detectar y corregir errores que ocurren en la transmisión de tramas.
+
+Factores a considerar:
+
+* Tramas perdidas: p.e. una ráfaga de ruido puede hacer que una trama completa sea indetectable para el receptor.
+* Tramas dañadas: La trama es reconocible, pero algunos bits contienen errores.
+
+Elementos que interviene:
+
+* Detección de errores
+* Confirmación positiva ACKs
+* Expiración de temporizadores y retransmisión
+* Confirmación negativa NACKs
+
+### Detección de errores
+
+* Comprobación de paridad
+* Comprobación de redundancia cíclica (CRC)
+
+![CRC explicación](./images/crc.png)
+
+### Corrección de errores
+
+3 técnicas de ARQ (Automatic Repeat Request):
+
+* ARQ con S&W
+* ARQ go-back-N
+* ARQ con retransmisión selectiva
+
+retransmisión selectiva es mas eficiente desde los datos pedidos porque solo se transmite la trama perdida. Sin embargo, es habitual que en un escenario de perdida o interferencia, lo que se dañe sea una ráfaga de tramas. En ese caso, go-back-N responde mejor. Dependiendo del escenario podría usarse uno u otro, o ambos.
+
+## HDLC
+
+* Estándar ISO 3309 / 4335
+* Hay tipos de estaciones, modos de configuración y modos de transferencia.
+* 3 tipos de trama diferentes.
+* Implementa todas las técnicas de control de flujo y errores vistas en la clase
+* ¿Que es el piggybacking?
+
+## Enlace en TCP/IP
+
+* No se especifica una tecnología de capa 2, dando libertad a los vendors que implementen el protocolo que mejor convenga. Esto es porque existen capas de enlace muy diferentes según el contexto.
+* IP tiene un principio de diseño para poder funcionar sobre prácticamente cualquier enlace que soporte dicho protocolo.
 
 ## Bibliografía
 
-\[STA,2007\]: Stallings, William. *Data and computer communications*. Pearson Education India, 2007. 8va Edición.
+\[STA,2007\]: Stallings, William. *Data and computer communications*. Pearson Education India, 2007. 8va Edición. Cap 7 (y parte del Cap 6).
