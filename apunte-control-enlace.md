@@ -146,8 +146,9 @@ Elementos que interviene:
 
 ### Detección de errores
 
-* Comprobación de paridad
-* Comprobación de redundancia cíclica (CRC)
+* Comprobación de paridad (paridad par o impar): Se agrega un 1 según tipo de paridad.
+  * Problema con ráfaga de bits cambiados o con numero par de 1 cambiados.
+* Comprobación de redundancia cíclica (CRC): Conocido en esta capa como FCS (Frame Check Sequence).
 
 ![CRC explicación](./images/crc.png)
 
