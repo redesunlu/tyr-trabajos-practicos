@@ -103,7 +103,7 @@ Tiempo de proceso no despreciable
 
 ### Stop & Wait
 
-* Emisor envía un frame, y espera el ack. Cuando lo recibe, envía el siguiente
+* Emisor envía un frame, y espera el ACK (*acknowledgement*). Cuando lo recibe, envía el siguiente
 * Muy eficiente para frames grandes, pero esto no es conveniente por una serie de razones
   * Tamaño de buffer en receptor limitado
   * Si ocurre un error hay que retransmitir el frame entero, entonces un gran frame debe transmitirse nuevamente. Pequeños frames son mas convenientes, porque se detecta el error mucho mas rapido y pequeñas cantidades de datos son retransmitidas.
@@ -162,7 +162,14 @@ Corregir errores implica retransmisión de tramas cuando se detecta un escenario
   * Escenario 1: Trama dañada al llegar a destino. Destino la descarta. Source tiene un timer, que al no recibir ACK, retransmite cuando expira. Para poder hacer esto se mantiene una copia del frame.
   * Escenario 2: ACK dañado. B recibe correctamente Trama, pero en A expira timer y retransmite.
   * ![arq stop and wait](images/arq-stop-and-wait.png) 
-* ARQ go-back-N
+* ARQ go-back-N: Puede haber n tramas en transito, y el mecanismo plantea que en caso de no recibir una trama (detectado por recibir la i-1 y a continuación la i+1), solicita la trama i, y todas las siguientes recibidas son descartadas y retransmitidas.
+  * Caso 1: Trama dañada. frame i para B enviado pero dañado/perdido. Lo descarta (y por tanto no es recibido)
+    * Subcaso a: A envía i+1, entonces B detecta i+1 fuera de orden, envía una trama Rej i, y A debe enviar i y todos los sucesivos.
+    * Subcaso b: A no envía mas nada, pero B tampoco envía ni ACK ni Rej. En A expira Timer, entonces transmite un ACK con un bit P=1, que le indica al destino que confirme la siguiente trama que espera. B envía el ACK correspondiente a i-1, y A reenvía i. A veces, como alternativa, reenvía directamente la trama cuando expira el timer.
+  * Caso 2: ACK dañado: 2 subcasos
+    * Subcaso a: B recibe trama i, y confirma con ACK i. Este ACK se daña en el camino, pero como son acumulativos, en el caso que antes que expire el timer, Otro ACK (p.e. para trama i+1), confirma la anterior.
+    * Subcaso b: Expira en A el timer y se esta ante algo similar a 1b. A este ACK con P=1 también se le setea un timer. En caso que este no llegue, se reintenta el ACK P=1 un numero finito de veces. Si el mecanismo no funciona, se inicia un proceso de reset.
+  * Caso 3: Rej perdido/dañado. Se procede con en 1b.
 * ARQ con retransmisión selectiva
 
 retransmisión selectiva es mas eficiente desde los datos pedidos porque solo se transmite la trama perdida. Sin embargo, es habitual que en un escenario de perdida o interferencia, lo que se dañe sea una ráfaga de tramas. En ese caso, go-back-N responde mejor. Dependiendo del escenario podría usarse uno u otro, o ambos. Ademas, el primero es para un escenario de control de flujo con S&W, mientras que los otros dos se utilizan en escenarios con SW.
