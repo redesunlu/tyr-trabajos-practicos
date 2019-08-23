@@ -169,10 +169,15 @@ Corregir errores implica retransmisión de tramas cuando se detecta un escenario
   * Caso 2: ACK dañado: 2 subcasos
     * Subcaso a: B recibe trama i, y confirma con ACK i. Este ACK se daña en el camino, pero como son acumulativos, en el caso que antes que expire el timer, Otro ACK (p.e. para trama i+1), confirma la anterior.
     * Subcaso b: Expira en A el timer y se esta ante algo similar a 1b. A este ACK con P=1 también se le setea un timer. En caso que este no llegue, se reintenta el ACK P=1 un numero finito de veces. Si el mecanismo no funciona, se inicia un proceso de reset.
-  * Caso 3: Rej perdido/dañado. Se procede con en 1b.
-* ARQ con retransmisión selectiva
+  * Caso 3: Rej perdido/dañado. Se procede como en 1b.
+* ARQ con retransmisión selectiva: Existe un tipo de ACK negativo SREJ, que indica la perdida o daño de un frame, y solo la trama indicada es retransmitida. Es mas eficiente desde la transmisión, pero requiere logica adicional y buffers para almacenar todos los frames siguientes a la espera del indicado en SREJ. El transmisor ademas debe incluir un mecanismo adicional para transmitir frames fuera de secuencia.
+  ![ARQ Go Back N y Transmisión Selectiva](images/arq-go-back-selective-reject.png)
 
-retransmisión selectiva es mas eficiente desde los datos pedidos porque solo se transmite la trama perdida. Sin embargo, es habitual que en un escenario de perdida o interferencia, lo que se dañe sea una ráfaga de tramas. En ese caso, go-back-N responde mejor. Dependiendo del escenario podría usarse uno u otro, o ambos. Ademas, el primero es para un escenario de control de flujo con S&W, mientras que los otros dos se utilizan en escenarios con SW.
+Retransmisión selectiva es mas eficiente desde los datos pedidos porque solo se transmite la trama perdida. Sin embargo, es habitual que en un escenario de perdida o interferencia, lo que se dañe sea una ráfaga de tramas. En ese caso, go-back-N responde mejor. Dependiendo del escenario podría usarse uno u otro (SREJ es muy común en enlaces satelitales, con alto retardo de propagación). Ademas, el primero es para un escenario de control de flujo con S&W, mientras que los otros dos se utilizan en escenarios con SW.
+
+Go Back N requiere que, si el campo de numero de secuencia es k y por ende su numero de secuencia es 2^k, El tamaño máximo de ventana tiene que ser (2^k) -1.
+
+Selective Reject tiene el inconveniente que acepta tramas desordenadas si están dentro de las validas para la retransmisión. Por ello, limita el numero de ventana a 2^(k-1) (o sea, a la mitad del rango máximo del campo de k bits).
 
 ## HDLC
 
@@ -190,3 +195,7 @@ retransmisión selectiva es mas eficiente desde los datos pedidos porque solo se
 ## Bibliografía
 
 \[STA,2007\]: Stallings, William. *Data and computer communications*. Pearson Education India, 2007. 8va Edición. Cap 7 (y parte del Cap 6).
+
+\[PET, 2012\]: Peterson, L. L., & Davie, B. S. (2012). *Computer networks: a systems approach*. Elsevier. 5ta Edición.
+
+La clase se construye en base al enfoque de Stallings, dado que es "agnóstico" de las tecnologías, a diferencia de Peterson que utiliza ejemplos de protocolos y da un tratamiento mas "aplicado".
