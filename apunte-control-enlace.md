@@ -22,7 +22,7 @@ La secuencia de bits que circulan por el enlace de datos se dividen en bloques, 
 
 Entre estos requerimientos / objetivos se pueden mencionar:
 
-* Sincronización de tramas: División de los datos a ser enviados en "bloques" conocidos como frame o tramas, cuyo principio y final deben distinguidos. 
+* Sincronización de tramas: División de los datos a ser enviados en "bloques" conocidos como frame o tramas, cuyo principio y final deben distinguidos por el receptor.
 * Control de Flujo: La estación que envía datos no debe hacerlo a una velocidad mayor de la que la estación receptora pueda recibirlos.
 * Control de errores: Corrección de errores introducidos por el sistema de transmisión.
 * Direccionamiento: En un medio compartido, p.e. LAN, las estaciones deben poder identificarse y especificarse.
@@ -66,6 +66,8 @@ Canal de comunicaciones libre de errores
 
 Tiempo de proceso despreciable
 
+![Escenario 1](images/escenario-1.png)
+
 #### Escenario 2: Condiciones
 
 Transmisión unidireccional
@@ -76,6 +78,8 @@ Canal de comunicaciones libre de errores
 
 Tiempo de proceso **NO** despreciable
 
+![Escenario 2](images/escenario-2.png)
+
 #### Escenario 3: Condiciones
 
 Transmisión unidireccional **de datos**
@@ -85,6 +89,8 @@ Transmisor y receptor siempre disponibles
 Canal de comunicaciones **con posibilidad** de errores
 
 Tiempo de proceso no despreciable
+
+![Escenario 3](images/escenario-3.png)
 
 #### Escenario 4: Condiciones
 
@@ -147,6 +153,9 @@ Elementos que interviene:
 ### Detección de errores
 
 * Comprobación de paridad (paridad par o impar): Se agrega un 1 según tipo de paridad.
+  * P.e.: '1101100'
+    * Paridad par: '1101100**0**'
+    * Paridad impar: '1101100**1**'
   * Problema con ráfaga de bits cambiados o con numero par de 1 cambiados.
 * Comprobación de redundancia cíclica (CRC): Conocido en esta capa como FCS (Frame Check Sequence).
 
