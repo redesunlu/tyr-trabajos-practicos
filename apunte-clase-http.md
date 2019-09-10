@@ -144,6 +144,7 @@ Content-Type: text/html; charset=iso-8859-1\r\n
 
 * General Headers: Headers que aplican a ambos request y response
   * Date
+  * Connection (keep-alive y close)
   * Keep-Alive
   * Cache-Control
 * Request Headers: Headers que solo deben ser incluidos en una peticion o datos del cliente
