@@ -36,11 +36,11 @@ Protocolo HTTP
 
 ## Introducción
 
-HTTP es un protocolo de capa de aplicación encargado de dar soporte a todo lo que hoy en dia se conoce como "la web". Inicialmente se trataba de un protocolo orientado a compartir información de manera que la misma pueda ser "navegable" entre si.
+HTTP es un protocolo de capa de **aplicación** encargado de dar soporte a todo lo que hoy en día se conoce como "la web". Inicialmente se trataba de un protocolo orientado a compartir información de manera que la misma pueda ser "navegable" entre si (de ahí su concepto de hipermedia).
 
-La estandarización y simplicidad del protocolo fue un factor clave a la hora de volverse popular, llegando a la actualidad de ser uno de los servicios en Internet mas utilizados.
+La estandarización y simplicidad del protocolo fue un factor clave a la hora de volverse popular, llegando a la actualidad de ser uno de los servicios en Internet mas utilizados, dando soporte a infinidad de aplicaciones sobre el.
 
-Como servicio de capa de aplicación, es utilizado directamente por el usuario final, a traves de software especializado conocido como User-Agent. En particular los conocidos Web Browsers son el caso de uso mas conocido.
+Como servicio de capa de aplicación, es utilizado directamente por el usuario final, a través de software especializado conocido como **User-Agent**. En particular los conocidos **Web Browsers** son el caso de uso mas conocido.
 
 HTTP viene de HyperText Transfer Protocol.
 
@@ -50,29 +50,29 @@ HTTP tuvo diversas versiones.
 
 * HTTP 0.9 (1991): La primer versión creada en el CERN por Tim Berners-Lee.
 * HTTP 1.0 (1996): Versión estable obsoleta detallada en el RFC 1945.
-* HTTP 1.1 (1997): Versión estable aun en uso descripta en RFC 2068.
+* HTTP 1.1 (**1997**): Versión estable aun en uso descrita en RFC 2068.
   * Update en RFC 2616 (1999)
   * Un conjunto de RFCs dejan obsoletos los anteriores: 7230, 7231, 7232, 7233, 7234, 7235.
-* HTTP 2 (2015): was published as RFC [7540](https://tools.ietf.org/html/rfc7540).
+* HTTP 2 (**2015**): was published as RFC [7540](https://tools.ietf.org/html/rfc7540).
 * HTTP 3 (2018-Future?)
 
 Esta clase refiere a HTTP/1.1 en su versión mas moderna.
 
 ## Definiciones
 
-- Cliente / Servidor
+- **Cliente / Servidor**
   - Web Server
   - Web Client
-- Usa servicios de TCP para garantizar fiabilidad
+- Usa servicios de **TCP** para garantizar fiabilidad
   - Requiere entonces que una conexión TCP sea establecida entre cliente y servidor previo al intercambio de cualquier PDU.
-- Protocolo sin estado: No existe relación alguna entre una transacción y la siguiente
-- La PDU de HTTP es conocida como "Mensaje"
-  - Un mensaje que viaja del cliente al servidor es una "petición"
-  - Un mensaje que viaja desde el servidor al cliente es una "respuesta"
-  - PDU variable y orientada al "texto plano"
+- Protocolo **sin estado**: No existe relación alguna entre una transacción y la siguiente
+- La PDU de HTTP es conocida como "**Mensaje**"
+  - Un mensaje que viaja del cliente al servidor es una "**petición**"
+  - Un mensaje que viaja desde el servidor al cliente es una "**respuesta**"
+  - PDU variable y orientada a "texto plano" (no tiene ningún tipo de seguridad)
 - Se dice que el cliente juega un rol "activo" y el servidor un rol "pasivo"
 - Los diferentes headers le permiten manejar diversos formatos, que puede ser una web en HTML, una imagen en png, un video en mp4, por nombrar algunos ejemplos.
-- Cada elemento referible en la web es conocido como "Recurso". En general un recurso disponible en la web es localizable via un identificador, que se conoce como URL.
+- Cada elemento referible o localizable en la web es conocido como "**Recurso**". En general un recurso disponible en la web es localizable vía un identificador, que se conoce como URL.
 
 ## Escenarios
 
@@ -88,17 +88,20 @@ Se desea recuperar un archivo .html desde un servidor web donde se encuentra alo
 * Coloca la dirección en la barra de direcciones
 * Cliente utiliza servicios de DNS para definir la IP del server www.unlu.edu.ar
 * Cliente inicia una conexión TCP con el servidor
-* UA genera un mensaje de petición del documento principal.html y lo envia al server
-* Servidor recibe la peticion
-* Servidor localiza el archivo en su Filesystem
-* Server genera un mensaje de respuesta que envia al cliente
+* UA genera un mensaje de petición del documento principal.html y lo envía al server
+* Servidor recibe la petición
+* Servidor localiza el archivo en su Filesystem, en base a la configuración que el administrador realizo del mismo.
+* Server genera un mensaje de respuesta que envía al cliente
 * Se cierra la conexión
 
 ¿Que elementos intervinieron?
 
 #### Cliente
 
-Acepta en su interfaz URL del recurso a solicitar; Puede utilizar servicios de DNS; Genera peticiones HTTP y Procesa Respuestas.
+* Acepta en su interfaz URL del recurso a solicitar
+* Puede utilizar servicios de DNS
+* Genera peticiones HTTP
+* Procesa respuestas
 
 #### Mensajes
 
@@ -143,7 +146,7 @@ Content-Type: text/html; charset=iso-8859-1\r\n
 ```
 
 * General Headers: Headers que aplican a ambos request y response
-  * Date
+  * Date (fecha en que el mensaje fue creado)
   * Connection (keep-alive y close)
   * Keep-Alive
   * Cache-Control
@@ -170,17 +173,17 @@ Content-Type: text/html; charset=iso-8859-1\r\n
 
 También llamados comandos, indican la acción que el cliente desea realizar sobre el recurso en el servidor. Existen muchos, entre ellos:
 
-GET: Una petición GET solicita el recurso al servidor que se indica en la URL
+**GET**: Una petición GET solicita el recurso al servidor que se indica en la URL
 
-POST: Una petición que le indica al servidor que "acepte" la entidad que va adjunta al mensaje, según se indique en la URL de la petición como sub recurso. P.e. `POST /articulos HTTP/1.1` creara un articulo nuevo (p.e. /articulos/new-article.html). Si el recurso existe, es una actualización.
+**POST**: Una petición que le indica al servidor que "acepte" la entidad que va adjunta al mensaje, según se indique en la URL de la petición como sub recurso. P.e. `POST /articulos HTTP/1.1` creara un articulo nuevo (p.e. /articulos/new-article.html). Si el recurso existe, es una actualización.
 
-PUT: Petición que adjunta una entidad desde el cliente para que el servidor la almacene y le permita ubicarla desde la URL indicada. P.e. `PUT /articulos/some-article.html` lo crea si existe, sino actualiza. DIFERENCIA con POST: Con post, hacer `POST /articulos/new-article HTTP/1.1` no es correcto.
+**PUT**: Petición que adjunta una entidad desde el cliente para que el servidor la almacene y le permita ubicarla desde la URL indicada. P.e. `PUT /articulos/some-article.html` lo crea si existe, sino actualiza. DIFERENCIA con POST: Con post, hacer `POST /articulos/new-article HTTP/1.1` no es correcto.
 
-DELETE: En general no se usa, elimina el recurso especificado.
+**DELETE**: En general no se usa, elimina el recurso especificado.
 
-HEAD: Similar a GET, pero solo devuelve el header del response (es util para solicitar información del recurso sin que comience la descarga del mismo).
+**HEAD**: Similar a GET, pero solo devuelve el header del response (es útil para solicitar información del recurso sin que comience la descarga del mismo).
 
-OPTIONS, PATCH, TRACE.
+**OPTIONS**, **PATCH**, **TRACE**.
 
 #### Servidor
 
@@ -216,26 +219,26 @@ El servidor que posee el recurso que desea el usuario es ahora conocido como `or
 
 Los proxys, los gateways y los túneles.
 
-Gateway habitualmente nos habla de un dispositivo que permite que 2 dispositivos hablen en diferentes protocolos. Asi por ejemplo, el UA podía hacer peticiones en HTTP, y el gateway hacia el server usaba otro protocolo, p.e. FTP o HTTP2.
+**Gateway** habitualmente nos habla de un dispositivo que permite que 2 dispositivos hablen en diferentes protocolos. Asi por ejemplo, el UA podía hacer peticiones en HTTP, y el gateway hacia el server usaba otro protocolo, p.e. FTP o HTTP2.
 
-Un túnel es cuando un protocolo se encapsula dentro de otro que habitualmente no lo haría, generalmente por razones de restricciones. Por ejemplo, tunelizar HTTP en SSH porque una organización permite trafico ssh pero no http.
+Un **túnel** es cuando un protocolo se encapsula dentro de otro que habitualmente no lo haría, generalmente por razones de restricciones. Por ejemplo, tunelizar HTTP en SSH porque una organización permite trafico ssh pero no http.
 
 #### Proxy
 
 Proxy es un dispositivo que permite recibir, procesar y reenviar peticiones HTTP entre clientes y servidores. Para el cliente, el proxy es un servidor, y para el origin server, el proxy es un cliente. Es habitual su uso para establecer políticas de seguridad, restricciones de acceso, monitoreo de trafico, entre otros.
 
-Es interesante notar que tanto el cliente como el servidor son conscientes de la existencia del proxy. En el cliente este debe ser configurado (sección proxy en los navegadores). En el caso del servidor, el proxy agrega cabeceras que lo identifican como tal. Es habitual que el proxy escuche en el puerto 3128 o 8080.
+Es interesante notar que tanto el cliente como el servidor son conscientes de la existencia del proxy. En el cliente este debe ser configurado (sección proxy en los navegadores). En el caso del servidor, el proxy agrega cabeceras que lo identifican como tal. Es habitual que el proxy "escuche" en el puerto 3128 o 8080 de TCP.
 
   * Forwarded
-  * X-Forwarded-Host
-  * Via
+  * X-Forwarded-Host: Con el anterior, ayudan a identificar el origen de la petición
+  * Via (MUST): indica versión de protocolo recibida
 
 Escenarios de implementación de un proxy:
 
-1. El proxy opera dentro de los limites de la organización, de manera que los clientes no pueden realizar conexiones TCP (y por ende HTTP) hacia el exterior, pero si hasta el proxy. De esta manera, el proxy si tiene permitido conexiones al exterior y es a través de este que se realizan las peticiones de los clientes de la organización.
+1. El proxy opera dentro de los limites de la organización, de manera que los clientes no pueden realizar conexiones TCP (y por ende HTTP) hacia el exterior, pero si hasta el proxy. De esta manera, el proxy si tiene permitido conexiones al exterior y es a través de este que se realizan las peticiones de los clientes de la organización. Este es el modo de uso que suele tenerse en mente cuando se explica que es un Proxy.
 2. Un usuario desea ocultarse tras un proxy para anonimizar su navegación. Contrata o instala un proxy en un servidor externo, y se conecta a través de este para operar hacia la web. Proxy anónimo.
 3. Una organización desea que sus clientes se conecten a un sistema que se encuentra en N servidores, de manera que el cliente 1 se conecte al server 1, el cliente 2 lo haga al server 2, el cliente N lo haga al server N, el cliente N+1 lo haga al 1, y así. Un proxy puede implementar este tipo de políticas, y este servicio es conocido como proxy reverso.
-4. Una organización dispone de un acceso autorizado a traves de una IP a un servicio de pago, pero tiene N user-agents distribuidos por todo el edificio que requieren usar el servicio. Si se autoriza la IP del proxy, los clientes pueden acceder a través de este de forma cómoda.
+4. Una organización dispone de un acceso autorizado a través de una IP a un servicio de pago, pero tiene N user-agents distribuidos por todo el edificio que requieren usar el servicio. Si se autoriza la IP del proxy, los clientes pueden acceder a través de este de forma cómoda.
 
 ### Escenario 3
 
@@ -285,11 +288,21 @@ En general, esto se debe a que el sitio aloja todos los objetos en el mismo serv
 
 Diversos enfoques se buscaron para superar estos limites, HTTP Pipeling o Web farming
 
-![http-pipelining](./images/http-pipellining.svg)
+<img src="./images/http-pipellining.svg" alt="http-pipelining" style="zoom:80%;" />
 
 source: wikipedia
 
-Web farming consiste en tener disponibles N servidores con los objetos disponibles, de manera que cuando un recurso HTML es devuelto, las urls pasadas se devuelven de manera que se bajen solo las permitidas por servidor.
+Domain Sharding consiste en tener disponibles N servidores con los objetos disponibles, de manera que cuando un recurso HTML es devuelto, las urls pasadas se devuelven de manera que se bajen solo las permitidas por servidor.
+
+Sin Domain Sharding:
+
+![download cascade without domain sharding](./images/without-domain-sharding.jpg)
+
+Con Domain Sharding:
+
+![with domain sharding](./images/domain-sharding.jpg)
+
+
 
 #### Tipos de recursos
 
@@ -342,6 +355,8 @@ Web Pages <--> Web Sites <--> Web Applications
 ![http server side dynamic](./images/http-server-side-dynamic.png)
 
 source: MDN
+
+#### Contenido dinámico
 
 El contenido HTML devuelto por el web server es creado vía scripting o lenguaje de programación de forma dinámica, y puede variar según ubicación geográfica, parámetros de la petición, datos en una base de datos, etc...
 
