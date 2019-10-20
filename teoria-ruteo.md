@@ -29,6 +29,12 @@ Temario
       ![](./images/encapsulamiento-entrega-directa.png)
     - Indirecta (otra red de capa 2 anexa)  
       ![](./images/encapsulamiento-entrega-indirecta-1.png)
+    - ARP: Protocolo auxiliar (RFC 826) a operaciones de la capa 3 que permite mediante un conjunto de mensajes, responder la correspondencia entre direcciones de capa 3 y direcciones de la subred de capa inferior. Forma de funcionamiento
+      - Cada host en la red LAN mantiene una tabla de IP - dirección Ethernets.
+      - Cuando el algoritmo de ruteo determina a que IP de la red LAN es necesario enviar el mensaje, se controla en la tabla ARP si esta el mapeo IP <-> dir eth.
+        - En caso de no estar, se realiza un mensaje ARP Request al broadcast (FF:FF:FF:FF:FF:FF)
+      - Todos los host en la red de capa 2, escuchan el mensaje y revisan si el mensaje esta dirigidos a ellos. Esto lo hacen vía el campo de consulta dentro de la PDU de ARP, donde el emisor del mensaje ARP estableció que IP esta buscando. El host que tenga dicha IP genera un mensaje ARP Reply, donde establece su MAC en uno de los campos.
+      - El resto de los host que escuchan el dialogo ARP pueden agregar a sus respectivas tablas 
 - Tabla de rutas
     - Explicar cada columna de `route` 
         - Red destino
