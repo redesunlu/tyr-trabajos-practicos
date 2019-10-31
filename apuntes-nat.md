@@ -57,9 +57,29 @@ Uno de los usos mas extendidos de NAT, NAPT (Network Address Port Translation), 
 
 En todos los casos, el objetivo es mantener la correspondencia entre los dispositivos dentro de la red para poder identificar en cada caso los paquetes que vengan desde el exterior puedan ser debidamente re-escritos y enviados a quien corresponda.
 
+```bash
+# Source NAT estatico, si cambia la IP pública la regla no aplica
+iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j SNAT --to 203.0.113.1 
+# Masquerade es un SNAT contempla que la IP pública puede ser dinamica
+iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE
+```
+
 ### Port Forwarding
 
-[EXPLICAR, Pagina 314]
+Un problema típico cuando se esta detrás de un dispositivo NAT es que sucede si algún equipo en la red interna desea prestar un servicio accesible desde el exterior. Se podrá instalar un servidor y que el mismo se encuentre disponible para recibir peticiones, pero debido a la restricción de NAT, ningún dispositivo del exterior podrá conseguir que algún paquete llegue al mismo de forma activa (es decir, comenzando la conexión). Decimos por ello que los equipos detrás de NAT no son directamente alcanzables desde el exterior.
+
+Incluso permitiendo que el dispositivo NAT permita el ingreso de paquetes con segmentos que contengan el flag *SYN* activo, como lo habitual es que los dispositivos tengan IPs privadas, ningún dispositivo podrá llegar debido a que estos bloques de direcciones  no son ruteables en Internet.
+
+La solución a este problema es **port mapping** o **port forwarding**. Este tipo de NAT consiste en lo siguiente:
+
+"En el dispositivo que realiza NAT, se genera una regla que indique que cualquier paquete recibido a la IP pública del dispositivo y a un puerto definido de forma fija, sea ruteado a una IP / puerto especifico de la red interna."
+
+Con dicha regla, todo el trafico entrante es reenviado a un *endpoint* o proceso en un dispositivo dentro de la red. Decimos que la configuración de dicha regla es "estática". Esto significa que un usuario con privilegios de administración de red debe tener acceso al dispositivo y realizar el ajuste de estos parámetros.
+
+```bash
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j DNAT --to 192.168.1.2:8080
+iptables -A FORWARD -p tcp -d 192.168.1.2 --dport 8080 -j ACCEPT
+```
 
 ### Consideraciones
 
@@ -67,7 +87,7 @@ En todos los casos, el objetivo es mantener la correspondencia entre los disposi
 
 **2. Ocultación de la red:** Una de las ventajas de NAT, es que no manera, con lo visto hasta acá, de que algún dispositivo del exterior pueda conocer absolutamente nada sobre la topología interna de la red. Desde el exterior es imposible distinguir si una conexión es iniciada por un dispositivo a través de NAT o el paquete viene desde el origen directamente. Esto es a veces visto como una ventaja adicional de este mecanismo.
 
-**3. NAT y TCP:** ¿Que efecto tiene todo el mecanismo de NAT en las conexiones TCP? En definitiva, si un socket es un par de identificadores de procesos en dispositivos finales, NAT cambia parte de esos identificadores, o en algunos casos, lo cambia completamente. Cuando se inicia una conexión, NAT detecta el segmento de apertura de conexión (vía cabecera *syn*). El dispositivo mantiene una tabla de mapeo de conexiones. Es necesario para cuando el servidor responda, que lo hará a la IP pública y puerto asignado por el dispositivo NAT. A este mecanismo se lo conoce como *por preservation*. Ademas NAT implementa timers y controles para verificar si la sesión TCP sigue activa en caso de inactividad.
+**3. NAT y TCP:** ¿Que efecto tiene todo el mecanismo de NAT en las conexiones TCP? En definitiva, si un socket es un par de identificadores de procesos en dispositivos finales, NAT cambia parte de esos identificadores, o en algunos casos, lo cambia completamente. Cuando se inicia una conexión, NAT detecta el segmento de apertura de conexión (vía cabecera *syn*). El dispositivo mantiene una tabla de mapeo de conexiones. Es necesario para cuando el servidor responda, que lo hará a la IP pública y puerto asignado por el dispositivo NAT. A este mecanismo se lo conoce como *port preservation*. Ademas NAT implementa timers y controles para verificar si la sesión TCP sigue activa en caso de inactividad.
 
 **4. NAT y apps P2P:** En general y por su esquema, NAT esta configurado para descartar segmentos entrantes con el flag SYN activado (aplica a datagramas UDP sin correlación en la tabla de mapeo de NAT). Esto genera problemas con protocolos P2P (SIP, Bittorrent), donde las aplicaciones de usuarios detrás de NAT funcionan simultáneamente como clientes o servidores y ambos dispositivos se encuentran detrás de NAT. En este escenario, ningún dispositivo tiene una IP Pública a la cual "conectarse". Diferentes enfoques son utilizados para atender esta problemática.
 
@@ -75,4 +95,6 @@ En todos los casos, el objetivo es mantener la correspondencia entre los disposi
 
 ![NAT retransmisión vía servidor público](./images/nat-relaying.png)
 
-Otras tecnicas son **hole punching**, donde a traves de un servidor de confianza ambos clientes conocen las credenciales del otro, y ambos intentan iniciar una conexion. Esto implica, entre otras cosas, que NAT registre temporalmente la llegada de un segmento o datagrama entrante a la espera de uno similar desde la red interna, y en dicho caso (limitado temporalmente), la sesión es establecida.
+Otra técnica es **hole punching**, donde a través de un servidor de confianza ambos clientes conocen las credenciales del otro, y ambos intentan iniciar una conexión. Esto implica, entre otras cosas, que NAT registre temporalmente la llegada de un segmento o datagrama entrante a la espera de uno similar desde la red interna, y en dicho caso (limitado temporalmente), la sesión es establecida.
+
+**5. Cabeceras afectadas:** Como se pudo observar, implementar NAT requiere modificar diversos campos en varias capas de la pila de protocolos TCP/IP. Cuando un datagrama sale desde el interior de la red, son modificados los campos IP origen y tal vez el puerto de capa 4, pero ademas, debe modificarse el checksum de capa 3 y el mismo campo de capa 4 (en este ultimo caso, debe hacerse aun si no hubiera cambio de puerto, dado que el checksum de TCP involucra campos de IP - direcciones origen y destino, campo protocol number y campo total lenght).
