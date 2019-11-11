@@ -6,7 +6,7 @@ Protocolo de capa de transporte no orientado a la conexión, no fiable, sin cont
 
 UDP (User Datagram Protocol) es un protocolo sencillo de capa de transporte, que se limita a unas pocas funciones en comparación al otro protocolo de la misma capa mas conocido, TCP.
 
-Definido por J Postel en el RFC 768 (1980), la principal función que cumple UDP es la de multiplexar los datos que llegan a un dispositivo al servicio correspondiente en capa de aplicación. Idéntica función cumple el protocolo con los datos que genera capa 5 y solicitan servicios a UDP. Para lograr cumplir con esta tarea, se vale de un esquema similar al de TCP: Puertos. Estos puertos permiten realizar la multiplexación de servicios.
+Definido por J Postel en el RFC 768 (1980), con una actualizacion en el RFC 1122 (1989), la principal función que cumple UDP es la de multiplexar los datos que llegan a un dispositivo al servicio correspondiente en capa de aplicación. Idéntica función cumple el protocolo con los datos que genera capa 5 y solicitan servicios a UDP. Para lograr cumplir con esta tarea, se vale de un esquema similar al de TCP: Puertos. Estos puertos permiten realizar la multiplexación de servicios.
 
 ## ¿Porque UDP si existe TCP?
 
@@ -35,6 +35,8 @@ Existen consideraciones sobre usar UDP para flujos de datos grandes (Caso multim
 En el campo "Protocolo" de IP, UDP es designado con el numero 17.
 
 El conjunto de puertos de NAT es independiente de los puertos de TCP. Esto es, si existe un web server ocupando el puerto TCP/80 como único servicio de un host, el puerto 80 UDP esta libre. 
+
+![UDP y TCP usan puertos diferentes](./images/udp-tcp-ports-and-apps.png)
 
 ## Ejemplos
 
