@@ -115,6 +115,14 @@ En el cliente HTTP
         (Reiniciar Firefox)
         Repetir los ultimos 2 pasos para browser.cache.memory.enable
 
+- Deshabilitar DNS Lookup para registros AAAA desde el navegador:
+
+    ```
+    network.dns.disableIPv6		true
+    ```
+    
+    Esto evita que firefox realice consultas al registro AAAA que son innecesarias para el TP
+    
 - Agregar las direcciones siguientes a `/etc/hosts`
 
         127.0.0.3	safebrowsing.google.com
@@ -124,7 +132,7 @@ En el cliente HTTP
         127.0.0.3	location.services.mozilla.com
         127.0.0.3	tiles-cloudfront.cdn.mozilla.net
         127.0.0.3	safebrowsing-cache.google.com
-
+    127.0.0.3	safebrowsing.googleapis.com
         127.0.0.3	detectportal.firefox.com
         127.0.0.3	shavar.services.mozilla.com.unlu.edu.ar
         127.0.0.3	shavar.services.mozilla.com
@@ -135,7 +143,7 @@ En el cliente HTTP
 
         safebrowsing.google.com, safebrowsing-cache.google.com,
         .mozdev.org, .mozilla.com, .mozilla.net, .mozilla.org,
-        www.netsurf-browser.com
+        www.netsurf-browser.com, detectportal.firefox.com, safebrowsing.googleapis.com
 
 - Preferentemente, quitar los servidores DNS que estén definidos en
   `/etc/resolv.conf`
@@ -199,17 +207,17 @@ En el servidor Proxy HTTP
         # habilitar el servicio a todas las direcciones
         # http_access deny all
         http_access allow all
-
+    
         cache deny all     # evitar que se haga caché de recursos
-
+    
         # disminuir el tiempo de vida de peticiones dns
         negative_dns_ttl 1 seconds
         positive_dns_ttl 2 seconds
-
+    
         client_db off      # desactivar la creación de estadísticas de clientes
                            # esto evita que squid pregunte por el puntero
                            # reverso del router C
-
+    
         log_fqdn off       # desactivar la resolución de nombres en el registro
         pinger_enable off  # desactivar que haga PING (!)
 
@@ -256,7 +264,7 @@ En los routers
 
         net.ipv4.ip_forward=1            # habilita el reenvío de paquetes
         net.ipv4.conf.all.arp_filter=1   # solo responde arp en la interfaz adecuada
-
+    
         net.ipv4.conf.all.accept_redirects = 0    # deshabilitar ICMP redirect
         net.ipv4.conf.all.send_redirects = 0      # deshabilitar ICMP redirect
 
@@ -302,10 +310,10 @@ En el router con NAT (Router C)
         IP_EXTERNA=200.18.10.2
         # elimino las configuraciones previas
         iptables -F; iptables -t nat -F; iptables -t mangle -F
-
+    
         # alternativa 1 (snat). Preferida
         iptables -t nat -A POSTROUTING -o $IF_EXTERNA -j SNAT --to $IP_EXTERNA
-
+    
         # alternativa 2 (masquerade)
         # iptables -t nat -A POSTROUTING -o $IF_EXTERNA -j MASQUERADE
         # habilito el reenvio
