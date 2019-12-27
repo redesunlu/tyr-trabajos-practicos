@@ -3,6 +3,14 @@
 
 REQUIRED_PACKAGES := pandoc lmodern texlive-xetex texlive-generic-recommended texlive-fonts-recommended fonts-dejavu
 
+# define los argumentos de pandoc segun la version, pues hay diferencia entre v1 y v2
+PANDOC_VERSION_MAJOR := $(shell pandoc --version | head -1 | cut -d' ' -f2 | cut -d'.' -f1)
+ifeq "$(PANDOC_VERSION_MAJOR)" "2"
+    PANDOC_FLAGS := --pdf-engine=xelatex
+else
+    PANDOC_FLAGS := --latex-engine=xelatex
+endif
+
 $(foreach package,$(REQUIRED_PACKAGES),\
 	$(if $(shell dpkg -s $(package) 2> /dev/null),,$(error "Please execute 'apt-get install $(REQUIRED_PACKAGES)' and try again")))
 
@@ -14,10 +22,10 @@ all: pdf/gl-introduccion.pdf pdf/tp-transmision-datos.pdf pdf/tpl1-configuracion
 	pdf/tplX-ruteo-2019.pdf pdf/tp-eficiencia-enlace.pdf
 
 pdf/%.pdf: %.md header.tex
-	@- mkdir pdf
+	mkdir -p pdf
 	cp "$<" /tmp/output.md
 	sed -i '/Notas para ayudantes/,/Fin notas para ayudantes/d' /tmp/output.md
-	pandoc -f markdown -t latex --latex-engine=xelatex --include-in-header header.tex \
+	pandoc -f markdown -t latex $(PANDOC_FLAGS) --include-in-header header.tex \
 		-V lang=es-AR -V geometry:a4paper -V fontsize=11pt -V documentclass=article \
 		-V geometry:headheight=1in -V geometry:margin=1in -V geometry:top=1.5in \
 		-V mainfont="DejaVu Serif" -V colorlinks=true -V graphics=true \
