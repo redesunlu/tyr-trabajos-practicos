@@ -208,3 +208,7 @@ Dado que puedes pasar de cientos a miles de horas en tu terminal, vale la pena m
 1. Creá un alias `dc` que ejecute `cd` para cuando lo escribís incorrectamente.
 
 2. Ejecutá `history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10` para obtener tus 10 comandos más utilizados y considerá escribir alias más cortos para ellos. Nota: esto funciona para Bash; si usás ZSH, utilizá `history 1` en lugar de solo `history` .
+
+## Licencia
+
+Todo el contenido en este curso, incluyendo el codigo fuente del sitio, notas de lectura, ejericicios y videos de lectura se encuentra licenciado bajo CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike 4.0 International). Ver [aquí](https://missing.csail.mit.edu/license) para mas información sobre como contribuir con el contenido o las traducciones.
