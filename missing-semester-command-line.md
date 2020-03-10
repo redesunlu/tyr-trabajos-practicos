@@ -14,7 +14,7 @@ El intérprete de comandos utiliza un mecanismo de comunicación UNIX llamado *s
 
 En nuestro caso, pulsar `Ctrl-C` hace que el shell envíe una señal `SIGINT` al proceso que se está ejecutando.
 
-El siguiente es un ejemplo mínimo de un programa Python que captura `SIGINT` y lo ignora, con lo cual no es posible detenerlo. Para matar este programa deberemos enviar una señal llamada `SIGQUIT`. Esto se realiza pulsando `Ctrl-El siguiente es un ejemplo mínimo de un programa Python que captura `SIGINT` y lo ignora, con lo cual no es posible detenerlo. Para matar este programa deberemos enviar una señal llamada `SIGQUIT`. Esto se realiza pulsando  .
+El siguiente es un ejemplo mínimo de un programa Python que captura `SIGINT` y lo ignora, con lo cual no es posible detenerlo. Para matar este programa deberemos enviar una señal llamada `SIGQUIT`. Esto se realiza pulsando `Ctrl-\`. El siguiente es un ejemplo mínimo de un programa Python que captura `SIGINT` y lo ignora, con lo cual no es posible detenerlo. Para matar este programa deberemos enviar una señal llamada `SIGQUIT`. Esto se realiza pulsando  .
 
 ```python
 #!/usr/bin/env python
@@ -212,3 +212,11 @@ Dado que puedes pasar de cientos a miles de horas en tu terminal, vale la pena m
 ## Licencia
 
 Todo el contenido en este curso, incluyendo el codigo fuente del sitio, notas de lectura, ejericicios y videos de lectura se encuentra licenciado bajo CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike 4.0 International). Ver [aquí](https://missing.csail.mit.edu/license) para mas información sobre como contribuir con el contenido o las traducciones.
+
+## Acerca de Missing Semester
+
+Original de "The Missing Semester of Your CS Education"
+
+https://missing.csail.mit.edu/
+
+Traducido por el equipo de Teleinformática y Redes

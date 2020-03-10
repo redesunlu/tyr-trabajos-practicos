@@ -252,3 +252,11 @@ En este punto, ya conoces bastante del intérprete de comandos como para realiza
 ## Licencia
 
 Todo el contenido en este curso, incluyendo el codigo fuente del sitio, notas de lectura, ejericicios y videos de lectura se encuentra licenciado bajo CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike 4.0 International). Ver [aquí](https://missing.csail.mit.edu/license) para mas información sobre como contribuir con el contenido o las traducciones.
+
+## Acerca de Missing Semester
+
+Original de "The Missing Semester of Your CS Education"
+
+https://missing.csail.mit.edu/
+
+Traducido por el equipo de Teleinformática y Redes
