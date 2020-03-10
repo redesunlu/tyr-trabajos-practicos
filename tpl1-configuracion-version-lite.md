@@ -10,7 +10,7 @@ TPL 1 - Configuración inicial de la red del laboratorio
 * Por Florge 2019. Cambiado dmesg por ip link, . ¿Será necesario poner una salida de ip link show explicándola? tshark por tcpdump, y reordenado el punto de asignar nombre al host.
 * Ojo con el filtro de tcpdump para el ping, porque si se hace ping a la propia IP publica (sea de localhost o de la interfaz física), el comando no captura nada. Si se hace ping a un host externo, el filtro funciona perfectamente. En wireshark pasa exactamente lo mismo. Hay confirmación del comportamiento en un [hilo de StackOverflow](https://unix.stackexchange.com/questions/491859/ping-uses-localhost-instead-of-public-ip-address) y en un [mensaje de lista de correo de 2008](https://groups.google.com/d/msg/comp.protocols.tcp-ip/TNkCcZWV3e4/RZ2LVPTsA98J). **La "solución" mas sencilla es hacer ping a otro host.**
 Quizás la mejor explicación sea esta:
-  
+
     > Physically, if it actually went out on eth0 it wouldn't be received, an Ethernet interface doesn't "hear" what it's sending. So in any case, there needs to be a shortcut somewhere that says "oh this is a local packet, it must be handled locally". Probably easier to redirect the packet to lo0 than adding a "handle outbound traffic as inbound path", though one would have to check the relevant RFCs for correctness. – [jcaron Jan 1 at 13:20](https://unix.stackexchange.com/questions/491859/ping-uses-localhost-instead-of-public-ip-address#comment902770_491859)
 
 #### --- Fin notas para ayudantes ---
@@ -40,7 +40,7 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
     b. Verificar que es posible contactar otros 2 equipos de la red utilizando nombres de host.
 
 7. Ver la tabla de ruteo definida en el equipo. ¿Cuáles son las redes accesibles?
-   
+
 8. Agregar la dirección `10.4.11.30` como ruta por defecto para acceder a otras redes. Verificar nuevamente la tabla de ruteo.
 
 9. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con otro equipo. Las acciones que debe realizar son:
@@ -53,19 +53,13 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 
     d. Analizar el volcado del programa de captura utilizando la aplicación wireshark (o cualquier otro analizador de tráfico que permita leer archivos en formato _pcap_), representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
-**Bibliografía**
+**Recursos**
 
-* Guía del comando TCPdump. Jeremy Stretch. Traducido al español por el equipo de LabRedes
-  <http://www.labredes.unlu.edu.ar/files/site/data/tyr/tcpdump-esp-draft1.pdf>
-* "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 4: "Direcciones Internet".
-* "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 5: "Transformación de direcciones Internet en direcciones físicas".
-* "Comunicaciones y Redes de Computadoras", Sexta Edición, William Stallings, Prentice Hall. Capítulo 14.1: “Ethernet (CSMA/CD)”
-* El manual del Administrador de Debian. Raphaël Hertzog, Roland Mas. Freexian. 2016.
-  Apéndice B: "Curso breve de emergencia"
-  <https://debian-handbook.info/browse/es-ES/stable/short-remedial-course.html>
-* Tcpdump Examples: Practical examples to lift your network troubleshooting.
-  Hacker Target Pty Ltd. 2018  <https://hackertarget.com/tcpdump-examples/>
-* Páginas de manual de cada comando utilizado.
+* Resumen de comandos: [http://bit.ly/tyr-comandos](http://bit.ly/tyr-comandos)
+* Semestre Perdido. Linea de Comandos: [http://bit.ly/tyr-ms-cli](http://bit.ly/tyr-ms-cli) (versión traducida por el equipo de TyR)
+* Semetre Perdido. Shell: [http://bit.ly/tyr-ms-shell](http://bit.ly/tyr-ms-shell) (versión traducida por el equipo de TyR)
+
+\pagebreak
 
 Mapa de la red del laboratorio
 ==============================
