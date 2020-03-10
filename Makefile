@@ -20,7 +20,7 @@ all: pdf/gl-introduccion.pdf pdf/tp-transmision-datos.pdf pdf/tpl1-configuracion
 	pdf/tpl2-telnet.pdf pdf/tpl3-dns.pdf pdf/tpl4-correo-electronico.pdf pdf/tpl5-http.pdf \
 	pdf/tpe-sockets.pdf pdf/receta-tp-integrador-2019.pdf pdf/tpl1-parte2.pdf \
 	pdf/tplX-ruteo-2019.pdf pdf/tp-eficiencia-enlace.pdf pdf/tpl1-configuracion-version-lite.pdf \
-	pdf/cheatsheet.pdf
+	pdf/cheatsheet.pdf pdf/missing-semester-course-shell.pdf pdf/missing-semester-command-line.pdf
 
 pdf/%.pdf: %.md header.tex
 	mkdir -p pdf
