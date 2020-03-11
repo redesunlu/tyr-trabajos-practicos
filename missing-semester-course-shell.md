@@ -255,8 +255,7 @@ Todo el contenido en este curso, incluyendo el codigo fuente del sitio, notas de
 
 ## Acerca de Missing Semester
 
-Original de "The Missing Semester of Your CS Education"
-
-https://missing.csail.mit.edu/
+Original de "The Missing Semester of Your CS Education"  
+<https://missing.csail.mit.edu/>
 
 Traducido por el equipo de Teleinformática y Redes

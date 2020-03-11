@@ -176,9 +176,7 @@ Algunos ejemplos de herramientas que se pueden configurar mediante dotfiles son:
 - **Sincronización**: puedes actualizar tus archivos de configuración en cualquier lugar y mantenerlos todos sincronizados.
 - **Seguimiento de cambios**: probablemente mantendrás tus archivos de configuración durante toda tu carrera programando, y tener un historial de versiones es bueno para proyectos de larga duración.
 
-¿Qué deberías poner en tus dotfiles? Podés obtener información sobre la configuración de tus herramientas leyendo la documentación en línea o las [páginas de manual](https://en.wikipedia.org/wiki/Man_page) . Otra buena manera es buscar en Internet publicaciones en blogs sobre programas específicos, donde los autores cuentan sus personalizaciones preferidas. Otra forma mas de aprender acerca de las personalizaciones es mirar los dotfiles de otras personas: podés encontrar un muchísimos [repositorios de dotfiles](https://github.com/search?o=desc&q=dotfiles&s=stars&type=Repositories). podés ver el más popular [aquí](https://github.com/mathiasbynens/dotfiles) (no obstante te recomendamos no copiar ciegamente las configuraciones). [Aquí](https://dotfiles.github.io/) hay otro buen recurso sobre el tema.
-
-Todos los instructores de la clase tienen sus dotfiles accesibles   públicamente en GitHub: [Anish](https://github.com/anishathalye/dotfiles) , [Jon](https://github.com/jonhoo/configs) , [Jose](https://github.com/jjgo/dotfiles) .
+¿Qué deberías poner en tus dotfiles? Podés obtener información sobre la configuración de tus herramientas leyendo la documentación en línea o las [páginas de manual](https://en.wikipedia.org/wiki/Man_page) . Otra buena manera es buscar en Internet publicaciones en blogs sobre programas específicos, donde los autores cuentan sus personalizaciones preferidas. Otra forma mas de aprender acerca de las personalizaciones es mirar los dotfiles de otras personas: podés encontrar muchísimos [repositorios de dotfiles](https://github.com/search?o=desc&q=dotfiles&s=stars&type=Repositories). Podés ver el más popular [aquí](https://github.com/mathiasbynens/dotfiles) (no obstante te recomendamos no copiar ciegamente las configuraciones). [Aquí](https://dotfiles.github.io/) hay otro buen recurso sobre el tema.
 
 # Emuladores de terminal
 
@@ -215,8 +213,7 @@ Todo el contenido en este curso, incluyendo el codigo fuente del sitio, notas de
 
 ## Acerca de Missing Semester
 
-Original de "The Missing Semester of Your CS Education"
-
-https://missing.csail.mit.edu/
+Original de "The Missing Semester of Your CS Education"  
+<https://missing.csail.mit.edu/>
 
 Traducido por el equipo de Teleinformática y Redes
