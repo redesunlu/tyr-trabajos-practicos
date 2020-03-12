@@ -6,7 +6,7 @@ de la asignatura Teleinformatica y Redes (10040).
 ## Obtener acceso root
 
 ```
-$ su
+$ su -
 Contraseña: *****
 # <comando como root>
 ```
