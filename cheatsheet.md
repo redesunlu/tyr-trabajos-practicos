@@ -74,16 +74,16 @@ Permite crear capturas de red y volcarlas a un archivo para su posterior
 analisis.
 
 Ejemplos de captura:
-```bash
+```
 # tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'icmp && host DIRECCION_IP'
 # tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'tcp && host DIRECCION_IP'
 $ man tcpdump
 ```
-El primer comando captura todo el trafico de protocolo ICMP dirigido a la IP
+- El primer comando captura todo el trafico de protocolo ICMP dirigido a la IP
 DIRECCION_IP.
-El segundo comando, permite capturar todo el trafico que en capa 4 utilice
+- El segundo comando, permite capturar todo el trafico que en capa 4 utilice
 el protocolo TCP y dirigido a la ip DIRECCION_IP.
-El ultimo comando nos permite acceder al manual de ayuda del comando.
+- El ultimo comando nos permite acceder al manual de ayuda del comando.
 
 ## Comando `tshark`
 
