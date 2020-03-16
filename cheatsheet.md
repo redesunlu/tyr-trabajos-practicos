@@ -73,13 +73,87 @@ $ hostname
 Permite crear capturas de red y volcarlas a un archivo para su posterior
 analisis.
 
-Ejemplo de captura:
-```
+Ejemplos de captura:
+```bash
 # tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'icmp && host DIRECCION_IP'
+# tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'tcp && host DIRECCION_IP'
 $ man tcpdump
 ```
-El comando anterior captura todo el trafico de protocolo ICMP dirigido a la IP
+El primer comando captura todo el trafico de protocolo ICMP dirigido a la IP
 DIRECCION_IP.
+El segundo comando, permite capturar todo el trafico que en capa 4 utilice
+el protocolo TCP y dirigido a la ip DIRECCION_IP.
+El ultimo comando nos permite acceder al manual de ayuda del comando.
+
+## Comando `tshark`
+
+Permite realizar o analizar capturas.
+
+Ejemplos para analizar capturas:
+```bash
+tshark -­r NOMBRE_ARCHIVO.PCAP
+tshark -­r NOMBRE_ARCHIVO.PCAP ­-nV
+tshark -­r NOMBRE_ARCHIVO.PCAP ­-O tcp
+tshark -­r NOMBRE_ARCHIVO.PCAP -­nqz follow,tcp,hex,0
+```
+
+## Comando `nc`: NetCat
+
+Permite generar conexiones TCP / UDP de forma que permite leer y escribir en
+dichas conexiones.
+
+Para iniciar un proceso de tipo Servidor:
+```bash
+nc -­l <NRO_DE_PUERTO>
+```
+
+Para realizar una conexión como cliente:
+```bash
+nc <IP_HOST_SERVIDOR> <NRO_DE_PUERTO_SERVIDOR>
+```
+
+Una vez establecida la conexión, la entrada estándar del proceso _nc_ se reenviará al otro extremo de la conexión, donde la instancia par de _nc_ la copiará en su salida estándar. Ahora pruebe escribir mensajes en su consola, recordando que la comunicación es bidireccional. Una vez realizado el intercambio de mensajes en ambos sentidos, puede finalizar la conexión enviando EOF (Ctrl+D) o deteniendo el proceso _nc_ (Ctrl+C) desde cualquiera de los hosts.
+
+## Comando `telnet`
+
+El cliente y servidor de telnet no suele venir instalado por defecto. En
+sistemas Debian o similares se lo suele instalar con el gestor de paquetes:
+
+```bash
+apt-get install telnet telnetd
+```
+
+Para iniciar una sesión telnet hacia un equipo servidor:
+```bash
+telnet IP_HOST_SERVIDOR
+```
+
+Una sesion telnet se finaliza tecleando `exit`.
+
+## Comando `ss`
+
+Permita verificar el estado de las conexiones de red de un dispositivo
+
+Ejemplo
+
+```bash
+ss -­ltnp
+```
+
+El comando anterior muestra las conexiones que esten en estado
+_listening_ (opción `l`), que sean conexiones TCP (opción `t`),
+mostart el ID de proceso (opción `p`) y no resuelve puertos ni ips (opción `n`).
+
+Una alternativa en desuso es el comando `netstat`.
+
+## Comando `ps`
+
+Permite obtener un listado de procesos del sistema. Se puede ejecutar sin
+parametros.
+
+```bash
+ps
+```
 
 ## Archivos relevantes del sistema
 En todos los casos puede utilizar el editor `nano` para editar los archivos.

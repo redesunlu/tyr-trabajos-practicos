@@ -1,57 +1,26 @@
 TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 =================================================
 
-**Fecha de Entrega:** 05/09/2019
+**Fecha de Entrega:** 02/04/2020
 
 
 1. Creación de un modelo simple Cliente/Servidor
 
-    Acuerde con otro compañero en los roles iniciales que tendrá cada uno y el número de puerto a utilizar. Realice una captura de todo el proceso utilizando la herramienta `tcpdump`, guardándola en un archivo en formato _pcap_ para su posterior análisis:
+    Acuerde con otro compañero en los roles iniciales que tendrá cada uno y el número de puerto a utilizar. Realice una captura de todo el proceso utilizando la herramienta `tcpdump`, guardándola en un archivo en formato _pcap_ para su posterior análisis.
 
-        tcpdump -n -p -w NOMBRE_ARCHIVO.PCAP 'tcp && host DIRECCION_IP'
+    Un host debera actuar como servidor, indicando como parametros el numero de puerto. Iniciado el proceso, este servicio quedara en modo de _escucha_ o _listening_. En el otro host se debera iniciar un cliente indicandole IP del servidor y puerto establecido en el comando servidor. Verifique desde otra terminal que el proceso servidor esté en "escucha" en el puerto indicado (usando comandos tipo `ss` o `netstat`).
 
-    En el host que actuará como servidor, inicie el proceso `nc`, indicando que abra un número de puerto dado en modo de _escucha_ o _listening_. Para ello, ejecute:
+    Si generó correctamente los procesos servidor y cliente, deberia poder ver una especie de "chat". Intercambie varios mensajes con el otro dispositivo y finalice la conexión. Luego detenga la captura (CTRL+C).
 
-        nc -­l NRO_DE_PUERTO
-
-    Verifique desde otra terminal que el proceso esté en "escucha" en el puerto indicado ejecutando:
-
-        netstat -­ltnp
-
-    o bien
-
-        ss -­ltnp
-
-    En el host que actuará como cliente, inicie el proceso `nc`, indicando que realice una conexión al servidor y puerto dados. Para ello, ejecute:
-
-        nc IP_HOST_SERVIDOR NRO_DE_PUERTO
-
-    Una vez establecida la conexión, la entrada estándar del proceso _nc_ se reenviará al otro extremo del socket, donde la instancia par de _nc_ la copiará en su salida estándar, creando una suerte de "chat". Ahora pruebe escribir mensajes en su consola, recordando que la comunicación es bidireccional. Una vez realizado el intercambio de mensajes en ambos sentidos, puede finalizar la conexión enviando EOF (Ctrl+D) o deteniendo el proceso _nc_ (Ctrl+C) desde cualquiera de los hosts.
-
-    Una vez finalizada la conexión, detenga el proceso _tcpdump_ que se encuentra capturando (CTRL+C).
-
-    Analice la captura almacenada en el archivo utilizando `tshark` con el parámetro `-r`, y diversos parámetros de visualización (consulte la página de manual correspondiente).
-
-    Ejemplos:
-
-        tshark -­r NOMBRE_ARCHIVO.PCAP
-        tshark -­r NOMBRE_ARCHIVO.PCAP ­-nV
-        tshark -­r NOMBRE_ARCHIVO.PCAP ­-O tcp
-        tshark -­r NOMBRE_ARCHIVO.PCAP -­nqz follow,tcp,hex,0
+    Analice la captura almacenada en el archivo utilizando `tshark` y diversos parámetros de visualización (consulte la guia de comandos provista por la materia).
 
     Realice un diagrama representando el intercambio de tramas indicando las que corresponden al establecimiento y cierre de la conexión TCP y a las de transmisión de datos a nivel aplicación.
 
 2. Describa someramente el protocolo Telnet. Características y usos.
 
-\pagebreak
+3. Instale o verifique que el cliente `telnet` y el servidor telnet correspondiente (llamado `telnetd`) se encuentran en el dispositivo.
 
-3. Instale el cliente `telnet` y el servidor telnet correspondiente (llamado `telnetd`):
-
-        apt-get install telnet telnetd
-
-4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos (mediante `ps`), y finalice la sesión (escribiendo el comando `exit`), realizando una captura de todo el proceso utilizando `tcpdump`. Para ello comience la captura y luego ejecute:
-
-        telnet IP-HOST-DESTINO
+4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos y finalice la sesión, realizando una captura de todo el proceso en consola aparte.
 
     Analice la captura, identifique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP.  Comente las características de la información en tránsito con respecto a la confidencialidad.
 
@@ -90,16 +59,21 @@ por ejemplo
 
 El hash (md5 o sha256, dependiendo de la versión de openssl) se solicita para validar que el estudiante no cambió el texto de la salida. Hay que recordar que la IP del cliente puede variar pues se deja a libre elección del estudiante.
 
-#### --- Fin notas para ayudantes ---
-
-
-#### Bibliografía
+Old bibliografia
 
 * "TCP/IP Illustrated Vol.1", Richard Stevens, Addison Wesley.  Capítulo 26: "Telnet and Rlogin: Remote Login".
 * "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 23: "Aplicaciones: acceso remoto (TELNET, Rlogin)".
 
-#### Recursos en internet
+#### --- Fin notas para ayudantes ---
 
-* Para cada uno de los protocolos (TELNET, HTTP, DNS, FTP, etc.) a desarrollar a lo largo de la cursada, busque
-cuales son los Request For Comments (RFC) o Internet Draft que los describen, siguiendo la cadena de
-actualizaciones. Recurra a <http://www.faqs.org>, <http://www.rfc-editor.org>, y <http://www.ietf.org>
+### Bibliografía
+
+[FOR09] Capítulo 20: “Remote Login: TELNET and SSH”
+
+### Recursos en internet
+
+* Para cada uno de los protocolos (TELNET, HTTP, DNS, FTP, etc.) a desarrollar a lo largo de la cursada, busque cuales son los Request For Comments (RFC) o Internet Draft que los describen, siguiendo la cadena de actualizaciones. Recurra a <http://www.faqs.org>, <http://www.rfc-editor.org>, y <http://www.ietf.org>
+
+### Referencia
+
+[FOR09] FOROUZAN, B.A. TCP IP Protocol Suite. McGraw-Hill Higher Education, 2009.
