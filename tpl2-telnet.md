@@ -6,7 +6,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
 1. Creación de un modelo simple Cliente/Servidor
 
-    Acuerde con otro compañero en los roles iniciales que tendrá cada uno y el número de puerto a utilizar. Realice una captura de todo el proceso utilizando la herramienta `tcpdump`, guardándola en un archivo en formato _pcap_ para su posterior análisis.
+    Utilice para esta practica el laboratorio de Netkit _webserver_. Al inciarlo, cada terminal tendra un rol asignado. Defina un numero de puerto para el servidor (superior a 1024) y verifique las IPs de cada terminal. Realice una captura de todo el proceso utilizando la herramienta `tcpdump`, guardándola en un archivo en formato _pcap_ para su posterior análisis.
 
     Un host debera actuar como servidor, indicando como parametros el numero de puerto. Iniciado el proceso, este servicio quedara en modo de _escucha_ o _listening_. En el otro host se debera iniciar un cliente indicandole IP del servidor y puerto establecido en el comando servidor. Verifique desde otra terminal que el proceso servidor esté en "escucha" en el puerto indicado (usando comandos tipo `ss` o `netstat`).
 
@@ -18,15 +18,7 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 
 2. Describa someramente el protocolo Telnet. Características y usos.
 
-3. Instale o verifique que el cliente `telnet` y el servidor telnet correspondiente (llamado `telnetd`) se encuentran en el dispositivo.
-
-4. Establezca una sesión Telnet a otro host del laboratorio, obtenga un listado de procesos y finalice la sesión, realizando una captura de todo el proceso en consola aparte.
-
-    Analice la captura, identifique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP.  Comente las características de la información en tránsito con respecto a la confidencialidad.
-
-5. Investigue acerca de la diferencia en la ejecución de procesos servidores en modo stand-alone y como esclavos del proceso _inetd_ (provisto por alguno de los paquetes _openbsd-inetd, inetutils-inetd, xinetd_). Mencione ventajas y desventajas de cada modelo.
-
-6. Instale e inicie en **netkit** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_telnet-TYR.tar.gz>
+3. Instale e inicie en **netkit** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_telnet-TYR.tar.gz>
 
     El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
 
@@ -41,6 +33,8 @@ TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
        Añada además todos los comandos que ejecutó para lograr dicho resultado.
     6. Salga del host remoto escribiendo el comando `exit`
     7. Detenga y guarde la captura de tráfico. Remítala como parte de la tarea.
+
+4. Analice la captura obtenida del ejercicio anterior, identifique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP.  Comente las características de la información en tránsito con respecto a la confidencialidad.
 
 #### Notas para ayudantes
 
@@ -68,7 +62,9 @@ Old bibliografia
 
 ### Bibliografía
 
-[FOR09] Capítulo 20: “Remote Login: TELNET and SSH”
+[FOR09] Capítulo 17: "Introduction to the Application Layer" (hasta pagina 546)
+
+[FOR09] Capítulo 20: "Remote Login: TELNET and SSH"
 
 ### Recursos en internet
 

@@ -104,7 +104,7 @@ dichas conexiones.
 
 Para iniciar un proceso de tipo Servidor:
 ```bash
-nc -­l <NRO_DE_PUERTO>
+nc -­l -p <NRO_DE_PUERTO>
 ```
 
 Para realizar una conexión como cliente:
