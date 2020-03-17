@@ -45,7 +45,7 @@ Analice la captura almacenada en el archivo utilizando `tshark` y diversos pará
 
 Instale e inicie en **netkit** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_telnet-TYR.tar.gz>
 
-    El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
+El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
 
 1. Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`.
 2. Inicie una captura de tráfico en el enlace A.
@@ -58,10 +58,8 @@ Instale e inicie en **netkit** el laboratorio de Telnet provisto por los docente
 6. Salga del host remoto escribiendo el comando `exit`
 7. Detenga y guarde la captura de tráfico. Remítala como parte de la tarea.
 8. Analice la captura:
-
-  a) Identifique e indique identifique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP.
-
-  b) Comente las características de la información en tránsito con respecto a la confidencialidad.
+a)  Identifique e indique identifique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP.
+b)  Comente las características de la información en tránsito con respecto a la confidencialidad.
 
 #### Notas para ayudantes
 
