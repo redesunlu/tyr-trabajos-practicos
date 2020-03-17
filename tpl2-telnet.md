@@ -34,11 +34,11 @@ Si generó correctamente los procesos servidor y cliente, debería poder ver una
 
 Analice la captura almacenada en el archivo utilizando `tshark` y diversos parámetros de visualización (consulte la guia de comandos provista por la materia).
 
-  a) "Extraiga" de la captura solamente los datos intercambiados a nivel aplicación y remítalos.
+a) "Extraiga" de la captura solamente los datos intercambiados a nivel aplicación y remítalos.
 
-  b) Realice un diagrama representando el intercambio de tramas indicando las que corresponden al establecimiento de la conexión TCP a las de transmisión de datos a nivel aplicación, y a las del cierre de la conexión TCP.
+b)  Realice un diagrama representando el intercambio de tramas indicando las que corresponden al establecimiento de la conexión TCP a las de transmisión de datos a nivel aplicación, y a las del cierre de la conexión TCP.
 
-  c) ¿Todas las tramas en las que identifica el protocolo TCP transportan datos de aplicación?. ¿Si no es así puede explicar el porqué?
+c) ¿Todas las tramas en las que identifica el protocolo TCP transportan datos de aplicación?. ¿Si no es así puede explicar el porqué?
 
 
 # Segunda parte: Protocolo de acceso remoto TELNET
@@ -47,19 +47,27 @@ Instale e inicie en **netkit** el laboratorio de Telnet provisto por los docente
 
 El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
 
-1. Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`.
-2. Inicie una captura de tráfico en el enlace A.
-3. En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`.
-4. Con la sesión iniciada en _remoto_, ejecute el siguiente comando respetando la sintaxis.
+Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`.
+
+Inicie una captura de tráfico en el enlace A.
+
+En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`.
+
+Con la sesión iniciada en _remoto_, ejecute el siguiente comando respetando la sintaxis.
 
             who && who | openssl dgst
 
-5. Copie la salida de dicho comando como resolución de este ejercicio. Añada además todos los comandos que ejecutó para lograr dicho resultado.
-6. Salga del host remoto escribiendo el comando `exit`
-7. Detenga y guarde la captura de tráfico. Remítala como parte de la tarea.
-8. Analice la captura:
-a)  Identifique e indique identifique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP.
-b)  Comente las características de la información en tránsito con respecto a la confidencialidad.
+Copie la salida de dicho comando como resolución de este ejercicio. Añada además todos los comandos que ejecutó para lograr dicho resultado.
+
+Salga del host remoto escribiendo el comando `exit`
+
+Detenga y guarde la captura de tráfico. Remítala como parte de la tarea.
+
+Analice la captura:
+
+a) Identifique e indique identifique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP.
+
+b) Comente las características de la información en tránsito con respecto a la confidencialidad.
 
 #### Notas para ayudantes
 
