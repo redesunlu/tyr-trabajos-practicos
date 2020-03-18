@@ -11,7 +11,7 @@ Para el estudio previo de los temas se sugiere la siguiente lectura:
 
 Modelo cliente/servidor: Capítulo 17 (hasta pagina 546) [FOR09]
 
-Multiplexación en capas de transporte de la pila TCP/IP: "TCP/IP Processes, Multiplexing and Client/Server Application Roles" <http://www.tcpipguide.com/free/t_TCPIPProcessesMultiplexingandClientServerApplicati.htm>, y temas siguientes hasta "Common TCP/IP Applications and Assigned Well-Known and Registered Port Numbers"
+Multiplexación en capas de transporte de la pila TCP/IP: ["TCP/IP Processes, Multiplexing and Client/Server Application Roles"](http://www.tcpipguide.com/free/t_TCPIPProcessesMultiplexingandClientServerApplicati.htm), y temas siguientes hasta "Common TCP/IP Applications and Assigned Well-Known and Registered Port Numbers"
 
 Establecimiento de conexiones TCP, Negociación de 3 Vías (three way handshake): <https://www.youtube.com/watch?v=ixBAG8apsFM> (minuto 2:0 en adelante)
  
