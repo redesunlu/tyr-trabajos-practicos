@@ -1,7 +1,7 @@
 TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 =================================================
 
-**Fecha de Entrega:** 02/04/2020
+**Fecha de Entrega:** 16/04/2020
 
 La presente guía tiene por objetivo familiarizar el trabajo con aplicaciones cliente/servidor y, como primer ejemplo de aplicación de la pila TCP/IP, el protocolo de acceso remoto telnet.
 
@@ -16,6 +16,10 @@ Multiplexación en capas de transporte de la pila TCP/IP: ["TCP/IP Processes, Mu
 Establecimiento de conexiones TCP, Negociación de 3 Vías (three way handshake): <https://www.youtube.com/watch?v=ixBAG8apsFM> (minuto 2:0 en adelante)
  
 Protocolo Telnet: Capítulo 20.1 [FOR09]
+
+**Importante** La entrega del tp deberán realizarla mediante el siguiente [formulario](https://tinyurl.com/TyR-TP2)
+
+Sobre dudas y consultas, la metodología es la misma a la indicada en la guía de clase.
 
 # Primer parte: Creación de un modelo simple Cliente/Servidor
 
@@ -110,8 +114,10 @@ Old bibliografia
 
 ### Preguntas (guía de lectura)
 
-En la capa de aplicación a qué se denomina cliente y a qué servidor.
+En la capa de aplicación ¿a qué se denomina cliente y a qué servidor?.
 
-En el stack TCP/IP, ¿cómo es posible que un protocolo de transporte brinde servicio a n procesos ejecutándose en un mismo host.?
+En el stack TCP/IP, ¿cómo es posible que un protocolo de transporte brinde servicio a n procesos ejecutándose en un mismo host?.
 
-Cuáles son las características y usos del protocolo telnet.
+¿Cuáles son las características y usos del protocolo telnet?.
+
+¿Qué problemática resuelve NVT?.
