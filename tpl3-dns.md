@@ -1,7 +1,7 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** 12/09/2019
+**Fecha de Entrega:** 16/04/2020
 
 **Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
@@ -38,12 +38,12 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
 2. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien alguno de acceso público tal como `8.8.8.8` o `1.1.1.1`) para obtener la siguiente información:
 
-    a. ¿Cuál es la dirección IP del host `redhidro.unlu.edu.ar`?
-    b. ¿Cuál es la dirección IP del host `resoluciones.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
-    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unp.edu.ar`?
-    d. ¿Cuál es el nombre del host cuya dirección IP es `170.210.96.90`?
-    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `arin.net`?
-    f. ¿Cuál es la dirección IPv6 del host `www.ietf.org`?
+    a. ¿Cuál es la dirección IP del host `ri.unlu.edu.ar`?
+    b. ¿Cuál es la dirección IP del host `educativa.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
+    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `uncu.edu.ar`?
+    d. ¿Cuál es el nombre del host cuya dirección IP es `170.210.96.10`?
+    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `lacnic.net`?
+    f. ¿Cuál es la dirección IPv6 del host `www.debian.org`?
 
 3. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `argentina.gob.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
 
@@ -72,19 +72,15 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
 #### Bibliografía
 
-* COLOURIS, G., DOLLIMORE, J., KINDBERG T. 2001. Capítulo 9: "Servicios de Nombres" en _Sistemas Distribuidos, Conceptos y Diseño_. Addison Wesley.
-* STEVENS, R. 1994. Capítulo 14: "DNS: The Domain Name System" en _TCP/IP Illustrated Vol.1_. Addison Wesley.
+* FOROUZAN, B.A. Transmisión de Datos y Redes de Comunicaciones. 4o ed. McGraw Hill. 2007. Capítulo 25: Sección 25.1-25.4 “Sistema de nombres de dominio”
+
+#### Adicional
 * GORALSKI, W. 2017. Capítulo 23: "The Domain Name System" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
   <https://www.sciencedirect.com/science/book/9780128110270>
-* COMER, D. Capítulo 22: "Sistema de nombre de dominio (DNS)" en _Redes globales de información con Internet y TCP/IP_. Prentice Hall.
 
 #### Recursos en Internet
 * Para cada uno de los protocolos desarrollados a lo largo de la cursada, busque cuales son los Request For Comments (RFC) o Internet Draft que los describen, siguiendo la cadena de actualizaciones. Recurra a
 <http://www.faqs.org>, <http://www.rfc-editor.org> y <http://www.ietf.org>
-* HERTZOG, R., MAS, R., Capítulo 10.6: "Servidores de nombres de dominio (DNS)" en _El libro del administrador de Debian_.
-  Disponible en <http://debian-handbook.info/browse/es-ES/stable/sect.domain-name-servers.html>
-* LUPI, F. 2014. Capítulo 26: "The Domain Name System" en _The NetBSD Guide_. The NetBSD Foundation.
-  Disponible en <https://www.netbsd.org/docs/guide/en/chap-dns.html>
 
 \pagebreak
 
