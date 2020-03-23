@@ -78,9 +78,11 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 * GORALSKI, W. 2017. Capítulo 23: "The Domain Name System" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
   <https://www.sciencedirect.com/science/book/9780128110270>
 
-#### Recursos en Internet
-* Para cada uno de los protocolos desarrollados a lo largo de la cursada, busque cuales son los Request For Comments (RFC) o Internet Draft que los describen, siguiendo la cadena de actualizaciones. Recurra a
-<http://www.faqs.org>, <http://www.rfc-editor.org> y <http://www.ietf.org>
+* HERTZOG, R., MAS, R., Capítulo 10.6: “Servidores de nombres de dominio (DNS)” en El libro del administrador de Debian. Disponible en http://debian-handbook.info/browse/es-ES/stable/sect.domain-name-servers.html
+
+*  LUPI, F. 2014. Capítulo 26: “The Domain Name System” en The NetBSD Guide. The NetBSD
+Foundation. Disponible en https://www.netbsd.org/docs/guide/en/chap-dns.html
+
 
 \pagebreak
 
