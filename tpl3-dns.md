@@ -5,6 +5,10 @@ TPL 3 - Domain Name System
 
 **Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
+**Importante** La entrega del tp deberán realizarla mediante el siguiente [formulario](https://tinyurl.com/TyR-TP3)
+
+
+
 #### Notas para ayudantes
 
 * Hay una muy buena presentación con teoría y práctica de DNS en
