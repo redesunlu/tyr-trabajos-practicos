@@ -77,4 +77,8 @@ Si no se posee una copia del repositorio
     cd tyr.wiki
     git pull && make
 
+Si se desea (re)generar sólo un documento md (y no todos), por ejemplo "seguridad.md" -> "seguridad.pdf"
+
+    make pdf/seguridad.pdf
+
 Los documentos generados quedan en el directorio `./pdf/`
