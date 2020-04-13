@@ -5,6 +5,8 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
+La entrega de este TP se realiza mediante el siguiente formulario: **<https://tinyurl.com/TyR-TP4>**
+
 #### Notas para ayudantes
 
 * Agregué el ejercicio 9 donde los estudiantes deben obtener el código fuente
@@ -29,6 +31,8 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     Hay que tener en cuenta que los mensajes sólo duran 1 día en la casilla.
 
 #### --- Fin notas para ayudantes ---
+
+### Consignas
 
 1. Describa el objetivo y como opera la aplicación correo electrónico, indicando los elementos involucrados: que son y cuál es la función de los agentes de usuario (user agents - UAs) y agentes de transferencia de mensajes (mail transfer agent - MTAs), ¿qué servicio adicional se requiere para la transferencia de mensajes?.
 
