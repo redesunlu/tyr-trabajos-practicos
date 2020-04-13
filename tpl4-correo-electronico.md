@@ -1,7 +1,7 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** 19/09/2019
+**Fecha de Entrega:** 29/04/2020
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -12,6 +12,21 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
     Pido un mensaje de SPAM para no lidiarme con todo el tema de la
     confidencialidad y demás. Un spam no debería tener datos privados.
+
+* Nota 2020: En el punto 8, en vez de utilizar el servidor `mail.unlu.edu.ar`,
+  puse que utilicen uno externo, pues nuestro servidor de correo posee varias
+  restricciones para evitar el ingreso de SPAM, y es poco probable que permita
+  un mail desde una IP cualquiera. Más abajo pongo el resultado de una de las
+  pruebas que efectué.
+
+    En reemplazo, se utiliza el servidor de correo `smtp.ethereal.email`,
+    que es un SMTP server que almacena temporalmente los mensajes recibidos
+    desde cualquier emisor a un destinatario particular.<br>
+    Para TyR, el destinatario es la casilla `jaiden.sipes59@ethereal.email`
+    y los mensajes de correo recibidos pueden visualizarse en la web
+    accediendo a <https://ethereal.email/messages> con la clave
+    `ecSq3z5mn11B2hgUB9` o bien mediante POP o IMAP (con la misma clave).
+    Hay que tener en cuenta que los mensajes sólo duran 1 día en la casilla.
 
 #### --- Fin notas para ayudantes ---
 
@@ -28,9 +43,9 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
    Describa brevemente los comandos disponibles para el protocolo POP3.
    ¿Qué ventajas ofrece el protocolo IMAP4 sobre POP3?
 
-7. ¿Para qué se definió la extensión MIME? Describa cómo se implementa y los diferentes tipos de contenidos y codificación MIME.
+6. ¿Para qué se definió la extensión MIME? Describa cómo se implementa y los diferentes tipos de contenidos y codificación MIME.
 
-8. Instale e inicie en el entorno **netkit** el laboratorio de email provisto por los docentes, disponible en
+7. Instale e inicie en el entorno **netkit** el laboratorio de email provisto por los docentes, disponible en
 <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_email.tar.gz> y realice las siguientes actividades:
 
     1. Inicie una captura desde el host.
@@ -43,7 +58,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
 
-9. Utilizando `nc`, conéctese al servidor SMTP indicado por el docente (puerto 25) y envíele un mensaje. El mismo debe cumplir con los requisitos de la RFC 5322, indicará en FROM su apellido y legajo, y un cuerpo del mensaje tipo MIME Text/Plain donde debe responder cuales son los campos de encabezado obligatorios según RFC5322.
+8. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `jaiden.sipes59@ethereal.email`. Como remitente del mensaje utilice su propia cuenta de correo y como Asunto (Subject) especifique su nombre completo y legajo. Todo el mensaje debe cumplir con los requisitos de la RFC 5322 y ser de tipo MIME text/plain. Dentro del cuerpo del mensaje responda cuáles son los campos de encabezado obligatorios según RFC5322. Como resolución de este ejercicio, copie y pegue los comandos enviados y las respuestas recibidas desde el servidor (es decir, toda la transacción efectuada).
 
 9. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
    utilizando el menú ". . .", descargue el código RFC 822 del mismo (en Gmail
@@ -85,3 +100,64 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 * <https://github.com/redesunlu/netkit-doc/>
 * <https://github.com/redesunlu/netkit-doc/blob/master/manual-de-uso.md>
 * <https://github.com/redesunlu/netkit-doc/blob/master/preguntas-frecuentes.md>
+
+### Notas para ayudantes
+
+Otras RFC Relevantes
+
+* RFC 2487 SMTP Service Extension for Secure SMTP over Transport Layer Security
+* RFC 2554 SMTP Service Extension for Authentication
+* RFC 1734 POP3 AUTHentication command
+* RFC 3501 IMAP4 (Internet Message Access Protocol v4)
+* RFC 1731 IMAP4 Authentication Mechanisms
+
+#### Problemas con mail.unlu.edu.ar desde fuera de la Universidad
+
+La siguiente es una transcripción de intento de envío de mail desde la red
+de mi domicilio hacia un correo de la Universidad, donde pueden verse las
+trabas que imponen los mecanismos antispam.
+
+    $ nc mail.unlu.edu.ar smtp
+    220 mail.unlu.edu.ar ESMTP
+    HELO maurom.com
+    250 mail.unlu.edu.ar
+    MAIL FROM: maurom@example.com
+    250 2.1.0 Ok
+    RCPT TO: maurom@unlu.edu.ar
+    550 5.7.27 <maurom@example.com>: Sender address rejected: Domain example.com
+        does not accept mail (nullMX)
+    HELO maurom.com
+    250 mail.unlu.edu.ar
+    MAIL FROM: someone@unlu.edu.ar
+    250 2.1.0 Ok
+    RCPT TO: maurom@unlu.edu.ar
+    554 5.7.1 Service unavailable; Client host [181.16.123.141] blocked using
+        zen.spamhaus.org; https://www.spamhaus.org/query/ip/181.16.123.141
+    QUIT
+    221 2.0.0 Bye
+
+    $ nc smtp.gmail.com smtp
+    220 smtp.gmail.com ESMTP x8sm8613293qti.51 - gsmtp
+    HELLO maurom.com
+    502 5.5.1 Unrecognized command. x8sm8613293qti.51 - gsmtp
+    HELO maurom.com
+    250 smtp.gmail.com at your service
+    MAIL FROM: maumeloni@gmail.com
+    530 5.7.0 Must issue a STARTTLS command first. x8sm8613293qti.51 - gsmtp
+    STARTTLS
+    220 2.0.0 Ready to start TLS
+    MAIL FROM: maumeloni@gmail.com
+
+    $ nc mail.unlu.edu.ar smtp
+    220 mail.unlu.edu.ar ESMTP
+    HELO maurom.com
+    250 mail.unlu.edu.ar
+    MAIL FROM: maurom@unlu.edu.ar
+    250 2.1.0 Ok
+    RCPT TO: maurom@unlu.edu.ar
+    554 5.7.1 Service unavailable; Client host [181.16.123.141] blocked using
+        zen.spamhaus.org; https://www.spamhaus.org/query/ip/181.16.123.141
+    QUIT
+    221 2.0.0 Bye
+
+### Fin notas para ayudantes
