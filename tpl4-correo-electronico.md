@@ -92,12 +92,12 @@ La entrega de este TP se realiza mediante el siguiente formulario: **<https://ti
 #### Bibliografía
 
 * FOROUZAN, B.A. 2009. _TCP IP Protocol Suite_. McGraw-Hill Higher Education.
-  - Capítulo 23: “Electronic Mail: SMTP, POP, IMAP and MIME”
+  * Capítulo 23: “Electronic Mail: SMTP, POP, IMAP and MIME”
 * GORALSKI, W. 2017. [The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)](https://www.sciencedirect.com/science/book/9780128110270). Morgan Kaufmann.
-  - Capítulo 25: "SMTP and Email"
-* RFC 5321 Simple Mail Transfer Protocol
-* RFC 5322 Internet Message Format
-* RFC 1939 Post Office Protocol - Versión 3
+  * Capítulo 25: "SMTP and Email"
+* [RFC 5322 Internet Message Format](https://tools.ietf.org/html/rfc5322)
+* [RFC 5321 Simple Mail Transfer Protocol](https://tools.ietf.org/html/rfc5321)
+* [RFC 1939 Post Office Protocol - Versión 3](https://tools.ietf.org/html/rfc1939)
 * RFC 2045, 2046, 2047, 2049, 4288, 4289 MIME (Multipurpose Internet Mail Extensions).
 
 #### Entorno Netkit
