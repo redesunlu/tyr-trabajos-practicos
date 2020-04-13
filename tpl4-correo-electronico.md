@@ -62,7 +62,13 @@ La entrega de este TP se realiza mediante el siguiente formulario: **<https://ti
     6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
 
-8. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `jaiden.sipes59@ethereal.email`. Como remitente del mensaje utilice su propia cuenta de correo y como Asunto (Subject) especifique su nombre completo y legajo. Todo el mensaje debe cumplir con los requisitos de la RFC 5322 y ser de tipo MIME text/plain. Dentro del cuerpo del mensaje responda cuáles son los campos de encabezado obligatorios según RFC5322. Como resolución de este ejercicio, copie y pegue los comandos enviados y las respuestas recibidas desde el servidor (es decir, toda la transacción efectuada).
+\pagebreak
+
+8. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `jaiden.sipes59@ethereal.email`.
+
+   Como remitente del mensaje utilice su propia cuenta de correo y como Asunto (Subject) especifique su nombre completo y legajo. Todo el mensaje debe cumplir con los requisitos de la RFC 5322 y ser de tipo MIME text/plain. Dentro del cuerpo del mensaje responda cuáles son los campos de encabezado obligatorios según RFC5322.
+
+   Como resolución de este ejercicio, copie y pegue los comandos enviados y las respuestas recibidas desde el servidor (es decir, toda la transacción efectuada).
 
 9. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
    utilizando el menú ". . .", descargue el código RFC 822 del mismo (en Gmail
