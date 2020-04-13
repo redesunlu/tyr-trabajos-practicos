@@ -81,18 +81,13 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 #### Bibliografía
 
-* STALLINGS, W. 2002. Capítulo 19.3: "Electronic Mail: SMPTP and MIME" en _Comunicaciones y Redes de Computadoras (6ta ed)_. Prentice Hall.
-* STEVENS, R. 1994. Capítulo 28: "SMTP: Simple Mail Transfer Protocol" en _TCP/IP Illustrated Vol.1_. Addison Wesley.
-* GORALSKI, W. 2017. Capítulo 25: "SMTP and Email" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
-  <https://www.sciencedirect.com/science/book/9780128110270>
+* FOROUZAN, B.A. 2009. _TCP IP Protocol Suite_. McGraw-Hill Higher Education.
+  - Capítulo 23: “Electronic Mail: SMTP, POP, IMAP and MIME”
+* GORALSKI, W. 2017. [The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)](https://www.sciencedirect.com/science/book/9780128110270). Morgan Kaufmann.
+  - Capítulo 25: "SMTP and Email"
 * RFC 5321 Simple Mail Transfer Protocol
-* RFC 2487 SMTP Service Extension for Secure SMTP over Transport Layer Security
-* RFC 2554 SMTP Service Extension for Authentication
+* RFC 5322 Internet Message Format
 * RFC 1939 Post Office Protocol - Versión 3
-* RFC 1734 POP3 AUTHentication command
-* RFC 3501 IMAP4 (Internet Message Access Protocol v4)
-* RFC 1731 IMAP4 Authentication Mechanisms
-* RFC 5322, Internet Message Format
 * RFC 2045, 2046, 2047, 2049, 4288, 4289 MIME (Multipurpose Internet Mail Extensions).
 
 #### Entorno Netkit
