@@ -93,8 +93,6 @@ La entrega de este TP se realiza mediante el siguiente formulario: **<https://ti
 
 * FOROUZAN, B.A. 2009. _TCP IP Protocol Suite_. McGraw-Hill Higher Education.
   * Capítulo 23: “Electronic Mail: SMTP, POP, IMAP and MIME”
-* GORALSKI, W. 2017. [The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)](https://www.sciencedirect.com/science/book/9780128110270). Morgan Kaufmann.
-  * Capítulo 25: "SMTP and Email"
 * [RFC 5322 Internet Message Format](https://tools.ietf.org/html/rfc5322)
 * [RFC 5321 Simple Mail Transfer Protocol](https://tools.ietf.org/html/rfc5321)
 * [RFC 1939 Post Office Protocol - Versión 3](https://tools.ietf.org/html/rfc1939)
@@ -107,6 +105,11 @@ La entrega de este TP se realiza mediante el siguiente formulario: **<https://ti
 * <https://github.com/redesunlu/netkit-doc/blob/master/preguntas-frecuentes.md>
 
 ### Notas para ayudantes
+
+Esta bibliografía queda aparte pues no figura en el listado realizado en 2020
+
+* GORALSKI, W. 2017. [The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)](https://www.sciencedirect.com/science/book/9780128110270). Morgan Kaufmann.
+  * Capítulo 25: "SMTP and Email"
 
 Otras RFC Relevantes
 
