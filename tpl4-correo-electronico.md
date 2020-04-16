@@ -5,7 +5,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
-La entrega de este TP se realiza mediante el siguiente formulario: **<https://tinyurl.com/TyR-TP4>**
+La entrega de este TP se realiza mediante el siguiente [formulario](https://tinyurl.com/TyR-TP4).
 
 #### Notas para ayudantes
 
@@ -34,9 +34,9 @@ La entrega de este TP se realiza mediante el siguiente formulario: **<https://ti
 
 ### Consignas
 
-1. Describa el objetivo y como opera la aplicación correo electrónico, indicando los elementos involucrados: que son y cuál es la función de los agentes de usuario (user agents - UAs) y agentes de transferencia de mensajes (mail transfer agent - MTAs), ¿qué servicio adicional se requiere para la transferencia de mensajes?.
+1. Describa el objetivo y como opera la aplicación correo electrónico, indicando los elementos involucrados: que son y cuál es la función de los agentes de usuario (user agents - UAs) y agentes de transferencia de mensajes (mail transfer agent - MTAs).
 
-2. ¿Qué es un Relay Agent, qué función cumple y en qué casos se utiliza?.
+2. Un usuario redacta un mensaje destinado a `ventas@proveedor.com.ar` en su cliente de correo y lo envía mediante su propio MTA. Detalle paso a paso el procedimiento que sigue el MTA del usuario para conocer la dirección IP del MTA remoto con el que debe conectarse para entregar el mensaje al destinatario.
 
 3. ¿Cuáles son los comandos SMTP de una implementación mínima?
    Describa someramente cada uno.
@@ -61,8 +61,6 @@ La entrega de este TP se realiza mediante el siguiente formulario: **<https://ti
     5. Analice la captura y discuta acerca de la confidencialidad de los datos transmitidos.
     6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
-
-\pagebreak
 
 8. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `jaiden.sipes59@ethereal.email`.
 
