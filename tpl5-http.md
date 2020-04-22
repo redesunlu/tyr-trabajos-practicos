@@ -1,11 +1,13 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** 01/10/2018
+**Fecha de Entrega:** 06/5/2020
+
+**Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
+
+La entrega de este TP se realiza mediante el siguiente [formulario](https://tinyurl.com/TyR-TP5).
 
 #### Notas para ayudantes
-
-**Objetivo:** _TODO_
 
 - Los ejercicios con netcat incorporan los argumentos `-v` para que indique
   si se estableció bien la conexión TCP y `-C` (mayúscula) para que los Enter
@@ -13,10 +15,10 @@ TPL 5 - World Wide Web - HTTP
 - netcat-tradicional devualve inmediatamente el prompt con conection close, netcat-openbsd no, el server manda el fin, el cliente confirma el fin pero no cierra en el otro sentido. Al intentar anviar algo mas el server responde con rst y recién ahí el nc termina.
 - Al final de este documento están las expectativas de respuesta para los
   ejercicios 11 a 14 que involucran python.
+ 
+#### --- Fin notas para ayudantes ---
 
 #### Consignas
-
-#### --- Fin notas para ayudantes ---
 
 1. Describa someramente el protocolo HTTP. Indique modo de operación y primitivas básicas.
 
@@ -57,7 +59,8 @@ conexión con `nc`. Finalice la petición pulsando **tres veces** la tecla Enter
     2. ¿Cuales son los otros encabezados devueltos y qué contenido es transferido en cada caso?
     3. ¿Qué diferencia nota respecto a la duración de la conexión contra el servidor en los dos últimos casos?
 
-4. Instale e inicie el servidor HTTP Apache en su equipo (paquete `apache2`). Inicie una captura de paquetes, filtrando por la dirección del cliente o del servidor. En otro host  de la red, realice  una petición HTTP al servidor web (indicando la dirección IP en el campo URL) utilizando al menos 2 navegadores gráficos diferentes (ej: Firefox o Iceweasel, Chrome o Chromium, Konqueror, Epiphany) y 1 navegador web en modo texto (ej: w3m, lynx, links).
+4. Realice 3 capturas de peticiones HTTP al servidor web www.unlu.edu.ar.
+Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: Firefox, Iceweasel, Chrome, Chromium, Konqueror, Epiphany, Explorer, Sarafi, etc.), y para la tercer captura use la herramienta de transferencias curl (https://curl.haxx.se/) o wget (http://www.gnu.org/software/wget/).
 
     a. ¿Qué encabezados envía cada cliente en la petición?
     b. Comente las características de la información en tránsito con respecto a la confidencialidad.
@@ -288,10 +291,7 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 
 **Bibliografía**
 
-* STALLINGS, W. 2002. 19.4: "Protocolo de Transferencia de Hipertexto (HTTP)" en _Comunicaciones y Redes de Computadoras (6ta ed)_. Prentice Hall.
-* TANNEMBAUM, A. Capítulo 7.6: "La World Wide Web" en _Redes de Computadoras (3ra ed)_. Prentice Hall.
-* GORALSKI, W. 2017. Capítulo 26: "Hypertext Transfer Protocol" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
-  <https://www.sciencedirect.com/science/book/9780128110270>
+* FOROUZAN, B.A. TCP IP Protocol Suite. McGraw-Hill Higher Education, 2009. Capítulo 22: “World Wide Web and HTTP”
 * RFC 7230 - Hypertext Transfer Protocol (HTTP/1.1) Message Syntax and Routing
 * RFC 7231 - Hypertext Transfer Protocol (HTTP/1.1) Semantics and Content
 
@@ -308,6 +308,13 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 
 
 #### Notas para ayudantes
+
+Esta bibliografía queda aparte pues no figura en el listado realizado en 2020
+* STALLINGS, W. 2002. 19.4: "Protocolo de Transferencia de Hipertexto (HTTP)" en _Comunicaciones y Redes de Computadoras (6ta ed)_. Prentice Hall.
+* TANNEMBAUM, A. Capítulo 7.6: "La World Wide Web" en _Redes de Computadoras (3ra ed)_. Prentice Hall.
+* GORALSKI, W. 2017. Capítulo 26: "Hypertext Transfer Protocol" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
+  <https://www.sciencedirect.com/science/book/9780128110270>
+
 
 #### Expectativas de respuesta ejercicios 11 a 14
 
