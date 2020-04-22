@@ -42,7 +42,7 @@ conexión con `nc`. Finalice la petición pulsando **tres veces** la tecla Enter
 
             $ nc -v -C www.unlu.edu.ar 80
             GET / HTTP/1.1
-            Host: www.tyr.unlu.edu.ar
+            Host: www.labredes.unlu.edu.ar
             Connection: keep-alive
 
     d. Petición HTTP. Copie el texto de la petición (indicada bajo la línea) y péguelo una vez establecida la
@@ -50,7 +50,7 @@ conexión con `nc`. Finalice la petición pulsando **tres veces** la tecla Enter
 
             $ nc -v -C www.unlu.edu.ar 80
             GET / HTTP/1.1
-            Host: www.tyr.unlu.edu.ar
+            Host: www.labredes.unlu.edu.ar
             Connection: close
 
     Responda:
