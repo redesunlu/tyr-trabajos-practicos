@@ -309,7 +309,7 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 * Common Gateway Interface: <http://www.w3c.org/cgi/>
 * HTML: <http://www.w3.org/TR/html/>
 * Sitio web del lenguaje Python: <https://www.python.org/>
-* Tutorial de Python: <http://docs.python.org.ar/tutorial/2/contenido.html>
+* Tutorial de Python: <http://docs.python.org.ar/tutorial/3/index.html>
 * Guías de inicio en Python: <http://python.org.ar/AprendiendoPython>
 
 
