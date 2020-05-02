@@ -182,11 +182,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
         server.send_response(200)
         server.send_header('Content-Type', 'text/html')
         server.end_headers()
-        server.wfile.write('<html><head><title>Pagina HTML de ejemplo</title>'
-           '</head><body><p>Esta es una prueba, con texto en <b>negrita</b>,'
-           '<i>cursiva</i> e incluso una imagen externa:</p>'
-           '<img src="http://www.labredes.unlu.edu.ar/themes/glossyblue/images/'
-           'header-bg.jpg" /></body></html>')
+        server.wfile.write(b'<html><head><title>Pagina HTML de ejemplo</title>'
+           b'</head><body><p>Esta es una prueba, con texto en <b>negrita</b>,'
+           b'<i>cursiva</i> e incluso una imagen externa:</p>'
+           b'<img src="http://www.labredes.unlu.edu.ar/themes/glossyblue/images/'
+           b'header-bg.jpg" /></body></html>')
 
     def log_message(*args):
         """ Deshabilito la salida por defecto del servidor """
