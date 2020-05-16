@@ -5,7 +5,7 @@ TP - Ruteo estático
 
 **Objetivo:** Entender el funcionamiento de redes IP que basan sus estrategias de direccionamiento de paquetes a través del mecanismo de ruteo estático, mediante la configuración de un escenario hipotético.
 
-La entrega de este TP se realiza mediante el siguiente formulario.
+La entrega de este TP se realiza mediante el siguiente [formulario](https://tinyurl.com/TyR-TP6).
 
 #### Escenario
 
