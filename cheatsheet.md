@@ -14,8 +14,11 @@ Contraseña: *****
 ## Comando `ip`
 Comando general para manipulación y consulta de parametros de red, interfaces, etc...
 
+Con la opción -6, el comando tiene efecto sobre el stack del protocolo ipv6
+
 ```
 # ip <module> [<parametros>]
+# ip -6 <module> [<parametros>]
 $ man ip
 $ man ip-<module>
 ```
@@ -41,7 +44,18 @@ Administra y muestra los parametros de red
 ```
 # ip addr add dev INTERFAZ DIRECCIÓN_IP/PREFIJO_MÁSCARA
 $ ip addr show
+# ip -6 addr add dev INTERFAZ DIRECCIÓN_IP/PREFIJO_MÁSCARA
+$ ip -6 addr show
 $ man ip-address
+```
+
+### Comando `ip maddress`
+Administra y muestra los parametros de direcciones multicast
+
+```
+$ ip maddr show
+$ ip -6 maddr show
+$ man ip-maddress
 ```
 
 ### Comando `ip route`
@@ -51,6 +65,10 @@ Administra y muestra la tabla de rutas
 $ ip route show
 # ip route add DIRECCION_RED/PREFIJO_MASCARA via IP_GATEWAY dev INTERFAZ
 # ip route add default via DEFAULT_GATEWAY
+$ ip -6 route show
+# ip -6 route add DIRECCION_RED/PREFIJO_MASCARA via IP_GATEWAY dev INTERFAZ
+# ip -6 route add default via DEFAULT_GATEWAY
+$ man ip-route
 ```
 
 ## Comando `ping`
