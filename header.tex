@@ -18,3 +18,24 @@
 \renewcommand{\headrulewidth}{0.3pt} % grosor de la línea de la cabecera
 \renewcommand{\footrulewidth}{0.3pt} % grosor de la línea del pie
 
+\definecolor{InlineCodeFGColor}{HTML}{990000} % color de letra para codigo inline
+\definecolor{InlineCodeBGColor}{HTML}{F4F4F4} % fondo del texto codigo inline
+
+\let\oldtexttt\texttt
+
+% establece color de letra Y FONDO para codigo en linea
+%\renewcommand{\texttt}[1]{
+%  \colorbox{InlineCodeBGColor}{\textcolor{InlineCodeFGColor}{\oldtexttt{#1}}}
+%}
+
+% establece solo color de letra para codigo en linea
+\renewcommand{\texttt}[1]{
+  \textcolor{InlineCodeFGColor}{\oldtexttt{#1}}
+}
+
+\let\oldverbatim\verbatim
+
+\renewcommand{\verbatim}{
+  \color{InlineCodeFGColor}
+  \oldverbatim
+}

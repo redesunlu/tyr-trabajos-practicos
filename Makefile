@@ -30,10 +30,13 @@ pdf/%.pdf: %.md header.tex
 		-V lang=es-AR -V geometry:a4paper -V fontsize=11pt -V documentclass=article \
 		-V geometry:headheight=1in -V geometry:margin=1in -V geometry:top=1.5in \
 		-V mainfont="DejaVu Serif" -V colorlinks=true -V graphics=true \
-		-V monofont="Latin Modern Mono" -V monofontoptions="Colour=990000" \
+		-V monofont="Latin Modern Mono" \
 		-V author-meta=$(shell whoami) \
 		/tmp/output.md -o "$@"
 	#evince "$@" &
+
+%.html: %.md
+	pandoc -f markdown -t html5 -s "$<" -o "$@"
 
 clean:
 	- rm -v pdf/*.pdf
