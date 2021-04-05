@@ -1,11 +1,15 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** 26/03/2020
+**Fecha de Entrega:** xx/04/2021
 
-**URL de Entrega:** <https://tinyurl.com/TyR-TP1>
+**URL de Entrega:** <https://tinyurl.com/TyR-TP1> <----Revisar!!!
 
-**Objetivo:** Conocer el procedimiento inicial y hacer habitual la práctica de configuración de un host en una red basada en el juego de protocolos TCP/IP.
+**Objetivos:**
+
+Conocer el procedimiento inicial y hacer habitual la práctica de configuración de un host en una red basada en el juego de protocolos TCP/IP.
+
+Adquirir habilidades en el uso de la herramienta netkit-ng.
 
 #### Notas para ayudantes
 
@@ -17,41 +21,50 @@ Quizás la mejor explicación sea esta:
 
 #### --- Fin notas para ayudantes ---
 
+# Primer parte: Instalación del entorno netkit
+
+1. Instalar la herramienta Netkit-NG con el script `instalar-netkit-ng.sh` siguiendo la documentación de la siguiente URL:
+   <https://github.com/redesunlu/netkit-doc>
+2. Descargar y descomprimir el laboratorio de práctica de configuración inicial disponible en:
+   <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_conf_inicial-TYR.tar.gz>
+3. Iniciar el laboratorio, siguiendo la documentación referida en el punto 1.
+
+# Segunda parte: Configuración de hosts en una red - prueba de conectividad - análisis de captura
+
 **Consignas**
 
 Los comandos necesarios para llevar adelante la práctica se encuentran listados en el apunte respectivo de la asignatura, disponible en la web de la misma. En todos los casos, el informe a entregar debe mostrar los comandos ejecutados y las salidas obtenidas (en caso de ser una salida extensa, resaltar la parte importante). Ademas se debe explicar que se interpreta de dicha salida y si es lo esperado en cada caso.
 
-1. Verificar la/s interfaces físicas de red (comúnmente llamada _placa de red_ o _NIC_) que el sistema operativo haya detectado. Para ello debe, primero activar las interfaces disponible, y luego listar su información en pantalla.
+1. Verificar la/s interfaces de red (comúnmente llamada _placa de red_ o _NIC_) que el sistema operativo haya detectado en _pc1_ y _pc2_. Para ello debe primero activar las interfaces disponibles, y luego listar su información en pantalla.
 
     ¿Que comando utilizó?
     ¿Cual es el nombre de las interfaces?
-¿Que parte de la salida le indicó cual es la interfaz que se encuentra conectada?
-    ¿Cual es el nombre de la interfaz física que se encuentra conectada al cable de red?
+    ¿Que parte de la salida le indicó cual es la interfaz que se encuentra conectada?
+    ¿Cual es el nombre de la interfaz que se encuentra conectada a la red?
 
-2. Configuración de interfaces de red para utilizar el protocolo TCP/IP. El paso siguiente es asignar a la interfaz física una dirección de red IP según el plano anexo.
+2. Configuración de interfaces de red para utilizar el protocolo TCP/IP. El paso siguiente es asignar las direcciones IP 10.4.11.11 y 10.4.11.12 a _pc1_ y _pc2_ respectivamente (la máscara de red es /24 o 255.255.255.0).
 
-3. Verificar que es posible contactar a otros 2 equipos de la red.
+3. Verificar que es posible contactar ambos equipos de la red.
 
-4. Cambie la configuración del nombre del equipo (temporal y permanente).
-
+4. Cambie la configuración de los nombres de los equipos (temporal y permanente) asignandoles tyr11 y tyr12 a _pc1_ y _pc2_ respectivamente.
 
 5. Resolución de nombres de hosts a direcciones IP.
 
-    a. Configurar el dispositivo con los nombres y las direcciones de red de al menos 2 máquinas del laboratorio para la resolución local de nombres.
+    a. Configurar la resolución de nombres locales en ambos host con la información contenida en el puno 4.
 
-    b. Verificar que es posible contactar otros 2 equipos de la red utilizando nombres de host.
+    b. Verificar que es posible contactar ambos equipos de la red utilizando nombres de host.
 
 7. Ver la tabla de ruteo definida en el equipo. ¿Cuáles son las redes accesibles?
 
 8. Agregar la dirección `10.4.11.30` como ruta por defecto para acceder a otras redes. Verificar nuevamente la tabla de ruteo.
 
-9. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con otro equipo. Las acciones que debe realizar son:
+9. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con el otro equipo. Las acciones que debe realizar son:
 
-    a. Iniciar la captura en una terminal, redireccionando la salida a un archivo para su posterior análisis.
+    a. Iniciar la captura en una terminal del host anfitrion (utilizando el comdando _vdump_), redireccionando la salida a un archivo para su posterior análisis.
 
-    b. En otra terminal ejecutar el comando ping para enviar 3 mensajes ICMP Echo Request (consulte el manual de ping).
+    b. En _pc1_ ejecutar el comando ping para enviar a _pc2_ exactamente 3 mensajes ICMP Echo Request (consulte el manual de ping).
 
-    c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tcpdump_ presionando **Ctrl+C**)
+    c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _vdump_ presionando **Ctrl+C**)
 
     d. Analizar el volcado del programa de captura utilizando la aplicación wireshark (o cualquier otro analizador de tráfico que permita leer archivos en formato _pcap_), representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
@@ -60,17 +73,9 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 * Resumen de comandos: [http://bit.ly/tyr-comandos](http://bit.ly/tyr-comandos)
 * Semestre Perdido. Linea de Comandos: [http://bit.ly/tyr-ms-cli](http://bit.ly/tyr-ms-cli) (versión traducida por el equipo de TyR)
 * Semetre Perdido. Shell: [http://bit.ly/tyr-ms-shell](http://bit.ly/tyr-ms-shell) (versión traducida por el equipo de TyR)
+* "Manual de uso de Netkit"
+  <https://github.com/redesunlu/netkit-doc/blob/master/manual-de-uso.md>
 
-\pagebreak
-
-Mapa de la red del laboratorio
-==============================
-
-![](images/topologia-laboratorio.png)
-
-* Dirección de red: **10.4.11.0**
-* Máscara de red: **/24** o bien **255.255.255.0**
-* Dirección de broadcast: **10.4.11.255**
 
 #### Notas para ayudantes - Cuestiones ya resueltas
 
