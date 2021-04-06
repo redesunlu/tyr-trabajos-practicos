@@ -1,9 +1,9 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** xx/04/2021
+**Fecha de Entrega:** Comisión 6 (Luján): 21/04/2021 - Comisión 35 (Chivilcoy): 23/04/2021
 
-**URL de Entrega:** <https://tinyurl.com/TyR-TP1> <----Revisar!!!
+**URL de Entrega:** <https://tinyurl.com/TyR-TP1>
 
 **Objetivos:**
 
