@@ -117,8 +117,7 @@ tshark -­r NOMBRE_ARCHIVO.PCAP -­nqz follow,tcp,hex,0
 
 ## Comando `nc`: NetCat
 
-Permite generar conexiones TCP / UDP de forma que permite leer y escribir en
-dichas conexiones.
+Es un comando multipropósito que permite enviar datos desde teclado a través de una conexión con un servidor TCP, o bien operar como un servidor TCP en espera de conexiones y mostrar en pantalla los datos que recibe. Con el parámetro `-u` opera sobre transporte UDP, pudiendo tanto enviar como recibir mensajes UDP en un puerto arbitrario.
 
 Para iniciar un proceso de tipo Servidor:
 ```bash
