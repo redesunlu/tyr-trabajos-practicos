@@ -27,7 +27,7 @@ Defina un número de puerto para el proceso servidor (superior a 1024).
 
 Realice una captura de todo el proceso utilizando la herramienta `vdump`, guardándola en un archivo en formato _pcap_ para su posterior análisis.
 
-En el host _pc1_ deberá ejecutar la utilidad _nc_ actuando como servidor, indicando como parámetro el número de puerto elegido. Una vez iniciado, este servicio quedará en modo de _escucha_ o _listening_. En el otro host (_pc2_) ejecute la utilidad _nc_ como cliente indicando como parámetros la IP del servidor y número de puerto.
+En el host _pc1_ deberá ejecutar la utilidad `nc` actuando como servidor, indicando como parámetro el número de puerto elegido. Una vez iniciado, este servicio quedará en modo de _escucha_ o _listening_. En el otro host (_pc2_) ejecute la utilidad `nc` como cliente indicando como parámetros la IP del servidor y número de puerto.
 
 #### Notas para ayudantes
 
