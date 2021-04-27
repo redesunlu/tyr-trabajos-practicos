@@ -189,6 +189,11 @@ trabas que imponen los mecanismos antispam.
 
 
 y no dio bolilla al fin de datos. (tuve que cortar la conxeción)
+Actualización, falta usar "-C" con el nc. El resultado fue:
 
-    
+    550-5.7.1 [181.16.127.234] The IP you're using to send mail is not authorized to
+    550-5.7.1 send email directly to our servers. Please use the SMTP relay at your
+    550-5.7.1 service provider instead. Learn more at
+    550 5.7.1  https://support.google.com/mail/?p=NotAuthorizedError n6si4959770ljc.380 - gsmtp
+
 ### Fin notas para ayudantes
