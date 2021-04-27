@@ -7,8 +7,6 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
-La entrega de este TP se realiza mediante el siguiente [formulario](https://tinyurl.com/TyR-TP4).
-
 #### Notas para ayudantes
 
 * Agregué el ejercicio 9 donde los estudiantes deben obtener el código fuente
