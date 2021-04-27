@@ -1,7 +1,9 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** 29/04/2020
+**Fecha de Entrega:** Comisión 6 (Luján): 12/05/2021 - Comisión 35 (Chivilcoy): 14/05/2021
+
+**URL de Entrega:** <https://tinyurl.com/TyR-2021-TP4>
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -36,7 +38,7 @@ La entrega de este TP se realiza mediante el siguiente [formulario](https://tiny
 
 1. Describa el objetivo y como opera la aplicación correo electrónico, indicando los elementos involucrados: que son y cuál es la función de los agentes de usuario (user agents - UAs) y agentes de transferencia de mensajes (mail transfer agent - MTAs).
 
-2. Un usuario redacta un mensaje destinado a `ventas@proveedor.com.ar` en su cliente de correo y lo envía mediante su propio MTA. Detalle paso a paso el procedimiento que sigue el MTA del usuario para conocer la dirección IP del MTA remoto con el que debe conectarse para entregar el mensaje al destinatario.
+2. Un usuario redacta un mensaje destinado a `consultas@empresax.com.ar` en su cliente de correo y lo envía mediante su propio MTA. Detalle paso a paso el procedimiento que sigue el MTA del usuario para conocer la dirección IP del MTA remoto con el que debe conectarse para entregar el mensaje al destinatario.
 
 3. ¿Cuáles son los comandos SMTP de una implementación mínima?
    Describa someramente cada uno.
@@ -165,5 +167,30 @@ trabas que imponen los mecanismos antispam.
         zen.spamhaus.org; https://www.spamhaus.org/query/ip/181.16.123.141
     QUIT
     221 2.0.0 Bye
+    
 
+2021: Intento de envío usando gmail (si funcionaba tal vez podrían enviar a la cuenta de la materia):
+
+    nc 64.233.184.26 25
+    220 mx.google.com ESMTP w26si4443971wmk.159 - gsmtp
+    helo mihost.telered.com.ar
+    250 mx.google.com at your service
+    mail from: <florge@gmail.com>
+    250 2.1.0 OK w26si4443971wmk.159 - gsmtp
+    rcpt to: <florge@gmail.com>
+    250 2.1.5 OK w26si4443971wmk.159 - gsmtp
+    data
+    354  Go ahead w26si4443971wmk.159 - gsmtp
+    Subject: Prueba de envio de mail con nc
+
+    Hola Mundo!
+    
+    .
+
+    .
+
+
+y no dio bolilla al fin de datos. (tuve que cortar la conxeción)
+
+    
 ### Fin notas para ayudantes
