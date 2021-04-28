@@ -1,7 +1,7 @@
 # Makefile para construir los Trabajos Practicos de Administracion y Gestion de Redes
 # Mauro A. Meloni <maurom@unlu.edu.ar>
 
-REQUIRED_PACKAGES := pandoc lmodern texlive-xetex texlive-generic-recommended texlive-fonts-recommended fonts-dejavu
+REQUIRED_PACKAGES := pandoc lmodern texlive-xetex texlive-latex-recommended texlive-fonts-recommended fonts-dejavu
 
 # define los argumentos de pandoc segun la version, pues hay diferencia entre v1 y v2
 PANDOC_VERSION_MAJOR := $(shell pandoc --version | head -1 | cut -d' ' -f2 | cut -d'.' -f1)
