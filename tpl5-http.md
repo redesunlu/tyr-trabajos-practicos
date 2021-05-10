@@ -1,11 +1,12 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** 06/5/2020
+**Fecha de Entrega:** Comisión 6 (Luján): 26/05/2021 - Comisión 35 (Chivilcoy): 28/05/2021
+
+**URL de Entrega:** <https://tinyurl.com/TyR-2021-TP5>
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
-La entrega de este TP se realiza mediante el siguiente [formulario](https://tinyurl.com/TyR-TP5).
 
 #### Notas para ayudantes
 

@@ -195,5 +195,7 @@ Actualización, falta usar "-C" con el nc. El resultado fue:
     550-5.7.1 send email directly to our servers. Please use the SMTP relay at your
     550-5.7.1 service provider instead. Learn more at
     550 5.7.1  https://support.google.com/mail/?p=NotAuthorizedError n6si4959770ljc.380 - gsmtp
+    
+Aguante ehtereal.email
 
 ### Fin notas para ayudantes
