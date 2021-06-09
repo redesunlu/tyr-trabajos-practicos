@@ -21,7 +21,7 @@ all: pdf/gl-introduccion.pdf pdf/tp-transmision-datos.pdf pdf/tpl1-configuracion
 	pdf/tpe-sockets.pdf pdf/receta-tp-integrador-2019.pdf pdf/tpl1-parte2.pdf \
 	pdf/tp-ruteo-estatico-2020.pdf pdf/tp-eficiencia-enlace.pdf pdf/tpl1-configuracion-inicial.pdf \
 	pdf/cheatsheet.pdf pdf/missing-semester-course-shell.pdf pdf/missing-semester-command-line.pdf \
-	pdf/practica_autoguiada_sockets.pdf
+	pdf/practica_autoguiada_sockets.pdf pdf/tp-ruteo-estatico-2021.pdf
 
 pdf/%.pdf: %.md header.tex
 	mkdir -p pdf
