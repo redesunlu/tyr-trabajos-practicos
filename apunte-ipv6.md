@@ -3,7 +3,8 @@ Apuntes (internos) de Teoría sobre IPv6
 
 Los siguientes esquemas documentan lo que se explica del protocolo en la clase de IPv6. Están armados en base al Curso IPv6 Básico de LACNIC.
 
-La práctica está documentada en [Clase Teórico-Práctica de Protocolo IPv6](./tplX-ipv6).
+La práctica está documentada en [Clase Teórico-Práctica de Protocolo IPv6 (presencia)](./tplX-ipv6-presencial)
+y [TP - Protocolo IPv6 (a distancia)](./tplX-ipv6-a-distancia).
 
 La idea es iniciar con:
 
