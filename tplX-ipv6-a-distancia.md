@@ -1,7 +1,7 @@
-TP - Protocolo IPv6
+TPL 7 - Protocolo IPv6
 ===================
 
-**Fecha de Entrega Comisión 6 (Luján): 30/06/2021 - Comisión 35 (Chivilcoy): 01/07/2021**
+**Fecha de Entrega Comisión 6 (Luján): 08/07/2021 - Comisión 35 (Chivilcoy): 08/07/2021**
 
 **URL de Entrega:** <https://tinyurl.com/TyR-2021-TP7>
 
@@ -16,25 +16,25 @@ Esta guía es una copia de la Guía Práctica No obligatoria de IPv6 existente e
 
 #### Fin notas para ayudantes
 
-Esta guía sobre IPv6 consta de dos partes. En la primera, se trabaja sobre un laboratorio Netkit ([descargar](https://drive.google.com/file/d/1PLRZ42hYg3AupBtdaP4CogKyuAgniTTz/view?usp=sharing), [alt](https://www.computer-networking.info/2nd/html/_downloads/netkit-lab_slaac.zip)) para reproducir las acciones propuestas (puntos 1 y 2). Es demostrativo para que puedan apreciar algunos cambios entre IPv4 e IPv6.  
+Esta guía sobre IPv6 consta de dos partes. En la primera, se trabaja sobre un laboratorio Netkit ([descargar](https://drive.google.com/file/d/1PLRZ42hYg3AupBtdaP4CogKyuAgniTTz/view?usp=sharing), [link alternativo](https://www.computer-networking.info/2nd/html/_downloads/netkit-lab_slaac.zip)) para reproducir las acciones propuestas (puntos 1 y 2). Es demostrativo para que puedan apreciar algunos cambios entre IPv4 e IPv6.  
 En la segunda actividad (Análisis de Capturas), se trabaja con tres capturas de tráfico ([descargar](https://drive.google.com/file/d/1eKazrLCdbpis1dq-_3oTCb6bGwkrGjDy/view?usp=sharing)). A partir de éstas, se propone identificar los mensajes y hosts enunciados a los efectos de comprender de mejor manera los procedimientos.
 
 ## Trabajando en el hostA
 
 Antes de levantar la interfaz `eth0` del host, verificar las direcciones IPv6 creadas automáticamente, las direcciones MAC y grupos multicast de los cuales el host es miembro.
 
-a. Verificar las direcciones IPv6. Indicar tipo y alcance de la dirección.
+### a. Verificar las direcciones IPv6. Indicar tipo y alcance de la dirección.
 
-```
+```console
 # ip -6 addr show
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436
     inet6 ::1/128 scope host «--
        valid_lft forever preferred_lft forever
 ```
 
-b. Verificar cuáles son las direcciones MAC en el hostA.
+### b. Verificar cuáles son las direcciones MAC en el hostA.
 
-```
+```console
 # ip link  show
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN mode DEFAULT
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -42,9 +42,9 @@ b. Verificar cuáles son las direcciones MAC en el hostA.
     link/ether 02:03:04:05:06:0a brd ff:ff:ff:ff:ff:ff «--
 ```
 
-c. Verificar a qué grupos multicast se encuentra asociado el hostA al momento de bootear. ¿En qué casos se utiliza dicha dirección?
+### c. Verificar a qué grupos multicast se encuentra asociado el hostA al momento de bootear. ¿En qué casos se utiliza dicha dirección?
 
-```
+```console
 # ip  maddr show
 1:	lo
 	inet  224.0.0.1
@@ -54,9 +54,9 @@ c. Verificar a qué grupos multicast se encuentra asociado el hostA al momento d
 	inet6 ff02::1 «--
 ```
 
-d. Levantar la interfaz `eth0`. Identificar si hay una nueva dirección IPv6:
+### d. Levantar la interfaz `eth0`. Identificar si hay una nueva dirección IPv6:
 
-```
+```console
 # ip link set dev eth0 up
 # ip -6 addr show
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436
@@ -67,8 +67,7 @@ d. Levantar la interfaz `eth0`. Identificar si hay una nueva dirección IPv6:
        valid_lft forever preferred_lft forever
 ```
 
-e. Clasificar la nueva dirección según su tipo y alcance. ¿Cuál es el prefijo y el ID de interfaz de la nueva dirección?
-
+### e. Clasificar la nueva dirección según su tipo y alcance. ¿Cuál es el prefijo y el ID de interfaz de la nueva dirección? 
 Determinar qué método utilizó el host para crear automáticamente el ID de interfaz de la dirección de enlace local.
 
 > usa EUI-64 ya que:
@@ -85,9 +84,9 @@ Determinar qué método utilizó el host para crear automáticamente el ID de in
 > IP = `fe80::3:4ff:fe05:60a/64`
 
 
-f. Verificar nuevamente a que nuevos grupos está asociado el hostA. Identificar si hay algún grupo nuevo y para que se utiliza la nueva dirección.
+### f. Verificar nuevamente a que nuevos grupos está asociado el hostA. Identificar si hay algún grupo nuevo y para que se utiliza la nueva dirección.
 
-```
+```console
 # ip maddr show
 1:	lo
 	inet  224.0.0.1
@@ -103,9 +102,9 @@ f. Verificar nuevamente a que nuevos grupos está asociado el hostA. Identificar
 
 ## Trabajando en el router con [radvd](https://linux.die.net/man/5/radvd.conf)
 
-a. Verificar las direcciones IPv6 en el router. ¿Cuál es la diferencia que encuentra con el hostA? Indicar el tipo y alcance (scope) de cada dirección.
+### a. Verificar las direcciones IPv6 en el router. ¿Cuál es la diferencia que encuentra con el hostA? Indicar el tipo y alcance (scope) de cada dirección.
 
-```
+```terminal
 # ip -6 addr show
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436
     inet6 ::1/128 scope host «--
@@ -117,9 +116,9 @@ a. Verificar las direcciones IPv6 en el router. ¿Cuál es la diferencia que enc
        valid_lft forever preferred_lft forever
 ```
 
-b. Verificar a qué grupos pertenece el router. Explique las diferencias con el  hostA
+### b. Verificar a qué grupos pertenece el router. Explique las diferencias con el  hostA
 
-```
+```terminal
 # ip maddr show
 1:	lo
 	inet  224.0.0.1
@@ -139,9 +138,9 @@ b. Verificar a qué grupos pertenece el router. Explique las diferencias con el 
 	inet6 ff02::1
 ```
 
-c. Iniciar el demonio radvd: `/etc/init.d/radvd start`
+### c. Iniciar el demonio radvd: `/etc/init.d/radvd start`
 
-d. Levantar nuevamente la interfaz `eth0` del hostA. Verificar nuevamente las direcciones IPv6 en el host. ¿Cuál es el prefijo y el ID de interfaz de la nueva dirección en el hostA? Clasificar tipo y alcance de la dirección.
+### d. Levantar nuevamente la interfaz `eth0` del hostA. Verificar nuevamente las direcciones IPv6 en el host. ¿Cuál es el prefijo y el ID de interfaz de la nueva dirección en el hostA? Clasificar tipo y alcance de la dirección.
 
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436
@@ -182,13 +181,13 @@ a. Para los mensajes de RA (Router Advertisement) y RS (Router Solicitation) ind
 
 3\. La captura del archivo _captura_ejemplo_ping6.pcap_ corresponde al intercambio de mensajes generados luego de la ejecución del comando `ping6` en uno de los host del laboratorio. Analice el tráfico y responda:
 
-a\. Para los mensajes de RA (Router Advertisement) y RS (Router Solicitation) indique:
+a. Para los mensajes Echo Request y Echo Reply indique:
 
   - ¿Cuál es la dirección IP origen y destino del Echo Request?
   - ¿Qué diferencia encuentra entre los mensajes Neighbor Solicitation de esta captura y los que aparecen en las capturas anteriores? Justifique.
   - ¿Qué hosts contestan el Echo Request?
 
-4) Haga una tabla con las distintas direcciones IPv6 que aparecen en las capturas indicando Prefijo de la dirección, ID de interfaz, y a cual de los siguientes grupos pertenece: Solicited-node address, all-IPv6-devices, all-IPv6-routers, Unicast link-local, Unicast Global.
+4\. Haga una tabla con las distintas direcciones IPv6 que aparecen en las capturas indicando Prefijo de la dirección, ID de interfaz, y a cual de los siguientes grupos pertenece: Solicited-node address, all-IPv6-devices, all-IPv6-routers, Unicast link-local, Unicast Global.
 
 
 ## Bibliografía
