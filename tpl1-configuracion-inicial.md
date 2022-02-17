@@ -9,7 +9,7 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 Conocer el procedimiento inicial y hacer habitual la práctica de configuración de un host en una red basada en el juego de protocolos TCP/IP.
 
-Adquirir habilidades en el uso de la herramienta netkit-ng.
+Adquirir habilidades en el uso del entorno de emulación de redes Kathará.
 
 #### Notas para ayudantes
 
@@ -21,13 +21,15 @@ Quizás la mejor explicación sea esta:
 
 #### --- Fin notas para ayudantes ---
 
-# Primer parte: Instalación del entorno netkit
+# Primer parte: Instalación del entorno Kathará
 
-1. Instalar la herramienta Netkit-NG con el script `instalar-netkit-ng.sh` siguiendo la documentación de la siguiente URL:
-   <https://github.com/redesunlu/netkit-doc>
-2. Descargar y descomprimir el laboratorio de práctica de configuración inicial disponible en:
+1. Instalar el entorno de emulación de redes Kathará siguiendo la documentación de la siguiente URL:
+   <https://github.com/KatharaFramework/Kathara/wiki/Installation-Guides>
+2. Descargar y descomprimir el laboratorio de práctica de configuración inicial desde:
    <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_conf_inicial-TYR.tar.gz>
-3. Iniciar el laboratorio, siguiendo la documentación referida en el punto 1.
+3. En una terminal de línea de comandos, dirigirse al directorio recientemente creado (que posee el archivo `lab.conf`) y ejecutar el comando  
+   `kathara lstart`  
+   para comprobar que es posible iniciar el laboratorio. Deberían abrirse tres ventanas con las terminales de los equipos _pc1_, _pc2_, y _r1_.
 
 # Segunda parte: Configuración de hosts en una red - prueba de conectividad - análisis de captura
 
@@ -46,7 +48,7 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 
 3. Verificar que es posible contactar ambos equipos de la red.
 
-4. Cambie la configuración de los nombres de los equipos (temporal y permanente) asignandoles tyr11 y tyr12 a _pc1_ y _pc2_ respectivamente.
+4. Cambiar la configuración de los nombres de los equipos asignandoles tyr11 y tyr12 a _pc1_ y _pc2_ respectivamente.
 
 5. Resolución de nombres de hosts a direcciones IP.
 
@@ -54,27 +56,29 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 
     b. Verificar que es posible contactar ambos equipos de la red utilizando nombres de host.
 
-7. Ver la tabla de ruteo definida en el equipo. ¿Cuáles son las redes accesibles?
+6. Ver la tabla de ruteo definida en el equipo. ¿Cuáles son las redes accesibles?
 
-8. Agregar la dirección `10.4.11.30` como ruta por defecto para acceder a otras redes. Verificar nuevamente la tabla de ruteo.
+7. Agregar la dirección `10.4.11.30` como ruta por defecto para acceder a otras redes. Verificar nuevamente la tabla de ruteo.
 
-9. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con el otro equipo. Las acciones que debe realizar son:
+8. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con el otro equipo. Las acciones que debe realizar son:
 
-    a. Iniciar la captura en una terminal del host anfitrion (utilizando el comdando _vdump_), redireccionando la salida a un archivo para su posterior análisis.
+    a. **ESTO HAY QUE ACTUALIZARLO O PONER CÓMO HACERLO CON KATHARÁ** En una terminal del host anfitrión, iniciar la captura utilizando el comando `tcpdump` sobre la interfaz `kt-xxx`) y redirigir la salida a un archivo para su posterior análisis.**
 
     b. En _pc1_ ejecutar el comando ping para enviar a _pc2_ exactamente 3 mensajes ICMP Echo Request (consulte el manual de ping).
 
-    c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _vdump_ presionando **Ctrl+C**)
+    c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tcpdump_ presionando **Ctrl+C**)
 
     d. Analizar el volcado del programa de captura utilizando la aplicación wireshark (o cualquier otro analizador de tráfico que permita leer archivos en formato _pcap_), representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
+
+9. **ESTE PUNTO LO REESCRIBÍ TENIENDO EN CUENTA QUE LOS CAMBIOS EN LAS VMS NO SON PERSISTENTES; DEBERÍAMOS VER CÓMO REFORMULARLO** Escribir los comandos de configuración que ejecutó en los puntos 2 a 7 a los archivos `pc1.startup` y `pc2.startup`, respectivamente, que están dentro del directorio del laboratorio, de manera tal que los nodos queden configurados automáticamente al reiniciar el laboratorio.
 
 **Recursos**
 
 * Resumen de comandos: [http://bit.ly/tyr-comandos](http://bit.ly/tyr-comandos)
 * Semestre Perdido. Linea de Comandos: [http://bit.ly/tyr-ms-cli](http://bit.ly/tyr-ms-cli) (versión traducida por el equipo de TyR)
 * Semetre Perdido. Shell: [http://bit.ly/tyr-ms-shell](http://bit.ly/tyr-ms-shell) (versión traducida por el equipo de TyR)
-* "Manual de uso de Netkit"
-  <https://github.com/redesunlu/netkit-doc/blob/master/manual-de-uso.md>
+* **ESTE MANUAL NO ESTÁ SUBIDO AÚN** Manual de uso de Kathará  
+  <https://github.com/redesunlu/netkit-doc/blob/master/kathara-manual-de-uso.md>
 
 
 #### Notas para ayudantes - Cuestiones ya resueltas
