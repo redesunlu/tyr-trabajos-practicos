@@ -1,9 +1,9 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** Comisión 6 (Luján): 21/04/2021 - Comisión 35 (Chivilcoy): 23/04/2021
+**Fecha de Entrega:** 28/03/2021
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2021-TP1>
+**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP1>
 
 **Objetivos:**
 
@@ -35,7 +35,7 @@ Quizás la mejor explicación sea esta:
 
 **Consignas**
 
-Los comandos necesarios para llevar adelante la práctica se encuentran listados en el apunte respectivo de la asignatura, disponible en la web de la misma. En todos los casos, el informe a entregar debe mostrar los comandos ejecutados y las salidas obtenidas (en caso de ser una salida extensa, resaltar la parte importante). Ademas se debe explicar que se interpreta de dicha salida y si es lo esperado en cada caso.
+Los comandos necesarios para llevar adelante la práctica se encuentran listados en el apunte respectivo de la asignatura, disponible en la web de la misma. En todos los casos, el informe a entregar debe mostrar los comandos ejecutados y las salidas obtenidas (en caso de ser una salida extensa, resaltar la parte importante). Además, se debe explicar lo que se interpreta de dicha salida y si es lo esperado en cada caso.
 
 1. Verificar la/s interfaces de red (comúnmente llamada _placa de red_ o _NIC_) que el sistema operativo haya detectado en _pc1_ y _pc2_. Para ello debe primero activar las interfaces disponibles, y luego listar su información en pantalla.
 
@@ -62,7 +62,12 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 
 8. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con el otro equipo. Las acciones que debe realizar son:
 
+#### Notas para ayudantes - 
     a. **ESTO HAY QUE ACTUALIZARLO O PONER CÓMO HACERLO CON KATHARÁ** En una terminal del host anfitrión, iniciar la captura utilizando el comando `tcpdump` sobre la interfaz `kt-xxx`) y redirigir la salida a un archivo para su posterior análisis.**
+    florge no veo otra manera de hacerlo. Hay una propuesta pero no está implementada
+#### --- Fin notas para ayudantes ---
+
+    a. En una terminal del host anfitrión, iniciar la captura utilizando el comando `tcpdump` o `tshark` sobre la interfaz `kt-xxx` y redirigir la salida a un archivo para su posterior análisis.
 
     b. En _pc1_ ejecutar el comando ping para enviar a _pc2_ exactamente 3 mensajes ICMP Echo Request (consulte el manual de ping).
 
@@ -70,7 +75,12 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 
     d. Analizar el volcado del programa de captura utilizando la aplicación wireshark (o cualquier otro analizador de tráfico que permita leer archivos en formato _pcap_), representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
+#### Notas para ayudantes - 
 9. **ESTE PUNTO LO REESCRIBÍ TENIENDO EN CUENTA QUE LOS CAMBIOS EN LAS VMS NO SON PERSISTENTES; DEBERÍAMOS VER CÓMO REFORMULARLO** Escribir los comandos de configuración que ejecutó en los puntos 2 a 7 a los archivos `pc1.startup` y `pc2.startup`, respectivamente, que están dentro del directorio del laboratorio, de manera tal que los nodos queden configurados automáticamente al reiniciar el laboratorio.
+
+#### --- Fin notas para ayudantes ---
+
+9. Escribir los comandos de configuración que ejecutó en los puntos 2 a 7 en _pc1_ y _pc2_ a los archivos `pc1.startup` y `pc2.startup` respectivamente, que están dentro del directorio del laboratorio, de manera tal que los nodos se configuren automáticamente al reiniciar el laboratorio.
 
 **Recursos**
 
