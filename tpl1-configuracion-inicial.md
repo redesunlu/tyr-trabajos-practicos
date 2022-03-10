@@ -75,12 +75,14 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 
     d. Analizar el volcado del programa de captura utilizando la aplicación wireshark (o cualquier otro analizador de tráfico que permita leer archivos en formato _pcap_), representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
-#### Notas para ayudantes - 
+#### Notas para ayudantes -
+
 9. **ESTE PUNTO LO REESCRIBÍ TENIENDO EN CUENTA QUE LOS CAMBIOS EN LAS VMS NO SON PERSISTENTES; DEBERÍAMOS VER CÓMO REFORMULARLO** Escribir los comandos de configuración que ejecutó en los puntos 2 a 7 a los archivos `pc1.startup` y `pc2.startup`, respectivamente, que están dentro del directorio del laboratorio, de manera tal que los nodos queden configurados automáticamente al reiniciar el laboratorio.
+florge, a menos que compliquemos las cosas con puntos de montaje queda así.
 
 #### --- Fin notas para ayudantes ---
 
-9. Escribir los comandos de configuración que ejecutó en los puntos 2 a 7 en _pc1_ y _pc2_ a los archivos `pc1.startup` y `pc2.startup` respectivamente, que están dentro del directorio del laboratorio, de manera tal que los nodos se configuren automáticamente al reiniciar el laboratorio.
+9. Escribir los comandos de configuración que ejecutó en los puntos 2, 4, 5 y 7 en _pc1_ y _pc2_ a los archivos `pc1.startup` y `pc2.startup` respectivamente, que están dentro del directorio del laboratorio, de manera tal que los nodos se configuren automáticamente al reiniciar el laboratorio.
 
 **Recursos**
 
