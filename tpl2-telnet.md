@@ -1,9 +1,9 @@
 TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 =================================================
 
-**Fecha de Entrega:** Comisión 6 (Luján): 28/04/2021 - Comisión 35 (Chivilcoy): 30/04/2021
+**Fecha de Entrega:** 04/04/2022
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2021-TP2>
+**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP2>
 
 **Objetivo:**
 Familiarizar el trabajo con aplicaciones cliente/servidor y, como primer ejemplo de aplicación de la pila TCP/IP, conocer el propósito y funcionamiento del protocolo **telnet**.
@@ -21,11 +21,11 @@ Protocolo Telnet: Capítulo 20.1 [FOR09]
 
 # Primer parte: Creación de un modelo simple Cliente/Servidor
 
-Utilice para esta parte de la práctica el laboratorio de Netkit _netkit-lab_conf_inicial_ y configure las interfaces de _pc1_ y _pc2_ tal como lo hizo en el primer trabajo práctico de laboratorio. Verifique conectividad entre ambos hosts.
+Utilice para esta parte de la práctica el laboratorio de práctica _netkit-lab_conf_inicial_ y configure las interfaces de _pc1_ y _pc2_ tal como lo hizo en el primer trabajo práctico de laboratorio. Verifique conectividad entre ambos hosts.
 
 Defina un número de puerto para el proceso servidor (superior a 1024).
 
-Realice una captura de todo el proceso utilizando la herramienta `vdump`, guardándola en un archivo en formato _pcap_ para su posterior análisis.
+Realice una captura de todo el proceso utilizando en el host anfitrión la herramienta `tcpdump` o `tshark`, guardándola en un archivo en formato _pcap_ para su posterior análisis.
 
 En el host _pc1_ deberá ejecutar la utilidad `nc` actuando como servidor, indicando como parámetro el número de puerto elegido. Una vez iniciado, este servicio quedará en modo de _escucha_ o _listening_. En el otro host (_pc2_) ejecute la utilidad `nc` como cliente indicando como parámetros la IP del servidor y número de puerto.
 
@@ -49,7 +49,7 @@ c) ¿Todas las tramas en las que identifica el protocolo TCP transportan datos d
 
 # Segunda parte: Protocolo de acceso remoto TELNET
 
-Instale e inicie en **netkit** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_telnet-TYR.tar.gz>
+Instale e inicie en **Kathará** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_telnet.tar.gz>
 
 El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
 
@@ -57,7 +57,7 @@ Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`.
 
 Inicie una captura de tráfico en el enlace A.
 
-En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `root` y la clave `ultrasecreta`.
+En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `alumno` y la clave `ultrasecreta`.
 
 Con la sesión iniciada en _remoto_, ejecute el siguiente comando respetando la sintaxis.
 
