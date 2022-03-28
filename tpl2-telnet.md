@@ -49,7 +49,7 @@ c) ¿Todas las tramas en las que identifica el protocolo TCP transportan datos d
 
 # Segunda parte: Protocolo de acceso remoto TELNET
 
-Instale e inicie en **Kathará** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_telnet.tar.gz>
+Instale e inicie en **Kathará** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_telnet-TYR.tar.gz>
 
 El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
 
