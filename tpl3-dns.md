@@ -36,23 +36,20 @@ Ejercicio removido en 2018 por florge-maurom
 
 ### Consignas
 
-1. Describa el objetivo del sistema DNS, su estructura, elementos que intervienen y
-tipos de datos (Resource Records) típicos que se pueden consultar.
+1. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien alguno de acceso público tal como `8.8.8.8` o `1.1.1.1`) para obtener la siguiente información:
 
-2. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien alguno de acceso público tal como `8.8.8.8` o `1.1.1.1`) para obtener la siguiente información:
+    a. ¿Cuál es la dirección IP del host `comdoc.unlu.edu.ar`?
+    b. ¿Cuál es la dirección IP del host `resoluciones.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
+    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unpa.edu.ar`?
+    d. ¿Cuál es el nombre del host cuya dirección IP es `190.104.80.6`?
+    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `iana.org`?
+    f. ¿Cuál es la dirección IPv6 del host `www.lacnic.net`?
 
-    a. ¿Cuál es la dirección IP del host `archivos.unlu.edu.ar`?
-    b. ¿Cuál es la dirección IP del host `saweb.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
-    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unsa.edu.ar`?
-    d. ¿Cuál es el nombre del host cuya dirección IP es `190.104.80.99`?
-    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `icann.org`?
-    f. ¿Cuál es la dirección IPv6 del host `www.nic.ar`?
+2. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `cruzroja.org.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
 
-3. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `cruzroja.org.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
+3. ¿En dónde se encuentra la copia mas cercana de un servidor dns raíz? ¿Cuál es el nombre del servidor replicado (o servidores)?
 
-4. ¿En dónde se encuentra la copia mas cercana de un servidor dns raíz? ¿Cuál es el nombre del servidor replicado (o servidores)?
-
-5. Defina cómo estará compuesta la base de datos de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `SU-NRO-LEGAJO.tyr.example` (`.example` es un TLD reservado para uso en documentación y ejemplos). De acuerdo al diagrama de la Figura 1, defina:
+4. Defina cómo estará compuesta la base de datos de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `SU-NRO-LEGAJO.tyr.example` (`.example` es un TLD reservado para uso en documentación y ejemplos). De acuerdo al diagrama de la Figura 1, defina:
 
     ![Host en la red a definir en dns](images/Diagrama_ej_tp_dns.png){ width=35% }
 
@@ -62,18 +59,17 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 
     Complete la planilla adjunta a partir de las definiciones previas.
 
-6. Instale e inicie en el entorno netkit el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_dns-TYR.tar.gz> y realice las siguientes actividades:
+5. Instale e inicie en el entorno kathara el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_dns-TYR.tar.gz> y realice las siguientes actividades:
 
     a. Inicie una captura desde el host.
     b. Desde _pc1.lugroma3.org_, ejecute el comando `ping -c 4 pc2.nanoinside.net`
     c. Una vez recibidas las 4 respuestas ICMP, detenga la captura.
     d. Analice la captura y describa cómo es el proceso de resolución de nombres para determinar la dirección ip de _pc2.nanoinside.net_, representando gráficamente el intercambio de mensajes dns, e indicando el propósito de cada uno.
 
-7. Analice la captura `captura_ejemplo_dns.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particular que observe en la misma?
+6. Analice la captura `captura_ejemplo_dns.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particular que observe en la misma?
 
-8. ¿Cómo un desarrollador de aplicaciones puede acceder al servicio DNS? (Por ej. si es necesario resolver, en una aplicación de software, mnemónicos a direcciones IP o viceversa)
+7. ¿Cómo un desarrollador de aplicaciones puede acceder al servicio DNS? (Por ej. si es necesario resolver, en una aplicación de software, mnemónicos a direcciones IP o viceversa)
 
-9. ¿Quién tiene a su cargo la administración de los nombres de dominio bajo el dominio `.ar`? ¿Qué y cuáles son las zonas especiales? ¿Que requisito especial se requiere para solicitar un dominio `.org.ar`?
 
 #### Bibliografía
 
@@ -88,6 +84,13 @@ tipos de datos (Resource Records) típicos que se pueden consultar.
 *  LUPI, F. 2014. Capítulo 26: “The Domain Name System” en The NetBSD Guide. The NetBSD
 Foundation. Disponible en https://www.netbsd.org/docs/guide/en/chap-dns.html
 
+### Preguntas (guía de lectura)
+
+Cuál es el objetivo del sistema DNS.
+¿Porqué es un sistema y no solamente un protocolo? Descríbalo indicando estructura, elementos que intervienen y
+tipos de datos (Resource Records) típicos que se pueden consultar.
+El protocolo DNS puede utilizar como protocolo de transporte tanto UDP como TCP. ¿En qué casos se utiliza cada uno y cuál es la razón?
+¿Quién tiene a su cargo la administración de los nombres de dominio bajo el dominio `.ar`? ¿Qué y cuáles son las zonas especiales? ¿Qué requisito especial se requiere para solicitar un dominio `.org.ar`?
 
 \pagebreak
 
