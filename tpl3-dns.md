@@ -1,9 +1,9 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** Comisión 6 (Luján): 5/05/2021 - Comisión 35 (Chivilcoy): 7/05/2021
+**Fecha de Entrega:** 18/04/2022
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2021-TP3>
+**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP3>
 
 **Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
