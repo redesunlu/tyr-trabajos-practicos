@@ -1,9 +1,9 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** Comisión 6 (Luján): 12/05/2021 - Comisión 35 (Chivilcoy): 14/05/2021
+**Fecha de Entrega:** 25/04/2022
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2021-TP4>
+**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP4>
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -34,27 +34,16 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 ### Consignas
 
-1. Describa el objetivo y como opera la aplicación correo electrónico, indicando los elementos involucrados: que son y cuál es la función de los agentes de usuario (user agents - UAs) y agentes de transferencia de mensajes (mail transfer agent - MTAs).
+1. Un usuario redacta un mensaje destinado a `consultas@empresax.com.ar` en su cliente de correo y lo envía mediante su propio MTA. Detalle paso a paso el procedimiento que debe seguir el MTA del usuario para entregar el mensaje al destinatario.
 
-2. Un usuario redacta un mensaje destinado a `consultas@empresax.com.ar` en su cliente de correo y lo envía mediante su propio MTA. Detalle paso a paso el procedimiento que sigue el MTA del usuario para conocer la dirección IP del MTA remoto con el que debe conectarse para entregar el mensaje al destinatario.
+2. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte del usuario que envía correo y el abuso que esto puede acarrear.
 
-3. ¿Cuáles son los comandos SMTP de una implementación mínima?
-   Describa someramente cada uno.
-
-4. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte del usuario que envía correo y el abuso que esto puede acarrear.
-
-5. ¿Cuál es el propósito de los protocolos POP e IMAP?
-   Describa brevemente los comandos disponibles para el protocolo POP3.
-   ¿Qué ventajas ofrece el protocolo IMAP4 sobre POP3?
-
-6. ¿Para qué se definió la extensión MIME? Describa cómo se implementa y los diferentes tipos de contenidos y codificación MIME.
-
-7. Instale e inicie en el entorno **netkit** el laboratorio de email provisto por los docentes, disponible en
+3. Instale e inicie en el entorno **kathará** el laboratorio de email provisto por los docentes, disponible en
 <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_email.tar.gz> y realice las siguientes actividades:
 
     1. Inicie una captura desde el host.
     2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje cuyo remitente sea `su-nombre@lugroma3.org` destinado a la cuenta de correo `guest@nanoinside.net`.
-        - Indique en el encabezado Subject: "Resolucion del ejercicio 8". Escriba un cuerpo de mensaje de al menos 3 líneas, incluyendo su nombre y su legajo.
+        - Indique en el encabezado Subject: "Resolucion del ejercicio 3". Escriba un cuerpo de mensaje de al menos 3 líneas, incluyendo su nombre y su legajo.
         - Finalice el mensaje escribiendo un punto en una línea en blanco. Deberá ver la respuesta `250 OK id=...` indicando que el mensaje fue procesado correctamente.
     3. Desde la **pc2**, utilizando `nc`, conéctese al servidor POP3 `pop.nanoinside.net` (TCP puerto 110). Acceda a la cuenta de usuario `guest` (contraseña `guest`), recupere el mensaje almacenado en la casilla, bórrelo y finalice adecuadamente la sesión POP.
     4. Detenga el proceso de captura en el host.
@@ -62,13 +51,13 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
 
-8. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `jaiden.sipes59@ethereal.email`.
+4. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `jaiden.sipes59@ethereal.email`
 
-   Como remitente del mensaje utilice su propia cuenta de correo y como Asunto (Subject) especifique su nombre completo y legajo. Todo el mensaje debe cumplir con los requisitos de la RFC 5322 y ser de tipo MIME text/plain. Dentro del cuerpo del mensaje responda cuáles son los campos de encabezado obligatorios según RFC5322.
+Como remitente del mensaje utilice su propia cuenta de correo y como Asunto (Subject) especifique su nombre completo y legajo. Todo el mensaje debe cumplir con los requisitos de la RFC 5322 y ser de tipo MIME text/plain. Dentro del cuerpo del mensaje responda cuáles son los campos de encabezado obligatorios según RFC5322.
 
-   Como resolución de este ejercicio, copie y pegue los comandos enviados y las respuestas recibidas desde el servidor (es decir, toda la transacción efectuada).
+Como resolución de este ejercicio, copie y pegue los comandos enviados y las respuestas recibidas desde el servidor (es decir, toda la transacción efectuada).
 
-9. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
+5. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
    utilizando el menú ". . .", descargue el código RFC 822 del mismo (en Gmail
    corresponde a la opción _Mostrar original_, en Outlook a _Ver origen del
    mensaje_, en Yahoo a _Ver mensaje original_, etc).
@@ -101,6 +90,19 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 * <https://github.com/redesunlu/netkit-doc/>
 * <https://github.com/redesunlu/netkit-doc/blob/master/manual-de-uso.md>
 * <https://github.com/redesunlu/netkit-doc/blob/master/preguntas-frecuentes.md>
+
+### Preguntas (guía de lectura)
+
+Describa el objetivo y como opera la aplicación correo electrónico, indicando los elementos involucrados: que son y cuál es la función de los agentes de usuario (user agents - UAs) y agentes de transferencia de mensajes (mail transfer agent - MTAs).
+
+¿Cuáles son los comandos SMTP de una implementación mínima? Describa someramente cada uno.
+
+Describa el formato de mensajes de Internet (Internet Message Format - IMF). Utilidad y alcance. ¿Qué resultado se obtendrá si se envía un correo electrónico que no respete el IMF?
+
+¿Cuál es el objetivo de las extensiones MIME? Describa cómo se implementa y brinde ejemplos de diferentes tipos de contenidos y codificación.
+
+¿Cuál es el propósito de los protocolos POP e IMAP? Describa brevemente los comandos disponibles para el protocolo POP3. ¿Qué ventajas ofrece el protocolo IMAP4 sobre POP3?
+
 
 ### Notas para ayudantes
 
