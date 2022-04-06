@@ -34,6 +34,7 @@ pdf/%.pdf: %.md header.tex
 		-V mainfont="DejaVu Serif" -V colorlinks=true -V graphics=true \
 		-V monofont="Latin Modern Mono" \
 		-V author-meta=$(shell whoami) \
+		-V mainfontoptions="Scale=MatchLowercase" \
 		/tmp/output.md -o "$@"
 	#evince "$@" &
 
