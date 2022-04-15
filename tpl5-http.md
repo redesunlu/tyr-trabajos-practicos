@@ -21,11 +21,7 @@ TPL 5 - World Wide Web - HTTP
 
 #### Consignas
 
-1. Describa someramente el protocolo HTTP. Indique modo de operación y primitivas básicas.
-
-2. ¿Qué es HTML? ¿Qué especifica? Ejemplifique.
-
-3. Utilizando la herramienta `nc`, conéctese a la dirección y al puerto del servidor web `www.unlu.edu.ar` y lleve a cabo las siguientes pruebas utilizando primitivas del protocolo HTTP. Guarde las respuestas obtenidas.
+1. Utilizando la herramienta `nc`, conéctese a la dirección y al puerto del servidor web `www.unlu.edu.ar` y lleve a cabo las siguientes pruebas utilizando primitivas del protocolo HTTP. Guarde las respuestas obtenidas.
 
     a. Petición por protocolo HTTP versión 1.0
 
@@ -61,15 +57,15 @@ conexión con `nc`. Finalice la petición pulsando **tres veces** la tecla Enter
     3. ¿Qué diferencia nota respecto a la duración de la conexión contra el servidor en los dos últimos casos?
     4. ¿Qué información acerca del sortware servidor web y configuración se obtiene?
 
-4. Realice 3 capturas de peticiones HTTP al servidor web www.unlu.edu.ar.
+2. Realice 3 capturas de peticiones HTTP al servidor web www.unlu.edu.ar.
 Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: Firefox, Iceweasel, Chrome, Chromium, Konqueror, Epiphany, Explorer, Sarafi, etc.), y para la tercer captura use la herramienta de transferencias curl (https://curl.haxx.se/) o wget (http://www.gnu.org/software/wget/).
 
     a. ¿Qué encabezados envía cada cliente en la petición?
     b. Comente las características de la información en tránsito con respecto a la confidencialidad.
 
-5. Describa cómo opera un cliente HTTP (por ejemplo un navegador web) para recuperar una página HTML que contiene varios objetos. Analice la captura del archivo `captura_ejemplo_http.pcap` provisto por los docentes y represente el intercambio de mensajes mediante un gráfico ideado por Ud. ¿Qué primitivas se utilizan en cada caso?.
+3. Describa cómo opera un cliente HTTP (por ejemplo un navegador web) para recuperar una página HTML que contiene varios objetos. Analice la captura del archivo `captura_ejemplo_http.pcap` provisto por los docentes y represente el intercambio de mensajes mediante un gráfico ideado por Ud. ¿Qué primitivas se utilizan en cada caso?.
 
-6. Instale e inicie en el entorno **kathará** el laboratorio de proxy HTTP provisto por los docentes, disponible en <http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_proxy-TYR.tar.gz>
+4. Instale e inicie en el entorno **kathará** el laboratorio de proxy HTTP provisto por los docentes, disponible en <http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_proxy-TYR.tar.gz>
 
     Este laboratorio comprende tres hosts: uno actúa como servidor web (con el servicio Apache2 en ejecución), uno actúa como cliente web (con el navegador Lynx instalado) y uno actúa como proxy HTTP (con el servicio Squid en ejecución).
 
@@ -116,7 +112,7 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
     3. Mencione las diferencias que observa en los encabezados respecto a no utilizar un proxy-http (punto 4)
     4. ¿Es posible cambiar el número de puerto TCP en el que escucha el servidor proxy? ¿Qué línea del archivo de configuración hay que cambiar para que Squid escuche por conexiones en el puerto 8080?
 
-8. ¿Cómo un sistema que realiza caché local puede determinar si algún objeto en el servidor original fue modificado con respecto a la copia actual, sin realizar la transferencia completa del objeto?
+5. ¿Cómo un sistema que realiza caché local puede determinar si algún objeto en el servidor original fue modificado con respecto a la copia actual, sin realizar la transferencia completa del objeto?
 
 
 **Bibliografía**
