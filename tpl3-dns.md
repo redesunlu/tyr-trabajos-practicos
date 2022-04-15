@@ -86,10 +86,13 @@ Foundation. Disponible en https://www.netbsd.org/docs/guide/en/chap-dns.html
 
 ### Preguntas (guía de lectura)
 
-Cuál es el objetivo del sistema DNS.
+¿Cuál es el objetivo del sistema DNS?
+
 ¿Porqué es un sistema y no solamente un protocolo? Descríbalo indicando estructura, elementos que intervienen y
 tipos de datos (Resource Records) típicos que se pueden consultar.
+
 El protocolo DNS puede utilizar como protocolo de transporte tanto UDP como TCP. ¿En qué casos se utiliza cada uno y cuál es la razón?
+
 ¿Quién tiene a su cargo la administración de los nombres de dominio bajo el dominio `.ar`? ¿Qué y cuáles son las zonas especiales? ¿Qué requisito especial se requiere para solicitar un dominio `.org.ar`?
 
 \pagebreak

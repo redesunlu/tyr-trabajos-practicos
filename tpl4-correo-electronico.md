@@ -39,7 +39,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 2. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte del usuario que envía correo y el abuso que esto puede acarrear.
 
 3. Instale e inicie en el entorno **kathará** el laboratorio de email provisto por los docentes, disponible en
-<https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_email.tar.gz> y realice las siguientes actividades:
+<https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_email.tar.gz> y realice las siguientes actividades:
 
     1. Inicie una captura desde el host.
     2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje cuyo remitente sea `su-nombre@lugroma3.org` destinado a la cuenta de correo `guest@nanoinside.net`.

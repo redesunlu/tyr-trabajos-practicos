@@ -89,9 +89,12 @@ florge, a menos que compliquemos las cosas con puntos de montaje queda así.
 * Resumen de comandos: [http://bit.ly/tyr-comandos](http://bit.ly/tyr-comandos)
 * Semestre Perdido. Linea de Comandos: [http://bit.ly/tyr-ms-cli](http://bit.ly/tyr-ms-cli) (versión traducida por el equipo de TyR)
 * Semetre Perdido. Shell: [http://bit.ly/tyr-ms-shell](http://bit.ly/tyr-ms-shell) (versión traducida por el equipo de TyR)
-* **ESTE MANUAL NO ESTÁ SUBIDO AÚN** Manual de uso de Kathará  
-  <https://github.com/redesunlu/netkit-doc/blob/master/kathara-manual-de-uso.md>
 
+#### Notas para ayudantes -
+
+* Manual de uso de Kathará <https://github.com/redesunlu/netkit-doc/blob/master/kathara-manual-de-uso.md>
+
+#### --- Fin notas para ayudantes ---
 
 #### Notas para ayudantes - Cuestiones ya resueltas
 

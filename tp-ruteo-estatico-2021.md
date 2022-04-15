@@ -41,7 +41,6 @@ Con esta información usted debe especificar la configuración que permita que l
 5. Indicar cualquier otra configuración y/o suposición realizadas (o restricciones impuestas). Justificar.
 ![Topología de la red de la organización](./images/ejercicio-ruteo-estatico.png){ width=90% }
 
-
 ### Actividad 2
 
 **Objetivo:** Entender el funcionamiento de redes IP que basan sus estrategias de direccionamiento de paquetes a través de un mecanismo de ruteo dinámico realizado en este caso por el protocolo RIP, mediante el descubrimiento del funcionamiento del protocolo partiendo de una captura de tráfico.
