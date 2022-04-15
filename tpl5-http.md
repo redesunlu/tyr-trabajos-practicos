@@ -1,9 +1,9 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** Comisión 6 (Luján): 26/05/2021 - Comisión 35 (Chivilcoy): 28/05/2021
+**Fecha de Entrega:** 08/05/2022
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2021-TP5>
+**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP5>
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -59,6 +59,7 @@ conexión con `nc`. Finalice la petición pulsando **tres veces** la tecla Enter
     1. ¿Qué códigos numéricos de respuesta HTTP devuelve el servidor web para cada petición? ¿Qué significan según la RFC?
     2. ¿Cuales son los otros encabezados devueltos y qué contenido es transferido en cada caso?
     3. ¿Qué diferencia nota respecto a la duración de la conexión contra el servidor en los dos últimos casos?
+    4. ¿Qué información acerca del sortware servidor web y configuración se obtiene?
 
 4. Realice 3 capturas de peticiones HTTP al servidor web www.unlu.edu.ar.
 Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: Firefox, Iceweasel, Chrome, Chromium, Konqueror, Epiphany, Explorer, Sarafi, etc.), y para la tercer captura use la herramienta de transferencias curl (https://curl.haxx.se/) o wget (http://www.gnu.org/software/wget/).
@@ -68,32 +69,29 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
 
 5. Describa cómo opera un cliente HTTP (por ejemplo un navegador web) para recuperar una página HTML que contiene varios objetos. Analice la captura del archivo `captura_ejemplo_http.pcap` provisto por los docentes y represente el intercambio de mensajes mediante un gráfico ideado por Ud. ¿Qué primitivas se utilizan en cada caso?.
 
-6. ¿Qué es un servidor Proxy? ¿En qué situaciones se implementa? Brinde ejemplos.
-
-7. Instale e inicie en el entorno **Netkit** el laboratorio de proxy HTTP provisto por los docentes, disponible en <http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_proxy-TYR.tar.gz>
+6. Instale e inicie en el entorno **kathará** el laboratorio de proxy HTTP provisto por los docentes, disponible en <http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_proxy-TYR.tar.gz>
 
     Este laboratorio comprende tres hosts: uno actúa como servidor web (con el servicio Apache2 en ejecución), uno actúa como cliente web (con el navegador Lynx instalado) y uno actúa como proxy HTTP (con el servicio Squid en ejecución).
 
-    a. Averigüe y tome nota de las dirección IP asignada al Proxy en su interfaz `eth1`.
+    a. Servidor HTTP Apache: Comente cuáles son los parámetros de configuración básicos necesarios de un servidor HTTP. Sugerencia: Investigue el archivo de configuración del software Apache y detalle alguna de las posibilidades de configuración. ¿Qué estructura de directorios se utiliza, y cuál es su contenido? ¿Qué información se almacena en los archivos de logs estándares?
 
-    b. En el cliente, configure que las peticiones HTTP se realicen a través de proxy. Para ello, establezca
-la variable de entorno `HTTP_PROXY` como se muestra a continuación. Esto es equivalente a configurar las variables "Servidor proxy" y "Puerto" en los navegadores gráficos y en los celulares.
+    b. Averigüe y tome nota de las dirección IP asignada al Proxy en su interfaz `eth1`.
+
+    c. En el cliente, configure que las peticiones HTTP se realicen a través de proxy. Para ello, establezca la variable de entorno `HTTP_PROXY` como se muestra a continuación. Esto es equivalente a configurar las variables "Servidor proxy" y "Puerto" en los navegadores gráficos y en los celulares.
 
             export http_proxy=http://DIRECCION_IP_PROXY:3128
 
-    c. Inicie una captura desde el host redirigiendola a un archivo para su posterior análisis:
+    d. Inicie una captura desde el host redirigiendola a un archivo para su posterior análisis.
 
-            vdump A > nombre_archivo.pcap
-
-    d. En el cliente, navegue hacia la dirección <http://169.254.0.1/> utilizando un browser de consola:
+    e. En el cliente, navegue hacia la dirección <http://169.254.0.1/> utilizando un browser de consola:
 
             lynx http://169.254.0.1/
         
         Dicha dirección IP es la correspondiente al host servidor web.
 
-    e. Detenga la captura y analice el mensaje que aparece en pantalla. ¿Qué código de respuesta HTTP se retornó? Cierre el navegador web pulsando la tecla `q`
+    f. Detenga la captura y analice el mensaje que aparece en pantalla. ¿Qué código de respuesta HTTP se retornó? Cierre el navegador web pulsando la tecla `q`
 
-    f. La configuración de fábrica del software proxy Squid impide que los clientes naveguen a través de él. Para resolverlo, busque el archivo `/etc/squid/squid.conf` dentro del host proxy, edítelo y reemplace la línea
+    g. La configuración de fábrica del software proxy Squid impide que los clientes naveguen a través de él. Para resolverlo, busque el archivo `/etc/squid/squid.conf` dentro del host proxy, edítelo y reemplace la línea
 
             # http_access allow localnet
         
@@ -101,17 +99,17 @@ la variable de entorno `HTTP_PROXY` como se muestra a continuación. Esto es equ
         
             http_access allow localnet
 
-    g. Guarde los cambios y reinicie el proceso que actúa como proxy mediante el comando
+    h. Guarde los cambios y reinicie el proceso que actúa como proxy mediante el comando
 
             service squid restart
         
         De esta manera, el software Squid admitirá peticiones que realicen clientes que estén accediendo desde redes privadas (10.0.0.0/8, 192.168.0.0/16 y otras).
 
-    h. Inicie una nueva captura y vuelva a realizar la petición del punto **d**.
+    i. Inicie una nueva captura y vuelva a realizar la petición del punto **d**.
 
-    i. Indique qué mensaje aparece en pantalla. Cierre el navegador web pulsando la tecla **q**
+    j. Indique qué mensaje aparece en pantalla. Cierre el navegador web pulsando la tecla **q**
 
-    Detenga la captura, analícela y responda:
+    k. Detenga la captura, analícela y responda:
 
     1. ¿Qué encabezados envía el cliente al proxy-http en la petición?
     2. ¿Qué encabezados envía el proxy-http al servidor web en la petición?
@@ -120,181 +118,6 @@ la variable de entorno `HTTP_PROXY` como se muestra a continuación. Esto es equ
 
 8. ¿Cómo un sistema que realiza caché local puede determinar si algún objeto en el servidor original fue modificado con respecto a la copia actual, sin realizar la transferencia completa del objeto?
 
-9. ¿Qué es la interfaz CGI? ¿Para qué se utiliza?
-
-10. ¿De qué formas un programa puede recibir parámetros por medio de la interfaz CGI? Comente las diferencias en el modo de operación en cada caso.
-
-Para los ejercicios 11 a 14 deberá utilizar el intérprete de lenguaje Python versión 3.x disponible para múltiples plataformas y sistemas operativos. En los sistemas operativos Linux el intérprete usualmente está
-instalado por defecto. Si bien no es estrictamente necesario ninguna introducción "fuerte" en el lenguaje, se
-recomienda leer los primeros capítulos del tutorial en español indicado en las referencias de este trabajo.
-
-11. Ejecute el siguiente comando en la consola de Linux, en el home del usuario (`/home/alumno`):
-
-        alumno@lab1:~$ python -m http.server
-
-    Luego, abra un navegador web e ingrese a la URL <http://localhost:8000>
-
-    a. ¿Qué es lo que se ve en el navegador?
-    b. ¿Cuál es la salida por consola del programa Python? ¿Qué puede interpretar de ella?
-    c. Abra un archivo de extensión `.html` en el directorio home del usuario. Si no existiera alguno, genere uno escrito por usted. ¿Qué sucede al abrirlo con el navegador web?
-
-12. Escriba en un editor de texto el script en página siguiente y guárdelo en el archivo `http1.py`
-
-    ![http1.py](images/http1_3.png){ width=14cm }
-
-    Es importante destacar al momento de escribir el código, que en el lenguaje Python los espacios son utilizados para definir el nivel de anidamiento de la sentencia (ya que como se ve, no se utilizan llaves); por lo tanto, debe respetarse la sintaxis y todos los espacios del ejemplo.
-
-    Ejecute el script servidor HTTP con el comando `python http1.py`
-    Luego, abra un navegador web e ingrese a la URL <http://localhost:8000>
-
-    a. ¿Qué es lo que se ve en el navegador?
-    b. ¿Cuál es la salida por consola del servidor http? ¿Qué puede interpretar de la misma?
-    c. Experimente y compare las diferencias en la salida del servidor web:
-        - Con otros navegadores o clientes http,
-        - Recargando la página con Ctrl+F5,
-        - Ingresando a la URL <http://localhost:8000/test/de/url/>
-
-        ¿Qué diferencias aprecia y a causa de qué?
-
-    d. En el navegador (Firefox o Chromium/Chrome), presione la combinación de teclas `Ctrl+Shift+I`, lo que da lugar a la apertura del depurador del navegador. Entre otras cosas, éste posee una pestaña o apartado llamado "Red", que permite examinar cómo la página web es obtenida por el navegador, recurso por recurso.
-    Seleccione haciendo clic sobre la petición hecha al servidor web local y describa qué encabezados devolvió el servidor escrito en Python.
-
-13. Escriba en un editor de texto el siguiente script [^1] y guárdelo en el archivo `http2.py`
-
-~~~~~~~python
-#!/usr/bin/env python
-# coding: utf-8
-
-import http.server
-
-HOST_NAME = 'localhost'
-PORT = 8000
-
-
-class Handler(http.server.BaseHTTPRequestHandler):
-
-    def do_GET(server):
-        """Respondo a una petición de tipo GET"""
-        # Imprimo los encabezados
-        print('-' * 80)
-        print(server.command, server.path, server.request_version)
-        print(server.headers)
-        # Devuelvo la respuesta
-        server.send_response(200)
-        server.send_header('Content-Type', 'text/html')
-        server.end_headers()
-        server.wfile.write(b'<html><head><title>Pagina HTML de ejemplo</title>'
-           b'</head><body><p>Esta es una prueba, con texto en <b>negrita</b>,'
-           b'<i>cursiva</i> e incluso una imagen externa:</p>'
-           b'<img src="http://www.labredes.unlu.edu.ar/themes/glossyblue/images/'
-           b'header-bg.jpg" /></body></html>')
-
-    def log_message(*args):
-        """ Deshabilito la salida por defecto del servidor """
-        pass
-
-if __name__ == '__main__':
-    http_server = http.server.HTTPServer((HOST_NAME, PORT), Handler)
-    print('Ejecutando Server HTTP - http://%s:%s' % (HOST_NAME, PORT))
-    print('Presione Ctrl+C para detener...')
-    try:
-        http_server.serve_forever()
-    except KeyboardInterrupt:
-        pass
-    http_server.server_close()
-    print('Deteniendo Server HTTP - %s:%s' % (HOST_NAME, PORT))
-~~~~~~~
-
-Ejecute el script servidor HTTP con el comando `python http2.py` Luego, abra un navegador web e ingrese a la URL <http://localhost:8000> con el depurador del navegador activo.
-
-  a. Analice cómo se obtiene la página principal y la imagen embebida en el documento.
-  b. Detenga el servidor, modifique el encabezado `Content-Type` a `text/plain` y vuelva a ejecutar la prueba. ¿Qué apariencia tiene la página web y por qué?
-
-14. Escriba en un editor de texto el siguiente script [^2] y guárdelo en el archivo `http3.py`
-
-~~~~~~~python
-#!/usr/bin/env python
-# coding: utf-8
-
-import http.server
-
-HOST_NAME = 'localhost'
-PORT = 8000
-
-
-def detectar_so(user_agent):
-    # Ver listados en http://www.useragentstring.com/pages/useragentstring.php
-    if 'Linux' in user_agent:
-        return b'Veo que Ud. esta usando Linux como S.O.'
-    elif 'Windows' in user_agent:
-        return b'Veo que Ud. esta usando Windows como S.O.'
-    else:
-        return b'No conozco su S.O.'
-
-
-def get_pagina_ok():
-    """ Función que dvuelve la página de exito de ejemplo """
-    # Como alternativa podría abrirse un archivo del disco, leerlo y devolverlo
-    # como cadena de texto.
-    return (b'<html><head><title>Pagina HTML de ejemplo</title>'
-            b'</head><body><p>Esta es una prueba, con texto en <b>negrita</b>,'
-            b'<i>cursiva</i> e incluso una imagen externa:</p>'
-            b'<img src="http://www.labredes.unlu.edu.ar/themes/glossyblue/images'
-            b'/header-bg.jpg" />')
-
-
-class Handler(http.server.BaseHTTPRequestHandler):
-
-    def do_GET(server):
-        """Respondo a una petición de tipo GET"""
-        # Imprimo los encabezados por consola
-        print('-' * 80)
-        print(server.command, server.path, server.request_version)
-        print(server.headers)
-        # Devuelvo la respuesta
-        if server.path.startswith('/ir_a/'):
-            ir_a = server.path.split('/')[-1]
-            server.send_response(302)
-            server.send_header('Location', 'http://' + ir_a)
-            server.end_headers()
-        elif server.path.startswith('/no_existe'):
-            server.send_response(404)
-            server.send_header('Content-Type', 'text/plain')
-            server.end_headers()
-            server.wfile.write('Pagina no encontrada')
-        else:
-            server.send_response(200)
-            server.send_header('Content-Type', 'text/html')
-            server.end_headers()
-            server.wfile.write(get_pagina_ok())
-            server.wfile.write(bytes(b'<p>' + detectar_so(server.headers['User-Agent'])))
-            server.wfile.write(b'</p></body></html>')
-
-    def log_message(*args):
-        """ Deshabilito la salida por defecto del servidor """
-        pass
-
-
-if __name__ == '__main__':
-    http_server = http.server.HTTPServer((HOST_NAME, PORT), Handler)
-    print('Ejecutando Server HTTP - http://%s:%s' % (HOST_NAME, PORT))
-    print('Presione Ctrl+C para detener...')
-    try:
-        http_server.serve_forever()
-    except KeyboardInterrupt:
-        pass
-    http_server.server_close()
-    print('Deteniendo Server HTTP - %s:%s' % (HOST_NAME, PORT))
-~~~~~~~
-
-Ejecute el script servidor HTTP con el comando `python http3.py` Luego, abra un navegador web e ingrese a la URL <http://localhost:8000> con el depurador del navegador activo.
-
-a. ¿La página es siempre igual (estática) o dinámica? ¿De qué manera se intenta averiguar el Sistema Operativo del cliente?
-b. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/ir_a/www.unlu.edu.ar>? ¿Por qué? Analice el comportamiento con el depurador del navegador.
-c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por qué? Analice el comportamiento con el depurador del navegador.
-
-[^1]: <https://bit.ly/http-2-tyr>
-[^2]: <https://bit.ly/http-3-tyr>
 
 **Bibliografía**
 
@@ -313,6 +136,20 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 * Tutorial de Python: <http://docs.python.org.ar/tutorial/3/index.html>
 * Guías de inicio en Python: <http://python.org.ar/AprendiendoPython>
 
+### Preguntas (guía de lectura)
+
+Describa someramente el protocolo HTTP, indicando modo de operación y primitivas básicas.
+
+¿Cuál es el formato de mensajes del protocolo HTTP?
+
+¿Qué es un servidor Proxy? ¿En qué situaciones se implementa? Brinde ejemplos.
+
+¿Qué es HTML? ¿Qué especifica?
+
+¿Qué es la interfaz CGI? ¿Para qué se utiliza?
+
+¿De qué formas un programa puede recibir parámetros por medio de la interfaz CGI? Comente las diferencias en el modo de operación en cada caso.
+
 
 #### Notas para ayudantes
 
@@ -321,27 +158,5 @@ Esta bibliografía queda aparte pues no figura en el listado realizado en 2020
 * TANNEMBAUM, A. Capítulo 7.6: "La World Wide Web" en _Redes de Computadoras (3ra ed)_. Prentice Hall.
 * GORALSKI, W. 2017. Capítulo 26: "Hypertext Transfer Protocol" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
   <https://www.sciencedirect.com/science/book/9780128110270>
-
-
-#### Expectativas de respuesta ejercicios 11 a 14
-
-    11.a. Qué se ve en el navegador? --> Se ve un listado de directorio.
-    11.b. Qué se ve en la consola? --> Muestra las peticiones HTTP recibidas.
-          Debería interpretar cada campo.
-    11.c. Abrir archivo HTML. --> Se ve una página HTML interpretada.
-    
-    12.a. Qué se ve en el navegador? --> Se ve una página en blanco.
-    12.b. Qué se ve en la consola? --> Se ven los encabezados HTTP por consola.
-    12.c. Diferencias encabezados entre navegadores distintos, Ctrl+F5, URL.
-          User-Agent, Accept, Accept-language, Accept-encoding, Cache, URL.
-    12.d. Se ven los encabezados de servidor agregados por Python: Date, Server.
-    
-    13.a. El cliente hace una Petición GET HTML + Petición GET Imagen a UNLu.
-    13.b. Devolución Content-Type: text/plain. Retorna el código fuente de la página.
-    
-    14.a. Página dinámica. La respuesta depende del User-Agent.
-    14.b. Redirección mediante HTTP 302. Indicar header Location.
-          Primero GET a proceso propio, luego GET a UNLu y a recursos afines.
-    14.c. Petición a página inexistente. --> Obtiene una respuesta 404.
 
 #### --- Fin notas para ayudantes ---
