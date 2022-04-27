@@ -1,7 +1,7 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** 08/05/2022
+**Fecha de Entrega:** 09/05/2022
 
 **URL de Entrega:** <https://tinyurl.com/TyR-2022-TP5>
 
@@ -65,29 +65,27 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
 
 3. Describa cómo opera un cliente HTTP (por ejemplo un navegador web) para recuperar una página HTML que contiene varios objetos. Analice la captura del archivo `captura_ejemplo_http.pcap` provisto por los docentes y represente el intercambio de mensajes mediante un gráfico ideado por Ud. ¿Qué primitivas se utilizan en cada caso?.
 
-4. Instale e inicie en el entorno **kathará** el laboratorio de proxy HTTP provisto por los docentes, disponible en <http://www.unlu.edu.ar/~tyr/netkit/netkit-lab_proxy-TYR.tar.gz>
+4. Instale e inicie en el entorno **kathará** el laboratorio de proxy HTTP provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_proxy.tar.gz>
 
     Este laboratorio comprende tres hosts: uno actúa como servidor web (con el servicio Apache2 en ejecución), uno actúa como cliente web (con el navegador Lynx instalado) y uno actúa como proxy HTTP (con el servicio Squid en ejecución).
 
     a. Servidor HTTP Apache: Comente cuáles son los parámetros de configuración básicos necesarios de un servidor HTTP. Sugerencia: Investigue el archivo de configuración del software Apache y detalle alguna de las posibilidades de configuración. ¿Qué estructura de directorios se utiliza, y cuál es su contenido? ¿Qué información se almacena en los archivos de logs estándares?
 
-    b. Averigüe y tome nota de las dirección IP asignada al Proxy en su interfaz `eth1`.
+    b. En el cliente, configure que las peticiones HTTP se realicen a través de proxy. Para ello, establezca la variable de entorno `HTTP_PROXY` como se muestra a continuación. Esto es equivalente a configurar las variables "Servidor proxy" y "Puerto" en los navegadores gráficos y en los celulares.
 
-    c. En el cliente, configure que las peticiones HTTP se realicen a través de proxy. Para ello, establezca la variable de entorno `HTTP_PROXY` como se muestra a continuación. Esto es equivalente a configurar las variables "Servidor proxy" y "Puerto" en los navegadores gráficos y en los celulares.
+            export http_proxy=http://10.0.0.30:3128
 
-            export http_proxy=http://DIRECCION_IP_PROXY:3128
+    c. Inicie una captura desde el host redirigiendola a un archivo para su posterior análisis.
 
-    d. Inicie una captura desde el host redirigiendola a un archivo para su posterior análisis.
-
-    e. En el cliente, navegue hacia la dirección <http://169.254.0.1/> utilizando un browser de consola:
+    d. En el cliente, navegue hacia la dirección <http://169.254.0.1/> utilizando un browser de consola:
 
             lynx http://169.254.0.1/
         
         Dicha dirección IP es la correspondiente al host servidor web.
 
-    f. Detenga la captura y analice el mensaje que aparece en pantalla. ¿Qué código de respuesta HTTP se retornó? Cierre el navegador web pulsando la tecla `q`
+    e. Detenga la captura y analice el mensaje que aparece en pantalla. ¿Qué código de respuesta HTTP se retornó? Cierre el navegador web pulsando la tecla `q`
 
-    g. La configuración de fábrica del software proxy Squid impide que los clientes naveguen a través de él. Para resolverlo, busque el archivo `/etc/squid/squid.conf` dentro del host proxy, edítelo y reemplace la línea
+    f. La configuración de fábrica del software proxy Squid impide que los clientes naveguen a través de él. Para resolverlo, busque el archivo `/etc/squid/squid.conf` dentro del host proxy, edítelo y reemplace la línea
 
             # http_access allow localnet
         
@@ -95,17 +93,17 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
         
             http_access allow localnet
 
-    h. Guarde los cambios y reinicie el proceso que actúa como proxy mediante el comando
+    g. Guarde los cambios y reinicie el proceso que actúa como proxy mediante el comando
 
             service squid restart
         
         De esta manera, el software Squid admitirá peticiones que realicen clientes que estén accediendo desde redes privadas (10.0.0.0/8, 192.168.0.0/16 y otras).
 
-    i. Inicie una nueva captura y vuelva a realizar la petición del punto **d**.
+    h. Inicie una nueva captura y vuelva a realizar la petición del punto **d**.
 
-    j. Indique qué mensaje aparece en pantalla. Cierre el navegador web pulsando la tecla **q**
+    i. Indique qué mensaje aparece en pantalla. Cierre el navegador web pulsando la tecla **q**
 
-    k. Detenga la captura, analícela y responda:
+    j. Detenga la captura, analícela y responda:
 
     1. ¿Qué encabezados envía el cliente al proxy-http en la petición?
     2. ¿Qué encabezados envía el proxy-http al servidor web en la petición?
