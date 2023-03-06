@@ -1,9 +1,9 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** 28/03/2021
+**Fecha de Entrega:** 27/03/2023
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP1>
+**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP1>
 
 **Objetivos:**
 
@@ -26,7 +26,7 @@ Quizás la mejor explicación sea esta:
 1. Instalar el entorno de emulación de redes Kathará siguiendo la documentación de la siguiente URL:
    <https://github.com/KatharaFramework/Kathara/wiki/Installation-Guides>
 2. Descargar y descomprimir el laboratorio de práctica de configuración inicial desde:
-   <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_conf_inicial-TYR.tar.gz>
+   <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_conf_inicial-TYR.tar.gz>
 3. En una terminal de línea de comandos, dirigirse al directorio recientemente creado (que posee el archivo `lab.conf`) y ejecutar el comando  
    `kathara lstart`  
    para comprobar que es posible iniciar el laboratorio. Deberían abrirse tres ventanas con las terminales de los equipos _pc1_, _pc2_, y _r1_.
