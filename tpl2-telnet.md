@@ -1,9 +1,9 @@
 TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 =================================================
 
-**Fecha de Entrega:** 04/04/2022
+**Fecha de Entrega:** 03/04/2023
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP2>
+**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP2>
 
 **Objetivo:**
 Familiarizar el trabajo con aplicaciones cliente/servidor y, como primer ejemplo de aplicación de la pila TCP/IP, conocer el propósito y funcionamiento del protocolo **telnet**.
@@ -25,7 +25,9 @@ Utilice para esta parte de la práctica el laboratorio de práctica _netkit-lab_
 
 Defina un número de puerto para el proceso servidor (superior a 1024).
 
-Realice una captura de todo el proceso utilizando en el host anfitrión la herramienta `tcpdump` o `tshark`, guardándola en un archivo en formato _pcap_ para su posterior análisis.
+En el host anfitrión verifique el nombre de la interfaz virtual creada por kathara (kt-xxxx).
+
+Realice una captura de todo el proceso utilizando en el host anfitrión la herramienta `tcpdump` o `tshark` sobre la interfaz correspondiente, y guardándola en un archivo en formato _pcap_ para su posterior análisis.
 
 En el host _pc1_ deberá ejecutar la utilidad `nc` actuando como servidor, indicando como parámetro el número de puerto elegido. Una vez iniciado, este servicio quedará en modo de _escucha_ o _listening_. En el otro host (_pc2_) ejecute la utilidad `nc` como cliente indicando como parámetros la IP del servidor y número de puerto.
 
@@ -55,7 +57,7 @@ El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet
 
 Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`.
 
-Inicie una captura de tráfico en el enlace A.
+En el host anfitrión verifique el nombre de la interfaz virtual creada por kathara (kt-xxxx) e inicie una captura de tráfico sobre la misma.
 
 En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `alumno` y la clave `ultrasecreta`.
 
