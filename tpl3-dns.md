@@ -59,7 +59,7 @@ Ejercicio removido en 2018 por florge-maurom
 
     Complete la planilla adjunta a partir de las definiciones previas.
 
-5. Instale e inicie en el entorno kathara el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/blob/master/tarballs/kathara-lab_dns.tar.gz> y realice las siguientes actividades:
+5. Instale e inicie en el entorno kathara el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_dns.tar.gz> y realice las siguientes actividades:
 
     a. Inicie una captura desde el host.
     b. Desde _pc1.lugroma3.org_, ejecute el comando `ping -c 4 pc2.nanoinside.net`
