@@ -1,9 +1,9 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** 18/04/2022
+**Fecha de Entrega:** 03/04/2023
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP3>
+**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP3>
 
 **Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
@@ -38,12 +38,12 @@ Ejercicio removido en 2018 por florge-maurom
 
 1. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien alguno de acceso público tal como `8.8.8.8` o `1.1.1.1`) para obtener la siguiente información:
 
-    a. ¿Cuál es la dirección IP del host `comdoc.unlu.edu.ar`?
-    b. ¿Cuál es la dirección IP del host `resoluciones.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
-    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unpa.edu.ar`?
-    d. ¿Cuál es el nombre del host cuya dirección IP es `190.104.80.6`?
-    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `iana.org`?
-    f. ¿Cuál es la dirección IPv6 del host `www.lacnic.net`?
+    a. ¿Cuál es la dirección IP del host `redhidro.unlu.edu.ar`?
+    b. ¿Cuál es la dirección IP del host `straval.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
+    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unsa.edu.ar`?
+    d. ¿Cuál es el nombre del host cuya dirección IP es `170.210.96.90`?
+    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `lacnic.net`?
+    f. ¿Cuál es la dirección IPv6 del host `www.debian.org`?
 
 2. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `cruzroja.org.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
 
@@ -59,7 +59,7 @@ Ejercicio removido en 2018 por florge-maurom
 
     Complete la planilla adjunta a partir de las definiciones previas.
 
-5. Instale e inicie en el entorno kathara el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/netkit-lab_dns-TYR.tar.gz> y realice las siguientes actividades:
+5. Instale e inicie en el entorno kathara el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/blob/master/tarballs/kathara-lab_dns.tar.gz> y realice las siguientes actividades:
 
     a. Inicie una captura desde el host.
     b. Desde _pc1.lugroma3.org_, ejecute el comando `ping -c 4 pc2.nanoinside.net`
