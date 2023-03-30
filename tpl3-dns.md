@@ -1,7 +1,7 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** 10/04/2023
+**Fecha de Entrega:** Comisión 10 (Luján): 10/04/2023 **-** Comisión 35 (Chivilcoy): 17/04/2023
 
 **URL de Entrega:** <https://tinyurl.com/TyR-2023-TP3>
 
