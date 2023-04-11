@@ -1,9 +1,9 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** 25/04/2022
+**Fecha de Entrega:** 24/04/2023
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP4>
+**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP4>
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -30,6 +30,8 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     `ecSq3z5mn11B2hgUB9` o bien mediante POP o IMAP (con la misma clave).
     Hay que tener en cuenta que los mensajes sólo duran 1 día en la casilla.
 
+  * 2023 la cuenta de ehteral.email no existe mas. Se crea una nueva: "Melissa Veum" melissa.veum@ethereal.email pass capc43DG3Vf3jXNRVW
+  
 #### --- Fin notas para ayudantes ---
 
 ### Consignas
@@ -42,7 +44,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_email.tar.gz> y realice las siguientes actividades:
 
     1. Inicie una captura desde el host.
-    2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje cuyo remitente sea `su-nombre@lugroma3.org` destinado a la cuenta de correo `guest@nanoinside.net`.
+    2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje cuyo remitente sea `<su-nombre@lugroma3.org>` destinado a la cuenta de correo `<guest@nanoinside.net>`.
         - Indique en el encabezado Subject: "Resolucion del ejercicio 3". Escriba un cuerpo de mensaje de al menos 3 líneas, incluyendo su nombre y su legajo.
         - Finalice el mensaje escribiendo un punto en una línea en blanco. Deberá ver la respuesta `250 OK id=...` indicando que el mensaje fue procesado correctamente.
     3. Desde la **pc2**, utilizando `nc`, conéctese al servidor POP3 `pop.nanoinside.net` (TCP puerto 110). Acceda a la cuenta de usuario `guest` (contraseña `guest`), recupere el mensaje almacenado en la casilla, bórrelo y finalice adecuadamente la sesión POP.
@@ -51,11 +53,11 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
 
-4. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `jaiden.sipes59@ethereal.email`
+4. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `<melissa.veum@ethereal.email>`
 
-Como remitente del mensaje utilice su propia cuenta de correo y como Asunto (Subject) especifique su nombre completo y legajo. Todo el mensaje debe cumplir con los requisitos de la RFC 5322 y ser de tipo MIME text/plain. Dentro del cuerpo del mensaje responda cuáles son los campos de encabezado obligatorios según RFC5322.
+    Como remitente del mensaje utilice su propia cuenta de correo y como Asunto (Subject) especifique su nombre completo y legajo. Todo el mensaje debe cumplir con los requisitos de la RFC 5322 y ser de tipo MIME text/plain. Dentro del cuerpo del mensaje responda cuáles son los campos de encabezado obligatorios según RFC5322.
 
-Como resolución de este ejercicio, copie y pegue los comandos enviados y las respuestas recibidas desde el servidor (es decir, toda la transacción efectuada).
+    Como resolución de este ejercicio, copie y pegue los comandos enviados y las respuestas recibidas desde el servidor (es decir, toda la transacción efectuada).
 
 5. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
    utilizando el menú ". . .", descargue el código RFC 822 del mismo (en Gmail
