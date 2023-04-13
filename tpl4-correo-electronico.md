@@ -87,11 +87,6 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 * [RFC 1939 Post Office Protocol - Versión 3](https://tools.ietf.org/html/rfc1939)
 * RFC 2045, 2046, 2047, 2049, 4288, 4289 MIME (Multipurpose Internet Mail Extensions).
 
-#### Entorno Netkit
-
-* <https://github.com/redesunlu/netkit-doc/>
-* <https://github.com/redesunlu/netkit-doc/blob/master/manual-de-uso.md>
-* <https://github.com/redesunlu/netkit-doc/blob/master/preguntas-frecuentes.md>
 
 ### Preguntas (guía de lectura)
 
