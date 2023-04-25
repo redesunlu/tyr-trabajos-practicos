@@ -1,9 +1,9 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** 09/05/2022
+**Fecha de Entrega:** 08/05/2023
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2022-TP5>
+**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP5>
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -126,9 +126,16 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
 * Squid proxy: <http://www.squid-cache.org/>
 * Common Gateway Interface: <http://www.w3c.org/cgi/>
 * HTML: <http://www.w3.org/TR/html/>
+
+#### Notas para ayudantes
+
+2023 florge: no necesaria desde la divición de la práctica en 2022
+
 * Sitio web del lenguaje Python: <https://www.python.org/>
 * Tutorial de Python: <http://docs.python.org.ar/tutorial/3/index.html>
 * Guías de inicio en Python: <http://python.org.ar/AprendiendoPython>
+
+#### --- Fin notas para ayudantes ---
 
 ### Preguntas (guía de lectura)
 
