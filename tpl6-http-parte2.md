@@ -1,9 +1,9 @@
-TPL 5 - World Wide Web - HTTP
+TPL 6 - World Wide Web - HTTP - Parte2
 =======================================================
 
-**Fecha de Entrega:** xx/05/2022
+**Fecha de Entrega:** 15/05/2023
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2021-TP6>
+**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP6>
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -16,15 +16,10 @@ TPL 5 - World Wide Web - HTTP
 
 #### Consignas
 
-9. ¿Qué es la interfaz CGI? ¿Para qué se utiliza?
-
-10. ¿De qué formas un programa puede recibir parámetros por medio de la interfaz CGI? Comente las diferencias en el modo de operación en cada caso.
-
-Para los ejercicios 11 a 14 deberá utilizar el intérprete de lenguaje Python versión 3.x disponible para múltiples plataformas y sistemas operativos. En los sistemas operativos Linux el intérprete usualmente está
-instalado por defecto. Si bien no es estrictamente necesario ninguna introducción "fuerte" en el lenguaje, se
+Para los ejercicios del presente trabajo práctico, deberá utilizar el intérprete de lenguaje Python versión 3.x disponible para múltiples plataformas y sistemas operativos. En los sistemas operativos Linux el intérprete usualmente está instalado por defecto. Si bien no es estrictamente necesario ninguna introducción "fuerte" en el lenguaje, se
 recomienda leer los primeros capítulos del tutorial en español indicado en las referencias de este trabajo.
 
-11. Ejecute el siguiente comando en la consola de Linux, en el home del usuario (`/home/alumno`):
+1. Ejecute el siguiente comando en la consola de Linux, en el home del usuario (`/home/alumno`):
 
         alumno@lab1:~$ python -m http.server
 
@@ -34,7 +29,7 @@ recomienda leer los primeros capítulos del tutorial en español indicado en las
     b. ¿Cuál es la salida por consola del programa Python? ¿Qué puede interpretar de ella?
     c. Abra un archivo de extensión `.html` en el directorio home del usuario. Si no existiera alguno, genere uno escrito por usted. ¿Qué sucede al abrirlo con el navegador web?
 
-12. Escriba en un editor de texto el script en página siguiente y guárdelo en el archivo `http1.py`
+2. Escriba en un editor de texto el script en página siguiente y guárdelo en el archivo `http1.py`
 
     ![http1.py](images/http1_3.png){ width=14cm }
 
@@ -55,7 +50,7 @@ recomienda leer los primeros capítulos del tutorial en español indicado en las
     d. En el navegador (Firefox o Chromium/Chrome), presione la combinación de teclas `Ctrl+Shift+I`, lo que da lugar a la apertura del depurador del navegador. Entre otras cosas, éste posee una pestaña o apartado llamado "Red", que permite examinar cómo la página web es obtenida por el navegador, recurso por recurso.
     Seleccione haciendo clic sobre la petición hecha al servidor web local y describa qué encabezados devolvió el servidor escrito en Python.
 
-13. Escriba en un editor de texto el siguiente script [^1] y guárdelo en el archivo `http2.py`
+3. Escriba en un editor de texto el siguiente script [^1] y guárdelo en el archivo `http2.py`
 
 ~~~~~~~python
 #!/usr/bin/env python
@@ -106,7 +101,7 @@ Ejecute el script servidor HTTP con el comando `python http2.py` Luego, abra un 
   a. Analice cómo se obtiene la página principal y la imagen embebida en el documento.
   b. Detenga el servidor, modifique el encabezado `Content-Type` a `text/plain` y vuelva a ejecutar la prueba. ¿Qué apariencia tiene la página web y por qué?
 
-14. Escriba en un editor de texto el siguiente script [^2] y guárdelo en el archivo `http3.py`
+4. Escriba en un editor de texto el siguiente script [^2] y guárdelo en el archivo `http3.py`
 
 ~~~~~~~python
 #!/usr/bin/env python
@@ -201,9 +196,6 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 **Recursos en internet**
 
 * <http://www.faqs.org> y <http://www.rfc-editor.org>
-* Apache web server: <http://httpd.apache.org/>
-* Squid proxy: <http://www.squid-cache.org/>
-* Common Gateway Interface: <http://www.w3c.org/cgi/>
 * HTML: <http://www.w3.org/TR/html/>
 * Sitio web del lenguaje Python: <https://www.python.org/>
 * Tutorial de Python: <http://docs.python.org.ar/tutorial/3/index.html>
@@ -219,25 +211,25 @@ Esta bibliografía queda aparte pues no figura en el listado realizado en 2020
   <https://www.sciencedirect.com/science/book/9780128110270>
 
 
-#### Expectativas de respuesta ejercicios 11 a 14
+#### Expectativas de respuesta ejercicios 1 a 4
 
-    11.a. Qué se ve en el navegador? --> Se ve un listado de directorio.
-    11.b. Qué se ve en la consola? --> Muestra las peticiones HTTP recibidas.
+    1.a. Qué se ve en el navegador? --> Se ve un listado de directorio.
+    1.b. Qué se ve en la consola? --> Muestra las peticiones HTTP recibidas.
           Debería interpretar cada campo.
-    11.c. Abrir archivo HTML. --> Se ve una página HTML interpretada.
+    1.c. Abrir archivo HTML. --> Se ve una página HTML interpretada.
     
-    12.a. Qué se ve en el navegador? --> Se ve una página en blanco.
-    12.b. Qué se ve en la consola? --> Se ven los encabezados HTTP por consola.
-    12.c. Diferencias encabezados entre navegadores distintos, Ctrl+F5, URL.
+    2.a. Qué se ve en el navegador? --> Se ve una página en blanco.
+    2.b. Qué se ve en la consola? --> Se ven los encabezados HTTP por consola.
+    2.c. Diferencias encabezados entre navegadores distintos, Ctrl+F5, URL.
           User-Agent, Accept, Accept-language, Accept-encoding, Cache, URL.
-    12.d. Se ven los encabezados de servidor agregados por Python: Date, Server.
+    2.d. Se ven los encabezados de servidor agregados por Python: Date, Server.
     
-    13.a. El cliente hace una Petición GET HTML + Petición GET Imagen a UNLu.
-    13.b. Devolución Content-Type: text/plain. Retorna el código fuente de la página.
+    3.a. El cliente hace una Petición GET HTML + Petición GET Imagen a UNLu.
+    3.b. Devolución Content-Type: text/plain. Retorna el código fuente de la página.
     
-    14.a. Página dinámica. La respuesta depende del User-Agent.
-    14.b. Redirección mediante HTTP 302. Indicar header Location.
+    4.a. Página dinámica. La respuesta depende del User-Agent.
+    4.b. Redirección mediante HTTP 302. Indicar header Location.
           Primero GET a proceso propio, luego GET a UNLu y a recursos afines.
-    14.c. Petición a página inexistente. --> Obtiene una respuesta 404.
+    4.c. Petición a página inexistente. --> Obtiene una respuesta 404.
 
 #### --- Fin notas para ayudantes ---
