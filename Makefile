@@ -22,7 +22,8 @@ all: pdf/gl-introduccion.pdf pdf/tp-transmision-datos.pdf pdf/tpl1-configuracion
 	pdf/tp-ruteo-estatico-2020.pdf pdf/tp-eficiencia-enlace.pdf pdf/tpl1-configuracion-inicial.pdf \
 	pdf/cheatsheet.pdf pdf/missing-semester-course-shell.pdf pdf/missing-semester-command-line.pdf \
 	pdf/practica_autoguiada_sockets.pdf pdf/tp-ruteo-estatico-2021.pdf pdf/tplX-ipv6-a-distancia.pdf \
-	pdf/apunte-ipv6.pdf pdf/tpl7-ipv6-2022.pdf pdf/tpl00-AKA_Los_Labos_de_Pierre.pdf pdf/tpl6-http-parte2.pdf
+	pdf/apunte-ipv6.pdf pdf/tpl7-ipv6-2022.pdf pdf/tpl00-AKA_Los_Labos_de_Pierre.pdf pdf/tpl6-http-parte2.pdf \
+	pdf/tp-final.pdf
 
 pdf/%.pdf: %.md header.tex
 	mkdir -p pdf
