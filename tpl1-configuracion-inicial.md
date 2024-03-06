@@ -1,9 +1,9 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** 27/03/2023
+**Fecha de Entrega:** 03/04/2024
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP1>
+**URL de Entrega:** <https://tinyurl.com/TyR-2024-TP1>
 
 **Objetivos:**
 
@@ -26,7 +26,7 @@ Quizás la mejor explicación sea esta:
 1. Instalar el entorno de emulación de redes Kathará siguiendo la documentación de la siguiente URL:
    <https://github.com/KatharaFramework/Kathara/wiki/Installation-Guides>
 2. Descargar y descomprimir el laboratorio de práctica de configuración inicial desde:
-   <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_conf_inicial-TYR.tar.gz>
+   <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_conf_inicial-TYR.tar.gz>
 3. En una terminal de línea de comandos, dirigirse al directorio recientemente creado (que posee el archivo `lab.conf`) y ejecutar el comando  
    `kathara lstart`  
    para comprobar que es posible iniciar el laboratorio. Deberían abrirse tres ventanas con las terminales de los equipos _pc1_, _pc2_, y _r1_.
@@ -37,7 +37,7 @@ Quizás la mejor explicación sea esta:
 
 Los comandos necesarios para llevar adelante la práctica se encuentran listados en el apunte respectivo de la asignatura, disponible en la web de la misma. En todos los casos, el informe a entregar debe mostrar los comandos ejecutados y las salidas obtenidas (en caso de ser una salida extensa, resaltar la parte importante). Además, se debe explicar lo que se interpreta de dicha salida y si es lo esperado en cada caso.
 
-1. Verificar la/s interfaces de red (comúnmente llamada _placa de red_ o _NIC_) que el sistema operativo haya detectado en _pc1_ y _pc2_. Para ello debe primero activar las interfaces disponibles, y luego listar su información en pantalla.
+1. Verificar la/s interfaces de red (comúnmente llamada _placa de red_ o _NIC_) que el sistema operativo haya detectado en _pc1_ y _pc2_, y listar su información en pantalla.
 
     ¿Que comando utilizó?
     ¿Cual es el nombre de las interfaces?
@@ -71,7 +71,7 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 
     b. En _pc1_ ejecutar el comando ping para enviar a _pc2_ exactamente 3 mensajes ICMP Echo Request (consulte el manual de ping).
 
-    c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tcpdump_ presionando **Ctrl+C**)
+    c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tcpdump_ o _tshark_ presionando **Ctrl+C**)
 
     d. Analizar el volcado del programa de captura utilizando la aplicación wireshark (o cualquier otro analizador de tráfico que permita leer archivos en formato _pcap_), representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
 
@@ -89,10 +89,12 @@ florge, a menos que compliquemos las cosas con puntos de montaje queda así.
 * Resumen de comandos: [http://bit.ly/tyr-comandos](http://bit.ly/tyr-comandos)
 * Semestre Perdido. Linea de Comandos: [http://bit.ly/tyr-ms-cli](http://bit.ly/tyr-ms-cli) (versión traducida por el equipo de TyR)
 * Semetre Perdido. Shell: [http://bit.ly/tyr-ms-shell](http://bit.ly/tyr-ms-shell) (versión traducida por el equipo de TyR)
+* Manual de uso de Kathará <https://www.kathara.org/man-pages/kathara.1.html>
 
 #### Notas para ayudantes -
 
 * Manual de uso de Kathará <https://github.com/redesunlu/netkit-doc/blob/master/kathara-manual-de-uso.md>
+
 
 #### --- Fin notas para ayudantes ---
 
