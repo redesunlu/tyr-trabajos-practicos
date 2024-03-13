@@ -1,9 +1,9 @@
 TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 =================================================
 
-**Fecha de Entrega:** 03/04/2023
+**Fecha de Entrega:** 03/04/2024
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP2>
+**URL de Entrega:** <https://tinyurl.com/TyR-2024-TP2>
 
 **Objetivo:**
 Familiarizar el trabajo con aplicaciones cliente/servidor y, como primer ejemplo de aplicación de la pila TCP/IP, conocer el propósito y funcionamiento del protocolo **telnet**.
@@ -21,7 +21,7 @@ Protocolo Telnet: Capítulo 20.1 [FOR09]
 
 # Primer parte: Creación de un modelo simple Cliente/Servidor
 
-Utilice para esta parte de la práctica el laboratorio de práctica _netkit-lab_conf_inicial_ y configure las interfaces de _pc1_ y _pc2_ tal como lo hizo en el primer trabajo práctico de laboratorio. Verifique conectividad entre ambos hosts.
+Utilice para esta parte de la práctica el laboratorio de práctica _kathara-lab_conf_inicial_ y configure las interfaces de _pc1_ y _pc2_ tal como lo hizo en el primer trabajo práctico de laboratorio. Verifique conectividad entre ambos hosts.
 
 Defina un número de puerto para el proceso servidor (superior a 1024).
 
@@ -51,11 +51,11 @@ c) ¿Todas las tramas en las que identifica el protocolo TCP transportan datos d
 
 # Segunda parte: Protocolo de acceso remoto TELNET
 
-Instale e inicie en **Kathará** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_telnet.tar.gz>
+Instale e inicie en **Kathará** el laboratorio de Telnet provisto por los docentes, disponible en <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_telnet.tar.gz>
 
 El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet (_client_), mientras que el segundo host actuará como servidor remoto de telnet (_remote_).
 
-Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`.
+Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`. (puede elegir cualquiera del rango `172.16.0.1-254` exepto `172.16.0.10`)
 
 En el host anfitrión verifique el nombre de la interfaz virtual creada por kathara (kt-xxxx) e inicie una captura de tráfico sobre la misma.
 
