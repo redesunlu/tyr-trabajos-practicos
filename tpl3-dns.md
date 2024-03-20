@@ -1,9 +1,9 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** Comisión 10 (Luján): 10/04/2023 **-** Comisión 35 (Chivilcoy): 17/04/2023
+**Fecha de Entrega:** 08/04/2024
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP3>
+**URL de Entrega:** <https://tinyurl.com/TyR-2024-TP3>
 
 **Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
@@ -38,12 +38,12 @@ Ejercicio removido en 2018 por florge-maurom
 
 1. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien alguno de acceso público tal como `8.8.8.8` o `1.1.1.1`) para obtener la siguiente información:
 
-    a. ¿Cuál es la dirección IP del host `redhidro.unlu.edu.ar`?
-    b. ¿Cuál es la dirección IP del host `straval.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
-    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unsa.edu.ar`?
-    d. ¿Cuál es el nombre del host cuya dirección IP es `170.210.96.90`?
-    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `lacnic.net`?
-    f. ¿Cuál es la dirección IPv6 del host `www.debian.org`?
+    a. ¿Cuál es la dirección IP del host `cidetic.unlu.edu.ar`?
+    b. ¿Cuál es la dirección IP del host `cacic2023.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
+    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `uncu.edu.ar`?
+    d. ¿Cuál es el nombre del host cuya dirección IP es `190.104.80.8`?
+    e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `ripe.net`?
+    f. ¿Cuál es la dirección IPv6 del host `www.isoc.org`?
 
 2. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `cruzroja.org.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
 
@@ -54,12 +54,12 @@ Ejercicio removido en 2018 por florge-maurom
     ![Host en la red a definir en dns](images/Diagrama_ej_tp_dns.png){ width=35% }
 
     a. El nombre de todos los hosts en el nuevo dominio, y su respectivo puntero reverso.
-    b. El host `pc1` y `ns1` como name servers del dominio.
+    b. Los hosts `pc1` y `ns1` como name servers del dominio.
     e. `www.SU-NRO-LEGAJO.tyr.example` y `ftp.SU-NRO-LEGAJO.tyr.example` como alias de server1.
 
     Complete la planilla adjunta a partir de las definiciones previas.
 
-5. Instale e inicie en el entorno kathara el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_dns.tar.gz> y realice las siguientes actividades:
+5. Instale e inicie en el entorno kathara el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_dns.tar.gz> y realice las siguientes actividades:
 
     a. Inicie una captura desde el host.
     b. Desde _pc1.lugroma3.org_, ejecute el comando `ping -c 4 pc2.nanoinside.net`
@@ -125,11 +125,11 @@ Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr.example`
 
 #### Zona de Punteros Reversos
 
-| Nombre de Host               | Clase | Tipo de RR | Datos del RR         | Comentario |
-| ---------------------------- | :---: | :--------: | -------------------- | ---------- |
-| 200.1.1.10.in-addr.arpa.     |  IN   |    PTR     | router1.LEGAJO.tyr.example  | (ejemplo)  |
-|                              |  IN   |            |                      |            |
-|                              |  IN   |            |                      |            |
-|                              |  IN   |            |                      |            |
-|                              |  IN   |            |                      |            |
-|                              |  IN   |            |                      |            |
+| Nombre de Host            | Clase | Tipo de RR | Datos del RR         | Comentario |
+| --------------------------| :---: | :--------: | -------------------- | ---------- |
+| 200.1.1.22.in-addr.arpa.  |  IN   |    PTR     | pc2.LEGAJO.tyr.example | (ejemplo)  |
+|                           |  IN   |            |                      |            |
+|                           |  IN   |            |                      |            |
+|                           |  IN   |            |                      |            |
+|                           |  IN   |            |                      |            |
+|                           |  IN   |            |                      |            |
