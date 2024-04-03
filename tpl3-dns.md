@@ -65,6 +65,7 @@ Ejercicio removido en 2018 por florge-maurom
     b. Desde _pc1.lugroma3.org_, ejecute el comando `ping -c 4 pc2.nanoinside.net`
     c. Una vez recibidas las 4 respuestas ICMP, detenga la captura.
     d. Analice la captura y describa cómo es el proceso de resolución de nombres para determinar la dirección ip de _pc2.nanoinside.net_, representando gráficamente el intercambio de mensajes dns, e indicando el propósito de cada uno.
+    d. Identifique el host que realiza una consulta recursiva y cuál consultas iterarivas.
 
 6. Analice la captura `captura_ejemplo_dns.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particular que observe en la misma?
 
