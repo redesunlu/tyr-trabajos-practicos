@@ -1,9 +1,9 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** 24/04/2023
+**Fecha de Entrega:** 22/04/2024
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP4>
+**URL de Entrega:** <https://tinyurl.com/TyR-2024-TP4>
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -30,7 +30,8 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     `ecSq3z5mn11B2hgUB9` o bien mediante POP o IMAP (con la misma clave).
     Hay que tener en cuenta que los mensajes sólo duran 1 día en la casilla.
 
-  * 2023 la cuenta de ehteral.email no existe mas. Se crea una nueva: "Melissa Veum" melissa.veum@ethereal.email pass capc43DG3Vf3jXNRVW
+  * 2023 la cuenta de ehtereal.email no existe mas. Se crea una nueva: "Melissa Veum" melissa.veum@ethereal.email pass capc43DG3Vf3jXNRVW
+  * 2024 la cuenta de ethereal melissa.veum no existe mas. Se crea una nueva: "Rozella Crist" rozella.crist@ethereal.email pass zRbStF8ZZ9tuMumAtG
   
 #### --- Fin notas para ayudantes ---
 
@@ -41,7 +42,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 2. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte del usuario que envía correo y el abuso que esto puede acarrear.
 
 3. Instale e inicie en el entorno **kathará** el laboratorio de email provisto por los docentes, disponible en
-<https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_email.tar.gz> y realice las siguientes actividades:
+<https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_email.tar.gz> y realice las siguientes actividades:
 
     1. Inicie una captura desde el host.
     2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje cuyo remitente sea `<su-nombre@lugroma3.org>` destinado a la cuenta de correo `<guest@nanoinside.net>`.
@@ -53,7 +54,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
 
-4. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `<melissa.veum@ethereal.email>`
+4. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `<rozella.crist@ethereal.email>`
 
     Como remitente del mensaje utilice su propia cuenta de correo y como Asunto (Subject) especifique su nombre completo y legajo. Todo el mensaje debe cumplir con los requisitos de la RFC 5322 y ser de tipo MIME text/plain. Dentro del cuerpo del mensaje responda cuáles son los campos de encabezado obligatorios según RFC5322.
 
