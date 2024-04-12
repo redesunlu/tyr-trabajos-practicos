@@ -128,7 +128,7 @@ Documentación de configuración de la zona `SU-NRO-LEGAJO.tyr.example`
 
 | Nombre de Host            | Clase | Tipo de RR | Datos del RR         | Comentario |
 | --------------------------| :---: | :--------: | -------------------- | ---------- |
-| 200.1.1.22.in-addr.arpa.  |  IN   |    PTR     | pc2.LEGAJO.tyr.example | (ejemplo)  |
+| 22.1.1.10.in-addr.arpa.   |  IN   |    PTR     | pc2.LEGAJO.tyr.example | (ejemplo)  |
 |                           |  IN   |            |                      |            |
 |                           |  IN   |            |                      |            |
 |                           |  IN   |            |                      |            |
