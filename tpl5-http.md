@@ -1,9 +1,9 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** 08/05/2023
+**Fecha de Entrega:** 06/05/2024
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2023-TP5>
+**URL de Entrega:** <https://tinyurl.com/TyR-2024-TP5>
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -65,7 +65,7 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
 
 3. Describa cómo opera un cliente HTTP (por ejemplo un navegador web) para recuperar una página HTML que contiene varios objetos. Analice la captura del archivo `captura_ejemplo_http.pcap` provisto por los docentes y represente el intercambio de mensajes mediante un gráfico ideado por Ud. ¿Qué primitivas se utilizan en cada caso?.
 
-4. Instale e inicie en el entorno **kathará** el laboratorio de proxy HTTP provisto por los docentes, disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_proxy.tar.gz>
+4. Instale e inicie en el entorno **kathará** el laboratorio de proxy HTTP provisto por los docentes, disponible en <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_proxy.tar.gz>
 
     Este laboratorio comprende tres hosts: uno actúa como servidor web (con el servicio Apache2 en ejecución), uno actúa como cliente web (con el navegador Lynx instalado) y uno actúa como proxy HTTP (con el servicio Squid en ejecución).
 
