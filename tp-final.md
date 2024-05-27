@@ -26,11 +26,12 @@ La actividad propuesta se divide en dos partes: en la primera, deberán configur
 
 2. Configure las interfaces, ruteadores/rutas y servicios necesarios (web servers y proxy), de acuerdo a las siguientes consideraciones:
 
-- El equipo de usuario (pc1) accede al exterior a través del servidor proxy (revise la configuración para reconocer cómo es en este caso).
-- El servidor DNS maneja la zona \texttt{example.com} pero usted cuenta con un DNS local (ambos ya están configurados).
+- El equipo de usuario (Usuario) accede al exterior a través del servidor proxy (revise la configuración para reconocer cómo es en este caso).
+- El servidor DNS maneja la zona \texttt{tyr-ejemplo.com} (ya configurado).
+
 - Ambos servidores Web operan en el puerto 80.
     
-3. Copie la plantilla con sus datos al directorio público del servidor \texttt{datos.example.com}.
+3. Copie la plantilla con sus datos al directorio público del servidor \texttt{www.tyr-ejemplo.com}.
 
 4. Luego, debe realizar la captura de tráfico de una transferencia completa de su página web usando el comando \texttt{w3c} (las instrucciones se encuentran dentro de los fuentes del laboratorio) y todo su contenido asociado, utilizando el mnemónico del servidor web. La captura debe comenzar con el equipo cliente \textit{apagado} (tablas ARP de ruteadores y hosts vacías), y finalizar cuando se recupera la página completa. La captura original (incluyendo carga de aplicación) debe ser enviada al equipo docente junto con el trabajo. 
 
@@ -43,8 +44,7 @@ La actividad propuesta se divide en dos partes: en la primera, deberán configur
 4. Para la conexión TCP utilizada para recuperar el archivo \texttt{.html} entre usuario y proxy indique la finalidad de cada PDU intercambiada a nivel de transporte y aplicación. 
 5. Genere un diagrama de intercambios en el tiempo que muestre cómo sucedieron los mensajes, incluyendo TODOS los dispositivos involucrados. Por cada mensaje, identifique los principales parámetros que hacen a su función. En su gráfico, utilice diferentes colores para las diferentes conexiones (incluya las referencias correspondientes)\footnote{No use ningún software de generación automática del gráfico.}.
 6. Compare los headers HTTP del requerimiento del cliente al proxy con respecto del realizado por el proxy al servidor web. Muestre y explique las diferencias.
-7. Confeccione una tabla con los diferentes protocolos involucrados, cantidad de PDUs, total en headers y total en datos. De allí, calcule el \textit{overhead} ($Overhead = \frac{Total\_Datos\_Control}{Total\_Datos\_Tx}$) total y por protocolo generado para lograr la transferencia. Se sugiere armar una tabla en la cual cada fila $F_i$ corresponde a una PDU y cada columna a un protocolo $P_j$ (de diferentes capas). Luego, en cada celda $i, j$ consigne el tamaño en bytes que corresponde a esa $F_i$ y $P_j$.
-    Genere una gráfica acorde para mostrar los resultados.
+7. Confeccione una tabla con los diferentes protocolos involucrados, cantidad de PDUs, total en headers y total en datos. De allí, calcule el \textit{overhead} ($Overhead = \frac{Total\_Datos\_Control}{Total\_Datos\_Tx}$) total y por protocolo generado para lograr la transferencia. Se sugiere armar una tabla en la cual cada fila $F_i$ corresponde a una PDU y cada columna a un protocolo $P_j$ (de diferentes capas). Luego, en cada celda $i, j$ consigne el tamaño en bytes que corresponde a esa $F_i$ y $P_j$. Genere una gráfica acorde para mostrar los resultados.
 
 
 ___
@@ -56,7 +56,7 @@ ___
 ___
 
 
-![TP-Final-template.html](./images/tp-final-topologia.png) 
+![TP-Final-template.html](./images/Topo-TP-Final2024.png) 
 
 
 
