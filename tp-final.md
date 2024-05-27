@@ -24,13 +24,8 @@ La actividad propuesta se divide en dos partes: en la primera, deberán configur
 
 1. Descargue el labo base\footnote{\url{https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_TP_Integrador.tar.gz}} e implemente en el laboratorio de Kathara las redes de acuerdo al plano de topología de la Figura fig:topologia. 
 
-2. Configure las interfaces, ruteadores/rutas y servicios necesarios (web servers y proxy), de acuerdo a las siguientes consideraciones:
+2. Configure las interfaces, ruteadores/rutas, resolvers y NAT. El servidor DNS maneja la zona \texttt{tyr-ejemplo.com} (ya se encuetra configurado). Revise qué servicios debe iniciar y los puertos en los que operan los servidores web y el proxy. El equipo de usuario (Usuario) accede al exterior a través del servidor proxy (revise la configuración para reconocer cómo es en este caso). 
 
-- El equipo de usuario (Usuario) accede al exterior a través del servidor proxy (revise la configuración para reconocer cómo es en este caso).
-- El servidor DNS maneja la zona \texttt{tyr-ejemplo.com} (ya configurado).
-
-- Ambos servidores Web operan en el puerto 80.
-    
 3. Copie la plantilla con sus datos al directorio público del servidor \texttt{www.tyr-ejemplo.com}.
 
 4. Luego, debe realizar la captura de tráfico de una transferencia completa de su página web usando el comando \texttt{w3c} (las instrucciones se encuentran dentro de los fuentes del laboratorio) y todo su contenido asociado, utilizando el mnemónico del servidor web. La captura debe comenzar con el equipo cliente \textit{apagado} (tablas ARP de ruteadores y hosts vacías), y finalizar cuando se recupera la página completa. La captura original (incluyendo carga de aplicación) debe ser enviada al equipo docente junto con el trabajo. 
