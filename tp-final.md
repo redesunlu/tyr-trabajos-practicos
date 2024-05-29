@@ -22,7 +22,7 @@ La actividad propuesta se divide en dos partes: en la primera, deberán configur
 
 #### En el laboratorio
 
-1. Descargue el labo base\footnote{\url{https://github.com/redesunlu/netkit-labs/raw/master/tarballs/kathara-lab_TP_Integrador.tar.gz}} e implemente en el laboratorio de Kathara las redes de acuerdo al plano de topología de la Figura fig:topologia. 
+1. Descargue el labo base\footnote{\url{https://raw.githubusercontent.com/redesunlu/kathara-labs/main/tarballs/kathara-lab_TP_Integrador-2024.tar.gz}} e implemente en el laboratorio de Kathara las redes de acuerdo al plano de topología de la Figura fig:topologia. 
 
 2. Configure las interfaces, ruteadores/rutas, resolvers y NAT. El servidor DNS maneja la zona \texttt{tyr-ejemplo.com} (ya se encuetra configurado). Revise qué servicios debe iniciar y los puertos en los que operan los servidores web y el proxy. El equipo de usuario (Usuario) accede al exterior a través del servidor proxy (revise la configuración para reconocer cómo es en este caso). 
 
