@@ -26,7 +26,7 @@ Quizás la mejor explicación sea esta:
 1. Instalar el entorno de emulación de redes Kathará siguiendo la documentación de la siguiente URL:
    <https://github.com/KatharaFramework/Kathara/wiki/Installation-Guides>
 2. Descargar y descomprimir el laboratorio de práctica de configuración inicial desde:
-   <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_conf_inicial-TYR.tar.gz>
+   <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_conf_inicial.tar.gz>
 3. En una terminal de línea de comandos, dirigirse al directorio recientemente creado (que posee el archivo `lab.conf`) y ejecutar el comando  
    `kathara lstart`  
    para comprobar que es posible iniciar el laboratorio. Deberían abrirse tres ventanas con las terminales de los equipos _pc1_, _pc2_, y _r1_.
