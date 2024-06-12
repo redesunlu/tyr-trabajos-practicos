@@ -5,7 +5,9 @@ REQUIRED_PACKAGES := pandoc lmodern texlive-xetex texlive-latex-recommended texl
 
 # define los argumentos de pandoc segun la version, pues hay diferencia entre v1 y v2
 PANDOC_VERSION_MAJOR := $(shell pandoc --version | head -1 | cut -d' ' -f2 | cut -d'.' -f1)
-ifeq "$(PANDOC_VERSION_MAJOR)" "2"
+ifeq "$(PANDOC_VERSION_MAJOR)" "3"
+    PANDOC_FLAGS := --pdf-engine=xelatex
+else ifeq "$(PANDOC_VERSION_MAJOR)" "2"
     PANDOC_FLAGS := --pdf-engine=xelatex
 else
     PANDOC_FLAGS := --latex-engine=xelatex
