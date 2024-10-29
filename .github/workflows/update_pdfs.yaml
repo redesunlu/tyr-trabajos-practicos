@@ -1,0 +1,39 @@
+name: Update PDFs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          pandoc \
+          lmodern \
+          texlive-xetex \
+          texlive-latex-recommended \
+          texlive-fonts-recommended \
+          fonts-dejavu
+
+    - name: Regenerate all documentation
+      run: make all
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add pdfs/
+        git commit -m 'Update PDFs'
+        git push
