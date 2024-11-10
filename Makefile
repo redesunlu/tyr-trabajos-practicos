@@ -27,7 +27,7 @@ all: pdf/gl-introduccion.pdf pdf/tp-transmision-datos.pdf pdf/tpl1-configuracion
 	pdf/apunte-ipv6.pdf pdf/tpl7-ipv6-2022.pdf pdf/tpl00-AKA_Los_Labos_de_Pierre.pdf pdf/tpl6-http-parte2.pdf \
 	pdf/tp-final.pdf
 
-pdf/%.pdf: %.md header.tex
+pdf/%.pdf: markdown/%.md header.tex
 	mkdir -p pdf
 	cp "$<" /tmp/output.md
 	sed -i '/Notas para ayudantes/,/Fin notas para ayudantes/d' /tmp/output.md
@@ -41,7 +41,7 @@ pdf/%.pdf: %.md header.tex
 		/tmp/output.md -o "$@"
 	#evince "$@" &
 
-%.html: %.md
+%.html: markdown/%.md
 	pandoc -f markdown -t html5 -s "$<" -o "$@"
 
 clean:
