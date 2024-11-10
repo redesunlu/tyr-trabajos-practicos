@@ -4,37 +4,6 @@ Práctica Autoguiada - Interfase Sockets API
 **Objetivo:**
 El objetivo es que esta guía sirva para comprender, mediante algunos ejemplos básicos, cómo trabajar con la "API de sockets", desde un lenguaje de alto nivel como Python. Se eligió este lenguaje de programación porque éste, en combinación con su módulo [sockets](https://docs.python.org/3.8/howto/sockets.html), permite entender la API en cuestión con sus conceptos originales; sin detenerse en los detalles técnicos de implementación que exige un lenguaje más cercano a la máquina como C.
 
-#### Notas para ayudantes
-
-* Acá van notas nuestras que consideren pertinentes.
-* Le saqué los # a los comandos porque los estudiantes lo escribían. Si hace falta, lo vuelvo a poner.
-
-**Guión general a desarrollar**
-1. Ejemplo Eco UDP:
-1.1. Escribir el cliente UDP
-1.2. Escribir el servidor UDP 
-1.3. Validar la ejecución de ambos scripts con netstat, ps
-1.4. Validar el tráfico intercambiado con wireshark
-1.5. UDP - Consignas a implementar propuestas:
-1.5.1. En el server, validar la IP del cliente e ignorar si proviene de una IP no reconocido.
-1.5.2. Experimentar variando el buffer de recepción a algo más chico que el mensaje enviado y/o enviar un mensaje más grande desde el cliente; ¿qué sucede?
-1.5.3. Proveer la manera que desde el servidor se 'responda' el mensaje, el cliente imprima el mismo por pantalla y responda nuevamente, permitiendo el 'chat' entre ambos participantes. Analice el comportamiento del modo de funcionamiento*.
-1.5.4. Implementar un mensaje que provoque que el servidor termine su ejecución.
-1.5.5. Implementar un mensaje que provoque la ejecución de un comando en el servidor con os.system() y devuelva el código de salida ('exit status') al cliente.
-
-2. Ejemplo Eco TCP:
-2.1. Escribir el cliente TCP
-2.2. Escribir el servidor TCP 
-2.3. Validar la ejecución de ambos scripts con netstat, ps
-2.4. Validar el tráfico intercambiado con wireshark
-2.5. TCP - Consignas a implementar propuestas:
-2.5.1. Establecer la cola de listen() en 1 y ejecutar dos clientes a la vez. ¿Qué sucede?
-2.5.2. Experimentar reduciendo la cantidad de bytes enviados desde el cliente con send() en lugar de sendall(); ¿cómo hago para enviar todo el mensaje en tal caso?
-2.5.3. Experimentar reduciendo la cantidad de bytes recibidos en el servidor con recv(), ¿cómo hago para recibir todo lo que el cliente me desea enviar?
-2.5.4. ¿Cómo hago para enviar un mensaje de texto y una imagen por el mismo socket TCP? Analizar alternativas y proponer soluciones **.
-
-#### --- Fin notas para ayudantes ---
-
 #### Consignas
 La idea es que esta guía sirva para comprender, mediante algunos ejemplos básicos, cómo funciona la API de Sockets, tanto desde un programa cliente como servidor, utilizando el stack UDP primero y luego TCP. Se utilizará la versión 3 del lenguaje de programación Python, disponible en múltiples plataformas y sistemas operativos.
 Si bien no es estrictamente necesario ninguna introducción “fuerte” en el lenguaje, se recomienda leer los primeros capítulos del tutorial en español disponible aquí: [https://tutorial.python.org.ar/](https://tutorial.python.org.ar/)

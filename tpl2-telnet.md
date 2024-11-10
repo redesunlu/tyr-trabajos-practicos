@@ -31,13 +31,6 @@ Realice una captura de todo el proceso utilizando en el host anfitrión la herra
 
 En el host _pc1_ deberá ejecutar la utilidad `nc` actuando como servidor, indicando como parámetro el número de puerto elegido. Una vez iniciado, este servicio quedará en modo de _escucha_ o _listening_. En el otro host (_pc2_) ejecute la utilidad `nc` como cliente indicando como parámetros la IP del servidor y número de puerto.
 
-#### Notas para ayudantes
-
-Esto lo veo complicado de hacer sin multiplexor de terminal...
-Verifique desde otra terminal que el proceso servidor esté en "escucha" en el puerto indicado (usando comandos tipo `ss` o `netstat`).
-
-#### --- Fin notas para ayudantes ---
-
 Si generó correctamente los procesos servidor y cliente, debería poder ver una especie de "chat". Intercambie varios mensajes con el otro dispositivo y finalice la conexión (en cualquiera de los host presione CTRL+C). Luego detenga la captura (CTRL+C).
 
 Analice la captura almacenada en el archivo utilizando `tshark` y diversos parámetros de visualización (consulte la guía de comandos provista por la materia).
@@ -76,30 +69,6 @@ Analice la captura:
 a) Identifique e indique las tramas que corresponden a la transmisión de datos a nivel aplicación, cuáles a protocolos auxiliares (si existen) y al establecimiento y cierre de la conexión TCP. (referenciando por número de trama en la captura)
 
 b) Comente las características de la información en tránsito con respecto a la confidencialidad.
-
-#### Notas para ayudantes
-
-    8. (opcional) Analice la captura y busque entre los datos cargados por los paquetes IP la clave que utilizó para acceder al servidor remoto. ¿Puede leerse fácilmente?
-    9. (opcional) Identifique los paquetes que establecen la conexión TCP entre los hosts.
-
-Spoiler! El ejercicio está bien resuelto cuando el comado `who` devuelve
-
-    root     pts/0        Fecha y Hora (IP-DEL-CLIENTE)
-    (stdin)= HASH-MD5-O-SHA256-DE-LA-LINEA-ANTERIOR
-
-por ejemplo
-
-    root     pts/0        Mar 15 11:31 (172.16.0.2)
-    (stdin)= f94cccb03ebbffef4aa22b514211a503
-
-El hash (md5 o sha256, dependiendo de la versión de openssl) se solicita para validar que el estudiante no cambió el texto de la salida. Hay que recordar que la IP del cliente puede variar pues se deja a libre elección del estudiante.
-
-Old bibliografia
-
-* "TCP/IP Illustrated Vol.1", Richard Stevens, Addison Wesley.  Capítulo 26: "Telnet and Rlogin: Remote Login".
-* "Redes globales de información con Internet y TCP/IP". Tercera Edición. Douglas E. Comer, Prentice Hall. Capítulo 23: "Aplicaciones: acceso remoto (TELNET, Rlogin)".
-
-#### --- Fin notas para ayudantes ---
 
 ### Bibliografía
 

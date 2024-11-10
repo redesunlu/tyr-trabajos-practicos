@@ -7,13 +7,6 @@ TPL 6 - World Wide Web - HTTP - Parte2
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
-
-#### Notas para ayudantes
-
-- florge: Segunda práctica HTTP año 2022, escindida de la versión "larga" de años anteriores.
-
-#### --- Fin notas para ayudantes ---
-
 #### Consignas
 
 Para los ejercicios del presente trabajo práctico, deberá utilizar el intérprete de lenguaje Python versión 3.x disponible para múltiples plataformas y sistemas operativos. En los sistemas operativos Linux el intérprete usualmente está instalado por defecto. Si bien no es estrictamente necesario ninguna introducción "fuerte" en el lenguaje, se
@@ -200,36 +193,3 @@ c. ¿Qué sucede si se ingresa a la URL <http://localhost:8000/no_existe>? ¿Por
 * Sitio web del lenguaje Python: <https://www.python.org/>
 * Tutorial de Python: <http://docs.python.org.ar/tutorial/3/index.html>
 * Guías de inicio en Python: <http://python.org.ar/AprendiendoPython>
-
-
-#### Notas para ayudantes
-
-Esta bibliografía queda aparte pues no figura en el listado realizado en 2020
-* STALLINGS, W. 2002. 19.4: "Protocolo de Transferencia de Hipertexto (HTTP)" en _Comunicaciones y Redes de Computadoras (6ta ed)_. Prentice Hall.
-* TANNEMBAUM, A. Capítulo 7.6: "La World Wide Web" en _Redes de Computadoras (3ra ed)_. Prentice Hall.
-* GORALSKI, W. 2017. Capítulo 26: "Hypertext Transfer Protocol" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
-  <https://www.sciencedirect.com/science/book/9780128110270>
-
-
-#### Expectativas de respuesta ejercicios 1 a 4
-
-    1.a. Qué se ve en el navegador? --> Se ve un listado de directorio.
-    1.b. Qué se ve en la consola? --> Muestra las peticiones HTTP recibidas.
-          Debería interpretar cada campo.
-    1.c. Abrir archivo HTML. --> Se ve una página HTML interpretada.
-    
-    2.a. Qué se ve en el navegador? --> Se ve una página en blanco.
-    2.b. Qué se ve en la consola? --> Se ven los encabezados HTTP por consola.
-    2.c. Diferencias encabezados entre navegadores distintos, Ctrl+F5, URL.
-          User-Agent, Accept, Accept-language, Accept-encoding, Cache, URL.
-    2.d. Se ven los encabezados de servidor agregados por Python: Date, Server.
-    
-    3.a. El cliente hace una Petición GET HTML + Petición GET Imagen a UNLu.
-    3.b. Devolución Content-Type: text/plain. Retorna el código fuente de la página.
-    
-    4.a. Página dinámica. La respuesta depende del User-Agent.
-    4.b. Redirección mediante HTTP 302. Indicar header Location.
-          Primero GET a proceso propio, luego GET a UNLu y a recursos afines.
-    4.c. Petición a página inexistente. --> Obtiene una respuesta 404.
-
-#### --- Fin notas para ayudantes ---

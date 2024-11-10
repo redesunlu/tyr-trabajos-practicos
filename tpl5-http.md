@@ -7,18 +7,6 @@ TPL 5 - World Wide Web - HTTP
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
-
-#### Notas para ayudantes
-
-- Los ejercicios con netcat incorporan los argumentos `-v` para que indique
-  si se estableció bien la conexión TCP y `-C` (mayúscula) para que los Enter
-  se envíen como `<cr><lf>`.
-- netcat-tradicional devualve inmediatamente el prompt con conection close, netcat-openbsd no, el server manda el fin, el cliente confirma el fin pero no cierra en el otro sentido. Al intentar anviar algo mas el server responde con rst y recién ahí el nc termina.
-- Al final de este documento están las expectativas de respuesta para los
-  ejercicios 11 a 14 que involucran python.
-
-#### --- Fin notas para ayudantes ---
-
 #### Consignas
 
 1. Utilizando la herramienta `nc`, conéctese a la dirección y al puerto del servidor web `www.unlu.edu.ar` y lleve a cabo las siguientes pruebas utilizando primitivas del protocolo HTTP. Guarde las respuestas obtenidas.
@@ -127,16 +115,6 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
 * Common Gateway Interface: <http://www.w3c.org/cgi/>
 * HTML: <http://www.w3.org/TR/html/>
 
-#### Notas para ayudantes
-
-2023 florge: no necesaria desde la divición de la práctica en 2022
-
-* Sitio web del lenguaje Python: <https://www.python.org/>
-* Tutorial de Python: <http://docs.python.org.ar/tutorial/3/index.html>
-* Guías de inicio en Python: <http://python.org.ar/AprendiendoPython>
-
-#### --- Fin notas para ayudantes ---
-
 ### Preguntas (guía de lectura)
 
 Describa someramente el protocolo HTTP, indicando modo de operación y primitivas básicas.
@@ -150,14 +128,3 @@ Describa someramente el protocolo HTTP, indicando modo de operación y primitiva
 ¿Qué es la interfaz CGI? ¿Para qué se utiliza?
 
 ¿De qué formas un programa puede recibir parámetros por medio de la interfaz CGI? Comente las diferencias en el modo de operación en cada caso.
-
-
-#### Notas para ayudantes
-
-Esta bibliografía queda aparte pues no figura en el listado realizado en 2020
-* STALLINGS, W. 2002. 19.4: "Protocolo de Transferencia de Hipertexto (HTTP)" en _Comunicaciones y Redes de Computadoras (6ta ed)_. Prentice Hall.
-* TANNEMBAUM, A. Capítulo 7.6: "La World Wide Web" en _Redes de Computadoras (3ra ed)_. Prentice Hall.
-* GORALSKI, W. 2017. Capítulo 26: "Hypertext Transfer Protocol" en _The Illustrated Network: How TCP/IP Works in a Modern Network (2nd ed)_. Morgan Kaufmann.
-  <https://www.sciencedirect.com/science/book/9780128110270>
-
-#### --- Fin notas para ayudantes ---

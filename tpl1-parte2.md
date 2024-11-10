@@ -5,14 +5,6 @@ TPL 1 parte 2 - Configuración inicial de una red utilizando netkit
 
 **Objetivo:** Adquirir habilidades en el uso de la herramienta netkit-ng.
 
-#### Notas para ayudantes
-
-* Acá van notas nuestras que consideren pertinentes.
-* En caso de requerir insertar un salto de pagina en cualquier parte del documento, escribir \pagebreak en una linea en blanco.
-* Le saqué los # a los comandos porque los estudiantes lo escribían. Si hace falta, lo vuelvo a poner.
-
-#### --- Fin notas para ayudantes ---
-
 **Consignas**
 
 1. Instalar la herramienta Netkit-NG con el script `instalar-netkit-ng.sh` siguiendo la documentación de la siguiente URL:

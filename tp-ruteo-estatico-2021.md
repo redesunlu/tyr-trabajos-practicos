@@ -5,22 +5,6 @@ TP - Ruteo estático y dinámico con RIP
 
 **URL de Entrega:** <https://tinyurl.com/TyR-2021-TP6>
 
-#### Notas para ayudantes
-
-Algunas mejoras claras que hay que hacerle a este TP en ediciones posteriores:
-* Cambiar Administración y Gerencia, para que se obligue a jugar con R4. Como
-esta actualmente les alcanza con no poner default a R3 y listo. Si en cambio
-Administración esta en la topología de Gerencia, R4 si tiene que tener Default,
-y eso empuja a que aclaren que el que no tiene default es el disp de usuario.
-* Un bloque mas pequeño para que al subdividir no alcance para todas las redes.
-Esto obligaria a usar al menos un bloque de privadas (y NAT o Proxy tal vez).
-* Toda la parte del ISP esta mal: Bloque de Red no machea con IPs. IP de ISP
-en dibujo no es igual que en el enunciado.
-* Buscar la manera de "obligarlos" a pensar la red de interconexión R3<->R4
-porque sino asignan un bloque gigante de redes (llegue a ver /27 asignados ahi).
-
-#### --- Fin notas para ayudantes ---
-
 ### Actividad 1
 
 **Objetivo:** Entender el funcionamiento de redes IP que basan sus estrategias de direccionamiento de paquetes a través del mecanismo de ruteo estático, mediante la configuración de un escenario hipotético.

@@ -7,33 +7,6 @@ TPL 3 - Domain Name System
 
 **Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
-
-#### Notas para ayudantes
-
-* Hay una muy buena presentación con teoría y práctica de DNS en
-  <http://cereal.forest.usf.edu/linux/L3/w02-dns_proxy/O4L01/online-module-guide.pdf>
-* Para la próxima consultar los NS de `www.telecom.com.ar` y consultar que tienen de curioso.
-  (gulp.arnet.com.ar, oktubre.arnet.com.ar, lobosuelto.arnet.com.ar, corderoatado.arnet.com.ar)
-* El punto 7 se refiere a las funciones que existen (llamadas a sistema operativo)
-  para hacer consultas DNS en un programa que uno está escribiendo. Vale decir,
-  si se está programando en C/C++, qué funciones se utilizan para convertir un
-  nombre de host en IP y viceversa, por ejemplo.
-* Respecto al punto 8, entre los Top-Level-Domains, como también entre los
-  subdominios que figuran dentro de .ar, .es, etc. hay dominios o zonas que son
-  especiales y para obtener un subdominio dentro de ellas es necesario cumplir
-  ciertos requisitos adicionales. Vale decir, no cualquiera puede obtener un
-  dominio de estos tipo. Un ejemplo es ".mil", a nivel global, y ".mil.ar" a
-  nivel nacional, donde ambos están reservados para ciertas organizaciones.
-  La idea es que los estudiantes investiguen sobre algunos de estos dominios o
-  zonas especiales y qué requisitos hay que cumplir para obtener un subdominio
-  dentro de ".org.ar".
-
-Ejercicio removido en 2018 por florge-maurom
-8. Acceda a la herramienta en línea de reporte DNS <http:/www.howismydns.com/> y solicite chequear el dominio
-`unlu.edu.ar`. Describa al menos 3 de los chequeos/verificaciones realizados y los resultados obtenidos.
-
-#### --- Fin notas para ayudantes ---
-
 ### Consignas
 
 1. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien alguno de acceso público tal como `8.8.8.8` o `1.1.1.1`) para obtener la siguiente información:

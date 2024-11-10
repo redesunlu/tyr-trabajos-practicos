@@ -9,13 +9,6 @@ TPL 7 - Protocolo IPv6
 
 ## Consignas
 
-#### Notas para ayudantes
-
-Esta guía es una copia de la Guía Práctica No obligatoria de IPv6 existente en
-<https://docs.google.com/document/d/15JSkTwepweD4ulJ01JJqQuHeOgyxXAQGzPqmatgBDwY/>
-
-#### Fin notas para ayudantes
-
 Esta guía sobre IPv6 consta de dos partes. En la primera, se trabaja sobre un laboratorio Netkit ([descargar](https://drive.google.com/file/d/1PLRZ42hYg3AupBtdaP4CogKyuAgniTTz/view?usp=sharing), [link alternativo](https://www.computer-networking.info/2nd/html/_downloads/netkit-lab_slaac.zip)) para reproducir las acciones propuestas (puntos 1 y 2). Es demostrativo para que puedan apreciar algunos cambios entre IPv4 e IPv6.  
 En la segunda actividad (Análisis de Capturas), se trabaja con tres capturas de tráfico ([descargar](https://drive.google.com/file/d/1eKazrLCdbpis1dq-_3oTCb6bGwkrGjDy/view?usp=sharing)). A partir de éstas, se propone identificar los mensajes y hosts enunciados a los efectos de comprender de mejor manera los procedimientos.
 

@@ -5,13 +5,6 @@ TP Exploratorio - Interface de Sockets
 
 **Objetivo:** _TODO_
 
-#### Notas para ayudantes
-
-* Acá van notas nuestras que consideren pertinentes.
-* Le saqué los # a los comandos porque los estudiantes lo escribían. Si hace falta, lo vuelvo a poner.
-
-#### --- Fin notas para ayudantes ---
-
 #### Consignas
 
 1. Descargue de los ejemplos de programas Python que utilizan la interface de Sockets.

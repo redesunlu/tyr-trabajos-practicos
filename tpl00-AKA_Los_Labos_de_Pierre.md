@@ -7,13 +7,6 @@ TPL 00 - Detección de fallas
 
 **Objetivo:** Aplicar los conocimientos adquiridos para la resolución de problemas en escenarios que emulan posibles situaciones reales.
 
-
-#### Notas para ayudantes
-
-2023-03-23 Esqueleto inicial por florge basado en propuesta de plavallen.
-
-#### --- Fin notas para ayudantes ---
-
 ### Consignas
 
 1. Instale e inicie en el entorno kathara el laboratorio _DF_L1_configuracion_inicial_ provisto por los docentes disponible en <https://github.com/redesunlu/netkit-labs/raw/master/tarballs/DF_L1_configuracion_inicial.tar.gz> y realice las siguientes actividades:

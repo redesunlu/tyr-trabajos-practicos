@@ -11,16 +11,6 @@ Conocer el procedimiento inicial y hacer habitual la práctica de configuración
 
 Adquirir habilidades en el uso del entorno de emulación de redes Kathará.
 
-#### Notas para ayudantes
-
-* Por Florge 2019. Cambiado dmesg por ip link, . ¿Será necesario poner una salida de ip link show explicándola? tshark por tcpdump, y reordenado el punto de asignar nombre al host.
-* Ojo con el filtro de tcpdump para el ping, porque si se hace ping a la propia IP publica (sea de localhost o de la interfaz física), el comando no captura nada. Si se hace ping a un host externo, el filtro funciona perfectamente. En wireshark pasa exactamente lo mismo. Hay confirmación del comportamiento en un [hilo de StackOverflow](https://unix.stackexchange.com/questions/491859/ping-uses-localhost-instead-of-public-ip-address) y en un [mensaje de lista de correo de 2008](https://groups.google.com/d/msg/comp.protocols.tcp-ip/TNkCcZWV3e4/RZ2LVPTsA98J). **La "solución" mas sencilla es hacer ping a otro host.**
-Quizás la mejor explicación sea esta:
-
-    > Physically, if it actually went out on eth0 it wouldn't be received, an Ethernet interface doesn't "hear" what it's sending. So in any case, there needs to be a shortcut somewhere that says "oh this is a local packet, it must be handled locally". Probably easier to redirect the packet to lo0 than adding a "handle outbound traffic as inbound path", though one would have to check the relevant RFCs for correctness. – [jcaron Jan 1 at 13:20](https://unix.stackexchange.com/questions/491859/ping-uses-localhost-instead-of-public-ip-address#comment902770_491859)
-
-#### --- Fin notas para ayudantes ---
-
 # Primer parte: Instalación del entorno Kathará
 
 1. Instalar el entorno de emulación de redes Kathará siguiendo la documentación de la siguiente URL:
@@ -62,11 +52,6 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 
 8. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con el otro equipo. Las acciones que debe realizar son:
 
-#### Notas para ayudantes - 
-    a. **ESTO HAY QUE ACTUALIZARLO O PONER CÓMO HACERLO CON KATHARÁ** En una terminal del host anfitrión, iniciar la captura utilizando el comando `tcpdump` sobre la interfaz `kt-xxx`) y redirigir la salida a un archivo para su posterior análisis.**
-    florge no veo otra manera de hacerlo. Hay una propuesta pero no está implementada
-#### --- Fin notas para ayudantes ---
-
     a. En una terminal del host anfitrión, iniciar la captura utilizando el comando `tcpdump` o `tshark` sobre la interfaz `kt-xxx` y redirigir la salida a un archivo para su posterior análisis.
 
     b. En _pc1_ ejecutar el comando ping para enviar a _pc2_ exactamente 3 mensajes ICMP Echo Request (consulte el manual de ping).
@@ -74,13 +59,6 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
     c. Una vez obtenida la respuesta del comando _ping_ (deberán recibirse tres respuestas), detener la captura (finalizar el proceso _tcpdump_ o _tshark_ presionando **Ctrl+C**)
 
     d. Analizar el volcado del programa de captura utilizando la aplicación wireshark (o cualquier otro analizador de tráfico que permita leer archivos en formato _pcap_), representando en un gráfico ideado por usted el intercambio de mensajes. Indicar cuál es la función de cada uno identificando los datos de encabezados mas relevantes.
-
-#### Notas para ayudantes -
-
-9. **ESTE PUNTO LO REESCRIBÍ TENIENDO EN CUENTA QUE LOS CAMBIOS EN LAS VMS NO SON PERSISTENTES; DEBERÍAMOS VER CÓMO REFORMULARLO** Escribir los comandos de configuración que ejecutó en los puntos 2 a 7 a los archivos `pc1.startup` y `pc2.startup`, respectivamente, que están dentro del directorio del laboratorio, de manera tal que los nodos queden configurados automáticamente al reiniciar el laboratorio.
-florge, a menos que compliquemos las cosas con puntos de montaje queda así.
-
-#### --- Fin notas para ayudantes ---
 
 9. Escribir los comandos de configuración que ejecutó en los puntos 2, 4, 5 y 7 en _pc1_ y _pc2_ a los archivos `pc1.startup` y `pc2.startup` respectivamente, que están dentro del directorio del laboratorio, de manera tal que los nodos se configuren automáticamente al reiniciar el laboratorio.
 
@@ -90,21 +68,3 @@ florge, a menos que compliquemos las cosas con puntos de montaje queda así.
 * Semestre Perdido. Linea de Comandos: [http://bit.ly/tyr-ms-cli](http://bit.ly/tyr-ms-cli) (versión traducida por el equipo de TyR)
 * Semetre Perdido. Shell: [http://bit.ly/tyr-ms-shell](http://bit.ly/tyr-ms-shell) (versión traducida por el equipo de TyR)
 * Manual de uso de Kathará <https://www.kathara.org/man-pages/kathara.1.html>
-
-#### Notas para ayudantes -
-
-* Manual de uso de Kathará <https://github.com/redesunlu/netkit-doc/blob/master/kathara-manual-de-uso.md>
-
-
-#### --- Fin notas para ayudantes ---
-
-#### Notas para ayudantes - Cuestiones ya resueltas
-
-* Durante la primera práctica de 2018 encontramos las siguientes cuestiones para resolver/corregir:
-  * En el punto 1, la herramienta `mii-tool` no devuelve si hay enlace o no (de hecho, indica que "no conoce la interfaz") mientras la interfaz está dada de baja (que es lo normal cuando se inicia el sistema).
-    * Una alternativa viable es reemplazar el comando `mii-tool` por `ip link set group default up` (o el que corresponda a la/las interfaces disponibles) y luego verificar mediante `ip link show` que en alguna NO diga NO-CARRIER.
-  * Asociado a lo anterior, a los estudiantes les cuesta determinar mediante `dmesg` cual es la interfaz (además de "qué es una interfaz"), debido al reciente cambio de nomenclatura `ethN` ==> `enpNsN`.
-    * Una alternativa viable es reemplazar el uso de dmesg con `ip link show`, e indicar que los números de la izquierda indican la cantidad de interfaces, y que una máquina por defecto tiene `lo` y las interfaces de red que siguen. Hay que dejarles bien claro que _interfaz_ es la denominación del dispositivo que allí aparece, y que en todo lo sucesivo donde diga _interfaz_ hay que reemplazarlo por dicho "nombre".
-  * Por otro lado, hay que remover todas las referencias a ethN del TP.
-
-#### --- Fin notas para ayudantes ---
