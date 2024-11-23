@@ -55,6 +55,7 @@ pdf/%.pdf: markdown/%.md header.tex
 		-V author-meta=$(shell whoami) \
 		-V mainfontoptions="Scale=MatchLowercase" \
 		/tmp/output.md -o "$@"
+	sha256sum "$@" > "$@.sha256"
 	#evince "$@" &
 
 %.html: markdown/%.md
