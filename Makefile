@@ -18,8 +18,7 @@ $(foreach package,$(REQUIRED_PACKAGES),\
 
 .PHONY: all clean
 
-all:
-	pdf/apunte-ipv6.pdf                   \
+all:	pdf/apunte-ipv6.pdf                   \
 	pdf/cheatsheet.pdf                    \
 	pdf/gl-introduccion.pdf               \
 	pdf/missing-semester-command-line.pdf \
