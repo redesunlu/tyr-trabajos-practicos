@@ -63,4 +63,5 @@ pdf/%.pdf: markdown/%.md header.tex
 
 clean:
 	- rm -v pdf/*.pdf
+	- rm -v pdf/*.sha256
 	- rmdir pdf
