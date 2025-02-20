@@ -16,13 +16,13 @@ Tiene como objetivo brindar patrones básicos que permiten ordenar el documento 
 - Anexos (opcional)
 
 #### Tipografías y Formato
-- Leyenda: *Arial 12 pts, centrado, negrita*
-- Título: Arial 16 pts, centrado, negrita
-- Fecha entrega: Arial 10 pts, centrado, negrita
-- Autor/es+legajo: Arial 12 pts, centrado, normal.
-- Respuestas/Referencias/Anexos: Arial 12 pts, justificado, normal.
-- Código fuente o comandos: Courier 12, alineación izquierda.
-- Interlineado: Simple.
+- **Leyenda:** Arial 12 pts, centrado, negrita
+- **Título:** Arial 16 pts, centrado, negrita
+- **Fecha entrega:** Arial 10 pts, centrado, negrita
+- **Autor/es+legajo:** Arial 12 pts, centrado, normal.
+- **Respuestas/Referencias/Anexos:** Arial 12 pts, justificado, normal.
+- **Código fuente o comandos:** Courier 12, alineación izquierda.
+- **Interlineado:** Simple.
 
 #### Formato del Archivo y Envío
 Una vez escrita su versión final del TP, debe convertirlo a .pdf y nombrarlo como:
