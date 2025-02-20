@@ -11,9 +11,9 @@ Tiene como objetivo brindar patrones básicos que permiten ordenar el documento 
 
 #### Estructura del documento
 - Título
-1. Respuestas (incluir la consigna)
-2. Referencias
-3. Anexos (opcional)
+- Respuestas (incluir la consigna)
+- Referencias
+- Anexos (opcional)
 
 #### Tipografías y Formato
 - Leyenda: Arial 12 pts, centrado, negrita
