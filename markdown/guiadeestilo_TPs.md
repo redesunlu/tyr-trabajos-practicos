@@ -24,3 +24,14 @@ Tiene como objetivo brindar patrones básicos que permiten ordenar el documento 
 - Código fuente o comandos: Courier 12, alineación izquierda.
 - Interlineado: Simple.
 
+#### Formato del Archivo y Envío
+Una vez escrita su versión final del TP, debe convertirlo a .pdf y nombrarlo como:
+
+- TyR[año]-TP[#]-ApellidoPrimerAutor-Legajo.pdf (teóricos)
+- TyR[año]-TPL[#]-ApellidoPrimerAutor-Legajo.pdf (laboratorio)
+- 
+Ejemplo:
+TyR2024-TP1-Ruiz-102622.pdf
+
+Los archivos se enviarán como adjuntos a la dirección de correo electrónico que indicará el equipo docente para cada comisión.
+
