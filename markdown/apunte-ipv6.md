@@ -8,11 +8,11 @@ y [TP - Protocolo IPv6 (a distancia)](./tplX-ipv6-a-distancia).
 
 La idea es iniciar con:
 
-- introducción al protocolo,
-- formato de la pdu, encabezado, opcionales,
-- direccionamiento (link-local, global),
-- autoconfiguración (estático, dinámico, slaac, dhcp6),
-- protocolos auxiliares (ICMPv6 como reemplazo de ARP, neighbour discovery, router advertisement)
+- Introducción al protocolo,
+- Formato de la pdu, encabezado, opcionales,
+- Direccionamiento (link-local, global),
+- Autoconfiguración (estático, dinámico, slaac, dhcp6),
+- Protocolos auxiliares (ICMPv6 como reemplazo de ARP, neighbour discovery, router advertisement)
 - DNS sobre IPv6 (registros AAAA y consultas sobre IPv6)
 
 
