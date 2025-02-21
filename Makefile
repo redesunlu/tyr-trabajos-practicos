@@ -22,6 +22,7 @@ all: \
 	pdf/apunte-ipv6.pdf                   \
 	pdf/cheatsheet.pdf                    \
 	pdf/gl-introduccion.pdf               \
+	pdf/guiadeestilo_TPs.pdf              \
 	pdf/missing-semester-command-line.pdf \
 	pdf/missing-semester-course-shell.pdf \
 	pdf/practica_autoguiada_sockets.pdf   \
