@@ -14,7 +14,7 @@ La idea es iniciar con:
 - Autoconfiguración (estático, dinámico, slaac, dhcp6),
 - Protocolos auxiliares (ICMPv6 como reemplazo de ARP, neighbour discovery, router advertisement)
 - DNS sobre IPv6 (registros AAAA y consultas sobre IPv6)
-
+- Prueba
 
 #### Definición del protocolo IPv6
 
