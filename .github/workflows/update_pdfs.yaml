@@ -29,7 +29,9 @@ jobs:
           fonts-dejavu
 
     - name: Regenerate all documentation
-      run: make all
+      # Since we're cloning the repository from scratch and the mtimes of the pdfs are not preserved,
+      # we need to force the regeneration of all pdfs. Git will take care of only committing the changed ones.
+      run: make --always-make all
 
     - name: Commit and push changes if there are any
       run: |
