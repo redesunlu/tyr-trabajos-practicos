@@ -31,10 +31,14 @@ jobs:
     - name: Regenerate all documentation
       run: make all
 
-    - name: Commit and push changes
+    - name: Commit and push changes if there are any
       run: |
         git add -f pdf/
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git commit -m 'Update PDFs'
-        git push
+        if [ -n "$(git status --porcelain)" ]; then
+          git commit -m 'Update PDFs'
+          git push
+        else
+          echo "No changes to commit"
+        fi
