@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: Check out repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install dependencies
       run: |
@@ -33,8 +33,8 @@ jobs:
 
     - name: Commit and push changes
       run: |
+        git add pdf/
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add pdfs/
         git commit -m 'Update PDFs'
         git push
