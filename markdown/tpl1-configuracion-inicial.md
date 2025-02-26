@@ -3,7 +3,7 @@ TPL 1 - Configuración inicial de la red del laboratorio
 
 **Fecha de Entrega:** 01/04/2025
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2024-TP1>
+**URL de Entrega:** <https://tinyurl.com/TyR-2025-TP1>
 
 **Objetivos:**
 
