@@ -8,7 +8,6 @@ Teleinformática y Redes
     - Slides 02 Protocolos y OSI
     - [Guía de lectura - Introducción](./markdown/gl-introduccion.md)
 - [TPL#1 Configuración inicial del laboratorio](./markdown/tpl1-configuracion-inicial.md)
-- [TPL#1 parte 2 Configuración inicial de una red en netkit](./markdown/tpl1-parte2.md)
 - Teoría Comunicaciones de datos (modelo, señales, multiplexación)
     - Slides 03 Modelo Comunicaciones
     - Slides 04 Multiplexación
