@@ -89,7 +89,6 @@ Familiarizarse con el uso del intérprete de comandos en s.o. Linux.
 
 * Man, man y man.
 * Texinfo documentation system.
-* Resumen de comandos: [http://bit.ly/tyr-comandos](http://bit.ly/tyr-comandos)
 * Semestre Perdido. Linea de Comandos: [http://bit.ly/tyr-ms-cli](http://bit.ly/tyr-ms-cli) (versión traducida por el equipo de TyR)
 * Semetre Perdido. Shell: [http://bit.ly/tyr-ms-shell](http://bit.ly/tyr-ms-shell) (versión traducida por el equipo de TyR)
 * Curso Básico de Linux. Víctor González Barbone.2017 <https://iie.fing.edu.uy/personal/vagonbar/sample-page/curso-basico-de-linux/>
