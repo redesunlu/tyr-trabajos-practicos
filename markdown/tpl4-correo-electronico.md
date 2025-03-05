@@ -1,9 +1,9 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** 22/04/2024
+**Fecha de Entrega:** 21/04/2025
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2024-TP4>
+**URL de Entrega:** <https://tinyurl.com/TyR-2025-TP4>
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
