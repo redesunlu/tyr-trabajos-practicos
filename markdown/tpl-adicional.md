@@ -86,13 +86,13 @@ Familiarizarse con el uso del intérprete de comandos en s.o. Linux.
 33. ¿Qué es un proceso zombie? ¿Cómo se lo detecta?.
 
 **Bibliografía sugerida:**
+
 * Man, man y man.
-
 * Texinfo documentation system.
-
+* Resumen de comandos: [http://bit.ly/tyr-comandos](http://bit.ly/tyr-comandos)
+* Semestre Perdido. Linea de Comandos: [http://bit.ly/tyr-ms-cli](http://bit.ly/tyr-ms-cli) (versión traducida por el equipo de TyR)
+* Semetre Perdido. Shell: [http://bit.ly/tyr-ms-shell](http://bit.ly/tyr-ms-shell) (versión traducida por el equipo de TyR)
 * Curso Básico de Linux. Víctor González Barbone.2017 <https://iie.fing.edu.uy/personal/vagonbar/sample-page/curso-basico-de-linux/>
-
 * El manual del Administrador de Debian. Raphaël Hertzog, Roland Mas. Freexian. 2016.
   Apéndice B: "Curso breve de emergencia" <https://debian-handbook.info/browse/es-ES/stable/short-remedial-course.html>
-  
 * Libro The Linux System Admininistrator's Guide.Lars Wirzenius, Joanna Oja, Stephen Stafford, Alex Weeks <https://tldp.org/LDP/sag/html/index.html>
