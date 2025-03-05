@@ -19,18 +19,14 @@ $(foreach package,$(REQUIRED_PACKAGES),\
 .PHONY: all clean
 
 all: \
-	pdf/apunte-ipv6.pdf                   \
 	pdf/cheatsheet.pdf                    \
 	pdf/gl-introduccion.pdf               \
 	pdf/guiadeestilo_TPs.pdf              \
 	pdf/missing-semester-command-line.pdf \
 	pdf/missing-semester-course-shell.pdf \
 	pdf/practica_autoguiada_sockets.pdf   \
-	pdf/receta-tp-integrador-2019.pdf     \
 	pdf/tp-eficiencia-enlace.pdf          \
 	pdf/tp-final.pdf                      \
-	pdf/tp-ruteo-estatico-2020.pdf        \
-	pdf/tp-ruteo-estatico-2021.pdf        \
 	pdf/tp-transmision-datos.pdf          \
 	pdf/tpe-sockets.pdf                   \
 	pdf/tpl00-AKA_Los_Labos_de_Pierre.pdf \
@@ -40,8 +36,7 @@ all: \
 	pdf/tpl3-dns.pdf                      \
 	pdf/tpl4-correo-electronico.pdf       \
 	pdf/tpl5-http.pdf                     \
-	pdf/tpl6-http-parte2.pdf              \
-	pdf/tpl7-ipv6-2022.pdf
+	pdf/tpl6-http-parte2.pdf
 
 pdf/%.pdf: markdown/%.md header.tex
 	mkdir -p pdf
