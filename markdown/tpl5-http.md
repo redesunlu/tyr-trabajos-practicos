@@ -1,9 +1,9 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** 06/05/2024
+**Fecha de Entrega:** 05/05/2025
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2024-TP5>
+**URL de Entrega:** <https://tinyurl.com/TyR-2025-TP5>
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
