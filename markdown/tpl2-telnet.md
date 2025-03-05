@@ -1,7 +1,7 @@
 TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 =================================================
 
-**Fecha de Entrega:** 01/04/2025
+**Fecha de Entrega:** 31/03/2025
 
 **URL de Entrega:** <https://tinyurl.com/TyR-2025-TP2>
 
