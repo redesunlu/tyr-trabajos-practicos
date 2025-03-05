@@ -35,7 +35,6 @@ all: \
 	pdf/tpe-sockets.pdf                   \
 	pdf/tpl00-AKA_Los_Labos_de_Pierre.pdf \
 	pdf/tpl1-configuracion-inicial.pdf    \
-	pdf/tpl1-parte2.pdf                   \
 	pdf/tpl2-telnet.pdf                   \
 	pdf/tpl3-dns.pdf                      \
 	pdf/tpl4-correo-electronico.pdf       \
