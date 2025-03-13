@@ -52,7 +52,7 @@ Los comandos necesarios para llevar adelante la práctica se encuentran listados
 
 8. Realizar una captura de las PDU intercambiadas mientras se utiliza el comando `ping` para verificar conectividad con el otro equipo. Las acciones que debe realizar son:
 
-    a. En una terminal del host anfitrión, iniciar la captura utilizando el comando `tcpdump` o `tshark` sobre la interfaz `kt-xxx` y redirigir la salida a un archivo para su posterior análisis.
+    a. En el dispositivo _capturador_ inicie la captura utilizando el comando `tcpdump` o `tshark` sobre la interfaz `eth0` y redirigir la salida a un archivo en el directorio /shared para su posterior análisis.
 
     b. En _pc1_ ejecutar el comando ping para enviar a _pc2_ exactamente 3 mensajes ICMP Echo Request (consulte el manual de ping).
 
