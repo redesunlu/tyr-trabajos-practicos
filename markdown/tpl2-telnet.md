@@ -25,13 +25,11 @@ Utilice para esta parte de la práctica el laboratorio de práctica _kathara-lab
 
 Defina un número de puerto para el proceso servidor (superior a 1024).
 
-En el host anfitrión verifique el nombre de la interfaz virtual creada por kathara (kt-xxxx).
-
-Realice una captura de todo el proceso utilizando en el host anfitrión la herramienta `tcpdump` o `tshark` sobre la interfaz correspondiente, y guardándola en un archivo en formato _pcap_ para su posterior análisis.
+En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirigir la salida a un archivo en el directorio /shared para su posterior análisis
 
 En el host _pc1_ deberá ejecutar la utilidad `nc` actuando como servidor, indicando como parámetro el número de puerto elegido. Una vez iniciado, este servicio quedará en modo de _escucha_ o _listening_. En el otro host (_pc2_) ejecute la utilidad `nc` como cliente indicando como parámetros la IP del servidor y número de puerto.
 
-Si generó correctamente los procesos servidor y cliente, debería poder ver una especie de "chat". Intercambie varios mensajes con el otro dispositivo y finalice la conexión (en cualquiera de los host presione CTRL+C). Luego detenga la captura (CTRL+C).
+Si generó correctamente los procesos servidor y cliente, debería poder ver una especie de "chat". Intercambie varios mensajes con el otro dispositivo y finalice la conexión (en cualquiera de los host presione CTRL+C). Luego detenga la captura en el dispositivo capturador (CTRL+C).
 
 Analice la captura almacenada en el archivo utilizando `tshark` y diversos parámetros de visualización (consulte la guía de comandos provista por la materia).
 
@@ -50,7 +48,7 @@ El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet
 
 Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`. (puede elegir cualquiera del rango `172.16.0.1-254` exepto `172.16.0.10`)
 
-En el host anfitrión verifique el nombre de la interfaz virtual creada por kathara (kt-xxxx) e inicie una captura de tráfico sobre la misma.
+En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirigir la salida a un archivo en el directorio /shared para su posterior análisis.
 
 En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `alumno` y la clave `ultrasecreta`.
 
@@ -62,7 +60,7 @@ Copie la salida de dicho comando como resolución de este ejercicio (como texto)
 
 Salga del host remoto escribiendo el comando `exit`
 
-Detenga y guarde la captura de tráfico. Remítala como parte de la tarea.
+Luego detenga la captura en el dispositivo capturador. Remítala en formato pcap como parte de la tarea.
 
 Analice la captura:
 
