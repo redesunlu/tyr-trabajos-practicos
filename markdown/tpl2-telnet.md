@@ -25,7 +25,7 @@ Utilice para esta parte de la práctica el laboratorio de práctica _kathara-lab
 
 Defina un número de puerto para el proceso servidor (superior a 1024).
 
-En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirigir la salida a un archivo en el directorio /shared para su posterior análisis
+En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirigir la salida a un archivo en el directorio /shared para su posterior análisis. (Ej. `tshark -w - > /shared/captura_nc.pcap`)
 
 En el host _pc1_ deberá ejecutar la utilidad `nc` actuando como servidor, indicando como parámetro el número de puerto elegido. Una vez iniciado, este servicio quedará en modo de _escucha_ o _listening_. En el otro host (_pc2_) ejecute la utilidad `nc` como cliente indicando como parámetros la IP del servidor y número de puerto.
 
@@ -48,7 +48,7 @@ El laboratorio cuenta con dos hosts. El primer host actuará como cliente telnet
 
 Asigne una dirección IP al host _cliente_ dentro de la red `172.16.0.0/24`. (puede elegir cualquiera del rango `172.16.0.1-254` exepto `172.16.0.10`)
 
-En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirigir la salida a un archivo en el directorio /shared para su posterior análisis.
+En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirigir la salida a un archivo en el directorio /shared para su posterior análisis.  (Ej. `tshark -w - > /shared/captura_telnet.pcap`)
 
 En la terminal del host _cliente_, conéctese mediante telnet al host _remoto_, cuya dirección IP es `172.16.0.10`. Utilice el nombre de usuario `alumno` y la clave `ultrasecreta`.
 
