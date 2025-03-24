@@ -29,7 +29,7 @@ TPL 3 - Domain Name System
 
 5. Defina cómo estará compuesta la base de datos de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `SU-NRO-LEGAJO.tyr.example` (`.example` es un TLD reservado para uso en documentación y ejemplos). De acuerdo al diagrama de la Figura 1, defina:
 
-    ![Host en la red a definir en dns](images/Diagrama_ej_tp_dns.png){ with=35% }
+    ![Host en la red a definir en dns](images/Diagrama_ej_tp_dns.png){ width=35% }
 
     a. El nombre de todos los hosts en el nuevo dominio, y su respectivo puntero reverso.
    
