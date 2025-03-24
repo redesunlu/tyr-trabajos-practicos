@@ -11,38 +11,49 @@ TPL 3 - Domain Name System
 
 1. Utilizando la herramienta `dig` (o `nslookup`) realice consultas al servidor DNS indicado por el docente, (o desde su hogar al provisto por su ISP, o bien alguno de acceso público tal como `8.8.8.8` o `1.1.1.1`) para obtener la siguiente información:
 
-    a. ¿Cuál es la dirección IP del host `cidetic.unlu.edu.ar`?
-    b. ¿Cuál es la dirección IP del host `cacic2023.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
-    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `uncu.edu.ar`?
-    d. ¿Cuál es el nombre del host cuya dirección IP es `190.104.80.8`?
+    a. ¿Cuál es la dirección IP del host `platdig.unlu.edu.ar`?
+   
+    b. ¿Cuál es la dirección IP del host `educativa.unlu.edu.ar`? ¿Qué diferencia nota en la respuesta respecto al punto anterior?
+   
+    c. ¿Cuáles son los intercambiadores de mail (mnemónico y dirección IP) del dominio `unsa.edu.ar`?
+   
+    d. ¿Cuál es el nombre del host cuya dirección IP es `190.104.80.12`?
+   
     e. ¿Cuáles son los servidores de nombres (mnemónicos y dirección IP) para el dominio `ripe.net`?
-    f. ¿Cuál es la dirección IPv6 del host `www.isoc.org`?
+   
+    f. ¿Cuál es la dirección IPv6 del host `debian.org`?
 
-2. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `cruzroja.org.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
+3. Utilice la herramienta DNS BAJAJ disponible en <http://www.zonecut.net/dns/> para obtener información en forma de grafo acerca del dominio `cruzroja.org.ar`. ¿Cuáles son los servidores (nombre y dirección IP) para dicho dominio?
 
-3. ¿En dónde se encuentra la copia mas cercana de un servidor dns raíz? ¿Cuál es el nombre del servidor replicado (o servidores)?
+4. ¿En dónde se encuentra la copia mas cercana de un servidor dns raíz? ¿Cuál es el nombre del servidor replicado (o servidores)?
 
-4. Defina cómo estará compuesta la base de datos de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `SU-NRO-LEGAJO.tyr.example` (`.example` es un TLD reservado para uso en documentación y ejemplos). De acuerdo al diagrama de la Figura 1, defina:
+5. Defina cómo estará compuesta la base de datos de un servidor DNS administrado por Ud., de manera tal que sea el servidor primario del dominio `SU-NRO-LEGAJO.tyr.example` (`.example` es un TLD reservado para uso en documentación y ejemplos). De acuerdo al diagrama de la Figura 1, defina:
 
-    ![Host en la red a definir en dns](images/Diagrama_ej_tp_dns.png){ width=35% }
+    ![Host en la red a definir en dns](images/Diagrama_ej_tp_dns.png){ with=35% }
 
     a. El nombre de todos los hosts en el nuevo dominio, y su respectivo puntero reverso.
+   
     b. Los hosts `pc1` y `ns1` como name servers del dominio.
+   
     e. `www.SU-NRO-LEGAJO.tyr.example` y `ftp.SU-NRO-LEGAJO.tyr.example` como alias de server1.
 
     Complete la planilla adjunta a partir de las definiciones previas.
 
-5. Instale e inicie en el entorno kathara el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_dns.tar.gz> y realice las siguientes actividades:
+7. Instale e inicie en el entorno kathara el laboratorio de dns provisto por los docentes disponible en <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_dns.tar.gz> y realice las siguientes actividades:
 
-    a. Inicie una captura desde el host.
+    a. En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirigir la salida a un archivo en el directorio /shared para su posterior análisis. (Ej. "tshark -i eth0 -w - > /shared/captura_dns.pcap")
+   
     b. Desde _pc1.lugroma3.org_, ejecute el comando `ping -c 4 pc2.nanoinside.net`
+   
     c. Una vez recibidas las 4 respuestas ICMP, detenga la captura.
+   
     d. Analice la captura y describa cómo es el proceso de resolución de nombres para determinar la dirección ip de _pc2.nanoinside.net_, representando gráficamente el intercambio de mensajes dns, e indicando el propósito de cada uno.
+   
     d. Identifique el host que realiza una consulta recursiva y cuál consultas iterarivas.
 
-6. Analice la captura `captura_ejemplo_dns.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particular que observe en la misma?
+8. Analice la captura `captura_ejemplo_dns.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particularidad que observe en la misma?
 
-7. ¿Cómo un desarrollador de aplicaciones puede acceder al servicio DNS? (Por ej. si es necesario resolver, en una aplicación de software, mnemónicos a direcciones IP o viceversa)
+9. ¿Cómo un desarrollador de aplicaciones puede acceder al servicio DNS? (Por ej. si es necesario resolver, en una aplicación de software, mnemónicos a direcciones IP o viceversa)
 
 
 #### Bibliografía
