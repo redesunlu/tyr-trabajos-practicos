@@ -9,19 +9,19 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 
 ### Consignas
 
-1. Un usuario redacta un mensaje destinado a `consultas@empresax.com.ar` en su cliente de correo y lo envía mediante su propio MTA. Detalle paso a paso el procedimiento que debe seguir el MTA del usuario para entregar el mensaje al destinatario.
+1. Un usuario redacta un mensaje destinado a `consultas@empresax.example.com` en su cliente de correo y lo envía mediante su propio MTA. Detalle paso a paso el procedimiento que debe seguir el MTA del usuario para entregar el mensaje al destinatario.
 
 2. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte del usuario que envía correo y el abuso que esto puede acarrear.
 
 3. Instale e inicie en el entorno **kathará** el laboratorio de email provisto por los docentes, disponible en
 <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_email.tar.gz> y realice las siguientes actividades:
 
-    1. Inicie una captura desde el host.
+    1. En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirija la salida a un archivo en el directorio /shared para su posterior análisis. (Ej. "tshark -i eth0 -w - > /shared/captura_email.pcap")
     2. Desde la **pc1**, utilizando `nc`, conéctese al servidor SMTP `mail.lugroma3.org` (TCP puerto 25) y envíe un mensaje cuyo remitente sea `<su-nombre@lugroma3.org>` destinado a la cuenta de correo `<guest@nanoinside.net>`.
         - Indique en el encabezado Subject: "Resolucion del ejercicio 3". Escriba un cuerpo de mensaje de al menos 3 líneas, incluyendo su nombre y su legajo.
         - Finalice el mensaje escribiendo un punto en una línea en blanco. Deberá ver la respuesta `250 OK id=...` indicando que el mensaje fue procesado correctamente.
     3. Desde la **pc2**, utilizando `nc`, conéctese al servidor POP3 `pop.nanoinside.net` (TCP puerto 110). Acceda a la cuenta de usuario `guest` (contraseña `guest`), recupere el mensaje almacenado en la casilla, bórrelo y finalice adecuadamente la sesión POP.
-    4. Detenga el proceso de captura en el host.
+    4. Detenga el proceso de captura en el dispositivo capturador.
     5. Analice la captura y discuta acerca de la confidencialidad de los datos transmitidos.
     6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
