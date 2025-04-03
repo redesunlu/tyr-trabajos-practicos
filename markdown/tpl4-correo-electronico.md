@@ -26,13 +26,7 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
 
-4. Utilizando el comando `nc -C` (el parámetro `-C` es requerido para este ejercicio), conéctese al servidor SMTP `smtp.ethereal.email` (puerto 25) y efectúe toda la transacción SMTP necesaria para enviar un mensaje a la dirección de correo `<rozella.crist@ethereal.email>`
-
-    Como remitente del mensaje utilice su propia cuenta de correo y como Asunto (Subject) especifique su nombre completo y legajo. Todo el mensaje debe cumplir con los requisitos de la RFC 5322 y ser de tipo MIME text/plain. Dentro del cuerpo del mensaje responda cuáles son los campos de encabezado obligatorios según RFC5322.
-
-    Como resolución de este ejercicio, copie y pegue los comandos enviados y las respuestas recibidas desde el servidor (es decir, toda la transacción efectuada).
-
-5. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
+4. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
    utilizando el menú ". . .", descargue el código RFC 822 del mismo (en Gmail
    corresponde a la opción _Mostrar original_, en Outlook a _Ver origen del
    mensaje_, en Yahoo a _Ver mensaje original_, etc).
