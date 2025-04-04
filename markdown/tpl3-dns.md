@@ -51,7 +51,7 @@ TPL 3 - Domain Name System
    
     d. Identifique el host que realiza una consulta recursiva y cuál consultas iterarivas.
 
-8. Analice la captura `captura_ejemplo_dns.pcap` y represente el intercambio de mensajes. ¿Puede indicar alguna particularidad que observe en la misma?
+8. Analice la captura [`captura_ejemplo_dns.pcap`](https://www.labredes.unlu.edu.ar/sites/www.labredes.unlu.edu.ar/files/site/data/tyr//captura_ejemplo_dns.pcap) y represente el intercambio de mensajes. ¿Puede indicar alguna particularidad que observe en la misma?
 
 9. ¿Cómo un desarrollador de aplicaciones puede acceder al servicio DNS? (Por ej. si es necesario resolver, en una aplicación de software, mnemónicos a direcciones IP o viceversa)
 
