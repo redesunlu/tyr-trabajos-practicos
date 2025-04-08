@@ -13,7 +13,7 @@ TPL 5 - World Wide Web - HTTP
 
     a. Petición por protocolo HTTP versión 1.0
 
-            $ nc -v -C www.unlu.edu.ar 80 (enter)
+            $ nc -v -C www.debian.org 80 (enter)
             GET / HTTP/1.0 (enter) (enter)
 
     b. Petición por protocolo HTTP versión 1.1
@@ -51,7 +51,7 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
     a. ¿Qué encabezados envía cada cliente en la petición?
     b. Comente las características de la información en tránsito con respecto a la confidencialidad.
 
-3. Describa cómo opera un cliente HTTP (por ejemplo un navegador web) para recuperar una página HTML que contiene varios objetos. Analice la captura del archivo `captura_ejemplo_http.pcap` provisto por los docentes y represente el intercambio de mensajes mediante un gráfico ideado por Ud. ¿Qué primitivas se utilizan en cada caso?.
+3. Describa cómo opera un cliente HTTP (por ejemplo un navegador web) para recuperar una página HTML que contiene varios objetos. Analice la captura del archivo [`captura_ejemplo_http.pcap`](https://www.labredes.unlu.edu.ar/sites/www.labredes.unlu.edu.ar/files/site/data/tyr/captura_ejemplo_http.pcap) provisto por los docentes y represente el intercambio de mensajes mediante un gráfico ideado por Ud. ¿Qué primitivas se utilizan en cada caso?.
 
 4. Instale e inicie en el entorno **kathará** el laboratorio de proxy HTTP provisto por los docentes, disponible en <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_proxy.tar.gz>
 
@@ -63,7 +63,7 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
 
             export http_proxy=http://10.0.0.30:3128
 
-    c. Inicie una captura desde el host redirigiendola a un archivo para su posterior análisis.
+    c. En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirija la salida a un archivo en el directorio /shared para su posterior análisis. (Ej. "tshark -i eth0 -w - > /shared/captura_http1.pcap")https://www.labredes.unlu.edu.ar/sites/www.labredes.unlu.edu.ar/files/site/data/tyr/captura_ejemplo_http.pcap
 
     d. En el cliente, navegue hacia la dirección <http://169.254.0.1/> utilizando un browser de consola:
 
