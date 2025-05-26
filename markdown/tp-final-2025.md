@@ -51,7 +51,7 @@ ___
 ___
 
 
-![Topología](./images/Topo-TP-Final2025.png) 
+![Topología](../images/Topo-TP-Final2025.png) 
 
 
 
