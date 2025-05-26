@@ -28,7 +28,7 @@ La actividad propuesta se divide en dos partes: en la primera, deberán configur
 
 3. Copie la plantilla con sus datos al directorio público del servidor \texttt{datos.tyr-ejemplo.com}.
 
-4. Luego, debe realizar la captura de tráfico de una transferencia completa de su página web usando el comando \texttt{w3c} (las instrucciones se encuentran dentro de los fuentes del laboratorio) y todo su contenido asociado, utilizando el mnemónico del servidor web. La captura debe comenzar con el equipo cliente \textit{apagado} (tablas ARP de ruteadores y hosts vacías), y finalizar cuando se recupera la página completa. La captura original (incluyendo carga de aplicación) debe ser enviada al equipo docente junto con el trabajo. 
+4. Luego, debe realizar la captura de tráfico de una transferencia completa de su página web usando el comando \texttt{w3c} (las **instrucciones se encuentran** dentro de los fuentes del laboratorio) y todo su contenido asociado, utilizando el mnemónico del servidor web. La captura debe comenzar con el equipo cliente \textit{apagado} (tablas ARP de ruteadores y hosts vacías), y finalizar cuando se recupera la página completa. La captura original (incluyendo carga de aplicación) debe ser enviada al equipo docente junto con el trabajo. 
 
 
 #### En su casa
