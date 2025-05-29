@@ -24,7 +24,7 @@ La actividad propuesta se divide en dos partes: en la primera, deberán configur
 
 1. Descargue el labo base\footnote{\url{https://raw.githubusercontent.com/redesunlu/kathara-labs/main/tarballs/kathara-lab_TP_Integrador-2025.tar.gz}} e implemente en el laboratorio de Kathara las redes de acuerdo al plano de topología de la Figura fig:topologia. 
 
-2. Configure las interfaces, ruteadores/rutas, resolvers y NAT. El servidor DNS maneja la zona \texttt{tpfinal-tyr.com} (ya se encuetra configurado). Revise qué servicios debe iniciar y los puertos en los que operan los servidores web y el proxy. El equipo de usuario (Usuario) accede al exterior a través del servidor proxy (revise la configuración para reconocer cómo es en este caso). 
+2. Configure las interfaces, ruteadores/rutas y resolvers. El servidor DNS maneja la zona \texttt{tpfinal-tyr.com} (ya se encuetra configurado). Revise qué servicios debe iniciar y los puertos en los que operan los servidores web y el proxy. El equipo de usuario (Usuario) accede al exterior a través del servidor proxy (revise la configuración para reconocer cómo es en este caso). 
 
 3. Copie la plantilla con sus datos al directorio público del servidor \texttt{datos.tpfinal-tyr.com}.
 
