@@ -58,4 +58,4 @@ a. Para los mensajes Echo Request y Echo Reply indique:
 - NARTEN, T., et al. 2007. _Neighbor Discovery for IPv6_, RFC 4861  
 <https://tools.ietf.org/html/rfc4861>
 - BIERINGER, P. 2017. _Linux IPv6 HOWTO_  
-  <http://tldp.org/HOWTO/Linux+IPv6-HOWTO/>
+  <https://web.archive.org/web/20240522120519/https://tldp.org/HOWTO/Linux+IPv6-HOWTO/index.html>
