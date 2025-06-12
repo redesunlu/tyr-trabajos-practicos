@@ -38,7 +38,7 @@ all: \
 	pdf/tpl4-correo-electronico.pdf       \
 	pdf/tpl5-http.pdf                     \
 	pdf/tpl6-http-parte2.pdf	      \
-	pdf/tpl7-ipv6-opcional.md
+	pdf/tpl7-ipv6-opcional.pdf
 
 pdf/%.pdf: markdown/%.md header.tex
 	mkdir -p pdf
