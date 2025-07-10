@@ -46,7 +46,7 @@ ___
 **NOTAS** 
 
 1. El análisis debe corresponder a su interpretación de lo sucedido. No use interpretación que ofrece Wireshark ya que puede llevar a errores debido a cómo se realiza la captura.
-2. Su reporte final debe estar formado por un mismo documento entregable (pdf). Puede anexar archivos auxiliares como la captura y una planilla con los cálculos (distribución de mensajes, overhead, etc.)
+2. Su reporte final debe estar formado por un único documento principal entregable (pdf). Puede anexar archivos auxiliares como la captura y una planilla con los cálculos (distribución de mensajes, overhead, etc.)
 3. Incluya las respuestas a cada una de las consignas de manera explícita, clara y ordenada. 
 ___
 
