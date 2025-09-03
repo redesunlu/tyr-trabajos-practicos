@@ -1,7 +1,7 @@
 TPL 6 - World Wide Web - HTTP - Parte2
 =======================================================
 
-**Fecha de Entrega:** 12/05/2025
+**Fecha de Entrega:** 02/10/2025
 
 **URL de Entrega:** <https://tinyurl.com/TyR-2025-TP6>
 
