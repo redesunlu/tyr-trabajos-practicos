@@ -1,7 +1,7 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** 10/09/2025
+**Fecha de Entrega:** 11/09/2025
 
 **URL de Entrega:** <https://tinyurl.com/TyR-2025-TP3>
 
