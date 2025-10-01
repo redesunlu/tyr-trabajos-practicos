@@ -47,7 +47,8 @@ ___
 
 1. El análisis debe corresponder a su interpretación de lo sucedido. No use interpretación que ofrece Wireshark ya que puede llevar a errores debido a cómo se realiza la captura.
 2. Su reporte final debe estar formado por un único documento principal entregable (pdf). Puede anexar archivos auxiliares como la captura y una planilla con los cálculos (distribución de mensajes, overhead, etc.)
-3. Incluya las respuestas a cada una de las consignas de manera explícita, clara y ordenada. 
+3. Incluya las respuestas a cada una de las consignas de manera explícita, clara y ordenada.
+4. EL TP final debe ser enviado al equipo docente al menos una semana antes de presentarse a rendir el examen a los efectos de contar con tiempo para la corrección y, eventualmente, realizar cambios.
 ___
 
 
