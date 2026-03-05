@@ -8,8 +8,6 @@ TPL - Capa de Enlace en LAN - Ethernet
 **Objetivo:**
 
 
-
-
 ## Revisión de la configuración de los dispositivos del laboratorio
 
 Utilice para esta parte de la práctica el laboratorio de práctica Ethernet (<https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_ethernet.tar.gz>)
@@ -81,7 +79,7 @@ Sent 1 packets.
 [✓] Trama enviada exitosamente!
 ```
 
-Se recomienda leer y revisar el código fuente de ambos scripts a fines de comprender qué es lo que hacen.
+Se recomienda leer y revisar el código fuente de ambos scripts a fines de comprender los fundamentos de funcionamiento.
 
 ### Escenarios de prueba y análisis
 
@@ -99,14 +97,11 @@ Se recomienda leer y revisar el código fuente de ambos scripts a fines de compr
 
 
 ### Bibliografía
+[FOR07] Capítulo 13: “Lan Cableadas: Ethernet”
+[KUR12] Capítulo 5.4 y 5.5: "Capa de Enlace y Redes de Área Local"
 
 
 
-### Recursos en internet
-
-
-
-### Referencia
 
 
 
