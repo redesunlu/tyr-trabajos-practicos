@@ -1,9 +1,9 @@
 TPL 1 - Configuración inicial de la red del laboratorio
 =======================================================
 
-**Fecha de Entrega:** 28/08/2025
+**Fecha de Entrega:** 26/03/2026
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2025-TP1>
+**URL de Entrega:** <https://tinyurl.com/TyR-2026-TP1>
 
 **Objetivos:**
 
@@ -19,7 +19,7 @@ Adquirir habilidades en el uso del entorno de emulación de redes Kathará.
    <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_conf_inicial.tar.gz>
 3. En una terminal de línea de comandos, dirigirse al directorio recientemente creado (que posee el archivo `lab.conf`) y ejecutar el comando  
    `kathara lstart`  
-   para comprobar que es posible iniciar el laboratorio. Deberían abrirse tres ventanas con las terminales de los equipos _pc1_, _pc2_, y _r1_.
+   para comprobar que es posible iniciar el laboratorio. Deberían abrirse cuatro ventanas con las terminales de los equipos _pc1_, _pc2_, _r1_, y _capturador_.
 
 # Segunda parte: Configuración de hosts en una red - prueba de conectividad - análisis de captura
 
