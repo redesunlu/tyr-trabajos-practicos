@@ -1,7 +1,7 @@
 # Apunte de comandos para TyR
 
 Compendio de comandos necesarios para abordar las practicas de laboratorio
-de la asignatura Teleinformatica y Redes (10040).
+de la asignatura "Teleinformatica y Redes" (10040).
 
 ## Obtener acceso root
 
