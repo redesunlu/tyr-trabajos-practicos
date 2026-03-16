@@ -33,7 +33,7 @@ Familiarizarse con el uso del intérprete de comandos en s.o. Linux.
 
 7. Crear un grupo de usuarios llamado `grupo1`. (addgroup)
 
-8. Crear una cuenta para el usuario `abelardo`, asignándole como password `ksj1jh7`, directorio de trabajo `/home/abel1`, grupo de trabajo `grupo1` y el intérprete de comandos csh. (adduser)
+8. Crear una cuenta para el usuario `abelardo`, asignándole como password `ksj1jh7`, directorio de trabajo `/home/abel1`, grupo de trabajo `grupo1` y el intérprete de comandos dash. (adduser)
 
 9. Crear una cuenta para el usuario `felisa`, directorio de trabajo por defecto, grupo de trabajo `grupo1` y `bash` como shell.
 
@@ -57,7 +57,7 @@ Familiarizarse con el uso del intérprete de comandos en s.o. Linux.
 
 19. Pasar a modo superusuario. (su)
 
-20. Modificar `arch4` para que el nuevo dueño y grupo sea `root`, y pueda ser leído por todos los usuarios del sistema pero sólo modificado por `root` y su grupo. (chown, chgroup y chmod)
+20. Modificar `arch4` para que el nuevo dueño y grupo sea `root`, y pueda ser leído por todos los usuarios del sistema pero sólo modificado por `root` y su grupo. (chown, chgrp y chmod)
 
 21. Ver el espacio total en kbs utilizados por el directorio `/root`. (du)
 
@@ -65,9 +65,9 @@ Familiarizarse con el uso del intérprete de comandos en s.o. Linux.
 
 23. Ver por pantalla y guardar en `histo.cmd` los últimos 15 comandos ingresados por root. (tail, tee)
 
-24. Ver el nombre de usuario mediante la variable de entorno `USERNAME`. (echo)
+24. Ver el nombre de usuario mediante la variable de entorno `USER`. (echo)
 
-25. Contar las letras que componen el `PATH`. (echo y w)
+25. Contar las letras que componen el `PATH`. (echo y wc)
 
 26. Contar la cantidad de usuarios conectados al sistema. (who y wc)
 
@@ -77,7 +77,7 @@ Familiarizarse con el uso del intérprete de comandos en s.o. Linux.
 
 29. Crear un shell script llamado memoria que muestre la cantidad de memoria libre y usada del sistema.
 
-30. Ejecutar la utilidad `updatedb` en background con prioridad = 15. (nice)
+30. Ejecutar el comando `find . -name "*.pdf" > archivos_pdf` en background con prioridad = 15. (nice)
 
 31. ¿De que manera es posible ejecutar un proceso que continúe su ejecución aún cuando el usuario termina la sesión?.
 
