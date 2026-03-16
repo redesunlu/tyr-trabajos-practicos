@@ -77,7 +77,7 @@ Familiarizarse con el uso del intérprete de comandos en s.o. Linux.
 
 29. Crear un shell script llamado memoria que muestre la cantidad de memoria libre y usada del sistema.
 
-30. Ejecutar el comando `find . -name "*.pdf" > archivos_pdf` en background con prioridad = 15. (nice)
+30. Ejecutar el comando `find . -name "*.pdf" > lista_archivos_pdf.txt` en background con prioridad = 15. (nice)
 
 31. ¿De que manera es posible ejecutar un proceso que continúe su ejecución aún cuando el usuario termina la sesión?.
 
