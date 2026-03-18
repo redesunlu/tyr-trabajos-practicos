@@ -1,9 +1,9 @@
 TPL 2 - Aplicaciones 1: Cliente/Servidor - Telnet
 =================================================
 
-**Fecha de Entrega:** 04/09/2025
+**Fecha de Entrega:** 09/04/2026
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2025-TP2>
+**URL de Entrega:** <https://tinyurl.com/TyR-2026-TP2>
 
 **Objetivo:**
 Familiarizar el trabajo con aplicaciones cliente/servidor y, como primer ejemplo de aplicación de la pila TCP/IP, conocer el propósito y funcionamiento del protocolo **telnet**.
