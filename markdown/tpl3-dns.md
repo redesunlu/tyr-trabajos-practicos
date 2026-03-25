@@ -1,9 +1,9 @@
 TPL 3 - Domain Name System
 ==========================
 
-**Fecha de Entrega:** 11/09/2025
+**Fecha de Entrega:** 16/04/2026
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2025-TP3>
+**URL de Entrega:** <https://tinyurl.com/TyR-2026-TP3>
 
 **Objetivo:** Comprender el propósito, funcionamiento y servicio provisto por el Sistema de Nombres de Dominio (DNS). Familiarizarse con la estructura en árbol de nombres de dominio, con los tipos de registros de recurso y con la composición de una Zona DNS.
 
