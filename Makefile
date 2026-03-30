@@ -28,16 +28,17 @@ all: \
 	pdf/tp-eficiencia-enlace.pdf          \
 	pdf/tp-final-2024.pdf                 \
 	pdf/tp-final-2025.pdf                 \
+	pdf/tp-ethernet.pdf					  \
 	pdf/tp-transmision-datos.pdf          \
 	pdf/tpe-sockets.pdf                   \
 	pdf/tpl00-AKA_Los_Labos_de_Pierre.pdf \
-        pdf/tpl-adicional.pdf                 \
+	pdf/tpl-adicional.pdf                 \
 	pdf/tpl1-configuracion-inicial.pdf    \
 	pdf/tpl2-telnet.pdf                   \
 	pdf/tpl3-dns.pdf                      \
 	pdf/tpl4-correo-electronico.pdf       \
 	pdf/tpl5-http.pdf                     \
-	pdf/tpl6-http-parte2.pdf	      \
+	pdf/tpl6-http-parte2.pdf	          \
 	pdf/tpl7-ipv6-opcional.pdf
 
 pdf/%.pdf: markdown/%.md header.tex
