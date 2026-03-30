@@ -1,11 +1,8 @@
 TPL - Capa de Enlace en LAN - Ethernet
 =================================================
 
-**Fecha de Entrega:** 
 
-**URL de Entrega:** 
-
-**Objetivo:**
+**Objetivo:** Experimentar con el envío y recepción de tramas Ethernet, el formato y uso de las direcciones (unicast/broadcast) y la visualización de la información de capa de enlace en la captura.
 
 
 ## Revisión de la configuración de los dispositivos del laboratorio
