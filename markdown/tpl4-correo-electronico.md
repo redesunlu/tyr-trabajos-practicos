@@ -1,19 +1,15 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** 18/09/2025
+**Fecha de Entrega:** 16/04/2026
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2025-TP4>
+**URL de Entrega:** <https://tinyurl.com/TyR-2026-TP4>
 
 **Objetivo:** Permitir la comprensión del funcionamiento del servicio de correo electrónico, a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
 ### Consignas
 
-1. Un usuario redacta un mensaje destinado a `consultas@empresax.example.com` en su cliente de correo y lo envía mediante su propio MTA. Detalle paso a paso el procedimiento que debe seguir el MTA del usuario para entregar el mensaje al destinatario.
-
-2. Comente los problemas que plantea el uso de SMTP en cuanto a que el protocolo no requiere obligatoriamente la autenticación por parte del usuario que envía correo y el abuso que esto puede acarrear.
-
-3. Instale e inicie en el entorno **kathará** el laboratorio de email provisto por los docentes, disponible en
+1. Instale e inicie en el entorno **kathará** el laboratorio de email provisto por los docentes, disponible en
 <https://github.com/redesunlu/kathara-labs/blob/main/tarballs/kathara-lab_email.tar.gz> y realice las siguientes actividades:
 
     1. En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirija la salida a un archivo en el directorio /shared para su posterior análisis. (Ej. "tshark -i eth0 -w - > /shared/captura_email.pcap")
@@ -23,27 +19,19 @@ TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
     3. Desde la **pc2**, utilizando `nc`, conéctese al servidor POP3 `pop.nanoinside.net` (TCP puerto 110). Acceda a la cuenta de usuario `guest` (contraseña `guest`), recupere el mensaje almacenado en la casilla, bórrelo y finalice adecuadamente la sesión POP.
     4. Detenga el proceso de captura en el dispositivo capturador.
     5. Analice la captura y discuta acerca de la confidencialidad de los datos transmitidos.
-    6. Identifique la conexión TCP que se establece entre los MTA's. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
+    6. Identifique la conexión TCP que se establece entre el MTA destino y pc2. Utilice `tshark` para mostrar el contenido de dicho stream y adjúntelo.
     7. ¿Qué cosas adicionó al mensaje original el servidor `mail.lugroma3.org`?
 
-4. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y,
-   utilizando el menú ". . .", descargue el código RFC 822 del mismo (en Gmail
-   corresponde a la opción _Mostrar original_, en Outlook a _Ver origen del
-   mensaje_, en Yahoo a _Ver mensaje original_, etc).
-   Analice los encabezados del mensaje e indique:
+2. Seleccione un mensaje dentro de la carpeta SPAM de su casilla de correo y, utilizando el menú ". . .", descargue el código RFC 822 del mismo (en Gmail    corresponde a la opción _Mostrar original_, en Outlook a _Ver origen del mensaje_, en Yahoo a _Ver mensaje original_, etc).  Analice los encabezados del mensaje e indique:
 
-    * La semántica y el valor de los campos de encabezado vistos en clase
-      (From, To, CC, Date, Subject, Reply-To, MIME-Version, Content-Type),
+    * La semántica y el valor de los campos de encabezado vistos en clase (From, To, CC, Date, Subject, Reply-To, MIME-Version, Content-Type),
     * El valor del campo Return-Path y si coincide con el valor del campo From,
-    * La lista de servidores SMTP por los que fue pasando el mensaje
-      (encabezados que comienzan con `Received: from`), la hora en la que pasó
-      por cada uno de ellos y qué protocolo se utilizó en la transferencia
-      (indicado por `with ...`).
-    * Si es MIME de tipo _multipart/*_, determinar para qué se utiliza el valor
-      del dato `boundary`, cuantos bloques componen el mensaje, qué tipo de
-      contenido (Content-Type) y qué codificación se utiliza
-      (Content-Transfer-Encoding) en cada bloque,
+    * La lista de servidores SMTP por los que fue pasando el mensaje (encabezados que comienzan con `Received: from`), la hora en la que pasó
+      por cada uno de ellos y qué protocolo se utilizó en la transferencia (indicado por `with ...`).
+    * Si es MIME de tipo _multipart/*_, determinar para qué se utiliza el valor del dato `boundary`, cuantos bloques componen el mensaje, qué tipo de
+      contenido (Content-Type) y qué codificación se utiliza (Content-Transfer-Encoding) en cada bloque.
 
+3. ¿Cuáles son los intercambiadores de correo electrónico para el dominio uns.edu.ar y cuáles son las ips habilitadas para enviar correos desde el mismo?
 
 #### Bibliografía
 
