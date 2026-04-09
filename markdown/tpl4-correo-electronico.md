@@ -1,7 +1,7 @@
 TPL 4 - Correo Electrónico SMTP - POP3 - IMAP4 - MIME
 =====================================================
 
-**Fecha de Entrega:** 16/04/2026
+**Fecha de Entrega:** 23/04/2026
 
 **URL de Entrega:** <https://tinyurl.com/TyR-2026-TP4>
 
