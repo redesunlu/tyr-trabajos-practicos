@@ -1,9 +1,9 @@
 TPL 5 - World Wide Web - HTTP
 =======================================================
 
-**Fecha de Entrega:** 25/09/2025
+**Fecha de Entrega:** 30/04/2026
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2025-TP5>
+**URL de Entrega:** <https://tinyurl.com/TyR-2026-TP5>
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
@@ -46,7 +46,7 @@ conexión con `nc`. Finalice la petición pulsando **tres veces** la tecla Enter
     4. ¿Qué información acerca del sortware servidor web y configuración se obtiene?
 
 2. Realice 3 capturas de peticiones HTTP al servidor web www.unlu.edu.ar.
-Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: Firefox, Iceweasel, Chrome, Chromium, Konqueror, Epiphany, Explorer, Sarafi, etc.), y para la tercer captura use la herramienta de transferencias curl (https://curl.haxx.se/) o wget (http://www.gnu.org/software/wget/).
+Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: Firefox, Iceweasel, Chrome, Chromium, Konqueror, Epiphany, Edge, Explorer, Sarafi, etc.), y para la tercer captura use la herramienta de transferencias curl (https://curl.haxx.se/) o wget (http://www.gnu.org/software/wget/).
 
     a. ¿Qué encabezados envía cada cliente en la petición?
     b. Comente las características de la información en tránsito con respecto a la confidencialidad.
@@ -63,7 +63,7 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
 
             export http_proxy=http://10.0.0.30:3128
 
-    c. En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirija la salida a un archivo en el directorio /shared para su posterior análisis. (Ej. "tshark -i eth0 -w - > /shared/captura_http1.pcap")https://www.labredes.unlu.edu.ar/sites/www.labredes.unlu.edu.ar/files/site/data/tyr/captura_ejemplo_http.pcap
+    c. En el dispositivo capturador inicie la captura utilizando el comando tcpdump o tshark sobre la interfaz eth0 y redirija la salida a un archivo en el directorio /shared para su posterior análisis. (Ej. "tshark -i eth0 -w - > /shared/captura_http1.pcap")
 
     d. En el cliente, navegue hacia la dirección <http://169.254.0.1/> utilizando un browser de consola:
 
@@ -95,10 +95,8 @@ Para la primer y segunda captura utilice 2 navegadores gráficos distintos (ej: 
 
     1. ¿Qué encabezados envía el cliente al proxy-http en la petición?
     2. ¿Qué encabezados envía el proxy-http al servidor web en la petición?
-    3. Mencione las diferencias que observa en los encabezados respecto a no utilizar un proxy-http (punto 4)
+    3. Mencione las diferencias que observa en los encabezados respecto a no utilizar un proxy-http (punto 3)
     4. ¿Es posible cambiar el número de puerto TCP en el que escucha el servidor proxy? ¿Qué línea del archivo de configuración hay que cambiar para que Squid escuche por conexiones en el puerto 8080?
-
-5. ¿Cómo un sistema que realiza caché local puede determinar si algún objeto en el servidor original fue modificado con respecto a la copia actual, sin realizar la transferencia completa del objeto?
 
 
 **Bibliografía**
@@ -124,6 +122,8 @@ Describa someramente el protocolo HTTP, indicando modo de operación y primitiva
 ¿Qué es un servidor Proxy? ¿En qué situaciones se implementa? Brinde ejemplos.
 
 ¿Qué es HTML? ¿Qué especifica?
+
+¿Cómo un sistema que realiza caché local puede determinar si algún objeto en el servidor original fue modificado con respecto a la copia actual, sin realizar la transferencia completa del objeto?
 
 ¿Qué es la interfaz CGI? ¿Para qué se utiliza?
 
