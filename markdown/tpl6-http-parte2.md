@@ -1,9 +1,9 @@
 TPL 6 - World Wide Web - HTTP - Parte2
 =======================================================
 
-**Fecha de Entrega:** 02/10/2025
+**Fecha de Entrega:** 07/05/2026
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2025-TP6>
+**URL de Entrega:** <https://tinyurl.com/TyR-2026-TP6>
 
 **Objetivo:** Permitir la comprensión del funcionamiento de la "World Wide Web", a través del análisis de los principales protocolos y agentes que integran su arquitectura.
 
