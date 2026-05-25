@@ -3,7 +3,7 @@ TPL 7 - Ruteo estático y Traducción de Direcciones
 
 **Fecha de Entrega Comisión 6 (Luján): 04/06/2026 - Comisión 35 (Chivilcoy): 05/06/2026**
 
-**URL de Entrega:** <https://tinyurl.com/TyR-2026-TPx>
+**URL de Entrega:** <https://tinyurl.com/TyR-2026-TP7>
 
 **Objetivos:** 
 
