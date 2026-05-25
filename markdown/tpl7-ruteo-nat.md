@@ -1,4 +1,4 @@
-TP - Ruteo estático y Traducción de Direcciones de Red en Kathara
+TPL 7 - Ruteo estático y Traducción de Direcciones
 ===========================
 
 **Fecha de Entrega Comisión 6 (Luján): 04/06/2026 - Comisión 35 (Chivilcoy): 05/06/2026**
