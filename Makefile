@@ -26,8 +26,7 @@ all: \
 	pdf/missing-semester-course-shell.pdf \
 	pdf/practica_autoguiada_sockets.pdf   \
 	pdf/tp-eficiencia-enlace.pdf          \
-	pdf/tp-final-2024.pdf                 \
-	pdf/tp-final-2025.pdf                 \
+	pdf/tp-final-2026.pdf                 \
 	pdf/tp-ethernet.pdf					  \
 	pdf/tp-transmision-datos.pdf          \
 	pdf/tpe-sockets.pdf                   \
