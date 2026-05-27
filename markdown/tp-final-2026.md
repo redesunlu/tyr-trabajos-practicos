@@ -9,6 +9,12 @@ La actividad propuesta se divide en dos partes: en la primera, deberán configur
 
 **La entrega y aprobación de este Trabajo Práctico es condición necesaria (pero no suficiente) para aprobar la asignatura (promocionar o rendir el final). Esta actividad es de resolución personal.**
 
+```
+La fecha de entrega límite para promocionar la asignatura es 22/06/2026. Para el caso del examen final, el TP final debe ser enviado al menos una semana antes de presentarse a rendir el examen a los efectos de contar con tiempo para la corrección y, eventualmente, realizar cambios.
+
+La resolución del TP se debe enviar a: docentetyr@gmail.com
+```
+
 
 #### Actividades
 
@@ -48,7 +54,6 @@ ___
 2. No utilice capturas de pantalla de Wireshark. Haga tablas/resúmenes propios.
 3. Su reporte final debe estar formado por un único documento principal entregable (pdf). Puede anexar archivos auxiliares como la captura y una planilla con los cálculos (distribución de mensajes, overhead, etc.)
 4. Incluya las respuestas a cada una de las consignas de manera explícita, clara y ordenada.
-5. EL TP final debe ser enviado al equipo docente al menos una semana antes de presentarse a rendir el examen a los efectos de contar con tiempo para la corrección y, eventualmente, realizar cambios.
 ___
 
 
