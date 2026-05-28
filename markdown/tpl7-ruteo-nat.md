@@ -26,7 +26,7 @@ Además se requiere que su implementación respete las siguientes consignas:
 4. Los servidores de aplicaciones y bases de datos son accedidos solamente por los usuarios corporativos (Red C). 
 5. Los usuarios pueden navegar por Internet solamente a través del servidor proxy, y pueden acceder al correo electrónico y la web corporativa de forma directa (sin proxy).
 
-![Topología de la red de la organización](./images/ejercicio-ruteo-nat.png){width=75%}
+![Topología de la red de la organización](./images/ejercicio-ruteo-nat.png){width=80%}
 
 ### Actividad 1. Ruteo
 
