@@ -30,7 +30,6 @@ all: \
 	pdf/tp-ethernet.pdf					  \
 	pdf/tp-transmision-datos.pdf          \
 	pdf/tpe-sockets.pdf                   \
-	pdf/tpl00-AKA_Los_Labos_de_Pierre.pdf \
 	pdf/tpl-adicional.pdf                 \
 	pdf/tpl1-configuracion-inicial.pdf    \
 	pdf/tpl2-telnet.pdf                   \
